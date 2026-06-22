@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Zriceros Tongue Scraper - Amazon Listing</title>
+<title>Zriceros Tongue Scraper - Amazon Listing Handoff</title>
 <style>
   body {
     font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    max-width: 900px;
+    max-width: 960px;
     margin: 40px auto;
     padding: 0 24px;
     line-height: 1.6;
@@ -14,7 +14,7 @@
     background: #f7f7f7;
   }
   h1 {
-    font-size: 22px;
+    font-size: 23px;
     border-bottom: 3px solid #ff9900;
     padding-bottom: 8px;
   }
@@ -23,9 +23,13 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: #555;
-    margin-top: 40px;
+    margin-top: 44px;
     border-left: 4px solid #ff9900;
     padding-left: 10px;
+  }
+  h2 .num {
+    color: #ff9900;
+    margin-right: 6px;
   }
   .card {
     background: #fff;
@@ -98,62 +102,91 @@
   table th {
     background: #f0f0f0;
   }
-  .warn {
-    color: #c40000;
-    font-weight: 600;
+  .warn { color: #c40000; font-weight: 600; }
+  .ok { color: #067d62; font-weight: 600; }
+  .tbd { color: #946200; font-style: italic; }
+  .prio-high { background: #fff0ee; }
+  .prio-med { background: #fff8ec; }
+  .prio-low { background: #f0f7f4; }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    color: #fff;
   }
-  .ok {
-    color: #067d62;
-    font-weight: 600;
-  }
-  .tbd {
-    color: #946200;
-    font-style: italic;
-  }
-  .tips {
-    background: #fff8ec;
-    border: 1px solid #ffe2a8;
-  }
+  .badge.high { background: #c40000; }
+  .badge.med { background: #cc8400; }
+  .badge.low { background: #1a7a4c; }
+  .tips { background: #fff8ec; border: 1px solid #ffe2a8; }
   .tips h2 { border-left-color: #cc8400; color: #8a5b00; }
   .tips ol { margin: 0; padding-left: 20px; }
   .tips li { margin-bottom: 10px; }
-  .critique {
-    background: #fff0ee;
-    border: 1px solid #ffc9c0;
-  }
+  .critique { background: #fff0ee; border: 1px solid #ffc9c0; }
   .critique h2 { border-left-color: #c40000; color: #a30000; }
-  .gallery {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 12px;
-  }
-  .gallery img {
-    width: 100%;
-    max-width: 190px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-  }
-  footer {
-    margin-top: 50px;
-    font-size: 12px;
-    color: #999;
-    text-align: center;
-  }
+  .summary { background: #eef6ff; border: 1px solid #c9e2ff; }
+  .summary h2 { border-left-color: #0a5cb8; color: #0a5cb8; }
+  .toc { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px 20px; margin-top: 16px; font-size: 14px; }
+  .toc a { color: #007185; text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  .toc ol { margin: 0; padding-left: 20px; }
+  footer { margin-top: 50px; font-size: 12px; color: #999; text-align: center; }
 </style>
 </head>
 <body>
 
 <h1>Amazon Listing — Zriceros Tongue Scraper (3 Pack)</h1>
-<p class="meta">ASIN: B0GVZF1GN7 &middot; Categoría: Health &amp; Household &gt; Oral Care &gt; Tongue Cleaners &middot; v3 — actualizado con fotos reales del producto</p>
+<p class="meta">ASIN: B0GVZF1GN7 &middot; Categoría: Health &amp; Household &gt; Oral Care &gt; Tongue Cleaners &middot; v4 — documento de handoff para el equipo</p>
 
-<h2>Título</h2>
+<div class="toc">
+  <b>Índice</b>
+  <ol>
+    <li><a href="#resumen">Resumen ejecutivo</a></li>
+    <li><a href="#checklist">Checklist de acciones (priorizado)</a></li>
+    <li><a href="#titulo">Título</a></li>
+    <li><a href="#bullets">5 Bullet Points</a></li>
+    <li><a href="#descripcion">Descripción</a></li>
+    <li><a href="#keywords">Backend Search Terms</a></li>
+    <li><a href="#metadata">Metadata / Atributos Seller Central</a></li>
+    <li><a href="#competencia">Panorama competitivo (precios y reviews)</a></li>
+    <li><a href="#imagenes">Auditoría de imágenes</a></li>
+    <li><a href="#critica">Revisión crítica (Gemini vs. realidad)</a></li>
+    <li><a href="#pendientes">Pendientes / preguntas abiertas</a></li>
+  </ol>
+</div>
+
+<h2 id="resumen"><span class="num">1.</span>Resumen ejecutivo</h2>
+<div class="card summary">
+  <p><b>Producto:</b> Zriceros Tongue Scraper, 3-Pack, 304 acero inoxidable grado quirúrgico, incluye estuche metálico de viaje, color negro. Precio actual: $10.99 ($3.66/unidad).</p>
+  <p><b>Problema #1 (no es de copy):</b> el listing tiene <b>0 reviews</b>. El competidor líder (MasterMedi) tiene 102,300 reviews al mismo precio por unidad aproximado. Ningún título o bullet va a compensar esa brecha de confianza por sí solo — el SEO mejora el tráfico, las reviews mejoran la conversión.</p>
+  <p><b>Problema #2:</b> el campo <b>Brand</b> en Seller Central está mal configurado como "Generic" en vez de "Zriceros". Esto bloquea Brand Registry, A+ Content, Storefront y búsquedas por marca.</p>
+  <p><b>Lo que se entrega en este documento:</b> título, bullets, descripción y backend search terms listos para copiar y pegar; tabla de metadata completa para Seller Central; comparación de precios contra 12 competidores directos; auditoría de las 4 imágenes ya producidas; y una revisión crítica de una propuesta alternativa (de otra IA) que contenía afirmaciones falsas sobre el producto, ya descartadas.</p>
+</div>
+
+<h2 id="checklist"><span class="num">2.</span>Checklist de acciones (priorizado)</h2>
+<div class="card">
+  <table>
+    <tr><th>Prioridad</th><th>Acción</th><th>Dónde</th><th>Responsable</th><th>Estado</th></tr>
+    <tr class="prio-high"><td><span class="badge high">ALTA</span></td><td>Corregir Brand Name: "Generic" → "Zriceros"</td><td>Seller Central → Manage Inventory → Edit → Brand Name</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-high"><td><span class="badge high">ALTA</span></td><td>Pegar nuevo título (sección 3)</td><td>Seller Central → Edit Listing → Title</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-high"><td><span class="badge high">ALTA</span></td><td>Pegar los 5 bullets (sección 4)</td><td>Seller Central → Edit Listing → Key Product Features</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-med"><td><span class="badge med">MEDIA</span></td><td>Pegar nueva descripción (sección 5)</td><td>Seller Central → Edit Listing → Product Description</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-med"><td><span class="badge med">MEDIA</span></td><td>Pegar backend search terms (sección 6)</td><td>Seller Central → Edit Listing → Search Terms (pestaña "Keywords")</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-med"><td><span class="badge med">MEDIA</span></td><td>Completar atributos faltantes (sección 7)</td><td>Seller Central → Edit Listing → More Details / Variations</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-high"><td><span class="badge high">ALTA</span></td><td>Lanzar programa de reviews (Vine o insert con QR en la caja)</td><td>Seller Central → Amazon Vine, o Diseño de empaque</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-low"><td><span class="badge low">BAJA</span></td><td>Confirmar Country of Origin con el proveedor</td><td>Coordinar con fábrica/proveedor</td><td>—</td><td>☐ Pendiente</td></tr>
+    <tr class="prio-low"><td><span class="badge low">BAJA</span></td><td>Producir 2-3 imágenes faltantes (ver sección 9)</td><td>Diseño / fotografía de producto</td><td>—</td><td>☐ Pendiente</td></tr>
+  </table>
+</div>
+
+<h2 id="titulo"><span class="num">3.</span>Título</h2>
 <div class="card">
   <p class="title-text">Zriceros Tongue Scraper for Adults (3 Pack) - 304 Surgical Grade Stainless Steel Tongue Cleaner with Travel Case, Reduces Bad Breath &amp; Bacteria, Black Ergonomic Metal Tongue Brush, Rust-Resistant</p>
   <p class="charcount">195 caracteres (límite Amazon: 200)</p>
 </div>
 
-<h2>5 Bullet Points</h2>
+<h2 id="bullets"><span class="num">4.</span>5 Bullet Points</h2>
 <div class="card">
   <ul class="bullets">
     <li><b>304 SURGICAL-GRADE STAINLESS STEEL:</b> Made with premium 304 surgical-grade stainless steel that won't bend, corrode, or harbor bacteria like plastic scrapers — a durable tongue cleaner built to hold up to daily use for years, not weeks.</li>
@@ -164,7 +197,7 @@
   </ul>
 </div>
 
-<h2>Descripción</h2>
+<h2 id="descripcion"><span class="num">5.</span>Descripción</h2>
 <div class="card">
 <pre class="desc">STOP BAD BREATH BEFORE IT STARTS
 
@@ -203,55 +236,96 @@ A small daily habit, a noticeably fresher result. Add the Zriceros Tongue Scrape
 to your cart and make fresh breath part of your morning, every morning.</pre>
 </div>
 
-<h2>Backend Search Terms (campo oculto en Seller Central)</h2>
+<h2 id="keywords"><span class="num">6.</span>Backend Search Terms</h2>
 <div class="card">
   <p>Sin comas, sin repetir palabras del título/bullets, separadas por espacios. Amazon combina automáticamente.</p>
   <code class="kw">halitosis odor cure tounge tougne scrapper ayurvedic copper alternative kit dental gift idea portable toothbrush reusable biofilm tartar wellness essentials detox natural stocking stuffer men women tin pouch carry</code>
-  <p class="charcount">213 bytes (límite Amazon: 250 bytes) — quité "spoon" y "travel" porque ya no aplican o ya están cubiertos por "Travel Case" en el título</p>
+  <p class="charcount">213 bytes (límite Amazon: 250 bytes)</p>
 </div>
 
-<h2>Metadata / Atributos para Seller Central</h2>
+<h2 id="metadata"><span class="num">7.</span>Metadata / Atributos para Seller Central</h2>
 <div class="card">
   <table>
     <tr><th>Campo</th><th>Valor recomendado</th><th>Estado</th></tr>
-    <tr><td>Brand Name</td><td>Zriceros</td><td><span class="warn">⚠ Corregir — actualmente muestra "Generic"</span></td></tr>
+    <tr><td>Brand Name</td><td>Zriceros</td><td><span class="warn">⚠ Corregir — actualmente "Generic"</span></td></tr>
     <tr><td>Manufacturer</td><td>Zriceros</td><td><span class="ok">✔ Confirmado por logo de empaque</span></td></tr>
     <tr><td>Item Form</td><td>Scraper</td><td><span class="ok">✔ Confirmado</span></td></tr>
     <tr><td>Material Type (free text)</td><td>304 Stainless Steel (Surgical Grade)</td><td><span class="ok">✔ Confirmado por infografía del fabricante</span></td></tr>
     <tr><td>Color</td><td>Black</td><td><span class="ok">✔ Confirmado por fotos reales</span></td></tr>
     <tr><td>Number of Items / Unit Count</td><td>3</td><td><span class="ok">✔ Confirmado</span></td></tr>
-    <tr><td>Included Components</td><td>3x Tongue Scraper + 1x Metal Travel Case</td><td><span class="ok">✔ Confirmado por fotos — antes marcado como "no verificar", ahora corregido</span></td></tr>
+    <tr><td>Included Components</td><td>3x Tongue Scraper + 1x Metal Travel Case</td><td><span class="ok">✔ Confirmado por fotos</span></td></tr>
     <tr><td>Target Audience / Age Range</td><td>Adult</td><td><span class="ok">✔ Confirmado por bullet actual</span></td></tr>
     <tr><td>Special Feature</td><td>Rust Resistant, Reusable, Non-Slip Handle, Travel Case Included</td><td><span class="ok">✔ Confirmado por infografía del fabricante</span></td></tr>
     <tr><td>Style / Shape</td><td>Ergonomic loop handle, rounded smooth edge</td><td><span class="ok">✔ Confirmado por fotos reales</span></td></tr>
     <tr><td>Recommended Uses For Product</td><td>Oral Care, Daily Hygiene, Travel</td><td><span class="ok">✔ Coherente con categoría e infografía</span></td></tr>
-    <tr><td>Country of Origin</td><td>—</td><td><span class="tbd">⏳ No visible en fotos ni packaging — confirmar con proveedor (requerido para compliance)</span></td></tr>
+    <tr><td>Country of Origin</td><td>—</td><td><span class="tbd">⏳ No visible en fotos — confirmar con proveedor (requerido para compliance)</span></td></tr>
     <tr><td>Item Package Dimensions</td><td>6.08 x 3.43 x 0.65 in</td><td><span class="ok">✔ Confirmado (Product Details)</span></td></tr>
     <tr><td>Item Weight</td><td>3.21 oz</td><td><span class="ok">✔ Confirmado (Product Details)</span></td></tr>
     <tr><td>ASIN</td><td>B0GVZF1GN7</td><td><span class="ok">✔ Confirmado</span></td></tr>
   </table>
 </div>
 
-<h2 class="warn">Revisión crítica: actualización tras ver fotos reales</h2>
-<div class="card critique">
-  <p>Con las fotos del producto, varios puntos de la versión anterior cambian:</p>
+<h2 id="competencia"><span class="num">8.</span>Panorama competitivo (precios y reviews)</h2>
+<div class="card">
+  <p>Relevado directamente de la categoría <i>Tongue Brushes, Scrapers &amp; Cleaners</i> en Amazon US. Útil para pricing y para entender qué claims usa cada competidor.</p>
   <table>
-    <tr><th>Punto</th><th>Antes</th><th>Ahora</th></tr>
-    <tr><td>Travel Case</td><td>Descartado por falta de evidencia (Gemini lo afirmaba sin haberlo visto)</td><td><span class="ok">Confirmado por fotos — agregado al título y bullets</span></td></tr>
-    <tr><td>"Surgical/Medical Grade"</td><td>Descartado por no estar certificado en el listing de texto</td><td><span class="ok">Confirmado — el propio packaging del fabricante dice "Surgical Grade" y "304 Stainless Steel"</span></td></tr>
-    <tr><td>Color</td><td>Sin confirmar</td><td><span class="ok">Black — confirmado por fotos</span></td></tr>
-    <tr><td>Forma / Style</td><td>Sin confirmar</td><td><span class="ok">Asa/loop ergonómico con mango texturizado antideslizante — confirmado</span></td></tr>
-    <tr><td>"2-Pack" / "for Kids" / "Lifetime" (Gemini)</td><td>—</td><td><span class="warn">Siguen sin aplicar: el producto es 3-Pack, no se confirma uso pediátrico, no hay garantía de "lifetime"</span></td></tr>
+    <tr><th>Competidor</th><th>Formato</th><th>Precio/unidad</th><th>Reviews</th><th>Diferenciador en título</th></tr>
+    <tr><td><b>MasterMedi</b> (Top Rated, #1)</td><td>2-Pack + Travel Case</td><td>$4.98</td><td>102,300</td><td>"Multicolor Travel Cases", "100% Stainless Steel"</td></tr>
+    <tr><td><b>Mouthology</b></td><td>2-Pack</td><td>$5.00</td><td>85,500</td><td>Repite 6 sinónimos de "scraper/cleaner/scrubber" en el título</td></tr>
+    <tr><td><b>Cafhelp</b></td><td>2-Pack + 2 Cases</td><td>$2.50</td><td>18,600</td><td>"304 Surgical Stainless Steel", "Adults and Kids"</td></tr>
+    <tr><td><b>GuruNanda</b></td><td>2-Pack</td><td>$2.49–$2.50</td><td>14,900</td><td>"Medical Grade 100% Stainless Steel", "Travel Friendly"</td></tr>
+    <tr><td><b>drTung's</b></td><td>1-Pack + Case</td><td>$9.99</td><td>11,800</td><td>"Comfort Grip Handle", "for Adults & Kids"</td></tr>
+    <tr><td><b>MasterMedi Copper</b></td><td>2-Pack + Case</td><td>$6.00</td><td>9,686</td><td>Variante de cobre, precio premium</td></tr>
+    <tr><td><b>MasterMedi single</b></td><td>1-Pack + Case</td><td>$5.49</td><td>8,300</td><td>Entrada de gama más barata de la marca líder</td></tr>
+    <tr><td><b>Tongue Brush 3-Pack</b> (genérico)</td><td>3-Pack colores</td><td>$2.00</td><td>4,300</td><td>Multicolor, precio muy agresivo</td></tr>
+    <tr><td><b>PRIMALS</b></td><td>1-Pack Cobre</td><td>$27.99</td><td>98</td><td>"Ayurvedic", "Eco-Friendly", posiciona premium/nicho</td></tr>
+    <tr><td><b>Davids</b></td><td>1-Pack</td><td>$19.95</td><td>190</td><td>"Made in USA", precio premium justificado por origen</td></tr>
+    <tr><td>Tung Brush</td><td>2-Pack</td><td>$6.24</td><td>2,300</td><td>"USA Made", "Halitosis Defense"</td></tr>
+    <tr style="background:#eef6ff"><td><b>Zriceros (tu producto)</b></td><td>3-Pack + Case</td><td><b>$3.66</b></td><td><b>0</b></td><td>Precio por unidad competitivo, pero sin reviews</td></tr>
+  </table>
+  <p style="margin-top:10px"><b>Lectura rápida:</b> tu precio por unidad ($3.66) está bien posicionado — más caro que las opciones ultra-económicas (Cafhelp, GuruNanda ~$2.50) pero más barato que los líderes con más reviews (MasterMedi, Mouthology ~$5.00). El espacio premium ($19.95-$27.99 con "Made in USA" o "Ayurvedic/Copper") está vacío de competencia fuerte si en el futuro quieren una línea premium.</p>
+</div>
+
+<h2 id="imagenes"><span class="num">9.</span>Auditoría de imágenes (las 4 que ya tienen)</h2>
+<div class="card">
+  <table>
+    <tr><th>#</th><th>Contenido</th><th>Evaluación</th></tr>
+    <tr><td>1</td><td>Producto + caja + 3 scrapers sueltos, fondo claro con sombra</td><td><span class="tbd">⚠ Revisar como imagen principal:</span> Amazon exige fondo blanco puro (RGB 255,255,255) para la imagen principal (MAIN). Esta tiene un degradado gris/sombra — funciona muy bien como imagen secundaria, pero conviene verificar/generar una versión con fondo 100% blanco sólido para la posición de portada.</td></tr>
+    <tr><td>2</td><td>Infografía "How to Use" con 4 pasos ilustrados + beneficios con iconos</td><td><span class="ok">✔ Excelente.</span> Reduce fricción de uso, justo lo que un comprador primerizo necesita ver antes de comprar.</td></tr>
+    <tr><td>3</td><td>Infografía "Made with Surgical Grade Stainless Steel" + 4 beneficios + estuche abierto</td><td><span class="ok">✔ Excelente.</span> Muestra el estuche abierto con las 3 piezas adentro — resuelve la duda de "qué incluye exactamente".</td></tr>
+    <tr><td>4</td><td>Comparativa "Why Choose Zriceros" vs. "Other Tongue Scrapers" (6 puntos)</td><td><span class="ok">✔ Muy fuerte para conversión.</span> Es el tipo de imagen que más ayuda contra competidores con más reviews, porque compensa la falta de prueba social con argumentos racionales directos.</td></tr>
+  </table>
+  <p style="margin-top:14px"><b>Huecos a cubrir (Amazon permite hasta 9 imágenes + 1 video, hoy tienen 4):</b></p>
+  <table>
+    <tr><th>Imagen sugerida</th><th>Por qué</th></tr>
+    <tr><td>Imagen principal en fondo blanco puro</td><td>Cumplir norma de Amazon y evitar que el listing quede en desventaja frente a quienes sí cumplen (puede afectar posición de búsqueda/calidad de imagen)</td></tr>
+    <tr><td>Escala / tamaño real (mano sosteniendo el scraper, o con regla)</td><td>Resuelve la duda más común en reviews negativas de esta categoría: "no sabía que era tan chico/grande"</td></tr>
+    <tr><td>Lifestyle en baño/rutina matutina</td><td>Conecta el producto con el momento de uso real, mejora conversión en mobile</td></tr>
+    <tr><td>Video corto (15-30s) mostrando el uso real</td><td>Amazon prioriza listings con video; aumenta tiempo en página y conversión</td></tr>
   </table>
 </div>
 
-<h2>Recomendaciones adicionales</h2>
+<h2 id="critica"><span class="num">10.</span>Revisión crítica: Gemini vs. realidad</h2>
+<div class="card critique">
+  <table>
+    <tr><th>Punto</th><th>Decisión final</th><th>Motivo</th></tr>
+    <tr><td>"2-Pack"</td><td><span class="warn">Descartado</span></td><td>El producto real es 3-Pack</td></tr>
+    <tr><td>"Includes Travel Case"</td><td><span class="ok">Aceptado</span></td><td>Confirmado por fotos reales — Gemini lo intuyó sin verlo, las fotos lo validaron</td></tr>
+    <tr><td>"Medical/Surgical Grade Stainless Steel"</td><td><span class="ok">Aceptado (como "304 Surgical Grade")</span></td><td>Confirmado por el propio packaging del fabricante, no por suposición</td></tr>
+    <tr><td>"for Adults and Kids"</td><td><span class="warn">Descartado</span></td><td>No hay evidencia de diseño/testeo para uso pediátrico</td></tr>
+    <tr><td>"Built to last a lifetime"</td><td><span class="warn">Descartado</span></td><td>Claim de durabilidad absoluto no verificable</td></tr>
+    <tr><td>Color "(Silver)"</td><td><span class="warn">Descartado → corregido a Black</span></td><td>Confirmado por fotos que el producto es negro, no plateado</td></tr>
+    <tr><td>Search terms duplicando palabras del título</td><td><span class="warn">Corregido</span></td><td>Se reescribieron sin solapar con título/bullets para no desperdiciar bytes</td></tr>
+  </table>
+</div>
+
+<h2 id="pendientes"><span class="num">11.</span>Pendientes / preguntas abiertas</h2>
 <div class="card tips">
   <ol>
-    <li><b>Brand field roto:</b> la página muestra "Brand: Generic" en vez de "Zriceros". Esto bloquea búsquedas por marca, Brand Registry, A+ Content y Storefront. Corregir en Seller Central → Manage Inventory → Edit → campo Brand Name.</li>
-    <li><b>Imágenes ya están muy bien resueltas:</b> el set que compartiste (producto solo, infografía de uso, beneficios con iconos, comparativa vs. competencia) sigue casi al pie de la letra el mejor framework de imágenes de Amazon para esta categoría. Si falta algo, sería una imagen de "tamaño real" (mano sosteniendo el scraper) y una de "antes/después" de la lengua.</li>
-    <li><b>0 reviews sigue siendo el cuello de botella real:</b> con buen SEO vas a aparecer en el buscador, pero sin reviews vas a perder conversión contra competidores con 50K–100K+ reviews (MasterMedi, Mouthology). Priorizar programa de reviews (Vine, seguimiento post-venta, insert en packaging — la caja ya tiene espacio en la banda azul para un QR code de reseña).</li>
-    <li><b>Country of Origin pendiente:</b> es el único atributo que falta confirmar con el proveedor antes de completar el listing en Seller Central; no se inventó en este documento.</li>
+    <li><b>Country of Origin:</b> no aparece en ninguna foto ni en el listing actual. Es obligatorio para compliance — confirmar con el proveedor/fábrica antes de cargarlo en Seller Central.</li>
+    <li><b>Imagen principal en fondo blanco puro:</b> confirmar si la imagen 1 actual cumple la norma de Amazon o si hay que pedir una versión nueva al diseñador/fotógrafo.</li>
+    <li><b>Programa de reviews:</b> decidir si se usa Amazon Vine, inserto físico con QR en la caja (hay espacio libre en la banda azul), o ambos — y quién lo coordina.</li>
+    <li><b>A+ Content / Storefront:</b> una vez corregido el Brand Name, evaluar si vale la pena armar A+ Content reutilizando las infografías 2, 3 y 4 que ya están producidas (están en formato y calidad adecuados).</li>
   </ol>
 </div>
 
