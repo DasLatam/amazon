@@ -102,6 +102,14 @@
   o marcarlos como históricos.
 </div>
 
+<div class="card summary">
+  <strong>Actualizado con el <a href="panorama-competitivo.html">panorama competitivo</a>.</strong>
+  Medir a los cinco competidores cambió dos decisiones de este plan: <strong>no pujar
+  por búsquedas genéricas</strong> (ahí compiten productos de $9.99 con más de 100.000
+  reseñas) y <strong>arrancar la manual el día 1 apuntando al ASIN de PRIMALS</strong>,
+  sin esperar los 14 días de descubrimiento. Los cambios están marcados abajo.
+</div>
+
 <div class="toc">
   <strong>Índice</strong>
   <ol>
@@ -185,12 +193,18 @@ se llama <strong>ACoS de equilibrio</strong> y sale de la contribución por unid
     <table>
       <tr><th>Grupo</th><th>Qué hace</th><th>Puja inicial</th></tr>
       <tr><td>Coincidencia cercana</td><td>Búsquedas casi idénticas a tu producto</td><td class="num">$0.75</td></tr>
-      <tr><td>Coincidencia amplia</td><td>Búsquedas relacionadas, más ruido</td><td class="num">$0.45</td></tr>
-      <tr><td>Sustitutos</td><td>Aparecés en fichas de competidores</td><td class="num">$0.60</td></tr>
+      <tr><td>Coincidencia amplia</td><td>Búsquedas relacionadas, más ruido. <strong>Bajada</strong>: es la que trae las genéricas donde no podemos ganar</td><td class="num">$0.25 <small>(era $0.45)</small></td></tr>
+      <tr><td><strong>Sustitutos</strong></td><td>Aparecés en fichas de competidores. <strong>Subida</strong>: es la que nos pone en la ficha de PRIMALS, 20% más baratos</td><td class="num"><strong>$0.85</strong> <small>(era $0.60)</small></td></tr>
       <tr><td>Complementos</td><td>Productos que se compran junto al tuyo</td><td class="num">$0.35</td></tr>
     </table>
   </li>
-  <li><strong>Lanzar y no tocar nada por 14 días.</strong> Es lo más difícil.
+  <li><strong>Negativas desde el día 1</strong> &mdash; esto es nuevo, y es la
+      consecuencia directa del panorama competitivo. Agregar como negativas de frase:
+      <code>cheap</code>, <code>copper tongue scraper</code> y las genéricas puras
+      (<code>tongue scraper</code>, <code>tongue cleaner</code>) <em>sólo si el CPC
+      supera $1.00</em>. En esas búsquedas aparecemos junto a MasterMedi ($9.99,
+      103.187 reseñas): se paga el clic y se pierde la comparación.</li>
+  <li><strong>Lanzar y no tocar nada más por 14 días.</strong> Es lo más difícil.
       Amazon necesita ese tiempo para juntar datos; optimizar antes es leer ruido.</li>
 </ol>
 
@@ -202,6 +216,41 @@ se llama <strong>ACoS de equilibrio</strong> y sale de la contribución por unid
   gana la plata; en la automática se aprende.
 </div>
 
+<div class="card summary">
+  <strong>Cambio respecto del plan original: la manual arranca el día 1, no el 15.</strong>
+  Hay una parte que no necesita descubrimiento porque el
+  <a href="panorama-competitivo.html">panorama competitivo</a> ya la contestó:
+  sabemos exactamente en qué ficha queremos aparecer.
+</div>
+
+<h3>Día 1 — <code>ZRI-MANUAL-asin-primals</code></h3>
+
+<p>Campaña de <strong>segmentación por producto</strong>, no por palabras. Es la
+jugada de mejor relación esfuerzo/retorno que hay en esta categoría:</p>
+
+<ol>
+  <li><strong>Segmentación:</strong> Manual &rarr; Segmentación por producto &rarr;
+      <em>Segmentación individual por ASIN</em>.</li>
+  <li><strong>ASIN objetivo:</strong> <code>B0FHBWRWY8</code> (PRIMALS, $24.99).
+      Agregar también <code>B0DFJ3CD7M</code> (Natruveda, 437 reseñas &mdash; el otro
+      que todavía no es una fortaleza).</li>
+  <li><strong>NO agregar</strong> <code>B01LAY47D0</code> ni <code>B0D7JPW811</code>:
+      son los de 103.187 y 81.192 reseñas. Aparecer en su ficha a $19.89 es pagar
+      por que nos comparen y perder.</li>
+  <li><strong>Puja:</strong> $0.90. Es alta a propósito &mdash; la ficha de PRIMALS
+      tiene tráfico calificado y ya predispuesto a pagar $25.</li>
+  <li><strong>Presupuesto:</strong> $8/día de los $22 de la Fase 1.</li>
+</ol>
+
+<div class="card tips">
+  <strong>Por qué funciona:</strong> quien está mirando PRIMALS a $24.99 ya decidió
+  que quiere un raspador premium. Verte ahí a <strong>$19.89 con un set de 3 y
+  estuche</strong> no es competir por precio: es ofrecer más por menos, al comprador
+  que ya está con la billetera afuera.
+</div>
+
+<h3>Día 15 — las manuales por palabra clave</h3>
+
 <p><strong>De dónde salen las palabras</strong> (a los 14 días, no antes):
 Publicidad &rarr; Informes &rarr; <strong>Informe de términos de búsqueda</strong>.
 Filtrar por la campaña automática y ordenar por pedidos.</p>
@@ -212,6 +261,8 @@ Filtrar por la campaña automática y ordenar por pedidos.</p>
   <tr><td>1 pedido</td><td>A la manual en <strong>concordancia de frase</strong>, puja media</td></tr>
   <tr><td>Clics &gt; 15 y <strong>cero pedidos</strong></td><td class="warn">A <strong>palabras negativas</strong> exactas. Esto es plata que se está quemando</td></tr>
   <tr><td>Pocos clics</td><td>Dejar correr, no hay dato todavía</td></tr>
+  <tr><td><strong>Genérica</strong> (<em>tongue scraper</em>, <em>tongue cleaner</em>) con CPC &gt; $1.00</td><td class="warn">Negativa, aunque haya convertido. A ese CPC el ACoS se come el margen y competimos contra 100.000 reseñas</td></tr>
+  <tr><td><strong>De atributo</strong> (<em>black stainless steel</em>, <em>travel case</em>, <em>set of 3</em>)</td><td class="ok">Prioridad máxima: poco volumen pero casi sin competencia, y describen lo que tenemos</td></tr>
 </table>
 
 <p><strong>Paso a paso:</strong></p>
@@ -238,7 +289,7 @@ Filtrar por la campaña automática y ordenar por pedidos.</p>
 
 <table>
   <tr><th>Fase</th><th>Días</th><th>ACoS objetivo</th><th>Tope diario</th><th>Auto</th><th>Manual</th><th>Gasto de la fase</th></tr>
-  <tr><td><strong>1 &middot; Descubrir</strong><br><small>Auto sola</small></td><td class="num">14</td><td class="num">55%</td><td class="num">$22</td><td class="num">$22</td><td class="num">&mdash;</td><td class="num">$306</td></tr>
+  <tr><td><strong>1 &middot; Descubrir</strong><br><small>Auto + ASIN de PRIMALS</small></td><td class="num">14</td><td class="num">55%</td><td class="num">$22</td><td class="num">$14</td><td class="num">$8 <small>(ASIN)</small></td><td class="num">$306</td></tr>
   <tr><td><strong>2 &middot; Escalar</strong><br><small>Entra la manual</small></td><td class="num">28</td><td class="num">40%</td><td class="num">$24</td><td class="num">$10</td><td class="num">$14</td><td class="num">$668</td></tr>
   <tr><td><strong>3 &middot; Optimizar</strong><br><small>Subir ganadoras, cortar el resto</small></td><td class="num">42</td><td class="num">28%</td><td class="num">$18</td><td class="num">$7</td><td class="num">$11</td><td class="num">$737</td></tr>
   <tr><td><strong>4 &middot; Sostener</strong><br><small>El orgánico empuja</small></td><td class="num">66</td><td class="num">22%</td><td class="num">$11</td><td class="num">$4</td><td class="num">$7</td><td class="num">$708</td></tr>
@@ -264,8 +315,9 @@ Filtrar por la campaña automática y ordenar por pedidos.</p>
 
 <table>
   <tr><th>Cuándo</th><th>Qué mirar</th><th>Qué hacer</th></tr>
-  <tr><td>Días 1&ndash;14</td><td>Nada</td><td class="warn">No tocar. En serio.</td></tr>
-  <tr><td>Día 15</td><td>Informe de términos de búsqueda</td><td>Crear las manuales y las primeras negativas</td></tr>
+  <tr><td><strong>Día 1</strong></td><td>&mdash;</td><td>Lanzar la automática <em>y</em> la manual por ASIN sobre PRIMALS. Cargar las negativas genéricas</td></tr>
+  <tr><td>Días 2&ndash;14</td><td>Solo la manual por ASIN</td><td class="warn">La automática no se toca. La de ASIN sí: si el ACoS pasa de 60%, bajar la puja a $0.70</td></tr>
+  <tr><td>Día 15</td><td>Informe de términos de búsqueda</td><td>Crear las manuales por palabra y las negativas que falten</td></tr>
   <tr><td>Cada lunes</td><td>ACoS por campaña</td><td>Sube 10% las pujas con ACoS bajo el objetivo; baja 10% las que lo superan</td></tr>
   <tr><td>Cada lunes</td><td>Términos con &gt;15 clics y 0 pedidos</td><td>Negativas exactas</td></tr>
   <tr><td>Cada 15 días</td><td>Ubicaciones</td><td>Ajustar <em>Top of search</em> si convierte mejor</td></tr>
@@ -313,14 +365,21 @@ palanca.</p>
   <tr><td>Mirar solo el ACoS</td><td>Un ACoS bajo con TACoS plano significa que sin ads no vendés nada</td></tr>
   <tr><td>Subir <em>Top of search</em> en la primera semana</td><td>Es la ubicación más cara. Sin datos de conversión, quema el presupuesto en días</td></tr>
   <tr><td>Quedarse sin stock</td><td>Se pierde el ranking orgánico ganado y hay que reconstruirlo pagando de nuevo</td></tr>
+  <tr><td><strong>Pujar por las genéricas</strong></td><td>Es el error específico de esta categoría: el clic se paga igual y el comprador elige el de $9.99 con 100.000 reseñas. Ver el <a href="panorama-competitivo.html">panorama competitivo</a></td></tr>
+  <tr><td><strong>Segmentar el ASIN de MasterMedi o Mouthology</strong></td><td>Aparecer en la ficha de un producto con 100.000 reseñas a la mitad de nuestro precio es pagar por perder la comparación</td></tr>
 </table>
 
 <div class="card summary">
-  <strong>En una frase:</strong> $22 por día las primeras dos semanas solo en
-  automática sin tocar nada, después pasar las palabras ganadoras a manual exacta
-  y las perdedoras a negativas, y bajar el tope a medida que el orgánico empuja.
+  <strong>En una frase:</strong> $22 por día repartidos en automática ($14) y
+  segmentación por ASIN sobre PRIMALS ($8) desde el día 1, con las genéricas
+  negativizadas de entrada; a los 15 días pasar las palabras de atributo que
+  convirtieron a manual exacta; y bajar el tope a medida que el orgánico empuja.
   Total <strong>$2.419</strong> para las 1.000 unidades, con
   <strong>$8.492 de margen neto</strong> del otro lado.
+  <br><br>
+  <strong>La idea de fondo:</strong> no pelear en el mercado de $10 &mdash; ahí están
+  MasterMedi y Mouthology con más de 180.000 reseñas entre las dos. Pelear en el de
+  $25, donde PRIMALS está solo y vende 3.000 al mes con 157 reseñas.
 </div>
 
 <div class="card tbd">
