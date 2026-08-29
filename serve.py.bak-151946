@@ -12,20 +12,25 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    """La raiz sirve index.html, la portada navegable del proyecto.
-
-    Antes devolvia un listado crudo de los .html de la carpeta: servia para
-    encontrar un archivo, no para entender el proyecto. Si algun dia falta
-    index.html, se cae al listado como respaldo en vez de dar 404.
-    """
-    portada = BASE / "index.html"
-    if portada.exists():
-        return send_from_directory(BASE, "index.html")
     listings = sorted(p.name for p in BASE.glob("*.html"))
     items = "\n".join(f'<li><a href="/{name}">{name}</a></li>' for name in listings)
     return f"""<!DOCTYPE html>
-<html lang="es"><head><meta charset="UTF-8"><title>Amazon Listings</title></head>
-<body><h1>Amazon Listings</h1><ul>{items}</ul></body></html>"""
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Amazon Listings</title>
+<style>
+  body {{ font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 700px; margin: 60px auto; color: #232f3e; }}
+  h1 {{ border-bottom: 3px solid #ff9900; padding-bottom: 8px; }}
+  li {{ margin-bottom: 8px; }}
+  a {{ color: #007185; }}
+</style>
+</head>
+<body>
+<h1>Amazon Listings</h1>
+<ul>{items}</ul>
+</body>
+</html>"""
 
 
 @app.route("/<name>")
