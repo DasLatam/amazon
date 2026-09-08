@@ -28,12 +28,21 @@ def index():
 <body><h1>Amazon Listings</h1><ul>{items}</ul></body></html>"""
 
 
-@app.route("/<name>")
+# Las hojas ahora muestran imágenes —la comparación de la principal a 200 px, por
+# ejemplo— y hasta el 2026-09-08 esta ruta sólo servía `.html` de la raíz: la hoja
+# se veía bien en GitHub Pages y con la foto rota en el portal. De ahí que se
+# acepten también subcarpetas y formatos de imagen.
+EXTENSIONES = (".html", ".png", ".jpg", ".jpeg", ".webp", ".svg", ".gif")
+
+
+@app.route("/<path:name>")
 def listing(name):
-    if not name.endswith(".html") or "/" in name:
+    if not name.lower().endswith(EXTENSIONES):
         abort(404)
-    path = BASE / name
-    if not path.is_file():
+    # `send_from_directory` ya bloquea el salto de directorio, pero la ruta se
+    # normaliza igual antes de tocar el disco: es una línea y cierra la duda.
+    destino = (BASE / name).resolve()
+    if not destino.is_file() or BASE.resolve() not in destino.parents:
         abort(404)
     return send_from_directory(BASE, name)
 
