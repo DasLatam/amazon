@@ -296,68 +296,68 @@ listing. Esa búsqueda se ataca desde la campaña, no desde el título.</p>
 <h2 style="border:0;margin-top:28px;font-size:15px">5.2 &mdash; La imagen principal</h2>
 <div class="card">
 <p>En la grilla de resultados <strong>la foto es lo primero y muchas veces lo
-único</strong> que se mira antes de decidir. Y se mira a <strong>~200 píxeles en
-un teléfono</strong>, no en la pantalla grande donde uno la diseña.</p>
+único</strong> que se mira antes de decidir, y se mira a <strong>~200 píxeles en
+un teléfono</strong>. La prueba que ordena todo: achicarla a ese tamaño y contar.</p>
 
-<p><strong>La prueba, y cuesta un minuto:</strong> achicar la foto a 200 px y
-contar. Si no se pueden contar tres piezas en un segundo, la imagen no está
-funcionando &mdash; y no importa cuánto se puje.</p>
+<p>La principal de hoy muestra, de izquierda a derecha:
+<strong>la caja de presentación, el estuche de viaje y los tres raspadores</strong>.
+Está <strong>bien resuelta</strong>: fondo blanco puro y el producto ocupando el
+95% del ancho y el 98% del alto. No hay nada que arreglar ahí.</p>
 
 <div class="card critique" style="margin:18px 0">
-<h2 style="margin-top:0">Lo que la principal de hoy no muestra: el estuche</h2>
-<p>La caja negra rectangular que ocupa <strong>la mitad de arriba del cuadro</strong>
-es el <strong>envoltorio de cartón</strong>, no el estuche de viaje. El estuche es
-el metálico de bordes redondeados, y <strong>en la imagen principal no aparece en
-ningún lado</strong>: sólo se lo ve en las imágenes 3 y 4, que casi nadie abre.</p>
-<p>Eso es un problema serio, porque:</p>
-<ul>
-<li><strong>El envoltorio no comunica nada.</strong> Todo producto viene en una
-caja; ninguna decisión de compra se apoya en eso. Y se está llevando el mejor
-lugar del cuadro.</li>
-<li><strong>El estuche sí es el diferenciador.</strong> Contra un raspador suelto
-de $9,99, «tres piezas <em>y un estuche</em>» es toda la conversación &mdash; y es
-exactamente lo que el título promete y la foto no respalda.</li>
-<li><strong>El propio material lo dice.</strong> En la imagen 4, la fila
-«INCLUDES TRAVEL CASE» tiene enfrente «NO TRAVEL CASE» como la falla del
-competidor. Es el argumento más fuerte que tenemos y está escondido.</li>
-</ul>
-<p><strong>Hace falta una foto nueva</strong>, y es barata de sacar porque el
-producto existe: <strong>los tres raspadores + el estuche abierto, sobre blanco
-puro, sin el envoltorio de cartón</strong>. La composición ya está probada &mdash;
-es la del pie de la imagen 4&mdash;; lo que falta es tomarla a resolución de
-producto. Intentamos recortarla de ahí y no da: mide 445&times;340 px y habría que
-ampliarla &times;3,6, o sea una principal borrosa, que es peor que una nítida
-incompleta.</p>
+<h2 style="margin-top:0">Aviso para el próximo que lea esto</h2>
+<p>El archivo <code>images/01-main-DESACTUALIZADA-no-usar.jpg</code> del repo
+<strong>no es la imagen principal viva</strong>: es una versión vieja que no tiene
+el estuche y tiene el fondo gris. Un análisis hecho sobre ese archivo da un
+diagnóstico equivocado &mdash;pasó el 2026-09-08&mdash;. La que vale está en
+<code>images/00-main-VIVA-hoy.jpg</code>, bajada de la ficha.</p>
 </div>
 
-<p><strong>Mientras tanto, lo que sí se pudo arreglar</strong> sobre la foto
-actual, y está listo para subir en
-<code>images/propuestas/main-nueva.jpg</code>:</p>
-<table>
-<tr><th>Problema</th><th class="num">Antes</th><th class="num">Ahora</th></tr>
-<tr><td>Fondo blanco puro (lo exige Amazon)</td>
-    <td class="num warn">No: 217&ndash;243 según la zona,<br>con degradado y línea de horizonte</td>
-    <td class="num ok">Sí: 255,255,255</td></tr>
-<tr><td>Cuánto del cuadro ocupa el producto</td>
-    <td class="num warn">58%<br><span class="meta">345 px muertos a la izquierda</span></td>
-    <td class="num ok">92% del alto</td></tr>
-<tr><td>Lado, para habilitar el zoom</td>
-    <td class="num warn">1500 px</td><td class="num ok">1600 px</td></tr>
-</table>
-<p class="meta">El fondo se blanqueó con una rampa suave entre 200 y 218 de
-luminancia &mdash;el valle del histograma de esta foto&mdash; en vez de un umbral
-duro, que deja halos y bordes dentados alrededor de los raspadores.</p>
+<p><strong>La única mejora que queda, y es de Ariel:</strong> sacar la caja de
+presentación para que el estuche y los raspadores se vean más grandes.</p>
 
-<p><strong>Y una corrección:</strong> el 85% de Amazon es un <em>mínimo</em>
-(«products should fill at least 85% of the image frame»), no un tope. La versión
-nueva va al 92%, dejando apenas aire para que ningún borde toque el filo del
-cuadro.</p>
+<table>
+<tr><th>Elemento</th><th class="num">Ancho que ocupa</th><th>Qué aporta</th></tr>
+<tr><td>Caja de presentación</td><td class="num warn">28%</td>
+    <td>Poco. Todo producto viene en una caja, y el «3 PACK» impreso es
+    redundante: los tres raspadores están al lado y se cuentan solos. Además es
+    el elemento más a la izquierda, o sea el primero que se lee.</td></tr>
+<tr><td>Estuche de viaje</td><td class="num">24%</td>
+    <td><strong>El diferenciador.</strong> Contra un raspador suelto de $9,99 es
+    la mitad del argumento, y es lo que el título promete.</td></tr>
+<tr><td>Los tres raspadores</td><td class="num">39%</td>
+    <td><strong>La otra mitad.</strong> Es el «3» que hay que poder contar en un
+    segundo.</td></tr>
+</table>
+
+<p>Sacando la caja, lo que queda <strong>crece &times;1,54</strong> con el mismo
+cuadro. Medido, no estimado. Se ve en
+<code>images/propuestas/comparacion-200px.png</code>: al lado de la maqueta, la
+actual se ve chica y el estuche se lee como una mancha negra.</p>
+
+<p><strong>Y una segunda versión que vale la pena probar: el estuche
+abierto</strong>, con los raspadores adentro. Cuenta la historia del producto
+—se guardan, viajan, no se ensucian— en vez de mostrar objetos sueltos. Eso no es
+una edición: <strong>es una foto nueva</strong>, y la composición ya está probada
+en la imagen 3.</p>
+
+<div class="card tips" style="margin-top:18px">
+<p><strong>Qué hace falta para que yo entregue la versión final.</strong> La foto
+que se pudo bajar de la ficha mide <strong>350&times;289 px</strong>: alcanza para
+decidir, no para subir. Amazon quiere <strong>1600 px de lado</strong> para
+habilitar el zoom, y ampliar ×4,6 daría una principal borrosa &mdash; que es peor
+que la actual.</p>
+<p>Con el <strong>archivo original</strong> (Seller Central &rarr; Gestionar
+imágenes &rarr; descargar, o el que entregó el fotógrafo) saco la versión sin
+caja en una corrida, lista para subir.</p>
+</div>
 
 <p><strong>Lo que la principal NO puede llevar</strong> (Amazon lo rechaza o
 suprime el listing): texto, logos, marcas de agua, bordes, fondos que no sean
-blanco puro, ni accesorios que no vengan en la caja. El texto va en las imágenes
-2 a 7 &mdash; pero ésas mueven la conversión, que ya está en 36%, así que no son
-la prioridad. La única que pelea por el clic es la principal.</p>
+blanco puro, ni accesorios que no vengan en la caja. El 85% del cuadro es un
+<em>mínimo</em>, no un tope. El texto va en las imágenes 2 a 7 &mdash; pero ésas
+mueven la conversión, que ya está en 36%, así que no son la prioridad. La única
+que pelea por el clic es la principal.</p>
 </div>
 
 <div class="card critique">
