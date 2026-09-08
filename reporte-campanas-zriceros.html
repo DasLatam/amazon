@@ -65,6 +65,13 @@
   .row-payback td { background: #ecf9f1; }
   footer { margin-top: 50px; font-size: 12px; color: #999; text-align: center; }
   @media (max-width: 640px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+
+  .gloss { font-size: 13px; }
+  .gloss td:first-child { white-space: nowrap; font-weight: 600; }
+  .titulo-caja { background:#fff; border:1px solid #e0e0e0; border-radius:6px;
+                  padding:12px 14px; margin:10px 0; font-family:ui-monospace,Menlo,monospace;
+                  font-size:13px; line-height:1.5; }
+  .visible { background:#fff3cd; padding:2px 0; }
 </style>
 </head>
 <body>
@@ -73,32 +80,8 @@
 <p class="meta">ASIN: B0H6QZGX56 &middot; cuenta: lombardi company &middot;
   1.000 unidades a $19.89 &middot; actualizado 2026-09-07</p>
 <p><a href="index.html">&larr; Índice del proyecto</a> &middot;
-   <a href="estrategia-ppc-zriceros.html">Estrategia de PPC</a></p>
-
-<div class="card critique">
-<h2>Antes que nada: la contribución por unidad era otra</h2>
-<p>La <a href="estrategia-ppc-zriceros.html">hoja de estrategia</a> calculó
-<strong>$11,72 por unidad</strong> y un equilibrio del <strong>58,9%</strong>, con
-una tarifa FBA de $3,54 y un costo puesto de $1,65. Los números reales &mdash;
-calculadora oficial de Amazon más el costo informado&mdash; son otros:</p>
-<table>
-<tr><th>Concepto</th><th class="num">Estrategia (estimado)</th><th class="num">Real (calculadora)</th></tr>
-<tr><td>Precio</td><td class="num">$19.89</td><td class="num">$19.89</td></tr>
-<tr><td>Referral fee</td><td class="num">&minus;$2.98</td><td class="num">&minus;$2.98</td></tr>
-<tr><td>Tarifa FBA</td><td class="num">&minus;$3.54</td><td class="num warn">&minus;$4.09</td></tr>
-<tr><td>Inbound placement</td><td class="num">&mdash;</td><td class="num warn">&minus;$0.36</td></tr>
-<tr><td>Almacenamiento</td><td class="num">&mdash;</td><td class="num">&minus;$0.01</td></tr>
-<tr><td>= Depósito neto</td><td class="num">$13.37</td><td class="num">$12.45</td></tr>
-<tr><td>&minus; Costo del producto puesto</td><td class="num">&minus;$1.65</td><td class="num warn">&minus;$3.45</td></tr>
-<tr class="row-total"><td>= Contribución antes de PPC</td><td class="num">$11.72</td><td class="num">$9.00</td></tr>
-<tr class="row-total"><td>ACoS de equilibrio</td><td class="num">58,9%</td><td class="num">45.2%</td></tr>
-</table>
-<p><strong>La diferencia es de $2,72 por unidad</strong>, o sea
-<strong>$2.720 sobre las 1.000</strong>. No cambia que el negocio cierre &mdash;
-sigue habiendo mucho aire&mdash;, pero cambia el techo: se puede gastar hasta
-<strong>$9.00 de publicidad por unidad</strong>, no $11,72. Todo lo que
-sigue usa el número real. <em>Conviene corregir también la hoja de estrategia.</em></p>
-</div>
+   <a href="estrategia-ppc-zriceros.html">Estrategia de PPC</a> &middot;
+   <a href="listing-zriceros-tongue-scraper.html">Listing</a></p>
 
 <h2><span class="num">1.</span> Semana 1 &mdash; 31 ago a 6 sep 2026</h2>
 <div class="kpis">
@@ -108,34 +91,81 @@ sigue usa el número real. <em>Conviene corregir también la hoja de estrategia.
   <div class="kpi"><span class="big pos">$26.34</span><span class="lbl">Ganancia neta</span></div>
 </div>
 
+<div class="card">
+<h2 style="border:0;margin-top:0;font-size:14px">Qué significa cada número</h2>
+<table class="gloss">
+<tr><th>Número</th><th>Qué es</th><th>Malo</th><th>Bien</th><th>Qué esperamos</th></tr>
+
+<tr><td>ACoS<br><span class="meta">18,8%</span></td>
+ <td><em>Advertising Cost of Sales</em>: de cada $100 vendidos por publicidad,
+     cuántos se fueron en publicidad. $18,66 gastados sobre $99,45 vendidos.</td>
+ <td class="warn">Arriba de 45,2%<br><span class="meta">se pierde plata</span></td>
+ <td class="ok">25&ndash;40% en lanzamiento</td>
+ <td><strong>Que suba, no que baje.</strong> Un 18,8% con 4 pedidos es peor
+     negocio que un 30% con 25. El ACoS no es una nota: es cuánto estás dispuesto
+     a pagar por crecer.</td></tr>
+
+<tr><td>Equilibrio<br><span class="meta">45,2%</span></td>
+ <td>El ACoS donde la publicidad se come toda la ganancia. Sale de la
+     contribución: $9,00 sobre $19,89 de precio.</td>
+ <td colspan="2" style="text-align:center">No es bueno ni malo: <strong>es el techo</strong></td>
+ <td>Fijo mientras no cambien el precio ni los costos. Hoy usamos el
+     <strong>41%</strong> de ese techo.</td></tr>
+
+<tr><td>Conversión<br><span class="meta">36,4%</span></td>
+ <td><em>CVR, Conversion Rate</em>: de cada 100 que entran a la ficha, cuántas
+     compran. 4 pedidos sobre 11 clics.</td>
+ <td class="warn">Menos de 10%</td>
+ <td class="ok">15&ndash;20% es bueno<br>
+     <strong>36% es excepcional</strong></td>
+ <td><strong>Que baje un poco al escalar</strong>, y está bien: tráfico más
+     amplio es menos calificado. Si baja de 20%, mirar.</td></tr>
+
+<tr><td>Ganancia neta<br><span class="meta">$26,34</span></td>
+ <td>Lo único que va al bolsillo: 5 unidades &times; $9,00 de contribución,
+     menos $18,66 de publicidad.</td>
+ <td class="warn">Negativa</td>
+ <td class="ok">Positiva desde la semana 1</td>
+ <td><strong>Que crezca por volumen, aunque el ACoS suba.</strong> Es el número
+     que hay que mirar, no el ACoS.</td></tr>
+
+<tr><td>CTR<br><span class="meta">0.54%</span></td>
+ <td><em>Click-Through Rate</em>: de cada 100 que ven el anuncio, cuántas
+     clican. 11 clics sobre 2,046 impresiones.</td>
+ <td class="warn">Menos de 0,3%</td>
+ <td class="ok">0,8&ndash;1% bueno<br>1,5% fuerte</td>
+ <td><strong>Es el número flojo y el más importante ahora.</strong> El promedio
+     de Sponsored Products anda en 0,4%: estamos apenas encima, y con 0 reseñas
+     eso es exactamente lo esperable.</td></tr>
+
+<tr><td>CPC<br><span class="meta">$1.70</span></td>
+ <td><em>Cost Per Click</em>: lo que se paga cada vez que alguien clica.</td>
+ <td class="warn">Cuando el ACoS pasa el techo</td>
+ <td class="ok">Mientras el neto por unidad sea positivo</td>
+ <td>Que suba al escalar. Aguantamos hasta ~$3,50 y seguir ganando.</td></tr>
+</table>
+</div>
+
 <div class="card summary">
 <h2>Las conclusiones de la semana uno</h2>
-<p><strong>1. Gana plata, y con margen de sobra.</strong> ACoS de 18.8%
-contra un equilibrio de 45.2%: estamos usando
-<strong>41% del techo</strong>. Cada unidad deja
-$9.00 antes de publicidad, la publicidad costó $3.73, así que
-quedan <strong>$5.27 netos por unidad</strong> y $26.34 en la
-semana.</p>
-<p><strong>2. El listing convierte mucho mejor de lo previsto.</strong>
-36% de conversión <em>sin una sola reseña</em>. El plan había
-presupuestado lo contrario y por eso toleraba un ACoS del 55%. La ficha
-convence: de cada tres personas que entran, una compra.</p>
-<p><strong>3. El cuello es la exposición, no la conversión ni el precio.</strong>
-CTR de 0.54%, 11 clics en toda la semana. Con esta conversión, cada
-clic más se traduce casi directo en venta. <strong>El riesgo hoy no es gastar de
-más: es no vender.</strong></p>
-<p><strong>4. Casi no se gastó.</strong> $18.66 de los $154 que el plan
-habilitaba para la semana (<strong>12%</strong>). Con un CPC de $1.70 contra
-pujas planeadas de $0,75&ndash;$0,90, lo más probable es que no estemos ganando
-las subastas &mdash; y eso se arregla subiendo la puja, no el presupuesto.</p>
+<p><strong>1. Gana plata y le sobra margen.</strong> ACoS de 18.8% contra un
+techo de 45.2%: usamos el 41% de lo que
+podríamos gastar. Quedan $5.27 netos por unidad.</p>
+<p><strong>2. El que entra, compra.</strong> 36% de conversión sin una sola
+reseña, contra un promedio de categoría de 10&ndash;15%. El producto, el precio y
+la ficha están bien.</p>
+<p><strong>3. El problema es que no entra.</strong> 11 clics en toda la
+semana, CTR de 0.54%. <strong>El cuello está entre la impresión y el
+clic</strong> &mdash; nos ven 2,046 veces y nos clican once.</p>
+<p><strong>4. Y casi no se gastó:</strong> $18.66 de los $154 habilitados
+(12%). Con un CPC de $1.70 contra pujas planeadas de $0,75&ndash;$0,90, lo
+más probable es que no estemos ganando las subastas.</p>
 </div>
 
 <h2><span class="num">2.</span> Proyección de las 1.000 unidades</h2>
 <div class="card">
-<p>En plata, no en tiempo: la cantidad de ventas por semana debería subir, así que
-proyectar por fechas sería inventar. Lo que sí se puede proyectar es
-<strong>cuánto deja el ciclo completo según lo que termine costando la
-publicidad</strong>.</p>
+<p>En plata, no en tiempo: las ventas semanales deberían subir, así que proyectar
+por fechas sería inventar.</p>
 <table>
 <tr><th>Concepto</th><th class="num">Por unidad</th><th class="num">Por 1.000</th></tr>
 <tr><td>Ingresos</td><td class="num">$19.89</td><td class="num">$19,890</td></tr>
@@ -143,23 +173,17 @@ publicidad</strong>.</p>
 <tr><td>&minus; Costo del producto</td><td class="num">&minus;$3.45</td><td class="num">&minus;$3,450</td></tr>
 <tr class="row-total"><td>= Contribución antes de PPC</td><td class="num">$9.00</td><td class="num">$9,000</td></tr>
 </table>
-<p style="margin-top:20px"><strong>Y según lo que cueste la publicidad:</strong></p>
+<p style="margin-top:20px"><strong>Según lo que cueste la publicidad:</strong></p>
 <table>
 <tr><th>Escenario</th><th class="num">ACoS</th><th class="num">PPC total</th>
     <th class="num">Neto del ciclo</th><th class="num">Sobre el capital*</th></tr>
 <tr class="row-total"><td>Hoy — $3,73/unidad</td><td class='num'>18.8%</td><td class='num'>$3,732</td><td class='num'>$5,268</td><td class='num'>153%</td></tr>
 <tr><td>Si baja a $2,50</td><td class='num'>12.6%</td><td class='num'>$2,500</td><td class='num'>$6,500</td><td class='num'>188%</td></tr>
 <tr><td>Si baja a $1,50</td><td class='num'>7.5%</td><td class='num'>$1,500</td><td class='num'>$7,500</td><td class='num'>217%</td></tr>
-<tr><td class="warn">Equilibrio &mdash; no perder ni ganar</td><td class="num">45.2%</td>
+<tr><td class="warn">Equilibrio</td><td class="num">45.2%</td>
     <td class="num">$9,000</td><td class="num">$0</td><td class="num">0%</td></tr>
 </table>
-<p class="meta">* Capital inmovilizado en producto: 1.000 &times; $3.45 =
-$3,450. La columna es el neto del ciclo sobre esa plata.</p>
-<p>Al ritmo de costo de hoy el ciclo deja <strong>$5,268</strong>,
-que sobre $3,450 de mercadería es un
-<strong>153%</strong>. Y el costo de
-publicidad por unidad <em>debería bajar</em> a medida que entren reseñas y ventas
-orgánicas: cada $1 que baje son $1.000 más al final.</p>
+<p class="meta">* Capital en mercadería: 1.000 &times; $3.45 = $3,450.</p>
 </div>
 
 <h2><span class="num">3.</span> Las siete búsquedas</h2>
@@ -179,232 +203,196 @@ orgánicas: cada $1 que baje son $1.000 más al final.</p>
     <td class="num">$18.66</td><td class="num">4</td><td class="num">$99.45</td>
     <td class="num">5</td><td class="num">18.8%</td><td></td></tr>
 </table>
-<p class="meta">Impresiones totales del panel: 2,046. El informe de términos de
-búsqueda sólo detalla 159 porque <strong>lista únicamente las búsquedas que
-recibieron algún clic</strong>. No es un error del informe.</p>
-<p><strong>Cuatro de siete convirtieron, con un solo clic cada una.</strong> Con
-muestras de un clic no se puede concluir que un término "funciona" &mdash; se lee
-la dirección, no la magnitud.</p>
+<p class="meta">Impresiones del panel: 2,046. El informe de términos sólo
+detalla 159 porque lista únicamente las búsquedas que recibieron algún clic.</p>
 </div>
 
+<h2><span class="num">4.</span> Acciones de campaña</h2>
 <div class="card tips">
-<h2><span class="num">4.</span> Qué hacer</h2>
-
-<h3>Negativas &mdash; cargar ya</h3>
-<p>Esto no es optimizar antes de tiempo: es dejar de pagar por búsquedas que
-describen un producto que no vendemos.</p>
-<table>
-<tr><th>Negativa</th><th>Tipo</th><th>Por qué</th></tr>
-<tr><td><code>copper</code></td><td>Frase</td>
-    <td>No somos de cobre. Ya estaba en el plan del día 1 y no se cargó; gastó $1.68 sin vender.</td></tr>
-<tr><td><code>titanium</code></td><td>Frase</td>
-    <td>No somos de titanio. Gastó $2.54 sin vender, con el CPC más caro de la semana.</td></tr>
-<tr><td><code>with stand</code></td><td>Frase</td>
-    <td><em>Agregada por mí:</em> traemos estuche de viaje, no pedestal. Gastó $2.92 sin vender.</td></tr>
-<tr><td><code>cheap</code></td><td>Frase</td>
-    <td><em>Agregada por mí:</em> estaba en el plan del día 1 y tampoco se cargó. A $19.89 no competimos por precio.</td></tr>
-</table>
-<p class="meta">Las tres que ya gastaron suman <strong>$7,14 tirados</strong> &mdash;
-el 38% de todo lo invertido en la semana.</p>
-
-<h3>Manual en concordancia exacta &mdash; las que convirtieron</h3>
-<table>
-<tr><th>Palabra</th><th class="num">Puja sugerida</th><th>Por qué</th></tr>
-<tr><td><code>tongue brush</code></td><td class="num">$2.75</td>
-    <td>El mejor de todos: 2 unidades en un clic de $2.19. Puja = CPC pagado +25%.</td></tr>
-<tr><td><code>tongue scraper dr tung</code></td><td class="num">$3.65</td>
-    <td>Búsqueda de marca competidora: quien la busca ya quiere un raspador premium.</td></tr>
-<tr><td><code>tongue scraper stainless steel</code></td><td class="num">$2.75</td>
-    <td>Describe exactamente lo que somos. De atributo, poco volumen y poca competencia.</td></tr>
-</table>
-
-<h3>Lo que agrego yo</h3>
-<ol>
-<li><strong><code>tongue scraper</code> a manual en FRASE, no exacta.</strong> Es
-la genérica que el plan quería negativizar si superaba $1,00 de CPC &mdash; y
-resultó <strong>el término más barato de la cuenta ($0,84) y convirtió</strong>.
-En frase captura las variantes largas sin cerrarse a una sola. Dejarla también en
-la automática.</li>
-<li><strong>Cuatro palabras de atributo que todavía no aparecieron</strong>, y que
-la propia estrategia llama «prioridad máxima: poco volumen pero casi sin
-competencia, y describen lo que tenemos»:
-<code>tongue scraper set of 3</code>, <code>tongue scraper with case</code>,
-<code>stainless steel tongue cleaner</code>, <code>tongue cleaner for adults</code>.
-Exacta, puja $1,50. No van a traer volumen; van a traer ventas baratas que suben
-el histórico de conversión del ASIN.</li>
-<li><strong>Sumar el ASIN <code>B0DFJ3CD7M</code></strong> (Natruveda) a la
-campaña de segmentación por producto. Ya estaba en el plan y no se cargó.</li>
-<li><strong>Subir la puja del ASIN de PRIMALS de $0,90 a $1,30.</strong> Con el
-ACoS al 18.8% de un techo de 45.2%, el margen aguanta. Es la
-campaña con la intención de compra más alta.</li>
-<li><strong>Ubicaciones: subir <em>Top of search</em> un 25%.</strong> Con
-conversión del 36%, estar arriba se paga solo. Es la palanca más potente y
-la que más rápido hace volar el presupuesto &mdash; por eso 25% y no 50%.</li>
-</ol>
-<p><strong>Lo que NO hay que hacer:</strong> bajar pujas ni recortar presupuesto.
-El problema de esta semana no es el costo.</p>
+<p><strong>Negativas de frase, cargar ya</strong> &mdash; $7,14 tirados en la
+semana 1 (el 38% de la inversión) en búsquedas que describen un producto que no
+vendemos: <code>copper</code>, <code>titanium</code>, <code>with stand</code>,
+<code>cheap</code>.</p>
+<p><strong>Manual en exacta</strong>, puja = CPC pagado +25%:
+<code>tongue brush</code> $2,75 &middot;
+<code>tongue scraper dr tung</code> $3,65 &middot;
+<code>tongue scraper stainless steel</code> $2,75.
+Y <code>tongue scraper</code> en <strong>frase</strong> a $1,05: es la genérica
+que el plan quería negativizar, y resultó el término más barato de la cuenta
+($0,84) y convirtió.</p>
+<p><strong>Cada palabra que pasa a manual va como negativa exacta en la
+automática</strong>, o las dos campañas compiten entre sí y nos subimos el CPC
+solos.</p>
+<p><strong>Subir pujas hasta un ACoS objetivo del 30%</strong> y
+<strong>Top of search +25%</strong>. Sumar el ASIN <code>B0DFJ3CD7M</code>
+(Natruveda), que estaba en el plan y no se cargó.</p>
 </div>
 
-<h2><span class="num">5.</span> Cómo escalar: subir la exposición</h2>
+<h2><span class="num">5.</span> Cómo escalar: el problema es el CTR</h2>
 
 <div class="card summary">
 <h2>La cuenta que ordena todo</h2>
 <p style="font-size:17px;text-align:center;margin:18px 0">
 <strong>ventas = impresiones &times; CTR &times; conversión</strong></p>
-<p>Hoy: <strong>2.046 &times; 0,54% &times; 36,4% = 4 pedidos</strong>.</p>
-<p><strong>La conversión ya está resuelta y no hay que tocarla.</strong> 36,4% sin
-una sola reseña es excepcional &mdash; el promedio de la categoría anda por
-10&ndash;15%. De cada tres personas que entran a la ficha, una compra. Optimizar
-el listing ahora sería arreglar lo único que no está roto.</p>
-<p>Quedan dos factores, y <strong>no cuestan lo mismo</strong>: las impresiones se
-pagan en cada subasta; el CTR, no. Subir el CTR es gratis y multiplica todo lo
-que venga después. <strong>Por eso el orden correcto es CTR primero, presupuesto
-después</strong> &mdash; al revés se paga por mostrar un anuncio que la gente
-igual no clica.</p>
+<p>Hoy: <strong>2,046 &times; 0.54% &times; 36.4% = 4 pedidos</strong>.</p>
+<p><strong>La conversión está resuelta.</strong> No se toca: el que entra, compra.
+<strong>Las impresiones se pagan</strong> en cada subasta. <strong>El CTR es el
+único factor gratis</strong>, y multiplica todo lo que venga después.</p>
+<table>
+<tr><th>Para 25 pedidos/semana</th><th class="num">Impresiones necesarias</th><th class="num">Contra hoy</th></tr>
+<tr><td>Con el CTR de hoy (0,54%)</td><td class="num">12.700</td><td class="num warn">6,2&times;</td></tr>
+<tr><td>Con CTR 1,1%</td><td class="num">6.244</td><td class="num">3,1&times;</td></tr>
+<tr class="row-total"><td>Con CTR 1,6%</td><td class="num">4.293</td><td class="num ok">2,1&times;</td></tr>
+</table>
+<p><strong>Triplicar el CTR vale más que triplicar el gasto</strong>, y no cuesta
+nada. Por eso las dos secciones que siguen.</p>
 </div>
 
-<h2 style="border:0;margin-top:28px;font-size:15px">5.1 &mdash; La escalera</h2>
+<h2 style="border:0;margin-top:28px;font-size:15px">5.1 &mdash; El título</h2>
 <div class="card">
-<p>Cuántas impresiones hacen falta según el CTR que logremos. La lectura
-importante está en las columnas, no en las filas:</p>
-<table>
-<tr><th>Objetivo semanal</th><th class="num">Clics</th>
-    <th class="num">Con CTR 0,8%</th><th class="num">Con CTR 1,1%</th><th class="num">Con CTR 1,6%</th></tr>
-<tr><td>10 pedidos (12 unid.)</td><td class="num">27</td>
-    <td class="num">3.434 impr <span class="meta">(1,7&times;)</span></td>
-    <td class="num">2.498 <span class="meta">(1,2&times;)</span></td>
-    <td class="num ok">1.717 <span class="meta">(0,8&times;)</span></td></tr>
-<tr class="row-total"><td>25 pedidos (31 unid.)</td><td class="num">69</td>
-    <td class="num">8.585 <span class="meta">(4,2&times;)</span></td>
-    <td class="num">6.244 <span class="meta">(3,1&times;)</span></td>
-    <td class="num ok">4.293 <span class="meta">(2,1&times;)</span></td></tr>
-<tr><td>50 pedidos (62 unid.)</td><td class="num">137</td>
-    <td class="num">17.170 <span class="meta">(8,4&times;)</span></td>
-    <td class="num">12.488 <span class="meta">(6,1&times;)</span></td>
-    <td class="num">8.585 <span class="meta">(4,2&times;)</span></td></tr>
-</table>
-<p><strong>Mirá la fila de 25 pedidos.</strong> Con el CTR de hoy haría falta
-multiplicar las impresiones por 4,2. Con un CTR de 1,6% alcanza con
-<strong>2,1&times;</strong> &mdash; la mitad de gasto para el mismo resultado.
-Con 10 pedidos semanales es todavía más claro: a 1,6% de CTR se llega
-<em>con menos impresiones que las de hoy</em>.</p>
-<p class="meta">Referencias de la categoría: 0,4% es el promedio de Sponsored
-Products, 0,8&ndash;1% es bueno, 1,5% es fuerte. Estamos en 0,54% con cero
-reseñas &mdash; que es exactamente lo que explica el número.</p>
-</div>
+<p>El título hace <strong>dos trabajos distintos</strong>, y por eso importa
+entero y no sólo el principio:</p>
+<ul>
+<li><strong>Los primeros ~60 caracteres deciden el clic.</strong> Es lo único que
+se lee debajo de la foto en un teléfono; el resto se corta con puntos
+suspensivos.</li>
+<li><strong>Los 200 deciden en qué búsquedas aparecemos.</strong> Amazon indexa
+el título completo. Los <strong>76 caracteres sin usar de hoy son búsquedas en
+las que no existimos</strong> &mdash; o sea que el título también mueve las
+impresiones, no sólo el CTR.</li>
+</ul>
 
-<h2 style="border:0;margin-top:28px;font-size:15px">5.2 &mdash; Las palancas de CTR, por retorno</h2>
-<div class="card tips">
-<table>
-<tr><th>#</th><th>Palanca</th><th>Qué cuesta</th><th>Por qué mueve la aguja</th></tr>
-<tr><td>1</td><td><strong>Inscribir en Amazon Vine</strong></td>
-    <td>~US$200 por ASIN, una vez</td>
-    <td><strong>Es la más grande de todas y ya estaba identificada.</strong> En la
-    página de resultados aparecemos sin estrellas al lado de productos con
-    100.000 reseñas: no es que perdamos la comparación, es que ni siquiera nos
-    miran. Vine da hasta 30 reseñas. Con 1.000 unidades en stock y 0 reseñas, la
-    <a href="listing-zriceros-tongue-scraper.html">hoja del listing</a> ya la
-    llama «la palanca de mayor retorno del proyecto», y sigue sin hacerse.</td></tr>
-<tr><td>2</td><td><strong>Cupón del 5%</strong></td>
-    <td>~$1,00/unidad</td>
-    <td>Pinta una <strong>etiqueta verde en los resultados de búsqueda</strong>.
-    No es tanto el descuento como el badge: es color en una grilla gris. Con
-    $9,00 de contribución, $1,00 se paga solo si sube el CTR aunque sea un 15%.</td></tr>
-<tr><td>3</td><td><strong>Completar el título</strong></td>
-    <td>Gratis, media hora</td>
-    <td>Usa 124 de 200 caracteres &mdash; <strong>76 desperdiciados</strong>, y
-    ya estaba anotado en la hoja del listing. El título es lo que se lee debajo
-    de la foto en cada una de las 2.046 impresiones. Meter ahí «set of 3» y
-    «travel case», que es lo que nos diferencia de un raspador suelto de $9,99.</td></tr>
-<tr><td>4</td><td><strong>Imagen principal que muestre los 3 + el estuche</strong></td>
-    <td>Gratis si ya existe</td>
-    <td>A tamaño miniatura en un teléfono, la foto es <em>lo único</em> que se ve
-    antes de decidir. Si la principal muestra un raspador suelto sobre fondo
-    blanco, somos indistinguibles del de $9,99. Si muestra <strong>tres piezas y
-    un estuche</strong>, la comparación cambia de eje: ya no es precio contra
-    precio, es uno contra tres.</td></tr>
-</table>
-<p><strong>Las tres primeras se pueden hacer esta semana</strong> y dos son
-gratis. Ninguna depende de la campaña.</p>
-</div>
+<p><strong>Lo que está vivo hoy</strong> (124 de 200):</p>
+<div class="titulo-caja"><span class="visible">Tongue Scraper (Set of 3): Ergonomic, 100% Black Stainless S</span>teel, with Travel Case, BPA Free, Tongue Scrubber, easy to clean</div>
+<p class="meta">En amarillo, lo que se ve en el celular. No está mal: «Set of 3»
+entra en la ventana. Pero gasta lugar en <code>Ergonomic</code> y
+<code>100%</code>, que nadie busca, y deja afuera <code>tongue brush</code>
+&mdash;<strong>el término que mejor convirtió</strong>, dos unidades en un
+clic&mdash;, <code>tongue cleaner</code>, <code>for adults</code> y
+<code>3 pack</code>.</p>
 
-<h2 style="border:0;margin-top:28px;font-size:15px">5.3 &mdash; Las palancas de impresiones</h2>
-<div class="card tips">
+<p><strong>Propuesta</strong> (198 de 200):</p>
+<div class="titulo-caja"><span class="visible">Tongue Scraper for Adults (3 Pack) with Travel Case - Black </span>Stainless Steel Tongue Cleaner &amp; Scrubber, 304 Surgical Grade Metal Tongue Brush, Ergonomic, Dishwasher Safe, Reduces Bad Breath, BPA Free</div>
+<p>Qué cambia y por qué:</p>
 <ol>
-<li><strong>Top of search +25%.</strong> La posición de arriba tiene varias veces
-el CTR de las de abajo, así que <em>esta palanca mueve los dos factores a la
-vez</em>. Es la de mejor relación esfuerzo/retorno de la campaña. 25% y no 50%
-porque es también la que más rápido vuela el presupuesto.</li>
-<li><strong>Subir pujas hasta un ACoS del 30%.</strong> Hoy estamos en 18,8% de un
-techo de 45,2%: sobra margen. A 25 pedidos semanales con un CPC de $2,50 el ACoS
-sería 27,6% y quedarían <strong>$3,51 netos por unidad</strong>. Se venden seis
-veces más unidades ganando un 33% menos por cada una &mdash; y seis por cero coma
-sesenta y siete es cuatro veces más plata.</li>
-<li><strong>Sponsored Display, que no se está usando.</strong> La marca ya está
-registrada, así que está disponible. Sirve para dos cosas distintas:
-  <ul>
-  <li><em>Remarketing de vistas</em>: perseguir a quien miró la ficha y no compró.
-  Con 36% de conversión, el 64% que se fue es la audiencia más caliente que
-  tenemos y hoy no la tocamos.</li>
-  <li><em>Segmentación por producto</em>: aparecer en las fichas de competidores,
-  igual que la campaña de PRIMALS pero con más alcance.</li>
-  </ul></li>
-<li><strong>Sponsored Brands</strong> con la página de marca, que también está
-lista. Ocupa la franja de arriba de los resultados, arriba de todo lo demás.</li>
-<li><strong>Más ASINs objetivo</strong>: sumar <code>B0DFJ3CD7M</code> (Natruveda),
-que estaba en el plan y no se cargó, y buscar competidores de rango medio &mdash;
-nunca los de 100.000 reseñas, donde se paga por perder la comparación.</li>
+<li><strong>En la ventana visible entra el diferenciador completo</strong>:
+qué es, para quién, <em>cuántos</em> y <em>con estuche</em>. Contra un raspador
+suelto de $9,99, eso es toda la conversación.</li>
+<li><strong>No empieza con «Zriceros».</strong> El título del anexo lo hace, y
+para una marca con 0 reseñas es gastar los nueve caracteres más valiosos en algo
+que nadie busca ni reconoce. Poner la marca adelante es consejo para marcas
+conocidas.</li>
+<li><strong>Entran los términos que convirtieron</strong>: <code>tongue
+brush</code>, <code>tongue cleaner</code>, <code>for adults</code>,
+<code>stainless steel</code>, <code>3 pack</code>. Los cinco.</li>
+<li><strong>Usa 198 de 200.</strong> No sobra lugar para adjetivos: cada palabra
+tiene que ser una búsqueda posible.</li>
 </ol>
+<p class="meta">No se puede poner <code>dr tung</code> ni ninguna marca ajena,
+aunque haya convertido: Amazon lo prohíbe y puede costar la supresión del
+listing. Esa búsqueda se ataca desde la campaña, no desde el título.</p>
 </div>
 
-<h2 style="border:0;margin-top:28px;font-size:15px">5.4 &mdash; El costo de escalar</h2>
+<h2 style="border:0;margin-top:28px;font-size:15px">5.2 &mdash; La imagen principal</h2>
 <div class="card">
-<p>Escalar sube el CPC: para ganar más subastas hay que pujar más. La pregunta es
-hasta dónde aguanta.</p>
-<table>
-<tr><th>A 25 pedidos/semana</th><th class="num">Gasto semanal</th>
-    <th class="num">PPC por unidad</th><th class="num">ACoS</th><th class="num">Neto por unidad</th></tr>
-<tr class="row-total"><td>Con el CPC de hoy ($1,70)</td><td class="num">$117</td>
-    <td class="num">$3,74</td><td class="num">18,8%</td><td class="num ok">$5,26</td></tr>
-<tr><td>Si el CPC sube a $2,50</td><td class="num">$172</td>
-    <td class="num">$5,49</td><td class="num">27,6%</td><td class="num ok">$3,51</td></tr>
-<tr><td>Si el CPC sube a $3,50</td><td class="num">$240</td>
-    <td class="num">$7,69</td><td class="num">38,7%</td><td class="num">$1,31</td></tr>
-<tr><td class="warn">Equilibrio</td><td class="num">$281</td>
-    <td class="num">$9,00</td><td class="num">45,2%</td><td class="num">$0,00</td></tr>
-</table>
-<p><strong>Incluso pagando el doble por clic, 25 pedidos semanales dejan
-$3,51 netos por unidad &mdash; casi $110 por semana</strong>, contra los $26 de
-hoy. El error caro acá no es pagar de más por un clic: es quedarse en cuatro
-pedidos por semana cuidando un ACoS que ya está a menos de la mitad del techo.</p>
+<p>En la grilla de resultados <strong>la foto es lo primero y muchas veces lo
+único</strong> que se mira antes de decidir. Y se mira a
+<strong>~200 píxeles en un teléfono</strong>, no en la pantalla grande donde uno
+la diseña. Todo lo que sigue sale de esa diferencia.</p>
+
+<p><strong>La prueba que hay que hacer, y cuesta un minuto:</strong> achicar la
+foto a 200 px, mirarla en el celular con el brazo estirado y contar. <strong>Si
+no se pueden contar tres piezas en un segundo, la imagen no está
+funcionando</strong> &mdash; y no importa cuánto se puje.</p>
+
+<p><strong>Qué hacer, en orden:</strong></p>
+<ol>
+<li><strong>Que se vean TRES, separadas.</strong> Es el error más común: se
+fotografía el set prolijo, con las piezas superpuestas o encimadas, y a tamaño
+miniatura eso <em>se lee como un solo objeto</em>. Hay que abrirlas en abanico o
+en fila <strong>con espacio blanco visible entre una y otra</strong>. El «3» no
+se puede escribir &mdash;Amazon prohíbe texto en la principal&mdash;, así que
+tiene que verse.</li>
+<li><strong>El estuche atrás y más chico.</strong> Es el segundo mensaje, no el
+primero. Si compite en tamaño con los raspadores, la foto pasa a tener cuatro
+objetos y ninguno se entiende.</li>
+<li><strong>Llenar el 85% del cuadro.</strong> Es el máximo que Amazon permite y
+conviene usarlo entero: a 200 px, cada píxel de producto cuenta. Una foto con
+mucho aire alrededor se ve vacía y chica.</li>
+<li><strong>Aprovechar que el producto es negro.</strong> Sobre el fondo blanco
+obligatorio, el negro tiene mucho más contraste que el acero plateado de casi
+todos los competidores. <strong>Es una ventaja gratis en una grilla</strong>:
+somos la miniatura que no se confunde con la de al lado.</li>
+<li><strong>1.600 px o más de lado.</strong> Es lo que habilita el zoom, y el
+zoom correlaciona con conversión.</li>
+</ol>
+
+<p><strong>Lo que la principal NO puede llevar</strong> (Amazon lo rechaza o
+suprime el listing): texto, logos, marcas de agua, bordes, fondos que no sean
+blanco puro, ni accesorios que no vengan en la caja.</p>
+
+<p><strong>Dónde sí va el texto: en las imágenes 2 a 7.</strong> Ahí se explican
+los tres diseños, las medidas y el uso. Pero <strong>esas mueven la conversión,
+que ya está en 36%</strong> &mdash; o sea que no son la prioridad. La
+única que pelea por el clic es la principal.</p>
 </div>
 
 <div class="card critique">
-<h2>Lo que NO hay que hacer</h2>
-<ul>
-<li><strong>No tocar el listing para "mejorar la conversión".</strong> Está en
-36,4%. Cualquier cambio tiene más chance de romperlo que de mejorarlo. Lo único
-que se toca del listing es el título (por CTR, no por conversión) y la imagen
-principal.</li>
-<li><strong>No bajar el precio.</strong> A $19,89 la contribución es $9,00 y la
-conversión es 36%: el precio no está frenando nada. Bajarlo es regalar margen
-para resolver un problema que no existe. Si hace falta un incentivo visual, va el
-cupón &mdash; que es un badge, no un precio nuevo.</li>
-<li><strong>No escalar todo junto.</strong> Un cambio por vez y una semana de
-datos entre uno y otro: si se mueven pujas, cupón y título el mismo día, cuando
-suba (o baje) no se va a saber por cuál.</li>
-<li><strong>No mirar el ACoS solo.</strong> Va a subir cuando escalemos, y está
-bien que suba. El número que importa es <strong>el neto por semana</strong>.</li>
-</ul>
+<h2>Lo que descartamos, y por qué</h2>
+<p><strong>Amazon Vine: no se puede.</strong> Requiere Brand Registry y la marca
+no está registrada. Era la palanca más grande para las reseñas y queda fuera
+&mdash; conviene no volver sobre eso hasta que haya marca registrada.</p>
+<p><strong>Sponsored Brands y Sponsored Display: tampoco.</strong> Las dos piden
+Brand Registry. <em>Estaban recomendadas en la versión anterior de esta hoja por
+un error mío</em>: di por registrada la marca porque el listing tiene el campo
+«Brand: Zriceros» cargado, que es otra cosa. Quedan fuera hasta que haya
+registro.</p>
+<p><strong>El cupón: dudoso, y no es prioridad.</strong> Pinta un badge verde en
+los resultados, pero <em>no está claro que esté habilitado en una cuenta
+nueva</em> y su efecto principal es sobre la decisión de compra &mdash; que es
+justamente lo que ya funciona. Cuesta margen real para resolver un problema que
+no tenemos. Si se prueba, que sea después del título y la imagen, y midiendo.</p>
+<p><strong>Bajar el precio: no.</strong> A $19,89 la conversión es del
+36%. El precio no está frenando nada; bajarlo es regalar margen.</p>
+<p><strong>Tocar el listing para «mejorar la conversión»: no.</strong> Está en
+36%. Cualquier cambio tiene más chance de romperlo que de mejorarlo. Del
+listing se toca <strong>sólo el título y la imagen principal, y por CTR</strong>,
+no por conversión.</p>
+</div>
+
+<div class="card">
+<h2 style="border:0;margin-top:0;font-size:14px">El orden</h2>
+<ol>
+<li><strong>Título</strong> &mdash; gratis, media hora, y mueve CTR e impresiones
+a la vez.</li>
+<li><strong>Imagen principal</strong> &mdash; gratis si la foto ya existe.</li>
+<li><strong>Negativas</strong> &mdash; deja de tirar el 38% de la inversión.</li>
+<li><strong>Manual exacta + pujas + Top of search</strong> &mdash; recién acá se
+gasta más, cuando cada impresión rinde más que hoy.</li>
+</ol>
+<p><strong>Un cambio por vez, una semana de datos entre uno y otro.</strong> Si se
+mueven título, imagen y pujas el mismo día, cuando suba no se va a saber por
+cuál.</p>
 </div>
 
 <h2><span class="num">6.</span> Cómo se actualiza</h2>
 <div class="card">
-<p>Dos fuentes, el mismo día: el <strong>panel de Campaign Manager</strong> (totales)
-y el <strong>informe de términos de búsqueda</strong> (desglose, sólo con clics).
-Cada semana se agrega una sección arriba sin borrar las anteriores: la gracia es
-la serie, no la foto.</p>
+<p>Dos fuentes, el mismo día: el <strong>panel de Campaign Manager</strong>
+(totales) y el <strong>informe de términos de búsqueda</strong> (desglose, sólo
+búsquedas con clics). Cada semana se agrega una sección arriba sin borrar las
+anteriores: la gracia es la serie, no la foto.</p>
 </div>
+
+<hr style="margin-top:40px;border:0;border-top:1px solid #e0e0e0">
+<p class="meta"><strong>Nota sobre la contribución por unidad.</strong> La
+<a href="estrategia-ppc-zriceros.html">hoja de estrategia</a> calculó $11,72 por
+unidad y un equilibrio del 58,9%, con una tarifa FBA estimada de $3,54 y un costo
+puesto de $1,65. Los números reales &mdash;calculadora oficial de Amazon más el
+costo informado&mdash; son FBA $4.09 + inbound $0.36 y producto
+$3.45, que dan <strong>$9.00 de contribución y
+45.2% de equilibrio</strong>. Son $2,72 por unidad, $2.720 sobre las
+1.000. Toda esta hoja usa el número real; convendría corregir también la hoja de
+estrategia.</p>
 
 <footer>Zriceros Tongue Scraper · B0H6QZGX56 · avances de Amazon Ads ·
 semana 1 (31 ago – 6 sep 2026) · generado 2026-09-07</footer>
