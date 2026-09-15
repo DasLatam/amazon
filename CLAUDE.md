@@ -9,7 +9,11 @@ archivo que se deje en la carpeta se publica solo, en un repo público.
 
 Todas las hojas comparten el menú de arriba y el «anterior / siguiente» de abajo,
 y los genera `scripts/menu.py` desde la lista `SECCIONES` (Producto → Plan →
-Seguimiento de Ads); también pone los `<title>`. **Hoja nueva: sumarla a
+Seguimiento de Ads); también pone los `<title>`. El menú tiene dos niveles: las
+secciones son links a su hoja principal (Seguimiento abre la última semana) y
+debajo aparecen las hojas de la sección actual. La primera versión mostraba los
+nombres de sección como rótulos sueltos al lado de los links, parecían botones
+y no hacían nada: un rótulo en una barra de navegación tiene que ser un link. **Hoja nueva: sumarla a
 `SECCIONES` y correr `/usr/bin/python3 scripts/menu.py`.** Si queda un `.html`
 fuera de la lista, el script lo avisa y sale con 1. No editar a mano lo que está
 entre `<!-- menu -->` y `<!-- /menu -->`: la próxima corrida lo pisa. Es HTML
