@@ -13,6 +13,9 @@ un caso real, no un producto del servidor.
 - El seguimiento de Amazon Ads, **una hoja por semana**, con el informe de
   términos de búsqueda y la economía unitaria real ($9,00 de contribución,
   equilibrio 45,2%).
+- La hoja de reseñas (`resenas-zriceros.html`, también en
+  https://192.168.1.71/reseñas): todas las estrategias permitidas y prohibidas,
+  qué logra cada una a 90 días, y costos y plazos de la marca en la USPTO.
 
 **Qué no entra:** operar la cuenta. Todo cambio en Seller Central o Campaign
 Manager lo hace Ariel; desde acá se proponen y quedan como pendientes del tablero
