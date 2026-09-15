@@ -58,6 +58,7 @@ CSS = """
   .zm{position:static;flex-direction:column;align-items:stretch;gap:4px}
   .zm-rot{min-width:92px}
   .zp a{flex:1 1 100%}
+  table{display:block;max-width:100%;overflow-x:auto}
 }
 """.strip()
 
