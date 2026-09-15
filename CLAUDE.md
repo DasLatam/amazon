@@ -5,6 +5,17 @@ https://daslatam.github.io/amazon/ vía `scripts/sync_github.sh`, que **corre po
 cron cada 5 minutos y commitea todo lo que no esté en `.gitignore`**. Cualquier
 archivo que se deje en la carpeta se publica solo, en un repo público.
 
+## El menú de las hojas
+
+Todas las hojas comparten el menú de arriba y el «anterior / siguiente» de abajo,
+y los genera `scripts/menu.py` desde la lista `SECCIONES` (Producto → Plan →
+Seguimiento de Ads); también pone los `<title>`. **Hoja nueva: sumarla a
+`SECCIONES` y correr `/usr/bin/python3 scripts/menu.py`.** Si queda un `.html`
+fuera de la lista, el script lo avisa y sale con 1. No editar a mano lo que está
+entre `<!-- menu -->` y `<!-- /menu -->`: la próxima corrida lo pisa. Es HTML
+estático y no JS porque la hoja de reseñas se sirve también desde el tablero por
+https, y un script pedido por http al :8089 se bloquearía.
+
 ## El seguimiento semanal de Amazon Ads
 
 Una hoja por semana: `reporte-campanas-zriceros.html` (semana 1),
