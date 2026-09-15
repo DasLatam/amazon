@@ -103,7 +103,7 @@
 
 <h1>Zriceros Tongue Scraper — Avances de Amazon Ads</h1>
 <p class="meta">ASIN: B0H6QZGX56 &middot; cuenta: lombardi company &middot;
-  1.000 unidades a $19,89 &middot; actualizado 2026-09-15 (se sumó el presupuesto)</p>
+  1.000 unidades a $19,89 &middot; actualizado 2026-09-15 (se sumaron presupuesto, negativas y manual)</p>
 <h2><span class="num">1.</span> Semana 2 &mdash; 7 a 13 sep 2026</h2>
 <div class="kpis">
   <div class="kpi"><span class="big neg">75,6%</span><span class="lbl">ACoS</span><span class="sub">semana 1: 18,8%</span></div>
@@ -434,27 +434,111 @@ producto quedaría en un cuadrado de ~850&nbsp;px, por debajo de los
 1000&nbsp;px que necesita el zoom.</p>
 </div>
 
-<h2><span class="num">9.</span> Acciones para la semana 3</h2>
+<h2><span class="num">9.</span> Negativas y campaña manual: qué sumar</h2>
+<div class="card">
+<h2 style="border:0;margin-top:0;font-size:14px">Negativas: por ahora, sólo las que ya están propuestas</h2>
+<p>Con 20% de conversión sale, en promedio, una venta cada 5 clics. Un término con 3
+clics y ninguna compra no dice nada: por puro azar pasa la mitad de las veces
+(0,8&sup3; = 51%). Con 10 clics sin venta la chance de que sea mala suerte baja al 11%,
+y con 15, al 3,5%. Por eso la <a href="estrategia-ppc-zriceros.html">estrategia de
+PPC</a> fijó la regla: <strong>15 clics sin pedido, o $9 gastados sin venta</strong>
+(la contribución de una unidad). Lo que describe un producto que no vendemos se
+negativiza sin esperar.</p>
+<div class="tabla">
+<table>
+<tr><th>Negativa</th><th>Por qué</th><th>Dónde</th></tr>
+<tr><td>Producto <code>B088M39G17</code> (Cafhelp, $4,99)</td><td>1.429 impresiones, 4 clics, $8,80 y ninguna venta: casi llega a los $9. A un cuarto de nuestro precio, difícil que convierta</td><td>Las dos campañas</td></tr>
+<tr><td>Producto <code>B008QQF9SS</code> (aceite de sésamo)</td><td>Otra categoría: no hace falta esperar datos</td><td>Las dos campañas</td></tr>
+<tr><td><code>tongue scraper</code>, exacta</td><td>PRIMALS la paga $2,84 y la automática $0,83</td><td>PRIMALS, <span class="tbd">si la campaña lo permite (abajo)</span></td></tr>
+<tr><td><code>copper</code>, <code>titanium</code>, <code>with stand</code>, <code>cheap</code></td><td>Cargadas en la semana 1: describen un producto que no vendemos</td><td class="tbd">A confirmar en qué campaña quedaron</td></tr>
+</table>
+</div>
+<p style="margin-top:12px"><strong>Nada más por ahora.</strong> Fuera de Cafhelp, ningún
+término pasó de dos clics en dos semanas, y cortar con uno es cortar búsquedas que
+podían vender. <code>tongue cleaner</code>, <code>with case</code> y
+<code>travel</code> tuvieron un clic sin compra y son justo las palabras del título:
+se dejan correr. Lo mismo las fichas de un clic. Si GuruNanda ($5,22) vuelve a
+aparecer, entra por la misma razón que Cafhelp.</p>
+</div>
+
+<div class="card critique">
+<h2>Ojo: PRIMALS puede no aceptar palabras negativas</h2>
+<p>PRIMALS es una campaña de <strong>segmentación por producto</strong>. Las palabras
+negativas son de las campañas automáticas y de las de palabras clave; en las de
+producto, lo que se excluye son productos y marcas. No encontré la regla escrita en
+la documentación pública de Amazon, así que hay que mirarlo en el panel: <strong>si en
+PRIMALS &rarr; Segmentación negativa no hay pestaña de palabras clave</strong>,
+<code>tongue scraper</code> no se puede negativizar ahí. Y las negativas de la semana
+1 tampoco pudieron quedar en esa campaña: <code>copper</code> dejó de aparecer después
+del 9 por otra razón.</p>
+<p><strong>Si no se puede, alcanza con dos cosas.</strong> La puja a $1,20 ya deja
+<code>tongue scraper</code> dentro del techo. Y conviene revisar si el ASIN de PRIMALS
+está segmentado como <strong>«ampliado»</strong> en vez de <strong>«exacto»</strong>,
+si el panel ofrece esa opción: la ampliada muestra el anuncio también en productos
+parecidos y explicaría las 11 fichas ajenas de la semana 2. Pasarla a exacta devuelve
+la campaña a lo que se diseñó: aparecer en la ficha de PRIMALS.</p>
+</div>
+
+<div class="card summary">
+<h2>Campaña manual: sí, ahora y chica</h2>
+<p><strong>Lo que «funcionó» es poco.</strong> Fuera de <code>tongue scraper</code>,
+cada término que convirtió tuvo <strong>un solo clic</strong>: no hay nada probado para
+escalar. La manual en exacta sirve para otra cosa. Esas búsquedas llegaban por
+PRIMALS, y cuando baje a $1,20 lo más probable es que las pierda. La manual mantiene
+el anuncio con un precio controlado y las mide una por una.</p>
+<div class="tabla">
+<table>
+<tr><th>Término, exacta</th><th>Evidencia</th><th>Por qué entra</th></tr>
+<tr><td><code>tongue brush</code></td><td>1 clic, 1 pedido de 2 unidades (semana 1)</td><td>El mejor clic de las dos semanas</td></tr>
+<tr><td><code>tongue scraper stainless steel</code></td><td>1 clic, 1 pedido (semana 1)</td><td>Atributo real del producto</td></tr>
+<tr><td><code>tongue scraper dr tung</code></td><td>1 clic, 1 pedido (semana 1)</td><td>Marca competidora que convirtió</td></tr>
+<tr><td><code>tongue scrapper</code></td><td>1 clic, 1 pedido (semana 2)</td><td>La genérica mal escrita</td></tr>
+<tr><td><code>tongue scraper with case</code></td><td>1 clic, sin pedido (semana 2)</td><td>Nuestro diferencial: el estuche</td></tr>
+<tr><td><code>tongue scraper travel</code></td><td>1 clic, sin pedido (semana 2)</td><td>El mismo diferencial</td></tr>
+</table>
+</div>
+<p style="margin-top:12px"><strong>Cómo:</strong> concordancia exacta, puja de
+<strong>$1,20</strong> para todos (ACoS del 30% con 20% de conversión), presupuesto de
+<strong>$5 por día</strong> y sin ajuste de Top of search: como mucho, $35 en la semana.
+Cada término entra también como <strong>negativa exacta en la automática</strong>. Ahí
+no tuvieron ni un clic, así que no le saca nada de lo que venía comprando.</p>
+<p><strong><code>tongue scraper</code> no va.</strong> La automática la compra a $0,83 y
+convirtió 2 de 9 clics, lo mejor de la cuenta: pasarla a la manual sería pagarla más
+cara.</p>
+<p><strong>Por qué ahora y no en la semana 4:</strong> si se espera, estas búsquedas se
+pierden la semana en que PRIMALS baja la puja. Como cada campaña se mide por separado,
+sumar la manual no ensucia lo que mide la automática. <strong>Lo que hay que
+vigilar:</strong> PRIMALS las pagaba entre $2,19 y $2,92, y a $1,20 puede que casi no
+salgan. Si en una semana un término no tiene impresiones, ése es el dato: con 20% de
+conversión, no vale lo que cuesta.</p>
+</div>
+
+<h2><span class="num">10.</span> Acciones para la semana 3</h2>
 <div class="card tips">
-<p><strong>Un solo cambio: frenar la pérdida de PRIMALS.</strong> Son varios
-clics en la misma campaña, pero apuntan a lo mismo y la automática queda
-intacta para seguir midiendo el título.</p>
+<p><strong>Dos frentes: frenar la pérdida de PRIMALS y abrir una manual chica.</strong>
+Cada campaña se mide por separado, y la automática queda como está para seguir
+midiendo el título.</p>
 <ol>
 <li><strong>Bajar la puja de PRIMALS de $2,84 a $1,20</strong> (ACoS del 30% con
 20% de conversión). Si tiene activado Top of search o pujas dinámicas «subir y
 bajar», sacarlos.</li>
-<li><strong><code>tongue scraper</code> como negativa exacta en PRIMALS.</strong>
-La automática la compra a $0,83 y la sigue comprando.</li>
+<li><strong>Revisar si el ASIN de PRIMALS está segmentado como «ampliado»</strong> y
+pasarlo a «exacto» (sección 9).</li>
+<li><strong><code>tongue scraper</code> como negativa exacta en PRIMALS, si la
+campaña lo permite.</strong> Si no hay pestaña de palabras negativas, alcanza con la
+puja y la segmentación exacta. La automática la compra a $0,83 y la sigue
+comprando.</li>
 <li><strong>Dos productos negativos en las dos campañas:</strong>
 <code>B088M39G17</code> (Cafhelp, $4,99) y <code>B008QQF9SS</code> (aceite de
 sésamo).</li>
-<li><strong>La automática, no tocarla: ni la puja ni el presupuesto.</strong> Es la
-que gana plata y la que mide si el título subió el CTR. Más presupuesto no le
-sirve: usa el 6,5% del que tiene.</li>
+<li><strong>Campaña manual en exacta con 6 términos</strong>, puja de $1,20 y $5 por
+día, y cada término como negativa exacta en la automática (sección 9).</li>
+<li><strong>La automática, no tocarla: ni la puja ni el presupuesto.</strong> Fuera de
+las negativas de la manual, que no le sacan nada de lo que compraba. Es la que gana
+plata y la que mide si el título subió el CTR. Más presupuesto no le sirve: usa el
+6,5% del que tiene.</li>
 </ol>
-<p><strong>Lo que se posterga:</strong> la <strong>campaña manual en
-exacta</strong> pasa a la semana 4, y con pujas de ~$1,20, no las de $2,75 a
-$3,65 de la semana 1, que suponían 36% de conversión. <strong>Subir pujas y Top of
+<p><strong>Lo que se posterga:</strong> <strong>subir pujas y Top of
 search</strong>, que la semana 1 proponía para después del título, queda
 descartado mientras la conversión sea del 20%. La excepción es la automática, que
 paga $0,79 contra un objetivo de $1,19: si en la semana 3 no crece sola, en la 4 se
@@ -463,7 +547,7 @@ le prueba $1,00 (sección 7).</p>
 falta.</p>
 </div>
 
-<h2><span class="num">10.</span> Qué hace falta para la semana 3</h2>
+<h2><span class="num">11.</span> Qué hace falta para la semana 3</h2>
 <div class="card">
 <ul>
 <li><strong>El informe de términos de búsqueda</strong>, como esta vez.</li>
@@ -474,6 +558,10 @@ funcionó.</li>
 figuró «Sin presupuesto» en la columna de estado del panel, y la puja y la
 estrategia de puja de la automática. El informe de términos no trae ninguno de
 los tres, y la sección 7 los compara contra el plan.</li>
+<li><strong>Dos datos de PRIMALS en el panel:</strong> si tiene pestaña de palabras
+negativas, y si el ASIN está segmentado como exacto o ampliado. Y en qué campaña
+quedaron <code>copper</code>, <code>titanium</code>, <code>with stand</code> y
+<code>cheap</code>.</li>
 <li><strong>La fecha de cada cambio</strong>: qué día se cambió el título, qué
 día entraron las negativas y si se tocaron pujas o ubicaciones. Con eso se puede
 partir cada semana en antes y después.</li>
@@ -493,6 +581,6 @@ semana 1</a>).</p>
 <!-- /pie-menu -->
 
 <footer>Zriceros Tongue Scraper · B0H6QZGX56 · avances de Amazon Ads ·
-semana 2 (7 – 13 sep 2026) · generado 2026-09-14 · presupuesto sumado 2026-09-15</footer>
+semana 2 (7 – 13 sep 2026) · generado 2026-09-14 · presupuesto, negativas y manual sumados 2026-09-15</footer>
 </body>
 </html>
