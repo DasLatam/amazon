@@ -52,6 +52,23 @@ $1,20). No sacar conclusiones de conversión con menos de ~40 clics.
   era `51MqYyt1dBL`, **896×1195 (vertical)**; `images/main-actual.jpg` es una
   captura recortada de 350×289 y no sirve para medir.
 
+## Reseñas y marca (verificado 2026-09-14)
+
+Hoja: `resenas-zriceros.html`. El tablero la sirve en `https://192.168.1.71/reseñas`
+leyendo el archivo en cada pedido, así que editarla no pide reiniciar nada.
+
+- **Una solicitud directa en la USPTO no habilita Brand Registry mientras está
+  pendiente.** Sólo sirve la presentada por **IP Accelerator** (tope de $700 de
+  honorarios + $350 de tasa por clase). Por la vía directa hay que esperar el
+  registro, unos 10 meses.
+- Vine acepta marcas en Brand Registry **o productos genéricos**. Zriceros tiene
+  marca: volver a «Generic» para entrar a Vine desharía la corrección de la ficha.
+- New Seller Incentives (10% sobre ventas de marca, crédito de Vine) exige Brand
+  Registry **dentro de los 6 meses del primer ASIN a la venta**. El de prueba
+  (`B0GVZF1GN7`) ya estaba publicado el 2026-06-22.
+- El inserto con QR que se decidió el 2026-06-23 armaba el enlace con el ASIN de
+  **prueba**: si se imprimió así, las reseñas van a la ficha equivocada.
+
 ## Pendientes
 
 Las acciones que sólo puede hacer Ariel en Seller Central van a
