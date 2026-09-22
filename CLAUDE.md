@@ -27,12 +27,53 @@ Una hoja por semana: `reporte-campanas-zriceros.html` (semana 1),
 desde `index.html`. Las hojas viejas no se reescriben: si un número de una semana
 anterior resultó mal, se agrega una nota de corrección.
 
+## Cómo se le escribe a Ariel en estas hojas
+
+Tres reglas que puso el 2026-09-21 y que valen para todas las hojas del
+proyecto, no sólo para el seguimiento semanal:
+
+1. **La hoja es su informe: no se le hacen preguntas ni se le piden datos.**
+   *«tampoco hagamos preguntas como si no supiera, en teoria es un informe mio y
+   se lo que esta pasando»*. Se cayó por eso una sección entera («lo que hay que
+   anotar del panel: presupuesto configurado, puja de la automática, ¿le
+   subieron algo esta semana?»). Lo que la hoja no puede saber se dice como
+   límite —«desde el informe de términos no se distingue»— y va en «lo que esta
+   hoja no puede afirmar», nunca como un pedido ni como una pregunta retórica.
+2. **No se recomienda lo que no está disponible.** *«las reseñas en general
+   paremos con recomendar cosas que no hay como vine y esas cosas»*. Vine,
+   Brand Registry e IP Accelerator salieron de los próximos pasos y del índice.
+   `resenas-zriceros.html` los conserva porque es **hoja de referencia**: está
+   para consultarla, y el índice ahora lo dice con esas palabras. En un plan de
+   acción sólo entra lo que se puede hacer esta semana.
+3. **Una recomendación que cambia, se dice que cambió.** La imagen principal
+   venía propuesta **cuadrada de 1.600**; desde el 2026-09-21 va **vertical
+   1.600×2.000 (4:5)**, *«que sea mas vertical para que funcione en las
+   miniaturas»*. Las hojas viejas no se reescriben, así que el pendiente y la
+   hoja nueva arrancan diciendo «CAMBIO de la propuesta anterior». Si no, la
+   contradicción entre dos hojas parece un error y no una decisión.
+
+## El registro de solicitudes de reseña
+
+`datos/resenas_solicitadas.csv` + `scripts/resenas.py`. Existe porque el botón
+«Solicitar una reseña» de Seller Central se habilita entre 5 y 30 días después
+de la entrega y **después desaparece**: sin registro se vuelven a abrir los
+mismos pedidos cada semana y los que se pasan se pierden sin dejar rastro.
+
+- El CSV lleva números de pedido, así que vive en `datos/` y **no se publica**.
+- `resenas.py` lo resume en el bloque `<!-- registro-resenas -->` de la hoja
+  (sólo conteos, nunca los IDs), lista a cuáles se les puede pedir hoy y avisa a
+  cuáles les quedan cinco días o menos. Correrlo después de cargar el CSV.
+- Para qué: en unas semanas contesta **cuántas reseñas llegan por cada diez
+  solicitudes**. Ese número decide si vale seguir haciéndolo a mano, y hoy sólo
+  se puede estimar.
+
 **La hoja cierra con un paso a paso, no con propuestas.** Desde la semana 3
 (pedido de Ariel: *«pones un paso a paso al final como los proximos pasos pero
 mas detallado»*) la última sección es «Los próximos pasos, uno por uno» (ancla
 `#pasos`): un paso por acción, numerado por impacto, y cada uno con las mismas
 cinco filas —**dónde** tocar en el panel, **qué** poner, **por qué**, qué **no**
-hacer y **cómo se verifica** en el informe de la semana siguiente—. Cierra con
+hacer y **cómo se verifica** en el informe de la semana siguiente—. Van en orden
+de impacto, y los que se arrastran de semanas anteriores lo dicen en el título. Cierra con
 una tabla de predicción: qué tendría que dar la semana próxima si el plan sirve,
 y qué significa cada número si no da. Una propuesta que no dice cómo se comprueba
 vuelve a discutirse entera la semana que viene.
