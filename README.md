@@ -21,9 +21,11 @@ un caso real, no un producto del servidor.
 Manager lo hace Ariel; desde acá se proponen y quedan como pendientes del tablero
 (grupo `zriceros`).
 
-**Estado (2026-09-14):** dos semanas de campaña medidas. Semana 1: ACoS 18,8%,
-+$26,34. Semana 2: ACoS 75,6%, −$30,19. Acumulado en equilibrio. Título nuevo
-publicado; imagen principal y reseñas pendientes.
+**Estado (2026-09-21):** tres semanas de campaña medidas. Semana 1: ACoS 18,8%,
++$26,34. Semana 2: 75,6%, −$30,19. Semana 3: 51,6%, −$11,32. Acumulado: 19
+unidades, ACoS 49,3%, −$15,17 y 0 reseñas; BSR de la categoría #158. Mejora
+semana a semana y sigue arriba del equilibrio (45,2%). Título nuevo publicado;
+imagen principal, campaña manual y reseñas pendientes.
 
 **Dónde:** portal local `http://192.168.1.71:8089`, público en
 https://daslatam.github.io/amazon/ (repo `DasLatam/amazon`, sincronizado por cron).

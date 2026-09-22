@@ -47,6 +47,34 @@ Trampas del informe de términos:
   informe bajado al día siguiente todavía pueden sumar ventas.
 - Un mismo CPC repetido en muchas filas de una campaña es su puja (PRIMALS: $2,84).
 
+## Las dos campañas convierten igual: lo que cambia es el precio del clic
+
+Es el hallazgo de la semana 3 y **corrige la lectura de la semana 2**, que había
+leído la caída de conversión de PRIMALS (50% → 11,5%) como un problema de
+público. Con 69 clics acumulados PRIMALS convierte 18,8% y la automática 17,2%:
+lo mismo, y PRIMALS arriba. El 11,5% eran 26 clics.
+
+Toda la diferencia entre perder $34,62 y ganar $19,45 está en el CPC: $2,33
+contra $0,88. **La conclusión práctica no es apagar PRIMALS —trae dos de cada
+tres ventas— sino ponerle el precio bien.** Vale como regla para la próxima vez:
+antes de culpar al público de una campaña, comparar su conversión con la de al
+lado sobre el acumulado, no sobre la semana.
+
+Corolario del mismo tipo: **antes de dar por mala una ficha ajena, mirar su
+precio**. Las cuatro fichas que convirtieron en la semana 3 promedian $14,49 y
+las cinco que no, $7,88. Nadie que esté mirando un raspador de $4,99 paga
+$19,89.
+
+## Un CTR que cae no siempre es mala noticia sobre el anuncio
+
+Semana 3: con «tongue scraper» negativa en PRIMALS, la automática heredó esa
+subasta. Las impresiones de esa búsqueda pasaron de 170 a 1.480 y los clics de 4
+a 6: el CTR cayó de 2,4% a 0,41%. **No es que el anuncio empeoró; es que ganó
+subastas peores.** El informe de términos no trae la ubicación, así que la
+confirmación sale del informe de ubicación del panel. De paso, es el argumento
+más fuerte que hay para la imagen principal: el anuncio ahora se muestra y no lo
+miran.
+
 ## Economía (no cambia mientras no cambien precio ni costos)
 
 Precio $19,89 − tarifas $7,44 − producto $3,45 = **$9,00 de contribución**,
