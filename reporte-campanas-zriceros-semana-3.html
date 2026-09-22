@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 3 — Seguimiento de Ads · Zriceros en Amazon</title>
+<style>
+  body {
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 0 24px;
+    line-height: 1.6;
+    color: #232f3e;
+    background: #f7f7f7;
+  }
+  p, li { text-align: justify; hyphens: auto; }
+  h1 {
+    font-size: 23px;
+    border-bottom: 3px solid #ff9900;
+    padding-bottom: 8px;
+  }
+  h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+    margin-top: 44px;
+    border-left: 4px solid #ff9900;
+    padding-left: 10px;
+  }
+  h2 .num { color: #ff9900; margin-right: 6px; }
+  .meta { font-size: 13px; color: #888; margin-bottom: 4px; text-align: left; }
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .tabla { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  table th, table td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: left; vertical-align: top; }
+  table th { background: #f0f0f0; }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  .warn { color: #c40000; font-weight: 600; }
+  .ok { color: #067d62; font-weight: 600; }
+  .tbd { color: #946200; font-style: italic; }
+  .summary { background: #eef6ff; border: 1px solid #c9e2ff; }
+  .card > h2:first-child { margin-top: 0; }
+  .summary h2 { border-left-color: #0a5cb8; color: #0a5cb8; }
+  .tips { background: #fff8ec; border: 1px solid #ffe2a8; }
+  .tips h2 { border-left-color: #cc8400; color: #8a5b00; }
+  .critique { background: #fff0ee; border: 1px solid #ffc9c0; }
+  .critique h2 { border-left-color: #c40000; color: #a30000; }
+  .semanas { font-size: 14px; margin: 10px 0 0; }
+  .semanas a, .semanas strong { margin-right: 10px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }
+  .kpi { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center; }
+  .kpi .big { font-size: 26px; font-weight: 700; color: #0a5cb8; display: block; }
+  .kpi .lbl { font-size: 12px; color: #777; text-transform: uppercase; letter-spacing: .4px; margin-top: 4px; display: block; }
+  .kpi .sub { font-size: 12px; color: #999; display: block; margin-top: 2px; }
+  .pos { color: #067d62; }
+  .neg { color: #c40000; }
+  .row-total td { background: #eef6ff; font-weight: 700; }
+  .row-mal td { background: #fff5f3; }
+  .row-bien td { background: #ecf9f1; }
+  .formula { font-size: 17px; text-align: center; margin: 18px 0; }
+  footer { margin-top: 50px; font-size: 12px; color: #999; text-align: center; }
+  @media (max-width: 640px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+</style>
+</head>
+<body><!-- menu -->
+<style>.zm{position:sticky;top:0;z-index:50;margin:0 0 26px;border-radius:10px;overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.18);font:14px/1.3 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.zm a{text-decoration:none;white-space:nowrap}
+.zm-f1{display:flex;flex-wrap:wrap;align-items:center;gap:4px;background:#232f3e;padding:7px 10px}
+.zm-f1 a{color:#fff;padding:7px 13px;border-radius:6px}
+.zm-f1 a:hover{background:rgba(255,255,255,.14)}
+.zm-f1 .zm-marca{font-weight:700;margin-right:8px}
+.zm-f1 .zm-aqui{background:#37475a;box-shadow:inset 0 -3px 0 #ff9900;font-weight:700}
+.zm-f2{display:flex;flex-wrap:wrap;align-items:center;gap:4px;background:#37475a;padding:6px 10px}
+.zm-f2 .zm-rot{color:#b8c4cf;font-size:12px;padding:0 6px 0 3px}
+.zm-f2 a{color:#e8edf2;padding:5px 11px;border-radius:6px}
+.zm-f2 a:hover{background:rgba(255,255,255,.14)}
+.zm-f2 a[aria-current]{background:#ff9900;color:#232f3e;font-weight:700}
+.zp{display:flex;flex-wrap:wrap;gap:12px;margin:48px 0 0;padding-top:18px;border-top:1px solid #e0e0e0}
+.zp a{flex:0 1 46%;text-decoration:none;color:#007185;background:#fff;border:1px solid #e0e0e0;
+  border-radius:8px;padding:10px 14px;font-size:15px;font-weight:600}
+.zp a:hover{border-color:#ff9900}
+.zp small{display:block;color:#888;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.4px}
+.zp .zp-sig{margin-left:auto;text-align:right}
+@media (max-width:640px){
+  .zm{position:static}
+  .zp a{flex:1 1 100%}
+  table{display:block;max-width:100%;overflow-x:auto}
+}</style>
+<nav class="zm" aria-label="Hojas del proyecto"><div class="zm-f1"><a href="index.html" class="zm-marca">Zriceros en Amazon</a><a href="listing-zriceros-tongue-scraper.html" title="Listing, Competencia">Producto</a><a href="estrategia-inversion-zriceros.html" title="Inversión, PPC, Reseñas">Plan</a><a href="reporte-campanas-zriceros-semana-3.html" class="zm-aqui" title="Semana 1, Semana 2, Semana 3">Seguimiento de Ads</a></div><div class="zm-f2"><span class="zm-rot">Seguimiento de Ads ›</span><a href="reporte-campanas-zriceros.html">Semana 1</a><a href="reporte-campanas-zriceros-semana-2.html">Semana 2</a><a href="reporte-campanas-zriceros-semana-3.html" aria-current="page">Semana 3</a></div></nav>
+<!-- /menu -->
+
+
+<h1>Zriceros Tongue Scraper &mdash; Avances de Amazon Ads</h1>
+<p class="meta">ASIN: B0H6QZGX56 &middot; cuenta: lombardi company &middot;
+  1.000 unidades a $19,89 &middot; generado 2026-09-21</p>
+
+<h2><span class="num">1.</span> Semana 3 &mdash; 14 a 20 sep 2026</h2>
+<div class="kpis">
+  <div class="kpi"><span class="big neg">51,6%</span><span class="lbl">ACoS</span><span class="sub">semana 2: 75,6%</span></div>
+  <div class="kpi"><span class="big">45,2%</span><span class="lbl">Equilibrio</span><span class="sub">sin cambios</span></div>
+  <div class="kpi"><span class="big">17,0%</span><span class="lbl">Conversión</span><span class="sub">semana 2: 14,7%</span></div>
+  <div class="kpi"><span class="big neg">&minus;$11,32</span><span class="lbl">Ganancia neta</span><span class="sub">semana 2: &minus;$30,19</span></div>
+</div>
+
+<div class="card summary">
+<h2>Las conclusiones de la semana tres</h2>
+
+<p><strong>1. Mejoró mucho y todavía pierde.</strong> Se gastaron $92,32 para
+vender 9 unidades: ACoS de 51,6% contra un techo de 45,2%. Es la mejor semana
+desde que hay volumen &mdash;la 2 cerró en 75,6%&mdash; pero sigue del lado
+equivocado de la raya. Las tres semanas juntas: $186,17 de publicidad,
+19 unidades, ACoS de 49,3% y <strong>&minus;$15,17 netos</strong>.</p>
+
+<p><strong>2. Lo que se hizo, funcionó.</strong> La negativa de
+<em>tongue scraper</em> en PRIMALS entró: esa búsqueda no vuelve a aparecer en
+esa campaña, mientras <em>tongue scraper black</em> y
+<em>tongue scraper with cover</em> sí &mdash;que es exactamente lo que hace una
+negativa <strong>exacta</strong>&mdash;. Y la puja bajó de $2,84 a
+<strong>$2,19</strong>. PRIMALS pasó de un ACoS de 115% a uno de 55,5%.</p>
+
+<p><strong>3. Corrección a la hoja de la semana 2: el problema nunca fue a
+quién le llega PRIMALS, es cuánto paga.</strong> Aquella hoja leyó la caída de
+conversión del 50% al 11,5% como que la campaña le estaba llegando a la gente
+equivocada. Con 69 clics acumulados, PRIMALS convierte el <strong>18,8%</strong>
+y la automática el <strong>17,2%</strong>: prácticamente lo mismo, y PRIMALS
+arriba. El 11,5% eran 26 clics. Las dos campañas venden igual de bien; una paga
+$2,33 por clic y la otra $0,88, y ahí está toda la diferencia entre perder
+$34,62 y ganar $19,45.</p>
+
+<p><strong>4. La puja bajó hasta la mitad del camino.</strong> Con su propia
+conversión, PRIMALS empata a <strong>$1,69</strong> por clic y a un ACoS
+objetivo del 30% podría pagar <strong>$1,12</strong>. Paga $2,19. La orden de la
+semana 2 era $1,20: quedó a mitad de camino, y el resultado también.</p>
+
+<p><strong>5. Más de la mitad de las impresiones de PRIMALS se las llevan tres
+fichas baratas que nunca vendieron nada.</strong> MasterMedi ($9,95, el
+&#35;1 de la categoría), Cafhelp ($4,99, el &#35;2) y GRIN ($4,99, el &#35;4)
+juntaron 4.951 de las 8.522 impresiones de la campaña &mdash;el 58%&mdash; para
+cinco clics y cero ventas. Cafhelp ya estaba propuesta como negativa la semana
+pasada y sigue adentro.</p>
+
+<p><strong>6. Donde sí vende es en las fichas caras.</strong> Las cuatro fichas
+que convirtieron valen $9,99, $9,99, $12,99 y $24,99. La de $24,99 es
+<strong>la ficha de PRIMALS</strong>, el competidor que le da nombre a la
+campaña: tres clics, una venta, ACoS 28%. Es la primera semana que el anuncio
+aparece ahí, y funcionó a la primera.</p>
+
+<p><strong>7. PRIMALS no se achicó: se abrió.</strong> Apareció en
+<strong>20 fichas ajenas</strong> contra 11 la semana pasada. La segmentación
+por producto sigue siendo ampliada; lo que se movió fue el precio, no la
+puntería.</p>
+
+<p><strong>8. En la ficha: el ranking mejora, las reseñas siguen en cero y la
+imagen no cambió.</strong> BSR &#35;158 en <em>Tongue Brushes, Scrapers &amp;
+Cleaners</em> (era &#35;191 el 14-09), 0 reseñas sobre 19 unidades vendidas, y
+la imagen principal es el mismo archivo de hace una semana.</p>
+</div>
+
+<h2><span class="num">2.</span> Las tres semanas lado a lado</h2>
+<div class="card">
+<div class="tabla">
+<table>
+<tr><th></th><th class="num">Semana 1</th><th class="num">Semana 2</th><th class="num">Semana 3</th><th class="num">Acumulado</th></tr>
+<tr><td>Gasto</td><td class="num">$18,66</td><td class="num">$75,19</td><td class="num">$92,32</td><td class="num">$186,17</td></tr>
+<tr><td>Clics</td><td class="num">11</td><td class="num">34</td><td class="num">53</td><td class="num">98</td></tr>
+<tr><td>CPC</td><td class="num">$1,70</td><td class="num">$2,21</td><td class="num">$1,74</td><td class="num">$1,90</td></tr>
+<tr><td>Pedidos</td><td class="num">4</td><td class="num">5</td><td class="num">9</td><td class="num">18</td></tr>
+<tr><td>Unidades</td><td class="num">5</td><td class="num">5</td><td class="num">9</td><td class="num">19</td></tr>
+<tr><td>Ventas</td><td class="num">$99,45</td><td class="num">$99,45</td><td class="num">$179,01</td><td class="num">$377,91</td></tr>
+<tr><td>Conversión (pedidos / clics)</td><td class="num">36,4%</td><td class="num">14,7%</td><td class="num">17,0%</td><td class="num">18,4%</td></tr>
+<tr><td>ACoS</td><td class="num ok">18,8%</td><td class="num warn">75,6%</td><td class="num warn">51,6%</td><td class="num warn">49,3%</td></tr>
+<tr class="row-total"><td>Ganancia neta</td><td class="num pos">+$26,34</td><td class="num neg">&minus;$30,19</td><td class="num neg">&minus;$11,32</td><td class="num neg">&minus;$15,17</td></tr>
+<tr><td>Impresiones</td><td class="num">2.046 <small>(panel)</small></td><td class="num">4.080 o más</td><td class="num">10.485 o más</td><td class="num">&mdash;</td></tr>
+<tr><td>CTR</td><td class="num">0,54%</td><td class="num">0,83% o menos</td><td class="num">0,51% o menos</td><td class="num">&mdash;</td></tr>
+</table>
+</div>
+<p><strong>El gasto sube y la pérdida baja.</strong> Se gastó un 23% más que la
+semana 2 y se perdió un 63% menos: el CPC bajó de $2,21 a $1,74 y la conversión
+subió de 14,7% a 17,0%. Las dos cosas empujan para el mismo lado.</p>
+<p>Como siempre: el informe de términos de búsqueda trae <strong>todos los
+clics</strong> pero <strong>sólo las impresiones de las búsquedas que
+recibieron alguno</strong>, así que las impresiones son un piso y el CTR un
+techo. Y Amazon atribuye una compra hasta 7 días después del clic: los clics del
+19 y el 20 todavía pueden sumar ventas, y este informe se bajó el 21.</p>
+</div>
+
+<h2><span class="num">3.</span> Qué se hizo de lo que proponía la semana 2</h2>
+<div class="card">
+<div class="tabla">
+<table>
+<tr><th>Lo que se pidió</th><th>Estado</th><th>Cómo se sabe</th></tr>
+<tr class="row-bien"><td><em>tongue scraper</em> como negativa exacta en PRIMALS</td><td class="ok">Sí</td>
+<td>No aparece ni una vez en PRIMALS esta semana, y la semana pasada era su línea
+más cara (6 clics, $17,04). <em>tongue scraper black</em> y <em>tongue scraper
+with cover</em> sí aparecen, que es lo que deja pasar una negativa exacta.</td></tr>
+<tr><td>Bajar la puja de PRIMALS de $2,84 a $1,20</td><td class="tbd">A medias: quedó en $2,19</td>
+<td>$2,19 se repite en 16 de sus 23 líneas; $2,84 aparece una sola vez. Un CPC
+repetido en muchas búsquedas distintas es la puja de la campaña.</td></tr>
+<tr class="row-mal"><td>Productos negativos: Cafhelp (B088M39G17) y el aceite de sésamo (B008QQF9SS)</td><td class="warn">No</td>
+<td>Cafhelp sigue adentro de las dos campañas: 1.739 impresiones en PRIMALS y
+228 en la automática, dos clics, cero ventas. En tres semanas lleva 3.396
+impresiones, 6 clics y $11,99 sin una sola venta. El aceite de sésamo no
+apareció, pero tampoco había tenido clics antes: no prueba nada.</td></tr>
+<tr class="row-mal"><td>Pasar la segmentación de PRIMALS de ampliada a exacta</td><td class="warn">No</td>
+<td>Apareció en 20 fichas ajenas contra 11 la semana anterior. Si se hubiera
+pasado a exacta, ese número tenía que bajar.</td></tr>
+<tr class="row-mal"><td>Campaña manual en exacta con los 6 términos que convirtieron</td><td class="warn">No</td>
+<td>El informe sigue trayendo dos campañas y dos grupos de anuncios, los de
+siempre. Ninguno de los seis términos tuvo un clic.</td></tr>
+<tr><td>No tocar la automática</td><td class="tbd">Se movió, no se sabe si la tocaron</td>
+<td>Su CPC medio pasó de $0,79 a $0,94 y $1,00 se repite en 5 líneas. Dos
+lecturas posibles: le subieron la puja, o al salir PRIMALS de la subasta de
+<em>tongue scraper</em> la automática heredó ubicaciones más caras. El panel lo
+resuelve en diez segundos.</td></tr>
+<tr class="row-mal"><td>Imagen principal en dos alturas</td><td class="warn">No</td>
+<td>La ficha viva devuelve el mismo archivo (<code>51MqYyt1dBL</code>,
+896&times;1195) que el 14-09.</td></tr>
+<tr class="row-mal"><td>Botón «Solicitar una reseña» en los pedidos</td><td class="warn">Sin efecto visible</td>
+<td>0 reseñas en el bloque propio de la ficha, con 19 unidades vendidas. El
+botón puede haberse tocado y las reseñas no haber llegado: no se puede
+distinguir desde afuera.</td></tr>
+</table>
+</div>
+</div>
+
+<h2><span class="num">4.</span> Las dos campañas venden igual; una paga tres veces más</h2>
+<div class="card">
+<p>Esta es la tabla que corrige la lectura de la semana 2. Con los clics de las
+tres semanas, la conversión de las dos campañas es la misma dentro del error de
+la muestra, y <strong>PRIMALS está arriba</strong>:</p>
+<div class="tabla">
+<table>
+<tr><th>Campaña</th><th class="num">Clics</th><th class="num">Pedidos</th><th class="num">Conversión</th><th class="num">CPC</th><th class="num">Gasto</th><th class="num">ACoS</th><th class="num">Neto</th></tr>
+<tr class="row-mal"><td>PRIMALS (3 semanas)</td><td class="num">69</td><td class="num">13</td><td class="num">18,8%</td><td class="num warn">$2,33</td><td class="num">$160,62</td><td class="num warn">57,7%</td><td class="num neg">&minus;$34,62</td></tr>
+<tr class="row-bien"><td>Automática (3 semanas)</td><td class="num">29</td><td class="num">5</td><td class="num">17,2%</td><td class="num ok">$0,88</td><td class="num">$25,55</td><td class="num ok">25,7%</td><td class="num pos">+$19,45</td></tr>
+</table>
+</div>
+<p><strong>No hay un problema de público, hay un problema de precio.</strong>
+Cada clic de PRIMALS deja en promedio 0,188 &times; $9,00 = $1,69 antes de
+pagarlo, y se paga $2,33: pierde 64 centavos por clic, todas las veces. Cada
+clic de la automática deja $1,55 y cuesta $0,88: gana 67 centavos. Es la misma
+cuenta con el signo cambiado.</p>
+<p>Esto cambia la conclusión práctica: <strong>PRIMALS no hay que apagarla, hay
+que ponerle el precio bien</strong>. Apagarla sería tirar la campaña que trae
+dos de cada tres ventas.</p>
+<div class="tabla">
+<table>
+<tr><th>Campaña</th><th class="num">Conversión</th><th class="num">CPC de equilibrio (ACoS 45,2%)</th><th class="num">CPC a ACoS 30%</th><th class="num">Paga hoy</th></tr>
+<tr><td>PRIMALS</td><td class="num">18,8%</td><td class="num">$1,69</td><td class="num">$1,12</td><td class="num warn">$2,19</td></tr>
+<tr><td>Automática</td><td class="num">17,2%</td><td class="num">$1,55</td><td class="num">$1,03</td><td class="num ok">$0,94</td></tr>
+<tr class="row-total"><td>Las dos juntas</td><td class="num">18,4%</td><td class="num">$1,65</td><td class="num">$1,10</td><td class="num">$1,90</td></tr>
+</table>
+</div>
+<p class="meta">Cuenta: <em>puja máxima = contribución &times; conversión</em>,
+con $9,00 de contribución por unidad y una unidad por pedido (el promedio real
+es 1,06). Las unidades por clic son 19/98 = 19,4%, apenas por encima de la
+conversión por pedidos.</p>
+</div>
+
+<h2><span class="num">5.</span> Dónde se fue la plata: las fichas de otros</h2>
+<div class="card">
+<p>Cuando el informe muestra un ASIN en lugar de una búsqueda, el anuncio salió
+dentro de la ficha de ese producto. Precios y ranking leídos de amazon.com el
+21-09.</p>
+<div class="tabla">
+<table>
+<tr><th>Ficha</th><th class="num">Precio</th><th class="num">Impr.</th><th class="num">Clics</th><th class="num">Gasto</th><th class="num">Unid.</th><th class="num">Neto</th></tr>
+<tr class="row-bien"><td><strong>PRIMALS</strong> Copper Tongue Scraper <small>B0FHBWRWY8 · &#35;19</small></td><td class="num">$24,99</td><td class="num">237</td><td class="num">3</td><td class="num">$5,63</td><td class="num">1</td><td class="num pos">+$3,37</td></tr>
+<tr class="row-bien"><td>2 Pack acero con estuches <small>B0FPGPY7JV · &#35;58</small></td><td class="num">$12,99</td><td class="num">389</td><td class="num">4</td><td class="num">$8,76</td><td class="num">2</td><td class="num pos">+$9,24</td></tr>
+<tr class="row-bien"><td>Tung, kit de cepillo y gel <small>B01EJGV99G · &#35;6</small></td><td class="num">$9,99</td><td class="num">536</td><td class="num">3</td><td class="num">$6,57</td><td class="num">2</td><td class="num pos">+$11,43</td></tr>
+<tr class="row-bien"><td>MasterMedi 2 unid. con estuches <small>B0CDH6DCRC · &#35;1</small></td><td class="num">$9,99</td><td class="num">205</td><td class="num">1</td><td class="num">$2,19</td><td class="num">1</td><td class="num pos">+$6,81</td></tr>
+<tr class="row-mal"><td>MasterMedi 2 unid. multicolor <small>B01LAY47D0 · &#35;1</small></td><td class="num">$9,95</td><td class="num">2.715</td><td class="num">2</td><td class="num">$4,38</td><td class="num">0</td><td class="num neg">&minus;$4,38</td></tr>
+<tr class="row-mal"><td>Cafhelp 2 unid. <small>B088M39G17 · &#35;2 · las dos campañas</small></td><td class="num">$4,99</td><td class="num">1.967</td><td class="num">2</td><td class="num">$3,19</td><td class="num">0</td><td class="num neg">&minus;$3,19</td></tr>
+<tr class="row-mal"><td>MasterMedi 1 unid. <small>B0CHMKXXD3 · &#35;9</small></td><td class="num">$6,49</td><td class="num">545</td><td class="num">4</td><td class="num">$8,17</td><td class="num">0</td><td class="num neg">&minus;$8,17</td></tr>
+<tr class="row-mal"><td>GRIN desechables, 48 unid. <small>B0F3BG428H · &#35;4</small></td><td class="num">$4,99</td><td class="num">497</td><td class="num">2</td><td class="num">$3,57</td><td class="num">0</td><td class="num neg">&minus;$3,57</td></tr>
+<tr class="row-mal"><td>Mouthology 2 unid. <small>B0D7JPW811 · &#35;3</small></td><td class="num">$9,99</td><td class="num">154</td><td class="num">2</td><td class="num">$3,33</td><td class="num">0</td><td class="num neg">&minus;$3,33</td></tr>
+<tr><td colspan="7" class="meta">Las otras 16 fichas tuvieron un clic cada una y
+no se pueden juzgar. Con 19% de conversión, un clic sin compra es lo normal
+cuatro de cada cinco veces.</td></tr>
+</table>
+</div>
+<p><strong>El precio de la ficha vecina separa las dos listas.</strong> Las
+cuatro que vendieron promedian $14,49; las cinco que no vendieron, con dos clics
+o más, promedian $7,88. Tiene la misma lógica que se vio con Cafhelp la semana
+pasada: quien está mirando un raspador de $4,99 no va a pagar $19,89, y quien
+está mirando uno de $24,99 sí.</p>
+<p><strong>Y el volumen está todo del lado equivocado.</strong> Las tres fichas
+más baratas &mdash;MasterMedi $9,95, Cafhelp $4,99 y GRIN $4,99&mdash; se
+llevaron 4.951 impresiones, el 58% de la campaña, y no vendieron una sola
+unidad. Son los tres primeros puestos de la categoría: tienen todo el tráfico y
+ninguno de nuestros compradores.</p>
+<p><strong>El dato lindo de la semana:</strong> el anuncio salió por fin dentro
+de la ficha de <strong>PRIMALS</strong> &mdash;$24,99, el competidor que le da
+nombre a la campaña desde el día uno&mdash; y vendió a los tres clics, con un
+ACoS del 28%. Eso era lo que la campaña iba a hacer.</p>
+</div>
+
+<h2><span class="num">6.</span> Las búsquedas</h2>
+<div class="card">
+<div class="tabla">
+<table>
+<tr><th>Término</th><th>Camp.</th><th class="num">Impr.</th><th class="num">Clics</th><th class="num">Gasto</th><th class="num">Unid.</th><th class="num">ACoS</th><th>Lectura</th></tr>
+<tr><td><em>tongue scraper</em></td><td>auto</td><td class="num">1.480</td><td class="num">6</td><td class="num">$5,67</td><td class="num">1</td><td class="num ok">28,5%</td><td>la genérica, ahora sólo en la automática</td></tr>
+<tr><td><em>tongue cleaner</em></td><td>auto</td><td class="num">107</td><td class="num">3</td><td class="num">$3,00</td><td class="num">1</td><td class="num ok">15,1%</td><td>la misma palabra que en PRIMALS no vendió</td></tr>
+<tr class="row-mal"><td><em>tongue cleaner</em></td><td>PRIMALS</td><td class="num">92</td><td class="num">2</td><td class="num">$4,38</td><td class="num">0</td><td class="num">&mdash;</td><td>$2,19 por clic contra $1,00 de la automática</td></tr>
+<tr class="row-bien"><td><em>tongue scraper black</em></td><td>PRIMALS</td><td class="num">7</td><td class="num">1</td><td class="num">$2,19</td><td class="num">1</td><td class="num ok">11,0%</td><td>7 impresiones y una venta: es nuestro producto exacto</td></tr>
+<tr><td><em>tongue scraper black</em></td><td>auto</td><td class="num">11</td><td class="num">1</td><td class="num">$0,77</td><td class="num">0</td><td class="num">&mdash;</td><td></td></tr>
+<tr><td><em>tongue scraper with cover</em></td><td>PRIMALS</td><td class="num">11</td><td class="num">1</td><td class="num">$2,19</td><td class="num">0</td><td class="num">&mdash;</td><td>nuestro diferencial, con once impresiones</td></tr>
+<tr><td><em>tongue brush</em></td><td>auto</td><td class="num">32</td><td class="num">1</td><td class="num">$1,00</td><td class="num">0</td><td class="num">&mdash;</td><td>convirtió 2 veces en la semana 1 y sigue sin campaña propia</td></tr>
+</table>
+</div>
+<p><strong>La misma palabra sigue comprándose a dos precios.</strong> Esta
+semana le tocó a <em>tongue cleaner</em>: la automática pagó $1,00 el clic y
+vendió; PRIMALS pagó $2,19 dos veces y no vendió. Es el caso de
+<em>tongue scraper</em> de la semana pasada, más chico. Se arregla igual: o
+negativa exacta en PRIMALS, o la puja de PRIMALS abajo del techo.</p>
+<p><strong>Con la negativa puesta, la automática heredó el tráfico de
+<em>tongue scraper</em>&hellip; y lo aprovechó peor.</strong> Las impresiones de
+esa búsqueda pasaron de 170 a 1.480 &mdash;ocho veces&mdash; y los clics apenas
+de 4 a 6: el CTR cayó de 2,4% a <strong>0,41%</strong>. Ocho veces más gente vio
+el anuncio y casi nadie lo tocó, que es lo que pasa cuando se gana la subasta en
+ubicaciones de abajo en vez de arriba de los resultados. Es el argumento más
+fuerte que hay hasta ahora para la imagen principal: el anuncio ahora se
+<em>muestra</em>, y no lo miran.</p>
+<p><strong>Los términos que convirtieron siguen apareciendo de a un clic.</strong>
+<em>tongue scraper black</em> vendió con siete impresiones; <em>tongue brush</em>,
+que vendió dos unidades en la semana 1, no volvió a convertir. Sin campaña
+manual, nada garantiza que el anuncio vuelva a salir ahí.</p>
+</div>
+
+<h2><span class="num">7.</span> Cuánto se puede pagar por un clic</h2>
+<div class="card">
+<p class="formula"><strong>puja máxima = contribución &times; conversión</strong></p>
+<div class="tabla">
+<table>
+<tr><th>Con la conversión de&hellip;</th><th class="num">Equilibrio (ACoS 45,2%)</th><th class="num">Objetivo (ACoS 30%)</th></tr>
+<tr><td>Semana 1 (36,4%, 11 clics)</td><td class="num">$3,27</td><td class="num">$2,17</td></tr>
+<tr><td>Semana 2 (14,7%, 34 clics)</td><td class="num">$1,32</td><td class="num">$0,88</td></tr>
+<tr><td>Semana 3 (17,0%, 53 clics)</td><td class="num">$1,53</td><td class="num">$1,01</td></tr>
+<tr class="row-total"><td>Las tres semanas (18,4%, 98 clics)</td><td class="num">$1,65</td><td class="num">$1,10</td></tr>
+</table>
+</div>
+<p>Con 98 clics acumulados, la conversión dejó de moverse: 18,4% contra el 20,0%
+que daban dos semanas. <strong>El techo está en $1,65 y el precio sensato en
+$1,10.</strong> PRIMALS paga $2,19 y la automática $0,94.</p>
+<h2>Proyección de las 1.000 unidades</h2>
+<div class="tabla">
+<table>
+<tr><th>Escenario</th><th class="num">Publicidad por unidad</th><th class="num">ACoS</th><th class="num">Publicidad total</th><th class="num">Neto del ciclo</th><th class="num">Sobre el capital*</th></tr>
+<tr><td>Como la semana 3</td><td class="num">$10,26</td><td class="num">51,6%</td><td class="num">$10.258</td><td class="num neg">&minus;$1.258</td><td class="num neg">&minus;36%</td></tr>
+<tr><td>Como las tres semanas juntas</td><td class="num">$9,80</td><td class="num">49,3%</td><td class="num">$9.798</td><td class="num neg">&minus;$798</td><td class="num neg">&minus;23%</td></tr>
+<tr><td>Equilibrio</td><td class="num">$9,00</td><td class="num">45,2%</td><td class="num">$9.000</td><td class="num">$0</td><td class="num">0%</td></tr>
+<tr class="row-bien"><td>ACoS objetivo del 30%</td><td class="num">$5,97</td><td class="num">30,0%</td><td class="num">$5.967</td><td class="num pos">+$3.033</td><td class="num pos">+88%</td></tr>
+<tr><td>Como la automática sola (3 semanas)</td><td class="num">$5,11</td><td class="num">25,7%</td><td class="num">$5.110</td><td class="num pos">+$3.890</td><td class="num pos">+113%</td></tr>
+</table>
+</div>
+<p class="meta">* Capital en mercadería: 1.000 &times; $3,45 = $3.450. La
+automática sola son 5 unidades en tres semanas: muestra que esa campaña
+funciona, no que venda las 1.000 a ese costo.</p>
+</div>
+
+<h2><span class="num">8.</span> El presupuesto</h2>
+<div class="card">
+<div class="tabla">
+<table>
+<tr><th>Campaña</th><th class="num">Tope del plan</th><th class="num">Gasto/día, sem. 2</th><th class="num">Gasto/día, sem. 3</th><th class="num">Uso del tope</th></tr>
+<tr><td>Automática</td><td class="num">$14,00</td><td class="num">$0,91</td><td class="num">$2,14</td><td class="num">15%</td></tr>
+<tr><td>PRIMALS</td><td class="num">$8,00</td><td class="num">$9,83</td><td class="num warn">$11,05</td><td class="num warn">138%</td></tr>
+<tr class="row-total"><td>Total</td><td class="num">$22,00</td><td class="num">$10,74</td><td class="num">$13,19</td><td class="num">60%</td></tr>
+</table>
+</div>
+<p><strong>La automática se despertó sola:</strong> pasó de $0,91 a $2,14 por
+día sin que nadie le tocara el presupuesto, porque heredó las subastas que soltó
+PRIMALS. Sigue usando el 15% de su tope: <strong>subirle el presupuesto sigue
+sin cambiar nada</strong>.</p>
+<p><strong>PRIMALS está 38% arriba de su tope del plan por segunda semana
+seguida.</strong> O el presupuesto configurado no es el del plan, o la campaña
+viene comiéndose el margen mensual que Amazon permite y en algún momento se va a
+frenar sola. Hay que mirarlo en el panel: es la campaña que pierde plata, así
+que frenarse no la perjudica, pero conviene saber cuál de las dos cosas está
+pasando.</p>
+</div>
+
+<h2><span class="num">9.</span> La ficha viva, al 21-09</h2>
+<div class="card">
+<div class="tabla">
+<table>
+<tr><th></th><th>14-09</th><th>21-09</th><th>Lectura</th></tr>
+<tr><td>Ranking en la categoría</td><td>&#35;191</td><td class="ok">&#35;158</td><td>en <em>Tongue Brushes, Scrapers &amp; Cleaners</em>. Sube con las ventas, y esta semana hubo 9</td></tr>
+<tr><td>Ranking general</td><td>&mdash;</td><td>&#35;155.653</td><td>en <em>Health &amp; Household</em></td></tr>
+<tr><td>Reseñas</td><td>0</td><td class="warn">0</td><td>19 unidades vendidas y ninguna reseña</td></tr>
+<tr><td>Título</td><td>el nuevo</td><td>el nuevo</td><td><em>Tongue Scraper for Adults (3 Pack) with Travel Case &mdash; Black Stainless Steel Tongue Cleaner</em></td></tr>
+<tr><td>Imagen principal</td><td><code>51MqYyt1dBL</code></td><td class="warn"><code>51MqYyt1dBL</code></td><td>el mismo archivo: no se cambió</td></tr>
+<tr><td>Precio</td><td>$19,89</td><td>$19,89</td><td>sin cambios</td></tr>
+</table>
+</div>
+<p class="meta"><strong>Cuidado con las estrellas.</strong> La ficha devuelve
+&laquo;4,3&raquo;, pero el bloque propio del ASIN &mdash;el que lleva
+<code>data-csa-c-asin="B0H6QZGX56"</code>&mdash; no trae ninguna reseña: ese 4,3
+es de un carrusel de productos parecidos. Sigue en cero.</p>
+</div>
+
+<div class="card tips">
+<h2>Qué hacer en la semana 4</h2>
+<p><strong>1. La puja de PRIMALS a $1,20, ahora sí.</strong> Es la única palanca
+que mueve el resultado, y la evidencia ya no admite dudas: la campaña convierte
+bien (18,8% sobre 69 clics) y empata a $1,69. A $2,19 pierde 50 centavos por
+clic; a $1,20 gana 49. Es el mismo pedido de la semana pasada, con una semana
+más de datos que lo confirma. Si la campaña tiene ajuste de <em>Top of search</em>
+o pujas dinámicas «subir y bajar», sacarlos: son lo que explica el $2,84 suelto.</p>
+
+<p><strong>2. Tres productos negativos, por precio.</strong> En las dos
+campañas: <strong>B088M39G17</strong> (Cafhelp, $4,99 &mdash; 3.396 impresiones
+y 6 clics en tres semanas, cero ventas), <strong>B0F3BG428H</strong> (GRIN
+desechables, $4,99) y <strong>B0CHMKXXD3</strong> (MasterMedi 1 unidad, $6,49
+&mdash; 4 clics, $8,17, cero ventas). El criterio no es sólo la falta de venta
+&mdash;con 4 clics eso pasa el 43% de las veces por azar&mdash; sino que ninguno
+de los tres puede convertir: nadie que esté mirando un raspador de $4,99 paga
+$19,89. Los de $9,95 y $9,99 que todavía no vendieron se dejan otra semana.</p>
+
+<p><strong>3. Segmentar PRIMALS por producto exacto, a las cuatro que
+funcionan.</strong> B0FHBWRWY8 (PRIMALS, $24,99), B0FPGPY7JV ($12,99),
+B01EJGV99G ($9,99) y B0CDH6DCRC ($9,99). Hoy la campaña se abre a 20 fichas y
+acierta en cuatro; el 58% de sus impresiones van a las tres más baratas, que no
+compran. Esto y la puja son la misma idea: dejar de pagar caro por tráfico que
+no convierte.</p>
+
+<p><strong>4. La campaña manual en exacta, que sigue sin hacerse.</strong>
+Puja $1,20, presupuesto $5/día, sin ajuste de ubicación:
+<em>tongue brush</em> · <em>tongue scraper stainless steel</em> ·
+<em>tongue scraper dr tung</em> · <em>tongue scrapper</em> ·
+<em>tongue scraper black</em> · <em>tongue scraper with case</em> ·
+<em>tongue scraper travel</em>. Se le suma <em>tongue scraper black</em>, que
+vendió esta semana con siete impresiones. <strong>No</strong> incluir
+<em>tongue scraper</em> ni <em>tongue cleaner</em>: las dos convierten en la
+automática a menos de $1,00 y ponerlas en otra campaña es volver a pagarse el
+clic a uno mismo.</p>
+
+<p><strong>5. La imagen principal, que ahora tiene un argumento
+medido.</strong> El anuncio pasó a tener ocho veces más impresiones en
+<em>tongue scraper</em> y el CTR cayó a 0,41%. Cuando el problema era «no nos
+ven», la imagen podía esperar; ahora nos ven y no nos tocan. Sigue en pie la
+propuesta: foto en dos alturas &mdash;estuche arriba, tres raspadores parados
+abajo, sin la caja&mdash;, cuadrada de 1.600 px, fondo blanco, sin texto.</p>
+
+<p><strong>6. Las reseñas, que son el freno de fondo.</strong> 19 unidades
+vendidas y cero reseñas. Los competidores que nos ganan las subastas tienen
+miles. El botón «Solicitar una reseña» en cada pedido entregado es gratis y hay
+que tocarlo todas las semanas; lo que mueve la aguja de verdad es Vine, y Vine
+necesita Brand Registry, y Brand Registry necesita la marca por IP Accelerator.
+Cada semana que pasa sin decidir eso es una semana más vendiendo sin prueba
+social. Detalle en la <a href="resenas-zriceros.html">hoja de reseñas</a>.</p>
+
+<p><strong>7. Lo que hay que anotar del panel</strong>, que el informe no trae:
+presupuesto diario configurado de cada campaña, puja y estrategia de puja de la
+automática (¿le subieron algo esta semana?), ajustes por ubicación en PRIMALS, y
+si la segmentación de PRIMALS es ampliada o exacta.</p>
+</div>
+
+<div class="card critique">
+<h2>Lo que esta hoja no puede afirmar</h2>
+<ul>
+<li><strong>Que la negativa se cargó.</strong> Lo único que se ve es que
+<em>tongue scraper</em> dejó de aparecer en PRIMALS. Eso es lo que hace una
+negativa exacta, pero también podría ser casualidad: hay que verlo en la
+campaña.</li>
+<li><strong>Que $2,19 es la puja.</strong> Es el CPC que se repite en 16
+líneas, que es la mejor señal disponible desde afuera. Amazon cobra el precio
+del segundo, así que la puja real puede ser algo más alta.</li>
+<li><strong>Que la automática no se tocó.</strong> Su CPC subió 19% y no se
+puede separar una suba de puja de un cambio de ubicaciones.</li>
+<li><strong>Nada sobre las fichas de un solo clic.</strong> Son 16 de las 20 en
+las que apareció PRIMALS. Un clic sin compra es lo normal.</li>
+<li><strong>Que las 9 ventas son definitivas.</strong> Amazon atribuye hasta 7
+días después del clic; los últimos días de este informe todavía pueden
+sumar.</li>
+<li><strong>Por qué cayó el CTR de la automática.</strong> «Ubicaciones peores»
+es la explicación más probable, pero el informe de términos no trae ubicación:
+eso sale del informe de ubicación en el panel.</li>
+</ul>
+</div>
+
+<hr style="margin-top:40px;border:0;border-top:1px solid #e0e0e0">
+<p class="meta"><strong>Fuentes.</strong> Informe de términos de búsqueda de
+Sponsored Products del 14 al 20 de septiembre, descargado el 21-09. Ficha viva
+de B0H6QZGX56 y de los 9 productos de la sección 5, leídas de amazon.com el
+21-09. Contribución de $9,00 por unidad y equilibrio de 45,2%, de la calculadora
+de Amazon (detalle en la <a href="reporte-campanas-zriceros.html">hoja de la
+semana 1</a>).</p>
+
+<!-- pie-menu -->
+<nav class="zp" aria-label="Hoja anterior y siguiente"><a href="reporte-campanas-zriceros-semana-2.html"><small>← Anterior</small>Seguimiento de Ads · Semana 2</a></nav>
+<!-- /pie-menu -->
+
+<footer>Zriceros Tongue Scraper · B0H6QZGX56 · avances de Amazon Ads ·
+semana 3 (14 – 20 sep 2026) · generado 2026-09-21</footer>
+</body>
+</html>
