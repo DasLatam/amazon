@@ -85,6 +85,11 @@
   table.p-mini { margin: 6px 0 0; font-size: 12.5px; }
   table.p-mini th { background: #f5f5f5; }
   ol.pasos code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+  .p-registro { margin-top: 12px; padding: 10px 12px; background: #fffaf0;
+    border: 1px dashed #ffd27f; border-radius: 6px; }
+  .p-registro table.p-mini { margin: 0; }
+  .p-registro table.p-mini th { width: 60%; background: transparent; font-weight: 400; }
+  .p-registro p.meta { margin: 8px 0 0; }
   @media (max-width: 640px) {
     .kpis { grid-template-columns: repeat(2, 1fr); }
     ol.pasos > li { padding-left: 16px; }
@@ -668,9 +673,7 @@ los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
 </table>
 <div class="p-registro">
 <!-- registro-resenas -->
-<p class="meta">Registro de solicitudes: todavía vacío.
-  <code>datos/resenas_solicitadas.csv</code> está creado con las columnas y una
-  fila de ejemplo comentada.</p>
+<p class="meta">Registro de solicitudes: todavía vacío. <code>datos/resenas_solicitadas.csv</code> está creado con las columnas; se llena con los pedidos de Seller Central.</p>
 <!-- /registro-resenas -->
 </div></li>
 
