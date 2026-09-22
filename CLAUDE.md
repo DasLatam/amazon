@@ -27,6 +27,16 @@ Una hoja por semana: `reporte-campanas-zriceros.html` (semana 1),
 desde `index.html`. Las hojas viejas no se reescriben: si un número de una semana
 anterior resultó mal, se agrega una nota de corrección.
 
+**La hoja cierra con un paso a paso, no con propuestas.** Desde la semana 3
+(pedido de Ariel: *«pones un paso a paso al final como los proximos pasos pero
+mas detallado»*) la última sección es «Los próximos pasos, uno por uno» (ancla
+`#pasos`): un paso por acción, numerado por impacto, y cada uno con las mismas
+cinco filas —**dónde** tocar en el panel, **qué** poner, **por qué**, qué **no**
+hacer y **cómo se verifica** en el informe de la semana siguiente—. Cierra con
+una tabla de predicción: qué tendría que dar la semana próxima si el plan sirve,
+y qué significa cada número si no da. Una propuesta que no dice cómo se comprueba
+vuelve a discutirse entera la semana que viene.
+
 **Cómo llegan los datos:** Ariel deja el CSV del informe de términos de búsqueda en
 el compartido SMB de srvnvidia (`smb://SRVNVIDIA._smb._tcp.local/shared/amazon/`),
 que en el server es **`/home/hpp/shared/amazon/`**. Se copia a `datos/` con nombre

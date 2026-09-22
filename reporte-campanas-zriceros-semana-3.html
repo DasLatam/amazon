@@ -68,7 +68,29 @@
   .row-bien td { background: #ecf9f1; }
   .formula { font-size: 17px; text-align: center; margin: 18px 0; }
   footer { margin-top: 50px; font-size: 12px; color: #999; text-align: center; }
-  @media (max-width: 640px) { .kpis { grid-template-columns: repeat(2, 1fr); } }
+  ol.pasos { counter-reset: paso; list-style: none; padding: 0; margin: 18px 0 0; }
+  ol.pasos > li { counter-increment: paso; position: relative;
+    margin: 0 0 22px; padding: 14px 16px 16px 52px; background: #fff;
+    border: 1px solid #ffe2a8; border-radius: 8px; }
+  ol.pasos > li::before { content: counter(paso); position: absolute; left: 14px; top: 14px;
+    width: 26px; height: 26px; border-radius: 50%; background: #cc8400; color: #fff;
+    font-weight: 700; font-size: 14px; text-align: center; line-height: 26px; }
+  .p-tit { display: block; font-size: 15.5px; font-weight: 700; color: #232f3e; }
+  .p-tag { display: block; font-size: 11.5px; color: #8a5b00; text-transform: uppercase;
+    letter-spacing: .4px; margin: 2px 0 10px; }
+  table.p-tab { margin: 0; font-size: 13.5px; }
+  table.p-tab > tbody > tr > th { width: 150px; background: #fffaf0; font-size: 12.5px;
+    color: #8a5b00; vertical-align: top; text-align: left; }
+  table.p-tab ul, table.p-tab ol { margin: 0; padding-left: 20px; }
+  table.p-mini { margin: 6px 0 0; font-size: 12.5px; }
+  table.p-mini th { background: #f5f5f5; }
+  ol.pasos code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+  @media (max-width: 640px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    ol.pasos > li { padding-left: 16px; }
+    ol.pasos > li::before { position: static; display: inline-block; margin-right: 8px; }
+    table.p-tab > tbody > tr > th { width: auto; }
+  }
 </style>
 </head>
 <body><!-- menu -->
@@ -410,61 +432,262 @@ pasando.</p>
 es de un carrusel de productos parecidos. Sigue en cero.</p>
 </div>
 
-<div class="card tips">
-<h2>Qué hacer en la semana 4</h2>
-<p><strong>1. La puja de PRIMALS a $1,20, ahora sí.</strong> Es la única palanca
-que mueve el resultado, y la evidencia ya no admite dudas: la campaña convierte
-bien (18,8% sobre 69 clics) y empata a $1,69. A $2,19 pierde 50 centavos por
-clic; a $1,20 gana 49. Es el mismo pedido de la semana pasada, con una semana
-más de datos que lo confirma. Si la campaña tiene ajuste de <em>Top of search</em>
-o pujas dinámicas «subir y bajar», sacarlos: son lo que explica el $2,84 suelto.</p>
+<div class="card tips" id="pasos">
+<h2>Los próximos pasos, uno por uno</h2>
+<p><strong>Están en orden de impacto, no de comodidad.</strong> Los pasos 1 a 4
+se hacen en Campaign Manager y son los que mueven el resultado de la semana 4:
+son unos quince minutos en total. Del 5 al 9 son los que mueven el resultado del
+mes. El 10 es la única cosa que hay que hacer sin falta el lunes, porque sin eso
+no hay semana 5.</p>
+<p class="meta">Los nombres de los botones son los del panel en español; Amazon
+los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
 
-<p><strong>2. Tres productos negativos, por precio.</strong> En las dos
-campañas: <strong>B088M39G17</strong> (Cafhelp, $4,99 &mdash; 3.396 impresiones
-y 6 clics en tres semanas, cero ventas), <strong>B0F3BG428H</strong> (GRIN
-desechables, $4,99) y <strong>B0CHMKXXD3</strong> (MasterMedi 1 unidad, $6,49
-&mdash; 4 clics, $8,17, cero ventas). El criterio no es sólo la falta de venta
-&mdash;con 4 clics eso pasa el 43% de las veces por azar&mdash; sino que ninguno
-de los tres puede convertir: nadie que esté mirando un raspador de $4,99 paga
-$19,89. Los de $9,95 y $9,99 que todavía no vendieron se dejan otra semana.</p>
+<ol class="pasos">
 
-<p><strong>3. Segmentar PRIMALS por producto exacto, a las cuatro que
-funcionan.</strong> B0FHBWRWY8 (PRIMALS, $24,99), B0FPGPY7JV ($12,99),
-B01EJGV99G ($9,99) y B0CDH6DCRC ($9,99). Hoy la campaña se abre a 20 fichas y
-acierta en cuatro; el 58% de sus impresiones van a las tres más baratas, que no
-compran. Esto y la puja son la misma idea: dejar de pagar caro por tráfico que
-no convierte.</p>
+<li><span class="p-tit">Bajar la puja de PRIMALS de $2,19 a $1,20</span>
+<span class="p-tag">≈3 min · es el paso que más mueve</span>
+<table class="p-tab">
+<tr><th>Dónde</th><td>Campaign Manager &rarr; <em>Campañas</em> &rarr;
+  <em>Campaña - 9/1/2026 PRIMALS</em> &rarr; el grupo de anuncios
+  <em>Grupo raspador - 9/1/2026</em> &rarr; pestaña de segmentación
+  (<em>Segmentación por productos</em>).</td></tr>
+<tr><th>Qué hacer</th><td>Poner <strong>$1,20</strong> en la puja de cada
+  objetivo. Si aparece la opción de edición masiva, seleccionar todo y usar
+  «establecer puja».</td></tr>
+<tr><th>Y además</th><td>En <em>Configuración de la campaña</em>:
+  <ol type="a"><li>estrategia de puja en <strong>«Pujas dinámicas: solo
+  reducir»</strong> (si está en «subir y bajar», eso explica el $2,84 suelto que
+  todavía aparece en el informe);</li>
+  <li><strong>borrar cualquier ajuste por ubicación</strong> (Top of search /
+  Product pages) y dejarlos en 0%.</li></ol></td></tr>
+<tr><th>Por qué</th><td>Con 69 clics acumulados PRIMALS convierte el 18,8%, así
+  que cada clic vale $1,69 antes de pagarlo. A $2,19 pierde 50 centavos cada
+  vez; a $1,20 gana 49. Es la misma cuenta con el signo cambiado, y no depende
+  de ninguna suposición.</td></tr>
+<tr><th>Cómo se verifica</th><td>En el informe de la semana que viene, el CPC
+  que se repita en la mayoría de las líneas de PRIMALS tiene que ser
+  <strong>$1,20 o menos</strong>. Si sigue apareciendo $2,19, la puja no se
+  guardó o hay un ajuste por ubicación arriba.</td></tr>
+</table></li>
 
-<p><strong>4. La campaña manual en exacta, que sigue sin hacerse.</strong>
-Puja $1,20, presupuesto $5/día, sin ajuste de ubicación:
-<em>tongue brush</em> · <em>tongue scraper stainless steel</em> ·
-<em>tongue scraper dr tung</em> · <em>tongue scrapper</em> ·
-<em>tongue scraper black</em> · <em>tongue scraper with case</em> ·
-<em>tongue scraper travel</em>. Se le suma <em>tongue scraper black</em>, que
-vendió esta semana con siete impresiones. <strong>No</strong> incluir
-<em>tongue scraper</em> ni <em>tongue cleaner</em>: las dos convierten en la
-automática a menos de $1,00 y ponerlas en otra campaña es volver a pagarse el
-clic a uno mismo.</p>
+<li><span class="p-tit">Apuntar PRIMALS a las cuatro fichas que sí convierten</span>
+<span class="p-tag">≈5 min · el 58% del gasto está en las que no compran</span>
+<table class="p-tab">
+<tr><th>Dónde</th><td>Mismo grupo de anuncios, misma pestaña de segmentación por
+  productos.</td></tr>
+<tr><th>Qué hacer</th><td>Pausar la segmentación amplia o por categoría que hoy
+  lo abre a 20 fichas, y dejar <strong>cuatro objetivos de producto
+  individuales, en exacto</strong>, a $1,20:
+  <table class="p-mini">
+  <tr><th>ASIN</th><th class="num">Precio</th><th class="num">Clics</th><th class="num">Unid.</th><th>Qué es</th></tr>
+  <tr><td>B0FHBWRWY8</td><td class="num">$24,99</td><td class="num">3</td><td class="num">1</td><td>PRIMALS Copper — el competidor que le da nombre a la campaña</td></tr>
+  <tr><td>B0FPGPY7JV</td><td class="num">$12,99</td><td class="num">4</td><td class="num">2</td><td>2 pack de acero con estuches</td></tr>
+  <tr><td>B01EJGV99G</td><td class="num">$9,99</td><td class="num">3</td><td class="num">2</td><td>Tung, kit de cepillo y gel</td></tr>
+  <tr><td>B0CDH6DCRC</td><td class="num">$9,99</td><td class="num">1</td><td class="num">1</td><td>MasterMedi 2 unid. con estuches</td></tr>
+  </table></td></tr>
+<tr><th>Por qué</th><td>Hoy la campaña acierta en cuatro de veinte fichas y el
+  58% de sus impresiones se las llevan las tres más baratas, que no compraron
+  nunca. Esto y el paso 1 son la misma idea: dejar de pagar caro por tráfico que
+  no convierte.</td></tr>
+<tr><th>Cuidado</th><td>B0CDH6DCRC tiene <strong>un solo clic</strong>. Va en la
+  lista porque es el mismo producto y el mismo precio que las otras dos que
+  convirtieron, no porque un clic pruebe algo.</td></tr>
+<tr><th>Cómo se verifica</th><td>La cantidad de ASIN distintos en las líneas de
+  PRIMALS tiene que caer de 20 a <strong>4 o 5</strong>. Si sigue en dos
+  dígitos, la segmentación amplia quedó activa.</td></tr>
+</table></li>
 
-<p><strong>5. La imagen principal, que ahora tiene un argumento
-medido.</strong> El anuncio pasó a tener ocho veces más impresiones en
-<em>tongue scraper</em> y el CTR cayó a 0,41%. Cuando el problema era «no nos
-ven», la imagen podía esperar; ahora nos ven y no nos tocan. Sigue en pie la
-propuesta: foto en dos alturas &mdash;estuche arriba, tres raspadores parados
-abajo, sin la caja&mdash;, cuadrada de 1.600 px, fondo blanco, sin texto.</p>
+<li><span class="p-tit">Tres productos negativos, en las dos campañas</span>
+<span class="p-tag">≈4 min</span>
+<table class="p-tab">
+<tr><th>Dónde</th><td>En cada campaña: grupo de anuncios &rarr;
+  <em>Segmentación negativa</em> &rarr; <em>Productos negativos</em>. Hay que
+  hacerlo <strong>dos veces</strong>, una en PRIMALS y una en la automática:
+  Cafhelp está en las dos.</td></tr>
+<tr><th>Qué hacer</th><td>Agregar como producto negativo:
+  <table class="p-mini">
+  <tr><th>ASIN</th><th class="num">Precio</th><th>Evidencia</th></tr>
+  <tr><td>B088M39G17</td><td class="num">$4,99</td><td>Cafhelp: 3.396 impresiones y 6 clics en tres semanas, <strong>0 ventas</strong>. Ya estaba propuesta la semana pasada</td></tr>
+  <tr><td>B0F3BG428H</td><td class="num">$4,99</td><td>GRIN desechables 48 unid.: 2 clics, 0 ventas. Ni es el mismo producto</td></tr>
+  <tr><td>B0CHMKXXD3</td><td class="num">$6,49</td><td>MasterMedi 1 unidad: 4 clics, $8,17, 0 ventas</td></tr>
+  </table></td></tr>
+<tr><th>Por qué</th><td>El criterio <strong>no</strong> es que no vendieron
+  —con 4 clics eso pasa el 43% de las veces por puro azar— sino que
+  <strong>no pueden</strong> vender: nadie que esté mirando un raspador de $4,99
+  paga $19,89. Es el mismo argumento que la hoja de la semana 2 usó con Cafhelp,
+  ahora con tres semanas de datos.</td></tr>
+<tr><th>Lo que NO hay que negativizar todavía</th><td>B01LAY47D0 ($9,95) y
+  B0D7JPW811 ($9,99): dos clics no alcanzan para juzgarlas, y están en la franja
+  de precio donde sí vendimos. Se dejan una semana más.</td></tr>
+<tr><th>Cómo se verifica</th><td>Los tres ASIN no vuelven a aparecer en ninguna
+  de las dos campañas. Si el paso 2 se hizo bien, este paso es casi redundante
+  en PRIMALS, pero en la automática hace falta igual.</td></tr>
+</table></li>
 
-<p><strong>6. Las reseñas, que son el freno de fondo.</strong> 19 unidades
-vendidas y cero reseñas. Los competidores que nos ganan las subastas tienen
-miles. El botón «Solicitar una reseña» en cada pedido entregado es gratis y hay
-que tocarlo todas las semanas; lo que mueve la aguja de verdad es Vine, y Vine
-necesita Brand Registry, y Brand Registry necesita la marca por IP Accelerator.
-Cada semana que pasa sin decidir eso es una semana más vendiendo sin prueba
-social. Detalle en la <a href="resenas-zriceros.html">hoja de reseñas</a>.</p>
+<li><span class="p-tit">«tongue cleaner» como negativa exacta en PRIMALS</span>
+<span class="p-tag">≈2 min</span>
+<table class="p-tab">
+<tr><th>Dónde</th><td>PRIMALS &rarr; grupo de anuncios &rarr;
+  <em>Segmentación negativa</em> &rarr; <em>Palabras clave negativas</em> &rarr;
+  concordancia <strong>exacta</strong>.</td></tr>
+<tr><th>Qué hacer</th><td>Agregar <code>tongue cleaner</code>. Nada más: en
+  exacta, no en frase.</td></tr>
+<tr><th>Por qué</th><td>Es el caso de <em>tongue scraper</em> de la semana
+  pasada, más chico: la automática la compró a $1,00 y vendió; PRIMALS la pagó
+  $2,19 dos veces y no vendió. Mientras las dos campañas puedan entrar a la
+  misma subasta, gana la de puja más alta y el clic sale al triple.</td></tr>
+<tr><th>Si la campaña no tiene la pestaña</th><td>Una campaña de segmentación
+  por productos puede no tener palabras negativas. En ese caso alcanza con el
+  paso 2: con los cuatro objetivos exactos, PRIMALS deja de salir en búsquedas
+  genéricas por su cuenta.</td></tr>
+<tr><th>Cómo se verifica</th><td><em>tongue cleaner</em> aparece sólo en la
+  automática. <strong>Ojo:</strong> en exacta, <em>tongue cleaner brush</em> o
+  <em>best tongue cleaner</em> siguen pudiendo aparecer, y eso está bien.</td></tr>
+</table></li>
 
-<p><strong>7. Lo que hay que anotar del panel</strong>, que el informe no trae:
-presupuesto diario configurado de cada campaña, puja y estrategia de puja de la
-automática (¿le subieron algo esta semana?), ajustes por ubicación en PRIMALS, y
-si la segmentación de PRIMALS es ampliada o exacta.</p>
+<li><span class="p-tit">Crear la campaña manual en exacta (pendiente desde la semana 2)</span>
+<span class="p-tag">≈10 min · se hace una vez y queda</span>
+<table class="p-tab">
+<tr><th>Dónde</th><td>Campaign Manager &rarr; <em>Crear campaña</em> &rarr;
+  Sponsored Products &rarr; <em>Segmentación manual</em> &rarr;
+  <em>Segmentación por palabras clave</em>.</td></tr>
+<tr><th>Configuración</th><td><ul>
+  <li>Nombre sugerido: <code>Manual exacta - 9/22/2026</code></li>
+  <li>Presupuesto diario: <strong>$5</strong></li>
+  <li>Estrategia de puja: <strong>pujas dinámicas, solo reducir</strong></li>
+  <li>Ajustes por ubicación: <strong>ninguno (0%)</strong></li>
+  <li>Producto: sólo <strong>B0H6QZGX56</strong></li>
+  <li>Concordancia: <strong>exacta</strong> · puja <strong>$1,20</strong> en todas</li>
+  </ul></td></tr>
+<tr><th>Las palabras</th><td><table class="p-mini">
+  <tr><th>Término</th><th>Por qué está</th></tr>
+  <tr><td><code>tongue brush</code></td><td>2 unidades en la semana 1 con un clic; no volvió a aparecer</td></tr>
+  <tr><td><code>tongue scraper black</code></td><td><strong>nueva:</strong> vendió en la semana 3 con 7 impresiones</td></tr>
+  <tr><td><code>tongue scraper stainless steel</code></td><td>vendió en la semana 1</td></tr>
+  <tr><td><code>tongue scraper dr tung</code></td><td>vendió en la semana 1</td></tr>
+  <tr><td><code>tongue scrapper</code></td><td>mal escrita y vendió en la semana 2</td></tr>
+  <tr><td><code>tongue scraper with case</code></td><td>es nuestro diferencial</td></tr>
+  <tr><td><code>tongue scraper travel</code></td><td>es nuestro diferencial</td></tr>
+  </table></td></tr>
+<tr><th>Las dos que NO van</th><td><code>tongue scraper</code> y
+  <code>tongue cleaner</code>. Las dos convierten en la automática a menos de
+  $1,00: ponerlas acá es pagarse el clic a uno mismo, que es exactamente el
+  problema que tuvimos con PRIMALS.</td></tr>
+<tr><th>Y después</th><td>Agregar esos <strong>siete términos como negativas
+  exactas en la automática</strong>, para que no compitan entre ellas.</td></tr>
+<tr><th>Por qué</th><td>Fuera de <em>tongue scraper</em>, cada término que
+  convirtió tuvo un solo clic y no se repitió. No es escalar: es no perder esas
+  búsquedas cuando PRIMALS baje a $1,20, que es de donde venían.</td></tr>
+<tr><th>Cómo se verifica</th><td>Aparece una tercera campaña en el informe. Un
+  término con <strong>cero impresiones</strong> a $1,20 también es un dato: no
+  vale lo que cuesta, y se saca sin culpa.</td></tr>
+</table></li>
+
+<li><span class="p-tit">A la automática: no tocarla, sólo anotar su puja</span>
+<span class="p-tag">≈1 min</span>
+<table class="p-tab">
+<tr><th>Qué hacer</th><td><strong>Nada.</strong> Anotar la puja y la estrategia
+  de puja que tiene configuradas hoy, y mandarlas.</td></tr>
+<tr><th>Por qué</th><td>Su CPC medio subió de $0,79 a $0,94 esta semana y de
+  afuera no se puede distinguir si le subieron la puja o si heredó ubicaciones
+  más caras al salir PRIMALS de la subasta. Con el número del panel se resuelve
+  en diez segundos. Y sigue siendo la campaña que gana plata y la que mide el
+  efecto del título nuevo: cada cambio que se le haga arruina esa
+  medición.</td></tr>
+<tr><th>Lo que sí no hay que hacer</th><td>Subirle el presupuesto. Usa el 15%
+  de su tope: el tope que no se usa no compra impresiones. Si en la semana 4 su
+  gasto sigue creciendo solo, la suba de puja se evalúa en la semana 5.</td></tr>
+</table></li>
+
+<li><span class="p-tit">Los cinco datos del panel que el informe no trae</span>
+<span class="p-tag">≈5 min · sin esto la semana 4 se lee a ciegas</span>
+<table class="p-tab">
+<tr><th>Qué anotar</th><td><ol type="a">
+  <li>Presupuesto diario <strong>configurado</strong> de cada campaña (PRIMALS
+  viene gastando $11,05 por día contra los $8 del plan: hay que saber si el tope
+  es más alto o si se está comiendo el margen mensual).</li>
+  <li>Puja y estrategia de puja de la automática.</li>
+  <li>Ajustes por ubicación de PRIMALS, antes de sacarlos.</li>
+  <li>Si la segmentación de PRIMALS figura como ampliada o exacta.</li>
+  <li>Si alguna campaña figuró «sin presupuesto» algún día.</li>
+  </ol></td></tr>
+<tr><th>Y de paso</th><td>Bajar el <strong>informe de ubicación</strong> (Top of
+  search / Rest of search / Product pages) de la semana. Es el único que puede
+  confirmar por qué el CTR de la automática cayó a 0,41%, y es una sospecha, no
+  un hecho, hasta que llegue.</td></tr>
+</table></li>
+
+<li><span class="p-tit">El botón «Solicitar una reseña», en cada pedido entregado</span>
+<span class="p-tag">≈5 min · gratis, y hay que repetirlo todas las semanas</span>
+<table class="p-tab">
+<tr><th>Dónde</th><td>Seller Central &rarr; <em>Pedidos</em> &rarr; abrir cada
+  pedido &rarr; botón <em>Solicitar una reseña</em> arriba a la
+  derecha.</td></tr>
+<tr><th>Qué hacer</th><td>Tocarlo en los <strong>18 pedidos</strong> que hay
+  hasta hoy. Se habilita entre 5 y 30 días después de la entrega, así que los de
+  esta semana todavía no aparecen: hay que volver.</td></tr>
+<tr><th>Por qué</th><td>19 unidades vendidas y <strong>0 reseñas</strong>. Los
+  competidores que nos ganan las subastas tienen miles. Al ritmo actual el botón
+  da 1 a 3 reseñas en 90 días: poco, pero es lo único gratis y disponible
+  hoy.</td></tr>
+<tr><th>Lo que sí mueve la aguja</th><td>Vine (~21 reseñas por 30 unidades), y
+  Vine necesita Brand Registry, y Brand Registry necesita la marca presentada
+  <strong>por IP Accelerator</strong> —no directo en la USPTO—. Eso es el paso 9.
+  Detalle en la <a href="resenas-zriceros.html">hoja de reseñas</a>.</td></tr>
+</table></li>
+
+<li><span class="p-tit">Las dos decisiones que no son de la campaña</span>
+<span class="p-tag">son de Ariel, y cada semana que pasan cuestan</span>
+<table class="p-tab">
+<tr><th>La imagen principal</th><td>Foto nueva <strong>en dos alturas</strong>:
+  el estuche arriba, los tres raspadores parados abajo, <strong>sin la
+  caja</strong>. Cuadrada de <strong>1.600 px</strong> de lado, fondo blanco
+  puro, sin texto ni logos. <em>Ahora tiene un argumento medido:</em> el anuncio
+  pasó a tener ocho veces más impresiones en <em>tongue scraper</em> y el CTR
+  cayó a 0,41%. Ya no es «no nos ven», es que nos ven y no nos tocan. Recortar
+  el archivo actual no sirve: quedaría en ~850 px, abajo del mínimo de 1.000 que
+  necesita el zoom.</td></tr>
+<tr><th>La marca</th><td>Decidir <strong>IP Accelerator</strong> (~$1.050,
+  clase 10) o no. Con el número de serie se entra a Brand Registry y después a
+  Vine. Por la vía directa en la USPTO hay que esperar el registro, unos 10
+  meses, y en el medio no hay Vine ni New Seller Incentives.</td></tr>
+<tr><th>Y un dato para pasar</th><td>La fecha en que se cambió el título. Sin
+  eso, el efecto del título nuevo sobre el CTR no se puede aislar de los cambios
+  de campaña.</td></tr>
+</table></li>
+
+<li><span class="p-tit">El lunes 28: bajar el CSV de la semana 4</span>
+<span class="p-tag">≈2 min · sin esto no hay semana 5</span>
+<table class="p-tab">
+<tr><th>Qué</th><td>Campaign Manager &rarr; <em>Informes</em> &rarr; informe de
+  <em>Términos de búsqueda</em> de Sponsored Products, del <strong>21 al 27 de
+  septiembre</strong>.</td></tr>
+<tr><th>Dónde dejarlo</th><td>En el compartido de siempre:
+  <code>smb://SRVNVIDIA._smb._tcp.local/shared/amazon/</code>.</td></tr>
+<tr><th>Y si se puede</th><td>Sumar el informe de <strong>ubicación</strong> y
+  los totales del panel por campaña (impresiones y CTR). Sin los totales, el CTR
+  de esta hoja sigue siendo un techo y no un número.</td></tr>
+</table></li>
+
+</ol>
+
+<h2>Qué tendría que dar la semana 4 si esto funciona</h2>
+<p>Esto es una predicción, y está acá para poder equivocarse a la vista:</p>
+<div class="tabla">
+<table>
+<tr><th></th><th class="num">Semana 3 (real)</th><th class="num">Semana 4 (si funciona)</th><th>Si no da eso, qué significa</th></tr>
+<tr><td>CPC de PRIMALS</td><td class="num">$2,19</td><td class="num">≤ $1,20</td><td>la puja no se guardó, o quedó un ajuste por ubicación</td></tr>
+<tr><td>Fichas ajenas en PRIMALS</td><td class="num">20</td><td class="num">4 a 6</td><td>la segmentación amplia sigue activa</td></tr>
+<tr><td>Clics de PRIMALS</td><td class="num">37</td><td class="num">15 a 25</td><td>si no bajan, mejor: la puja alcanzaba igual</td></tr>
+<tr><td>ACoS total</td><td class="num warn">51,6%</td><td class="num ok">30% a 38%</td><td>si sigue arriba de 45%, el problema no era el precio del clic y hay que volver a pensarlo</td></tr>
+<tr class="row-total"><td>Ganancia neta</td><td class="num neg">&minus;$11,32</td><td class="num pos">$0 a +$15</td><td>primera semana positiva desde la 1, que tenía 11 clics</td></tr>
+<tr><td>Reseñas</td><td class="num">0</td><td class="num">0 o 1</td><td>el botón tarda; lo que cambia esto es Vine, no la paciencia</td></tr>
+</table>
+</div>
+<p><strong>La menos obvia es la de los clics.</strong> Bajar la puja casi
+siempre baja el volumen, y eso está bien: 20 clics que dejan 49 centavos cada
+uno valen más que 37 que pierden 50. Lo que hay que mirar no es cuántos clics
+hubo, es el neto.</p>
 </div>
 
 <div class="card critique">
