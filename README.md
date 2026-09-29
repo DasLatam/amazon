@@ -21,11 +21,13 @@ un caso real, no un producto del servidor.
 Manager lo hace Ariel; desde acá se proponen y quedan como pendientes del tablero
 (grupo `zriceros`).
 
-**Estado (2026-09-21):** tres semanas de campaña medidas. Semana 1: ACoS 18,8%,
-+$26,34. Semana 2: 75,6%, −$30,19. Semana 3: 51,6%, −$11,32. Acumulado: 19
-unidades, ACoS 49,3%, −$15,17 y 0 reseñas; BSR de la categoría #158. Mejora
-semana a semana y sigue arriba del equilibrio (45,2%). Título nuevo publicado;
-imagen principal, campaña manual y reseñas pendientes.
+**Estado (2026-09-28):** cuatro semanas de campaña medidas. Semana 1: ACoS 18,8%,
++$26,34. Semana 2: 75,6%, −$30,19. Semana 3: 51,6%, −$11,32. Semana 4: una venta
+en 56 clics, 428%, −$76,12. Acumulado: 20 unidades, ACoS 68,2%, −$91,29, toda la
+pérdida de PRIMALS (la automática, +$0,67). La conversión cayó de 17% a 1,8% en
+las dos campañas a la vez; la propuesta es pausar PRIMALS y usar la automática
+sola como prueba de si la ficha vende. Primeras 6 calificaciones (5,0); BSR de la
+categoría #317. Apareció el mismo 3 pack con estuche a $5,99.
 
 **Dónde:** portal local `http://192.168.1.71:8089`, público en
 https://daslatam.github.io/amazon/ (repo `DasLatam/amazon`, sincronizado por cron).

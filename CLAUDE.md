@@ -116,6 +116,28 @@ precio**. Las cuatro fichas que convirtieron en la semana 3 promedian $14,49 y
 las cinco que no, $7,88. Nadie que esté mirando un raspador de $4,99 paga
 $19,89.
 
+## Cuando la conversión cae en las dos campañas a la vez, no es de las campañas
+
+Semana 4 (2026-09-28): 56 clics y un pedido, con el CPC más bajo que nunca. Con
+la conversión acumulada (18,4%), eso pasa 1,5 veces cada diez mil; y la
+automática, que nadie tocó, cayó igual (0 en 21). **Antes de discutir pujas,
+calcular la probabilidad binomial de lo observado con la conversión acumulada, por
+campaña.** Si las dos caen juntas, el problema está en lo que comparten (ficha,
+stock, Buy Box, precio, competidores al lado) y la única fuente es el informe
+comercial de Seller Central (sesiones, % de sesiones con unidades, % de Buy Box):
+la ficha pública sólo muestra cómo está hoy.
+
+Con esa semana cambió la recomendación: la semana 3 decía no apagar PRIMALS; la 4
+dice pausarla. Con cuatro semanas convierte 13,5% (no 18,8%), su equilibrio es
+$1,21 y es toda la pérdida (−$91,96 contra +$0,67 de la automática). La campaña
+manual queda en espera hasta que vuelva la conversión: no se lanza una campaña
+nueva la semana en que se cayó.
+
+**`bsr` de `leer_asin.extraer()` es el ranking general** (Health & Household), no
+el de la categoría: el de Tongue Brushes, Scrapers & Cleaners hay que sacarlo del
+texto de la ficha. Y **apareció el producto copiado**: B0C8ZCY2WM, tres
+raspadores con estuche a $5,99 (y B0CFDCYPF3, 3 pack a $3,99).
+
 ## Un CTR que cae no siempre es mala noticia sobre el anuncio
 
 Semana 3: con «tongue scraper» negativa en PRIMALS, la automática heredó esa
