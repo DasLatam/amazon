@@ -21,13 +21,14 @@ un caso real, no un producto del servidor.
 Manager lo hace Ariel; desde acá se proponen y quedan como pendientes del tablero
 (grupo `zriceros`).
 
-**Estado (2026-09-28):** cuatro semanas de campaña medidas. Semana 1: ACoS 18,8%,
+**Estado (2026-10-10):** cinco semanas de campaña medidas. Semana 1: ACoS 18,8%,
 +$26,34. Semana 2: 75,6%, −$30,19. Semana 3: 51,6%, −$11,32. Semana 4: una venta
-en 56 clics, 428%, −$76,12. Acumulado: 20 unidades, ACoS 68,2%, −$91,29, toda la
-pérdida de PRIMALS (la automática, +$0,67). La conversión cayó de 17% a 1,8% en
-las dos campañas a la vez; la propuesta es pausar PRIMALS y usar la automática
-sola como prueba de si la ficha vende. Primeras 6 calificaciones (5,0); BSR de la
-categoría #317. Apareció el mismo 3 pack con estuche a $5,99.
+en 56 clics, 428%, −$76,12. Semana 5 (nueve días): 73,7%, −$33,92. Acumulado: 26
+unidades, ACoS 69,5%, −$125,21. Toda la pérdida está en los anuncios mostrados en
+fichas ajenas (6,2% de conversión, −$124,15); en búsquedas convierte 16% y empata.
+PRIMALS pausada el 1-10; la propuesta es apagar Sustitutos y Complementos en la
+automática y retomar la manual en exacta a $1,00. 7 calificaciones (5,0); BSR de
+la categoría #154. La imagen principal nueva está con el diseñador.
 
 **Dónde:** portal local `http://192.168.1.71:8089`, público en
 https://daslatam.github.io/amazon/ (repo `DasLatam/amazon`, sincronizado por cron).
