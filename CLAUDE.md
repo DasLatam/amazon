@@ -138,6 +138,32 @@ el de la categoría: el de Tongue Brushes, Scrapers & Cleaners hay que sacarlo d
 texto de la ficha. Y **apareció el producto copiado**: B0C8ZCY2WM, tres
 raspadores con estuche a $5,99 (y B0CFDCYPF3, 3 pack a $3,99).
 
+## La pérdida está en las fichas ajenas, no en una campaña
+
+Semana 5 (2026-10-10). Separando cada línea del informe por **dónde salió el
+anuncio** —búsqueda tipeada o ASIN (ficha ajena)— y no por campaña, las cinco
+semanas dan: búsquedas 100 clics, 16,0%, −$1,06 (empate); fichas ajenas 145
+clics, 6,2%, −$124,15, que es **toda** la pérdida acumulada (−$125,21). En la
+automática, 13,8% contra 2,9%. Corrige a la semana 4 («PRIMALS es toda la
+pérdida»): PRIMALS perdía porque salía sobre todo en fichas ajenas y pagaba más.
+
+**Antes de culpar a una campaña, cortar por tipo de línea** (ASIN contra
+término). En la automática las fichas ajenas vienen de los grupos *Sustitutos* y
+*Complementos*, que se apagan por separado: eso reemplaza a ir negativizando ASIN
+de a uno (en la semana 5 aparecieron 28 fichas distintas). Y cuando se pausa una
+campaña, la otra hereda sus subastas: la automática triplicó el gasto con la
+misma puja.
+
+## La imagen del diseñador (2026-10-10)
+
+Llegó cuadrada, 1787×1787 (`images/propuestas/disenador-2026-10.jpg`): fondo 254
+con piso gris y reflejo, hojas de menta, producto en 71% del alto. **En la casilla
+del celular (152×224 pt, medida en `images/resultados-busqueda-celular.jpg`) una
+cuadrada achica el producto** respecto de la vertical de hoy (−25%); en la grilla
+de PC lo agranda. Simulación: `images/propuestas/miniaturas-semana-5.png`. Va como
+imagen 2; para la principal hay que pedirle seis correcciones (pendiente `zri-ctr`).
+Base del CTR para medirla: «tongue scraper» en la automática, 0,45% (semanas 3–5).
+
 ## Un CTR que cae no siempre es mala noticia sobre el anuncio
 
 Semana 3: con «tongue scraper» negativa en PRIMALS, la automática heredó esa
