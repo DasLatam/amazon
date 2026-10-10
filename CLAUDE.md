@@ -36,9 +36,11 @@ proyecto, no sólo para el seguimiento semanal:
    *«tampoco hagamos preguntas como si no supiera, en teoria es un informe mio y
    se lo que esta pasando»*. Se cayó por eso una sección entera («lo que hay que
    anotar del panel: presupuesto configurado, puja de la automática, ¿le
-   subieron algo esta semana?»). Lo que la hoja no puede saber se dice como
-   límite —«desde el informe de términos no se distingue»— y va en «lo que esta
-   hoja no puede afirmar», nunca como un pedido ni como una pregunta retórica.
+   subieron algo esta semana?»). **Tampoco lleva la sección roja «Lo que esta
+   hoja no puede afirmar»** (se sacó en la semana 5, 2026-10-10: *«no suma esas
+   aclaraciones solo traen mas preguntas»*). Un límite que cambia la lectura de
+   un número va en una línea al lado de ese número (como la nota de los nueve
+   días o la de atribución bajo la tabla); el resto no se escribe.
 2. **No se recomienda lo que no está disponible.** *«las reseñas en general
    paremos con recomendar cosas que no hay como vine y esas cosas»*. Vine,
    Brand Registry e IP Accelerator salieron de los próximos pasos y del índice.
