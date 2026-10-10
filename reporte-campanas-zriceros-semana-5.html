@@ -105,6 +105,14 @@
   @media (max-width: 640px) {
     .img-par, .brief { grid-template-columns: 1fr; }
   }
+  ol.clic { margin: 0; padding-left: 22px; }
+  ol.clic > li { margin: 0 0 8px; }
+  .ver { display: block; color: #067d62; font-size: 12.5px; margin-top: 3px; }
+  .ojo { display: block; color: #c40000; font-size: 12.5px; margin-top: 3px; }
+  p.ojo { font-size: 13px; }
+  .antes { background: #fff; border: 1px solid #ffe2a8; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .antes > p:first-child { margin-top: 0; }
+  pre.copiar { background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px; margin: 6px 0; white-space: pre-wrap; }
 </style>
 </head>
 <body><!-- menu -->
@@ -478,67 +486,124 @@ exacta sale de la espera, con puja de $1,00 en vez de $1,20.</p>
 <p class="meta">Los nombres de los botones son los del panel en español; Amazon
 los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
 
+<div class="antes">
+<p><strong>Antes de empezar (una sola vez, 1 minuto)</strong></p>
+<ol class="clic">
+<li>Entrar a <strong>advertising.amazon.com</strong> (es el panel de publicidad,
+  Campaign Manager) con el mismo usuario de Seller Central.</li>
+<li>Arriba a la derecha tiene que decir <strong>lombardi company</strong> y
+  <strong>Estados Unidos</strong>. Si dice otra cuenta u otro país, hacer clic ahí y
+  elegir esos dos.
+  <span class="ver">Tenés que ver: la lista de campañas con <em>Campaña - 9/1/2026
+  automatica</em> (Activa) y <em>Campaña - 9/1/2026 PRIMALS</em> (Pausada).</span></li>
+<li>Hacer los pasos <strong>en orden</strong> y de a uno. Si algo no coincide con lo
+  que dice acá, no improvisar: dejarlo como estaba y pasar al paso siguiente.</li>
+</ol>
+<p class="ojo"><strong>Las tres cosas que no se tocan en ningún paso:</strong> el
+interruptor de arriba de todo de una campaña (apaga la campaña entera), el botón
+<em>Archivar</em> (no tiene vuelta atrás) y el presupuesto de la automática.</p>
+</div>
+
 <ol class="pasos">
 
 <li><span class="p-tit">Apagar Sustitutos y Complementos en la automática</span>
-<span class="p-tag">≈2 min · CAMBIO: reemplaza a los seis productos negativos de la semana 4</span>
+<span class="p-tag">≈3 min · CAMBIO: reemplaza a los seis productos negativos de la semana 4</span>
 <table class="p-tab">
-<tr><th>Dónde</th><td>Campaign Manager &rarr; <em>Campaña - 9/1/2026 automatica</em>
-  &rarr; <em>Grupo RASPADOR - 9/1/2026</em> &rarr; <em>Segmentación</em>. Ahí
-  están los cuatro grupos de la segmentación automática, cada uno con su interruptor
-  y su puja.</td></tr>
-<tr><th>Qué hacer</th><td>Pausar <strong>Sustitutos</strong> y
-  <strong>Complementos</strong>. Dejar prendidos <strong>Coincidencia cercana</strong>
-  y <strong>Coincidencia amplia</strong>, a $1,00.</td></tr>
-<tr><th>Por qué</th><td>En la automática, las fichas ajenas convierten 2,9% (2
-  pedidos en 70 clics) y dejan &minus;$44,56; las búsquedas, 13,8% y +$17,34. Esta
-  semana las fichas se llevaron $43,94 de los $72,89 de la automática. Con los
-  negativos se cerraban fichas de a una, y siempre aparecen otras: esta semana
-  fueron 28 distintas.</td></tr>
-<tr><th>Qué no hacer</th><td>No bajarles la puja en vez de apagarlas: su
-  equilibrio es $0,26, y a ese precio no se gana ninguna subasta. Tampoco
-  reactivar PRIMALS: en búsquedas convertía igual, pero pagaba $2,37 el clic.</td></tr>
-<tr><th>Cómo se verifica</th><td>El informe de la semana 6 casi no trae ASIN en
-  la automática (alguno puede quedar de Coincidencia amplia, que a veces sale en
-  fichas), y su gasto baja a unos $3 por día.</td></tr>
+<tr><th>Qué se logra</th><td>Que el anuncio deje de salir dentro de las fichas de
+  otros productos (donde convierte 2,9% y pierde plata) y siga saliendo en las
+  búsquedas (donde convierte 13,8% y gana).</td></tr>
+<tr><th>Clic por clic</th><td><ol class="clic">
+  <li>En el menú de la izquierda, <em>Campañas</em>.</li>
+  <li>En la lista, clic en el <strong>nombre</strong> (el texto azul)
+    <em>Campaña - 9/1/2026 automatica</em>. No en el interruptor que está a su
+    izquierda.
+    <span class="ver">Tenés que ver: arriba, el nombre de la campaña, y abajo una
+    tabla con un grupo de anuncios.</span></li>
+  <li>Clic en el nombre del grupo: <em>Grupo RASPADOR - 9/1/2026</em>.</li>
+  <li>En el menú de la izquierda (ahora es el menú del grupo), clic en
+    <em>Segmentación</em>.
+    <span class="ver">Tenés que ver: una tabla con <strong>exactamente cuatro
+    filas</strong>: Coincidencia cercana, Coincidencia amplia, Sustitutos y
+    Complementos. Cada una tiene un interruptor a la izquierda y una puja a la
+    derecha.</span>
+    <span class="ojo">Si en vez de cuatro filas aparece una lista de palabras o de
+    ASIN, entraste a otra campaña: volver al punto 1.</span></li>
+  <li>En la fila <strong>Sustitutos</strong>, clic en el interruptor de la
+    izquierda. Pasa de azul a gris.</li>
+  <li>En la fila <strong>Complementos</strong>, lo mismo: de azul a gris.
+    <span class="ver">Tenés que ver: Coincidencia cercana y Coincidencia amplia en
+    azul (activas); Sustitutos y Complementos en gris (pausadas). La columna de puja
+    de las cuatro, sin cambios.</span></li>
+  <li>No hay botón de guardar: el cambio queda hecho al tocar el interruptor.
+    Refrescar la página (F5) y confirmar que los dos siguen en gris.</li>
+</ol></td></tr>
+<tr><th>Si te equivocás</th><td>Si apagaste otra fila, volver a tocar su
+  interruptor y queda como estaba. No se pierde nada.</td></tr>
+<tr><th>Qué no hacer</th><td>No cambiar ninguna puja. No apagar Coincidencia
+  cercana ni Coincidencia amplia: son las que venden. No reactivar PRIMALS.</td></tr>
+<tr><th>Cómo se verifica</th><td>El informe de la semana 6 casi no trae ASIN (códigos
+  B0…) en la automática, y su gasto baja a unos $3 por día.</td></tr>
 </table></li>
 
-<li><span class="p-tit">La imagen principal: devolverle al diseñador las seis correcciones</span>
-<span class="p-tag">≈10 min de mensaje · arrastrado desde la semana 1 · es la palanca más grande que queda</span>
+<li><span class="p-tit">La imagen: subir la del diseñador como imagen 2 y pedirle la principal corregida</span>
+<span class="p-tag">≈10 min · arrastrado desde la semana 1 · es la palanca más grande que queda</span>
 <table class="p-tab">
-<tr><th>Qué hacer</th><td>No subir la propuesta como imagen principal. Mandarle
-  al diseñador la lista de la sección 4: 1600 &times; 2000, fondo 255, sin menta,
-  estuche arriba y raspadores abajo, sin la caja, producto en 85% del alto, el
-  mismo acabado.</td></tr>
-<tr><th>Mientras tanto</th><td>Su propuesta, tal cual, puede subir ya como
-  <strong>imagen 2</strong> (Seller Central &rarr; <em>Catálogo</em> &rarr;
-  <em>Editar</em> &rarr; <em>Imágenes</em>). Las secundarias admiten fondo y
-  ambientación, y no cambia lo que se mide, que es la miniatura.</td></tr>
-<tr><th>Por qué</th><td>Con «tongue scraper» la automática tiene 3.361
-  impresiones en nueve días y un CTR de 0,45%. Llevarlo a 0,8% son casi el doble de
-  clics en la búsqueda que mejor convierte, sin pagar más por clic. Y es el único
-  argumento que tiene la miniatura frente a los 3 pack de $3,99 y $5,99.</td></tr>
-<tr><th>Qué no hacer</th><td>No subir la cuadrada «para probar»: en el celular
-  achica el producto, y con las hojas de menta y el fondo gris arriesga que la
-  ficha quede suprimida de la búsqueda.</td></tr>
-<tr><th>Cómo se verifica</th><td>La ficha devuelve otro archivo en
-  <code>landingImage</code>, de 1600 &times; 2000. Desde la semana en que cambia,
-  el CTR de «tongue scraper» en la automática, contra 0,45%.</td></tr>
+<tr><th>Parte A: subirla como imagen 2</th><td><ol class="clic">
+  <li>Entrar a <strong>sellercentral.amazon.com</strong> (no al panel de
+    publicidad).</li>
+  <li>Menú (las tres rayitas arriba a la izquierda) &rarr; <em>Inventario</em>
+    &rarr; <em>Administrar todo el inventario</em>.</li>
+  <li>En el buscador de esa página, escribir <strong>B0H6QZGX56</strong> y Enter.
+    <span class="ver">Tenés que ver: una sola fila, el Tongue Scraper a
+    $19,89.</span></li>
+  <li>A la derecha de esa fila, la flecha al lado de <em>Editar</em> &rarr;
+    <em>Administrar imágenes</em>.
+    <span class="ver">Tenés que ver: casilleros de imagen. El primero, marcado
+    <em>MAIN</em> o <em>Principal</em>, tiene la foto de hoy.</span></li>
+  <li><span class="ojo">No tocar el casillero MAIN.</span> Clic en el
+    <strong>segundo</strong> casillero y elegir el archivo del diseñador
+    (<em>original ZC.jpg.jpeg</em>, en la carpeta compartida de amazon).
+    Si el segundo casillero ya tiene una foto, usar el primero vacío: el orden se
+    acomoda después arrastrando.</li>
+  <li>Clic en <em>Guardar</em> o <em>Enviar</em>.
+    <span class="ver">Tenés que ver: la imagen nueva en el segundo lugar y la
+    principal sin cambios. Amazon puede tardar hasta un día en mostrarla en la
+    ficha.</span></li>
+</ol></td></tr>
+<tr><th>Parte B: al diseñador</th><td>Mandarle tal cual la lista de seis puntos de la
+  sección 4 («La principal, lo que hay que pedirle que cambie»), con el esquema.
+  Lo que más importa: <strong>1600 &times; 2000 vertical</strong>, <strong>fondo
+  blanco puro</strong>, <strong>sin menta</strong> y el producto en el
+  <strong>85% del alto</strong>.</td></tr>
+<tr><th>Qué no hacer</th><td>No subir la cuadrada como principal «para probar»: en
+  el celular achica el producto, y con la menta y el fondo gris puede dejar la ficha
+  fuera de las búsquedas.</td></tr>
+<tr><th>Cómo se verifica</th><td>Cuando suba la principal corregida: el CTR de
+  «tongue scraper» en la automática, contra 0,45%. Arriba de 0,8% es la imagen
+  funcionando.</td></tr>
 </table></li>
 
 <li><span class="p-tit">Pedir la reseña a los pedidos del 7 de septiembre en adelante</span>
-<span class="p-tag">≈10 min · con fecha: los de la semana 2 vencen entre hoy y el 16-10</span>
+<span class="p-tag">≈1 min por pedido · con fecha: los del 7 al 13-09 vencen entre hoy y el 16-10</span>
 <table class="p-tab">
-<tr><th>Dónde</th><td>Seller Central &rarr; <em>Pedidos</em> &rarr; abrir el
-  pedido &rarr; <em>Solicitar una reseña</em>.</td></tr>
-<tr><th>Qué hacer</th><td>Primero los del 7 al 13 de septiembre: entregados
-  hace unos 30 días, el botón les desaparece estos días. Después los del 14 en
-  adelante. A los de la semana 1 ya no les aparece. Cada uno, una fila en
-  <code>datos/resenas_solicitadas.csv</code> y después
-  <code>/usr/bin/python3 scripts/resenas.py</code>.</td></tr>
-<tr><th>Por qué</th><td>Siete calificaciones de 5,0 en 25 pedidos de
-  publicidad: las estrellas ya se ven en la miniatura y cada una más mueve la
-  conversión de la ficha entera, no sólo la de los anuncios.</td></tr>
+<tr><th>Clic por clic</th><td><ol class="clic">
+  <li>En <strong>sellercentral.amazon.com</strong>: Menú &rarr; <em>Pedidos</em>
+    &rarr; <em>Administrar pedidos</em>.</li>
+  <li>Arriba de la lista, en el filtro de fechas, elegir <em>Personalizado</em> y
+    poner <strong>del 7 al 13 de septiembre de 2026</strong>.</li>
+  <li>Clic en el número del primer pedido.</li>
+  <li>Arriba a la derecha del pedido, botón <em>Solicitar una reseña</em> &rarr; en
+    la ventanita, <em>Sí</em>.
+    <span class="ver">Tenés que ver: un aviso de que la solicitud se envió.</span>
+    Si el botón no está o dice que no se puede, ese pedido ya venció o ya se le
+    pidió: seguir con el próximo.</li>
+  <li>Anotar el número de pedido y si se pudo pedir o no (va al registro).</li>
+  <li>Volver a la lista y repetir con cada pedido. Después, lo mismo con los del
+    14 de septiembre en adelante.</li>
+</ol></td></tr>
+<tr><th>Qué no hacer</th><td>No pedirle además la reseña por mensajes al
+  comprador: con el botón ya se le pidió, y Amazon no permite pedirla dos veces en el
+  mismo pedido.</td></tr>
 <tr><th>Cómo se verifica</th><td>El resumen del registro, debajo, deja de estar
   vacío.</td></tr>
 </table>
@@ -549,52 +614,138 @@ los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
 </div></li>
 
 <li><span class="p-tit">Campaña manual en exacta, siete búsquedas a $1,00</span>
-<span class="p-tag">≈10 min · CAMBIO: estaba en espera y a $1,20</span>
+<span class="p-tag">≈15 min · CAMBIO: estaba en espera y a $1,20 · son dos partes y van las dos el mismo día</span>
 <table class="p-tab">
-<tr><th>Dónde</th><td>Campaign Manager &rarr; <em>Crear campaña</em> &rarr;
-  <em>Sponsored Products</em> &rarr; <em>Segmentación manual</em> &rarr;
-  <em>Segmentación por palabra clave</em>.</td></tr>
-<tr><th>Qué poner</th><td>Concordancia <strong>exacta</strong>, puja
-  <strong>$1,00</strong>, presupuesto <strong>$5 por día</strong>, sin ajuste de
-  ubicación:
-  <ul><li>tongue brush</li><li>tongue scraper stainless steel</li>
-  <li>tongue scraper dr tung</li><li>tongue scrapper</li>
-  <li>tongue scraper black</li><li>tongue scraper with case</li>
-  <li>tongue scraper travel</li></ul>
-  Y las mismas siete como <strong>negativas exactas</strong> en la automática, para
-  no competir contra uno mismo.</td></tr>
-<tr><th>Por qué ahora y a $1,00</th><td>Se esperaba que volviera la conversión, y
-  volvió: 16% en búsquedas. Con esa conversión el objetivo de 30% es $0,95 y el
-  equilibrio $1,44; $1,20 era la cuenta con el 18% de la semana 3. Con la
-  automática sin fichas ajenas, esta es la forma de sumar búsquedas sin pagar por
-  mirar otras fichas.</td></tr>
-<tr><th>Qué no hacer</th><td>No sumar «tongue scraper», «tongue scraper for
-  adults» ni «tongue cleaner»: venden en la automática a menos de $1,00 y
-  ponerlas en otra campaña es pagarse el clic a uno mismo.</td></tr>
+<tr><th>Qué se logra</th><td>Sumar búsquedas que hoy casi no aparecen, pagando
+  como máximo $1,00 por clic, sin volver a las fichas ajenas.</td></tr>
+<tr><th>Tener a mano</th><td>Esta lista, para copiar y pegar (una por renglón):
+<pre class="copiar">tongue brush
+tongue scraper stainless steel
+tongue scraper dr tung
+tongue scrapper
+tongue scraper black
+tongue scraper with case
+tongue scraper travel</pre>
+  <em>tongue scrapper</em>, con dos p, está escrito así a propósito: es como lo
+  tipea la gente.</td></tr>
+<tr><th>Parte A: crear la campaña</th><td><ol class="clic">
+  <li>En el panel de publicidad, <em>Campañas</em> &rarr; botón <em>Crear
+    campaña</em> &rarr; <em>Sponsored Products</em> &rarr; <em>Continuar</em>.</li>
+  <li><strong>Configuración</strong> o <strong>Ajustes</strong> de la campaña:
+    <table class="p-mini">
+    <tr><th>Campo</th><th>Qué poner</th></tr>
+    <tr><td>Nombre de la campaña</td><td><code>Zriceros - Manual exacta - oct 2026</code></td></tr>
+    <tr><td>Cartera</td><td>dejar vacío / Sin cartera</td></tr>
+    <tr><td>Fecha de inicio</td><td>hoy</td></tr>
+    <tr><td>Fecha de finalización</td><td>sin fecha de finalización</td></tr>
+    <tr><td>Presupuesto diario</td><td><strong>5</strong> (dólares)</td></tr>
+    <tr><td>Segmentación</td><td><strong>Segmentación manual</strong> (no automática)</td></tr>
+    <tr><td>Estrategia de puja</td><td><strong>Pujas dinámicas: solo bajada</strong></td></tr>
+    <tr><td>Ajustes por ubicación (Parte superior de búsqueda, Páginas de producto, Resto)</td><td>todos en <strong>0%</strong> o vacíos</td></tr>
+    </table>
+    <span class="ojo">Si no se elige «solo bajada», Amazon puede pagar más de $1,00
+    por clic.</span></li>
+  <li><strong>Grupo de anuncios:</strong> nombre <code>Exacta</code>.</li>
+  <li><strong>Productos:</strong> en el buscador, <strong>B0H6QZGX56</strong>
+    &rarr; <em>Añadir</em>.
+    <span class="ver">Tenés que ver: un solo producto agregado, el Tongue Scraper
+    a $19,89.</span></li>
+  <li><strong>Segmentación:</strong> elegir <em>Segmentación por palabras
+    clave</em> (no <em>por producto</em>).</li>
+  <li>En la parte de palabras clave, pestaña <em>Introducir lista</em>
+    (o <em>Ingresar lista</em>).</li>
+  <li>En <em>Tipo de concordancia</em>: <strong>destildar Amplia y
+    Frase</strong>, dejar tildada sólo <strong>Exacta</strong>.</li>
+  <li>En <em>Puja</em>: elegir <em>Puja personalizada</em> (no <em>sugerida</em>)
+    y poner <strong>1</strong> (un dólar).</li>
+  <li>Pegar la lista de siete en el recuadro &rarr; <em>Añadir palabras
+    clave</em>.
+    <span class="ver">Tenés que ver: siete filas, cada una con concordancia
+    <em>Exacta</em> y puja <em>$1,00</em>. Si aparecen 14 o 21 filas, quedaron
+    tildadas Amplia o Frase: borrarlas con la X de cada fila.</span></li>
+  <li>No agregar nada en <em>Palabras clave negativas</em> de esta campaña.</li>
+  <li>Abajo de todo, <em>Lanzar campaña</em>.
+    <span class="ver">Tenés que ver: la campaña nueva en la lista de Campañas,
+    con estado <em>Activa</em> (o <em>Programada</em>, que se activa sola) y
+    presupuesto $5,00.</span></li>
+</ol></td></tr>
+<tr><th>Parte B: las mismas siete como negativas en la automática</th><td><ol class="clic">
+  <li><em>Campañas</em> &rarr; clic en el nombre <em>Campaña - 9/1/2026
+    automatica</em> &rarr; clic en <em>Grupo RASPADOR - 9/1/2026</em>.</li>
+  <li>Menú de la izquierda &rarr; <em>Segmentación negativa</em> (o
+    <em>Palabras clave negativas</em>).
+    <span class="ojo">No confundir con <em>Productos negativos</em>, que es otra
+    pestaña.</span></li>
+  <li><em>Añadir palabras clave negativas</em>.</li>
+  <li>Tipo de concordancia: <strong>Negativa exacta</strong> (no <em>Frase
+    negativa</em>).
+    <span class="ojo">Con Frase negativa se bloquearía también «tongue scraper» y
+    se apaga lo que más vende.</span></li>
+  <li>Pegar la misma lista de siete &rarr; <em>Añadir</em> &rarr;
+    <em>Guardar</em>.
+    <span class="ver">Tenés que ver: las siete en la lista de negativas del grupo,
+    todas como <em>Negativa exacta</em>.</span></li>
+</ol></td></tr>
+<tr><th>Por qué a $1,00</th><td>En búsquedas el producto convierte 16%: así, el
+  objetivo de ACoS 30% da $0,95 y el equilibrio $1,44. Los $1,20 de antes eran la
+  cuenta con el 18% de la semana 3.</td></tr>
+<tr><th>Qué no hacer</th><td>No sumar a la lista «tongue scraper», «tongue scraper
+  for adults» ni «tongue cleaner»: ya venden en la automática a menos de $1,00, y
+  ponerlas en las dos campañas es competir contra uno mismo.</td></tr>
 <tr><th>Cómo se verifica</th><td>La campaña nueva aparece en el informe de la
-  semana 6. Un término sin impresiones a $1,00 es un dato (esa búsqueda cuesta más de
-  lo que vale), no un error.</td></tr>
+  semana 6. Un término sin impresiones a $1,00 es un dato: esa búsqueda cuesta más
+  de lo que vale. No es un error.</td></tr>
 </table></li>
 
 <li><span class="p-tit">Las búsquedas de la automática: no tocar la puja</span>
 <span class="p-tag">0 min</span>
 <table class="p-tab">
-<tr><th>Qué hacer</th><td>Dejar Coincidencia cercana y amplia en $1,00.</td></tr>
-<tr><th>Por qué</th><td>Pagan $0,96 con un equilibrio de $1,24: ganan plata. Es
-  la parte del proyecto que funciona, y la base contra la que se va a medir la
-  imagen.</td></tr>
+<tr><th>Qué hacer</th><td>Nada. Coincidencia cercana y Coincidencia amplia quedan
+  en $1,00, como están.</td></tr>
+<tr><th>Por qué</th><td>Pagan $0,96 por clic con un equilibrio de $1,24: ganan
+  plata. Es la parte del proyecto que funciona y la base contra la que se va a medir
+  la imagen.</td></tr>
 </table></li>
 
-<li><span class="p-tit">El martes 14 de octubre, el CSV de la semana 6</span>
-<span class="p-tag">≈2 min</span>
+<li><span class="p-tit">El martes 14 de octubre, bajar el informe de la semana 6</span>
+<span class="p-tag">≈5 min</span>
 <table class="p-tab">
-<tr><th>Qué</th><td>Campaign Manager &rarr; <em>Informes</em> &rarr;
-  <em>Términos de búsqueda</em> de Sponsored Products, del <strong>7 al 13 de
-  octubre</strong>: siete días, para que se compare con las demás.</td></tr>
-<tr><th>Dónde</th><td><code>smb://SRVNVIDIA._smb._tcp.local/shared/amazon/</code>,
-  como siempre.</td></tr>
+<tr><th>Clic por clic</th><td><ol class="clic">
+  <li>En el panel de publicidad, menú de la izquierda &rarr; <em>Medición e
+    informes</em> &rarr; <em>Informes de Sponsored Ads</em> &rarr; <em>Crear
+    informe</em>.</li>
+  <li>Completar:
+    <table class="p-mini">
+    <tr><th>Campo</th><th>Qué poner</th></tr>
+    <tr><td>Tipo de anuncio / categoría</td><td>Sponsored Products</td></tr>
+    <tr><td>Tipo de informe</td><td><strong>Término de búsqueda</strong></td></tr>
+    <tr><td>Período del informe</td><td>personalizado: <strong>7 al 13 de octubre de 2026</strong> (siete días, ni uno más)</td></tr>
+    <tr><td>Unidad de tiempo</td><td>Resumen</td></tr>
+    <tr><td>Formato</td><td><strong>CSV</strong></td></tr>
+    </table></li>
+  <li><em>Ejecutar informe</em>. Esperar a que el estado diga
+    <em>Completado</em> (unos minutos; refrescar) &rarr; <em>Descargar</em>.</li>
+  <li>Copiar el archivo descargado a la carpeta compartida de siempre:
+    <code>smb://SRVNVIDIA._smb._tcp.local/shared/amazon/</code> (en la Mac: Finder
+    &rarr; <em>Ir</em> &rarr; <em>Conectarse al servidor</em> &rarr; pegar esa
+    dirección).</li>
+</ol></td></tr>
 </table></li>
 </ol>
+
+<div class="antes">
+<p><strong>Control final (2 minutos, al terminar todo)</strong></p>
+<p>En el panel de publicidad, <em>Campañas</em>. La lista tiene que quedar así:</p>
+<table class="p-mini">
+<tr><th>Campaña</th><th>Estado</th><th>Presupuesto</th></tr>
+<tr><td>Campaña - 9/1/2026 automatica</td><td>Activa</td><td>el de siempre, sin cambios</td></tr>
+<tr><td>Campaña - 9/1/2026 PRIMALS</td><td>Pausada (no archivada)</td><td>sin cambios</td></tr>
+<tr><td>Zriceros - Manual exacta - oct 2026</td><td>Activa o Programada</td><td>$5,00</td></tr>
+</table>
+<p>Y dentro de la automática &rarr; <em>Grupo RASPADOR</em> &rarr;
+<em>Segmentación</em>: dos filas en azul (cercana, amplia) y dos en gris
+(Sustitutos, Complementos).</p>
+</div>
 
 <h3>Qué tendría que dar la semana 6</h3>
 <table>
