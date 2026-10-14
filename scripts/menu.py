@@ -39,6 +39,7 @@ SECCIONES = [
         ("reporte-campanas-zriceros-semana-3.html", "Semana 3"),
         ("reporte-campanas-zriceros-semana-4.html", "Semana 4"),
         ("reporte-campanas-zriceros-semana-5.html", "Semana 5"),
+        ("reporte-campanas-zriceros-semana-6.html", "Semana 6"),
     ], -1),
 ]
 PORTADA = ("index.html", "Inicio", "")

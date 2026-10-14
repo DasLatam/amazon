@@ -156,6 +156,27 @@ de a uno (en la semana 5 aparecieron 28 fichas distintas). Y cuando se pausa una
 campaña, la otra hereda sus subastas: la automática triplicó el gasto con la
 misma puja.
 
+## Una semana buena no da vuelta un veredicto, pero corrige la cuenta (semana 6)
+
+Semana 6 (2026-10-14): 11 pedidos, +$44,48, sin haber hecho el paso 1 (apagar
+Sustitutos y Complementos). Las fichas ajenas bajaron solas de 48 a 12 clics y
+vendieron 3. Con 12 clics no se cambia de opinión (regla de los ~40), pero el
+acumulado sí se mueve: las fichas ajenas de la automática pasaron de 2,9% a 6,1%
+de conversión, y con eso el equilibrio sube de $0,26 a $0,55. **Cuando el
+equilibrio de algo que se iba a apagar pasa a ser una puja que se gana, la
+recomendación cambia de apagar a bajar la puja** ($0,50), y se dice que cambió.
+
+La imagen principal corregida apareció en la ficha entre el 10 y el 14-10
+(`61QDX1XG2oL`, 1278×1600, producto en 86% del alto; copia en
+`images/main-2026-10-14.jpg`). Nadie avisa cuándo cambia la ficha: **leerla
+siempre** con cada informe (los `hiRes` del HTML dan todas las imágenes) y comparar
+el ID de la principal con el de la semana anterior. El CTR de «tongue scraper» en la
+automática es la medida: 0,45% (semanas 3–5), 0,76% en la 6.
+
+**Una campaña que no aparece en el informe de términos no prueba que no exista**:
+el informe sólo trae términos con clics. Por eso el paso de la manual empieza
+mirando si ya está creada.
+
 ## La imagen del diseñador (2026-10-10)
 
 Llegó cuadrada, 1787×1787 (`images/propuestas/disenador-2026-10.jpg`): fondo 254

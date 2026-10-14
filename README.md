@@ -21,14 +21,16 @@ un caso real, no un producto del servidor.
 Manager lo hace Ariel; desde acá se proponen y quedan como pendientes del tablero
 (grupo `zriceros`).
 
-**Estado (2026-10-10):** cinco semanas de campaña medidas. Semana 1: ACoS 18,8%,
+**Estado (2026-10-14):** seis semanas de campaña medidas. Semana 1: ACoS 18,8%,
 +$26,34. Semana 2: 75,6%, −$30,19. Semana 3: 51,6%, −$11,32. Semana 4: una venta
-en 56 clics, 428%, −$76,12. Semana 5 (nueve días): 73,7%, −$33,92. Acumulado: 26
-unidades, ACoS 69,5%, −$125,21. Toda la pérdida está en los anuncios mostrados en
-fichas ajenas (6,2% de conversión, −$124,15); en búsquedas convierte 16% y empata.
-PRIMALS pausada el 1-10; la propuesta es apagar Sustitutos y Complementos en la
-automática y retomar la manual en exacta a $1,00. 7 calificaciones (5,0); BSR de
-la categoría #154. La imagen principal nueva está con el diseñador.
+en 56 clics, 428%, −$76,12. Semana 5 (nueve días): 73,7%, −$33,92. Semana 6: 24,9%,
+11 pedidos, +$44,48, la mejor. Acumulado: 37 unidades, ACoS 56,2%, −$80,73. En
+búsquedas el anuncio convierte 16,6% y gana; en fichas ajenas 7,6%, y es toda la
+pérdida que queda. PRIMALS pausada desde el 1-10; la automática sola gana en el
+acumulado (+$17,26). La imagen principal nueva (vertical, 86% del alto) está en la
+ficha desde el 10 al 14-10. La propuesta es bajar Sustitutos y Complementos a $0,50
+y lanzar la manual en exacta a $1,00. 7 calificaciones (5,0); BSR de la categoría
+#175.
 
 **Dónde:** portal local `http://192.168.1.71:8089`, público en
 https://daslatam.github.io/amazon/ (repo `DasLatam/amazon`, sincronizado por cron).
