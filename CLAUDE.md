@@ -170,7 +170,9 @@ La imagen principal corregida apareció en la ficha entre el 10 y el 14-10
 (`61QDX1XG2oL`, 1278×1600, producto en 86% del alto; copia en
 `images/main-2026-10-14.jpg`). Nadie avisa cuándo cambia la ficha: **leerla
 siempre** con cada informe (los `hiRes` del HTML dan todas las imágenes) y comparar
-el ID de la principal con el de la semana anterior. El CTR de «tongue scraper» en la
+el ID de la principal con el de la semana anterior. Con ella llegó una galería nueva de cinco
+(copias en `images/publicacion-2026-10/`, en el orden de la ficha); la cuadrada del
+diseñador con menta quedó descartada porque la imagen de ambiente cumple su papel. El CTR de «tongue scraper» en la
 automática es la medida: 0,45% (semanas 3–5), 0,76% en la 6.
 
 **Una campaña que no aparece en el informe de términos no prueba que no exista**:

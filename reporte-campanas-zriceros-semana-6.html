@@ -112,6 +112,8 @@
   p.ojo { font-size: 13px; }
   .antes { background: #fff; border: 1px solid #ffe2a8; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
   .antes > p:first-child { margin-top: 0; }
+  .galeria { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 640px) { .galeria { grid-template-columns: repeat(2, 1fr); } }
   pre.copiar { background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px; margin: 6px 0; white-space: pre-wrap; }
 </style>
 </head>
@@ -173,7 +175,9 @@ clics, y sigue ganando.</li>
 <li><strong>La imagen principal nueva ya está en la ficha, y cumple todo lo que
 se pidió.</strong> Vertical 4:5 (1278 &times; 1600), fondo blanco, sin menta y sin
 caja, el estuche entero arriba y el producto en el 86% del alto. En la miniatura
-del celular el producto se ve 26% más grande que con la anterior. Sección 4.</li>
+del celular el producto se ve 26% más grande que con la anterior. Con ella llegó una galería
+nueva de cinco imágenes; dos de las secundarias tienen un defecto de texto para
+corregir. Sección 4.</li>
 <li><strong>El CTR de «tongue scraper» subió de 0,45% a 0,76%</strong> (15 clics
 en 1.981 impresiones). Con el CTR de antes, 15 clics o más en esas impresiones pasa
 4 veces cada cien. No se puede atribuir todo a la imagen porque no se sabe qué día
@@ -272,12 +276,34 @@ las dos alturas sin la caja, el 85% del alto y el negro mate con gotas. La
 resolución es menor que la pedida (1278 &times; 1600 en vez de 1600 &times; 2000)
 pero tiene la misma proporción y pasa de 1.000 px, que es lo que necesita el zoom.
 Los tamaños medidos coinciden con lo que la semana 5 había estimado.</p>
-<p><strong>Las imágenes secundarias.</strong> La ficha muestra cinco: la
-principal, las medidas, el «cómo usar», la comparación «Why choose Zriceros» y la
-de ambiente con el logo. La cuadrada del diseñador (con menta y caja) no está entre
-ellas. En la del «cómo usar» hay un defecto que se ve: debajo de «TONGUE SCRAPER»,
-un rectángulo tapa un renglón de texto y asoman las puntas de las letras.</p>
-<figure class="sim"><img src="images/como-usar-franja-2026-10-14.jpg" alt="Recorte de la imagen Cómo usar: un rectángulo gris claro tapa un renglón de texto debajo del título"><figcaption>Imagen «How to use» de la ficha (710NlMNvTYL), recorte del título. El rectángulo tapa un texto que queda a medio ver.</figcaption></figure>
+<h3>Las cinco imágenes de la publicación</h3>
+<p>Son las cinco que tiene hoy la ficha, en el orden en que aparecen. Las cuatro
+secundarias son cuadradas de 1280 &times; 1280; la principal es la vertical de
+arriba.</p>
+<div class="galeria">
+<figure style="margin:0"><img src="images/publicacion-2026-10/1-principal.jpg" alt="Imagen 1, principal: estuche arriba y tres raspadores abajo sobre fondo blanco" style="width:100%;height:auto;border:1px solid #e0e0e0;border-radius:6px;background:#fff"><figcaption>1 · Principal</figcaption></figure>
+<figure style="margin:0"><img src="images/publicacion-2026-10/2-medidas.jpg" alt="Imagen 2: los tres raspadores con sus medidas en pulgadas" style="width:100%;height:auto;border:1px solid #e0e0e0;border-radius:6px;background:#fff"><figcaption>2 · Medidas</figcaption></figure>
+<figure style="margin:0"><img src="images/publicacion-2026-10/3-como-usar.jpg" alt="Imagen 3: cómo usar el raspador en cuatro pasos" style="width:100%;height:auto;border:1px solid #e0e0e0;border-radius:6px;background:#fff"><figcaption>3 · Cómo usar</figcaption></figure>
+<figure style="margin:0"><img src="images/publicacion-2026-10/4-por-que-zriceros.jpg" alt="Imagen 4: Why choose Zriceros, el estuche abierto y una tabla nuestros contra otros" style="width:100%;height:auto;border:1px solid #e0e0e0;border-radius:6px;background:#fff"><figcaption>4 · Por qué Zriceros</figcaption></figure>
+<figure style="margin:0"><img src="images/publicacion-2026-10/5-ambiente.jpg" alt="Imagen 5: los tres raspadores sobre una mesada de baño con el logo grande" style="width:100%;height:auto;border:1px solid #e0e0e0;border-radius:6px;background:#fff"><figcaption>5 · Ambiente</figcaption></figure>
+</div>
+<table style="margin-top:14px">
+<colgroup><col style="width:18%"><col style="width:41%"><col style="width:41%"></colgroup>
+<tr><th>Imagen</th><th>Lo que hace bien</th><th>Lo que hay que corregir</th></tr>
+<tr class="row-bien"><td>1 · Principal (fondo blanco)</td><td>Cumple las reglas de la principal: blanco, sin accesorios, producto en el 86% del alto. Es vertical, así que en el celular llena la casilla. El negro mate con gotas la separa de los raspadores de acero brillante que la rodean en los resultados, y el estuche con el logo arriba muestra el «with Travel Case» del título.</td><td>Nada. Es la que el informe de la semana 7 va a medir.</td></tr>
+<tr class="row-bien"><td>2 · Medidas</td><td>Contesta la duda más común antes de comprar (si entra en la boca, si es grande) con las medidas de los tres, y muestra que son tres diseños distintos, que es lo que explica el bullet 1.</td><td>Nada importante. «90 DEGREE» no dice qué tiene 90 grados; si se rehace, «90° scraping edge».</td></tr>
+<tr class="row-mal"><td>3 · Cómo usar</td><td>Cuatro pasos claros con fotos: le saca el miedo a quien nunca usó uno, que es buena parte de los que buscan «tongue scraper».</td><td><strong>Un rectángulo debajo de TONGUE SCRAPER tapa un renglón y se ven las puntas de las letras</strong> (recorte abajo). La frase «For best results…» está en otra tipografía que el resto.</td></tr>
+<tr class="row-mal"><td>4 · Por qué Zriceros</td><td>El «3 PACK» y el estuche abierto; la tabla resume en cuatro renglones la diferencia con los de $4 a $6.</td><td><strong>«SURGICAL GRADE STAINLESS STEEL» se sale de su recuadro</strong>: la última letra toca el borde (recorte abajo). En el estuche se ve un solo raspador, aunque son tres. Es la única en verde; las otras cuatro son negro y gris.</td></tr>
+<tr class="row-bien"><td>5 · Ambiente</td><td>El producto en un baño real y el logo grande: ayuda a recordar la marca, que es lo que hace falta para búsquedas como «zricezos».</td><td>Nada.</td></tr>
+</table>
+<div class="img-par">
+<figure><img src="images/como-usar-franja-2026-10-14.jpg" alt="Recorte de la imagen Cómo usar: un rectángulo tapa un renglón de texto debajo del título"><figcaption>Imagen 3, debajo del título: el rectángulo tapa un texto que queda a medio ver.</figcaption></figure>
+<figure><img src="images/publicacion-2026-10/4-detalle-acero.jpg" alt="Recorte de la imagen Por qué Zriceros: el texto Surgical grade stainless steel toca el borde derecho de su recuadro"><figcaption>Imagen 4: «STEEL» llega al borde del recuadro.</figcaption></figure>
+</div>
+<p><strong>La cuadrada del diseñador (con menta y caja) ya no hace falta.</strong>
+La semana 5 la proponía como imagen 2 porque la ficha no tenía una buena imagen de
+ambiente; la 5 cumple ese papel con el mismo acabado. Lo único pendiente de la
+galería son las dos correcciones de arriba.</p>
 <h3>El CTR de «tongue scraper», que es como se mide la imagen</h3>
 <table>
 <tr><th></th><th class="num">Semana 3</th><th class="num">Semana 4</th><th class="num">Semana 5</th><th class="num">Semana 6</th></tr>
@@ -295,7 +321,7 @@ un rectángulo tapa un renglón de texto y asoman las puntas de las letras.</p>
 <tr><th>Lo que se pidió</th><th>Estado</th><th>Cómo se sabe</th></tr>
 <tr><td>Apagar Sustitutos y Complementos</td><td class="tbd">No se ve</td><td>11 fichas ajenas en la automática, cinco con líneas hasta el 13-10. Bajaron de 48 a 12 clics. El paso 1 lo reemplaza por bajarles la puja.</td></tr>
 <tr><td>Imagen principal corregida (al diseñador)</td><td class="ok">Sí</td><td>En la ficha desde algún día entre el 10 y el 14-10: 61QDX1XG2oL, vertical, cumple las seis correcciones (sección 4).</td></tr>
-<tr><td>La cuadrada del diseñador como imagen 2</td><td class="tbd">No se ve</td><td>No está entre las cinco imágenes de la ficha. Sigue en el paso 4.</td></tr>
+<tr><td>La cuadrada del diseñador como imagen 2</td><td class="ok">Reemplazada</td><td>La galería nueva trae una imagen de ambiente (la 5) que cumple ese papel (sección 4).</td></tr>
 <tr><td>Pedir reseñas desde el 7-09</td><td class="tbd">Registro vacío</td><td><code>datos/resenas_solicitadas.csv</code> sin filas. A los pedidos del 7 al 13-09 ya se les fue el botón; los del 14 al 20-09 vencen esta semana.</td></tr>
 <tr><td>Campaña manual en exacta</td><td class="tbd">No aparece</td><td>El informe trae una sola campaña. El informe sólo lista términos con clics: si se creó, ninguna de las siete tuvo un clic.</td></tr>
 <tr><td>No tocar la puja de las búsquedas</td><td class="ok">Sí</td><td>$1,00 justo en 23 de las 37 líneas, como antes.</td></tr>
@@ -440,7 +466,7 @@ paso 1 hecho.</p>
 alguien está buscando y hacer que ahí nos toquen más, pero ahora con la imagen
 puesta.</strong> La semana 6 confirmó las dos mitades. El paso 1 deja de pagar de
 más en las fichas ajenas. El 2 suma búsquedas a una puja que gana. El 3 es lo único
-que mueve las calificaciones. El 4 termina las imágenes. El 5 cuida lo que
+que mueve las calificaciones. El 4 corrige dos imágenes. El 5 cuida lo que
 funciona. El precio se queda en $19,89.</p>
 <p><strong>Cambios respecto de la semana 5:</strong> Sustitutos y Complementos ya
 no se apagan, se bajan a $0,50 (sección 6). La imagen principal sale de la lista
@@ -640,40 +666,36 @@ tongue scraper travel</pre>
 <!-- /registro-resenas -->
 </div></li>
 
-<li><span class="p-tit">Las imágenes secundarias: subir la cuadrada del diseñador y corregir la de «cómo usar»</span>
-<span class="p-tag">≈10 min · la Parte A viene de la semana 5</span>
+<li><span class="p-tit">Las imágenes 3 y 4: dos textos para corregir</span>
+<span class="p-tag">≈5 min · CAMBIO: la cuadrada del diseñador ya no se sube, la reemplaza la imagen de ambiente</span>
 <table class="p-tab">
-<tr><th>Parte A: la cuadrada del diseñador como imagen 2</th><td><ol class="clic">
-  <li>Entrar a <strong>sellercentral.amazon.com</strong> (no al panel de
-    publicidad).</li>
-  <li>Menú (las tres rayitas arriba a la izquierda) &rarr; <em>Inventario</em>
-    &rarr; <em>Administrar todo el inventario</em>.</li>
-  <li>En el buscador de esa página, escribir <strong>B0H6QZGX56</strong> y Enter.
-    <span class="ver">Tenés que ver: una sola fila, el Tongue Scraper a
-    $19,89.</span></li>
-  <li>A la derecha de esa fila, la flecha al lado de <em>Editar</em> &rarr;
-    <em>Administrar imágenes</em>.
-    <span class="ver">Tenés que ver: casilleros de imagen. El primero, marcado
-    <em>MAIN</em> o <em>Principal</em>, tiene la foto nueva: el estuche negro arriba
-    y los tres raspadores abajo.</span></li>
-  <li><span class="ojo">No tocar el casillero MAIN.</span> Clic en el primer
-    casillero <strong>vacío</strong> y elegir el archivo del diseñador
-    (<em>original ZC.jpg.jpeg</em>, en la carpeta compartida de amazon).</li>
-  <li>Arrastrarla al <strong>segundo</strong> lugar, justo después de la
-    principal.</li>
-  <li>Clic en <em>Guardar</em> o <em>Enviar</em>.
-    <span class="ver">Tenés que ver: la imagen nueva en el segundo lugar y la
-    principal sin cambios. Amazon puede tardar hasta un día en mostrarla.</span></li>
+<tr><th>Al diseñador</th><td>Mandarle los dos recortes de la sección 4 con este pedido:
+  <ol class="clic">
+  <li>Imagen <em>How to use</em>: debajo de TONGUE SCRAPER hay un rectángulo que tapa
+    un renglón de texto y se ven las puntas de las letras. Borrar ese texto del todo,
+    o ponerlo entero y legible. De paso, la frase «For best results, use every
+    morning…» en la misma tipografía que el resto.</li>
+  <li>Imagen <em>Why choose Zriceros</em>: «SURGICAL GRADE STAINLESS STEEL» se sale
+    de su recuadro; achicar un poco la letra de los cuatro renglones o ensanchar
+    los recuadros.</li>
+  <li>Las dos, en 1280 &times; 1280 como están ahora. El resto, igual.</li>
+  </ol></td></tr>
+<tr><th>Cuando lleguen</th><td><ol class="clic">
+  <li><strong>sellercentral.amazon.com</strong> &rarr; Menú &rarr;
+    <em>Inventario</em> &rarr; <em>Administrar todo el inventario</em> &rarr; buscar
+    <strong>B0H6QZGX56</strong>.</li>
+  <li>Flecha al lado de <em>Editar</em> &rarr; <em>Administrar imágenes</em>.
+    <span class="ojo">No tocar el casillero MAIN.</span></li>
+  <li>En el casillero de cada imagen vieja, reemplazarla por la corregida, en el
+    mismo lugar &rarr; <em>Guardar</em>.
+    <span class="ver">Tenés que ver: las cinco en el mismo orden, la principal sin
+    cambios.</span></li>
 </ol></td></tr>
-<tr><th>Parte B: al diseñador</th><td>Mandarle el recorte de la sección 4 con este
-  pedido: «En la imagen <em>How to use</em>, debajo de TONGUE SCRAPER, hay un
-  rectángulo que tapa un renglón de texto y se ven las puntas de las letras. Borrar
-  ese texto de fondo del todo, o poner el renglón entero y legible. El resto de la
-  imagen, igual.» Cuando la mande, se reemplaza en el mismo casillero.</td></tr>
-<tr><th>Qué no hacer</th><td>No poner la cuadrada como principal: tiene menta y
-  piso gris, y la principal de hoy ya cumple todo.</td></tr>
-<tr><th>Cómo se verifica</th><td>La ficha muestra seis imágenes, la segunda es la
-  del diseñador, y en la de «cómo usar» no queda ningún texto cortado.</td></tr>
+<tr><th>Qué no hacer</th><td>No cambiar la principal ni el orden de la galería
+  esta semana: la semana 7 mide la imagen principal, y cualquier otro cambio en la
+  primera imagen lo ensucia.</td></tr>
+<tr><th>Cómo se verifica</th><td>En la ficha, ningún texto cortado ni pegado al
+  borde en las cinco imágenes.</td></tr>
 </table></li>
 
 <li><span class="p-tit">Las búsquedas de la automática y el presupuesto: no tocar</span>
