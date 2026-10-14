@@ -27,8 +27,8 @@ en 56 clics, 428%, −$76,12. Semana 5 (nueve días): 73,7%, −$33,92. Semana 6
 11 pedidos, +$44,48, la mejor. Acumulado: 37 unidades, ACoS 56,2%, −$80,73. En
 búsquedas el anuncio convierte 16,6% y gana; en fichas ajenas 7,6%, y es toda la
 pérdida que queda. PRIMALS pausada desde el 1-10; la automática sola gana en el
-acumulado (+$17,26). La imagen principal nueva (vertical, 86% del alto) está en la
-ficha desde el 10 al 14-10. La propuesta es bajar Sustitutos y Complementos a $0,50
+acumulado (+$17,26). Las imágenes nuevas (principal vertical, 86% del alto, y galería
+de cinco) se subieron el 13-10: no explican la semana 6, la 7 es la primera que las mide. La propuesta es bajar Sustitutos y Complementos a $0,50
 y lanzar la manual en exacta a $1,00. 7 calificaciones (5,0); BSR de la categoría
 #175.
 

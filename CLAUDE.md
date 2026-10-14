@@ -166,14 +166,19 @@ de conversión, y con eso el equilibrio sube de $0,26 a $0,55. **Cuando el
 equilibrio de algo que se iba a apagar pasa a ser una puja que se gana, la
 recomendación cambia de apagar a bajar la puja** ($0,50), y se dice que cambió.
 
-La imagen principal corregida apareció en la ficha entre el 10 y el 14-10
-(`61QDX1XG2oL`, 1278×1600, producto en 86% del alto; copia en
-`images/main-2026-10-14.jpg`). Nadie avisa cuándo cambia la ficha: **leerla
-siempre** con cada informe (los `hiRes` del HTML dan todas las imágenes) y comparar
-el ID de la principal con el de la semana anterior. Con ella llegó una galería nueva de cinco
-(copias en `images/publicacion-2026-10/`, en el orden de la ficha); la cuadrada del
-diseñador con menta quedó descartada porque la imagen de ambiente cumple su papel. El CTR de «tongue scraper» en la
-automática es la medida: 0,45% (semanas 3–5), 0,76% en la 6.
+La imagen principal corregida y una galería nueva de cinco se subieron el **13-10**
+(lo dijo Ariel), el último día de la semana 6: **no explican sus ventas**. Principal
+`61QDX1XG2oL`, 1278×1600, producto en 86% del alto; copias en
+`images/main-2026-10-14.jpg` y `images/publicacion-2026-10/` (en el orden de la
+ficha). La cuadrada del diseñador con menta quedó descartada: la imagen de ambiente
+cumple su papel. Leer la ficha con cada informe (los `hiRes` del HTML dan todas las
+imágenes) dice *qué* cambió pero no *cuándo*: **sin la fecha del cambio no se
+atribuye nada a una imagen**. El CTR de «tongue scraper» en la automática subió de
+0,45% (semanas 3–5) a 0,76% en la 6 **con la imagen vieja** (menos impresiones por
+día, los mismos clics: mejores subastas). La base para medir la nueva es 0,76%; la
+meta, 1,0%. En el carrusel de Amazon (casilla cuadrada) la principal vertical ocupa
+28% de la casilla contra 38–69% de las cajas de la competencia
+(`images/carrusel-2026-10-14.jpg`).
 
 **Una campaña que no aparece en el informe de términos no prueba que no exista**:
 el informe sólo trae términos con clics. Por eso el paso de la manual empieza
