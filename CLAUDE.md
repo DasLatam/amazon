@@ -99,6 +99,17 @@ Trampas del informe de términos:
 - Amazon atribuye compras **hasta 7 días después del clic**: los últimos días de un
   informe bajado al día siguiente todavía pueden sumar ventas.
 - Un mismo CPC repetido en muchas filas de una campaña es su puja (PRIMALS: $2,84).
+- **Con pujas dinámicas «aumentar y reducir» el CPC repetido es la puja × 1,5 o × 2**
+  (Amazon sube hasta 50% fuera de la parte superior y hasta 100% en la parte
+  superior). Semana 7: $1,50 y $2,00 sobre $1,00, y $0,75 sobre los $0,50 de
+  Sustitutos/Complementos. Que el techo deje de ser la puja es la señal del cambio.
+- **Los informes se pueden pisar un día.** El de la semana 6 se bajó el 13-10 y el de
+  la 7 empieza el 13-10. Las líneas idénticas en los dos (mismo término, clics y
+  costo, rango que incluye el día pisado) se descuentan del nuevo y se dice en la
+  nota de la tabla; los totales de líneas de varios días no se pueden partir.
+- **Desde la semana 7 el informe trae una línea «(Other)»** con impresiones y ningún
+  clic: las búsquedas sin clic agrupadas. No es un término; con ella las
+  impresiones dejan de ser sólo un piso.
 
 ## Las dos campañas convierten igual: lo que cambia es el precio del clic
 
@@ -175,10 +186,34 @@ cumple su papel. Leer la ficha con cada informe (los `hiRes` del HTML dan todas 
 imágenes) dice *qué* cambió pero no *cuándo*: **sin la fecha del cambio no se
 atribuye nada a una imagen**. El CTR de «tongue scraper» en la automática subió de
 0,45% (semanas 3–5) a 0,76% en la 6 **con la imagen vieja** (menos impresiones por
-día, los mismos clics: mejores subastas). La base para medir la nueva es 0,76%; la
-meta, 1,0%. En el carrusel de Amazon (casilla cuadrada) la principal vertical ocupa
+día, los mismos clics: mejores subastas). La base para medir la nueva era 0,76% y la
+meta 1,0%; la semana 7 cambió la puja a la vez y la base pasó a 0,54% (ver abajo). En el carrusel de Amazon (casilla cuadrada) la principal vertical ocupa
 28% de la casilla contra 38–69% de las cajas de la competencia
 (`images/carrusel-2026-10-14.jpg`).
+
+## Volumen contra margen (semana 7)
+
+Semana 7 (2026-10-20): con la puja dinámica de subir y bajar, el CPC de búsqueda
+pasó de $0,98 a $1,39, las impresiones de «tongue scraper» se cuadruplicaron y salió
+el récord: 17 pedidos, +$32,83 (la 6 ganó más con 11). **Comparar por unidad, no por
+semana:** con la conversión acumulada (17,6%), a $0,98 cada unidad deja $3,43 y a
+$1,39, $1,10; las 1.000 unidades salen en ~13 meses en vez de ~2 años pero dejan
+~$2.300 menos. La puja alta gana en las dos cosas sólo con conversión ≥ 20% (85 clics
+a $1,39 contra 45 a $0,98). Regla puesta para la semana 8: semanas 7+8 juntas ≥ 20%
+se queda; menos, vuelve a «solo reducir». Con la puja alta, 14 de 17 ventas vinieron
+de dos búsquedas («tongue scraper» y «tongue scraper for adults», 9 pedidos en 20
+clics desde la semana 5) y la cola larga a ~$1,41 perdió (−$15,32); a $1,00 ganaba.
+
+El cambio de puja coincidió con la primera semana de la imagen principal nueva:
+**el CTR de esa semana no mide la imagen** (cada vez que las impresiones se
+multiplicaron —semanas 3, 5 y 7— el CTR bajó). Base nueva: 0,54% con ~1.100
+impresiones por día; se compara con la semana 8 a la misma puja.
+
+**Los pendientes que Ariel marca hechos se toman como hechos** (`hecha_en`), aunque
+el informe todavía no los muestre: la manual exacta y la tanda de reseñas se
+marcaron el 19-10, el último día del informe de la semana 7. En la hoja van como
+«Hecho el 19-10» y se miden la semana siguiente. El registro de reseñas sigue vacío
+igual: se pidieron pero no se anotaron.
 
 **Una campaña que no aparece en el informe de términos no prueba que no exista**:
 el informe sólo trae términos con clics. Por eso el paso de la manual empieza
