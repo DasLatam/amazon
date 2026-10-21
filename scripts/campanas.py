@@ -110,8 +110,8 @@ def totales(filas: list[dict]) -> dict:
     return por
 
 
-def pct(a: float, b: float) -> str:
-    return f"{a / b * 100:.1f}%".replace(".", ",") if b else "—"
+def pct(a: float, b: float, dec: int = 1) -> str:
+    return f"{a / b * 100:.{dec}f}%".replace(".", ",") if b else "—"
 
 
 def plata(v: float) -> str:
@@ -138,7 +138,7 @@ def tabla_html(n: int, desde: str, hasta: str, por: dict, nombres_pasadas: set[s
                  (f' · {int(c["l_other"])} «(Other)»' if c["l_other"] else "") + ")"
         filas.append(
             f'<tr><td>{etiqueta}</td><td class="num">{lineas}</td><td class="num">{miles(c["impresiones"])}</td>'
-            f'<td class="num">{int(c["clics"])}</td><td class="num">{pct(c["clics"], c["impresiones"])}</td>'
+            f'<td class="num">{int(c["clics"])}</td><td class="num">{pct(c["clics"], c["impresiones"], 2)}</td>'
             f'<td class="num">{plata(c["gasto"])}</td><td class="num">{plata(c["ventas"])}</td>'
             f'<td class="num">{int(c["pedidos"])}</td><td class="num">{pct(c["gasto"], c["ventas"])}</td></tr>')
     return (f"<!-- {MARCA} -->\n<div class=\"tabla\"><table>\n"
@@ -175,7 +175,7 @@ def main() -> int:
         for nom, c in por.items():
             print(f"  {nom:<12} líneas {int(c['lineas']):>3} (búsq {int(c['l_busqueda'])}, fichas {int(c['l_ficha'])},"
                   f" other {int(c['l_other'])}) · impr {miles(c['impresiones'])} · clics {int(c['clics'])}"
-                  f" · CTR {pct(c['clics'], c['impresiones'])} · gasto {plata(c['gasto'])}"
+                  f" · CTR {pct(c['clics'], c['impresiones'], 2)} · gasto {plata(c['gasto'])}"
                   f" · ventas {plata(c['ventas'])} · pedidos {int(c['pedidos'])} · ACoS {pct(c['gasto'], c['ventas'])}")
         ids = {x["ID de la campaña"] for x in filas}
         print(f"  campañas distintas (por ID): {len(ids)}")

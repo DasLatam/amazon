@@ -86,6 +86,26 @@ que en el server es **`/home/hpp/shared/amazon/`**. Se copia a `datos/` con nomb
 `semana-N_<desde>_<hasta>_terminos.csv`. `datos/` está en `.gitignore`: el CSV
 trae el ID de la cuenta de anunciante y los de las campañas.
 
+**CAMBIO de la propuesta anterior (2026-10-20): desde la semana 8 son dos
+informes**, los dos de Sponsored Products, unidad «Resumen», lunes a domingo, sin
+filtro de campaña ni de estado: el de **términos de búsqueda** (como siempre; si se
+pueden elegir columnas, con «Segmentación» y «Tipo de concordancia») y el de
+**segmentación** (Targeting), que se copia como `semana-N_<desde>_<hasta>_segmentacion.csv`.
+Motivo: la manual exacta (`Zriceros - Manual exacta - oct 2026`, marcada hecha el
+19-10) no tiene ni una línea en ningún informe de términos, y ese informe no puede
+mostrar una campaña sin clics. Sus siete búsquedas sumaron 248 impresiones y 12
+clics en siete semanas (ocho pagados por PRIMALS a más de $2; en las semanas 5–7, un
+clic entre las siete): a $1,00 con «solo bajada» lo normal es una semana sin clics.
+**La manual se mide por impresiones por palabra (informe de segmentación), no por
+clics en el de términos.** Paso a paso para revisarla en el panel y para bajar los
+informes: `diagnostico-campana-manual.html` (en el menú, Seguimiento de Ads).
+Antes de armar cada semana, `/usr/bin/python3 scripts/campanas.py` cuenta líneas y
+totales por campaña y tipo, busca las siete palabras y verifica los totales de la
+hoja; con `--poner` escribe la tabla por campaña en el bloque `<!-- tabla-campanas -->`
+(sumar la hoja nueva a `HOJAS` y el control `HOJA_S7` de la semana que toque).
+**Que una campaña no tenga líneas no la hace culpable ni inexistente**: el
+historial del panel da el día de creación, no el día en que se marcó hecha.
+
 Trampas del informe de términos:
 
 - **Sólo lista búsquedas con al menos un clic.** Los clics están completos; las
