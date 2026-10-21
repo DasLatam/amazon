@@ -41,7 +41,7 @@ NOMBRE_MANUAL = "Zriceros - Manual exacta - oct 2026"
 HOJA_S7 = {"clics": 88, "gasto": 120.17, "pedidos": 17, "ventas": 338.13, "impresiones": 13896}
 
 MARCA = "tabla-campanas"
-HOJAS = ["reporte-campanas-zriceros-semana-7.html", "diagnostico-campana-manual.html"]
+HOJAS: list[str] = []  # el bloque tabla-campanas se sacó de las hojas (2026-10-21); sumar acá la hoja que lo lleve
 
 
 def num(v: str) -> float:

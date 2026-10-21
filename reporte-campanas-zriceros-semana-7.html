@@ -143,57 +143,13 @@
   .zp a{flex:1 1 100%}
   table{display:block;max-width:100%;overflow-x:auto}
 }</style>
-<nav class="zm" aria-label="Hojas del proyecto"><div class="zm-f1"><a href="index.html" class="zm-marca">Zriceros en Amazon</a><a href="listing-zriceros-tongue-scraper.html" title="Listing, Competencia">Producto</a><a href="estrategia-inversion-zriceros.html" title="Inversión, PPC, Reseñas">Plan</a><a href="reporte-campanas-zriceros-semana-7.html" class="zm-aqui" title="Diagnóstico manual, Semana 1, Semana 2, Semana 3, Semana 4, Semana 5, Semana 6, Semana 7">Seguimiento de Ads</a></div><div class="zm-f2"><span class="zm-rot">Seguimiento de Ads ›</span><a href="diagnostico-campana-manual.html">Diagnóstico manual</a><a href="reporte-campanas-zriceros.html">Semana 1</a><a href="reporte-campanas-zriceros-semana-2.html">Semana 2</a><a href="reporte-campanas-zriceros-semana-3.html">Semana 3</a><a href="reporte-campanas-zriceros-semana-4.html">Semana 4</a><a href="reporte-campanas-zriceros-semana-5.html">Semana 5</a><a href="reporte-campanas-zriceros-semana-6.html">Semana 6</a><a href="reporte-campanas-zriceros-semana-7.html" aria-current="page">Semana 7</a></div></nav>
+<nav class="zm" aria-label="Hojas del proyecto"><div class="zm-f1"><a href="index.html" class="zm-marca">Zriceros en Amazon</a><a href="listing-zriceros-tongue-scraper.html" title="Listing, Competencia">Producto</a><a href="estrategia-inversion-zriceros.html" title="Inversión, PPC, Reseñas">Plan</a><a href="reporte-campanas-zriceros-semana-7.html" class="zm-aqui" title="Campaña manual, Semana 1, Semana 2, Semana 3, Semana 4, Semana 5, Semana 6, Semana 7">Seguimiento de Ads</a></div><div class="zm-f2"><span class="zm-rot">Seguimiento de Ads ›</span><a href="diagnostico-campana-manual.html">Campaña manual</a><a href="reporte-campanas-zriceros.html">Semana 1</a><a href="reporte-campanas-zriceros-semana-2.html">Semana 2</a><a href="reporte-campanas-zriceros-semana-3.html">Semana 3</a><a href="reporte-campanas-zriceros-semana-4.html">Semana 4</a><a href="reporte-campanas-zriceros-semana-5.html">Semana 5</a><a href="reporte-campanas-zriceros-semana-6.html">Semana 6</a><a href="reporte-campanas-zriceros-semana-7.html" aria-current="page">Semana 7</a></div></nav>
 <!-- /menu -->
 
 
 <h1>Zriceros Tongue Scraper &mdash; Avances de Amazon Ads</h1>
 <p class="meta">ASIN: B0H6QZGX56 &middot; cuenta: lombardi company &middot;
-  1.000 unidades a $19,89 &middot; generado 2026-10-20 &middot; nota sobre la campaña manual sumada el 2026-10-20</p>
-
-<div class="card tips" id="nota-manual">
-<h2>Nota de corrección del 20-10: la campaña manual en exacta</h2>
-<p><strong>Los números de esta hoja están bien y no se tocan.</strong> Se
-volvieron a sacar línea por línea del CSV con <code>scripts/campanas.py</code>: 88
-clics, $120,17, 17 pedidos, $338,13 en ventas y 13.896 impresiones, lo mismo que
-dicen las secciones 1 y 2. Las 36 líneas del informe (33 después de descontar las
-tres del 13-10) son todas de <em>Campaña - 9/1/2026 automatica</em>, con un solo ID
-de campaña: no hay nada de la manual sumado, mezclado ni atribuido a otra campaña.</p>
-<!-- tabla-campanas -->
-<div class="tabla"><table>
-<tr><th>Campaña</th><th class="num">Líneas del informe</th><th class="num">Impr.</th><th class="num">Clics</th><th class="num">CTR</th><th class="num">Gasto</th><th class="num">Ventas</th><th class="num">Pedidos</th><th class="num">ACoS</th></tr>
-<tr><td>Campaña - 9/1/2026 automatica</td><td class="num">33 (29 búsq. · 3 fichas · 1 «(Other)»)</td><td class="num">13.896</td><td class="num">88</td><td class="num">0,63%</td><td class="num">$120,17</td><td class="num">$338,13</td><td class="num">17</td><td class="num">35,5%</td></tr>
-<tr><td>Zriceros - Manual exacta - oct 2026</td><td colspan="8" class="tbd">ninguna línea: ningún clic ni impresiones agrupadas en el informe</td></tr>
-<tr><td>Campaña - 9/1/2026 PRIMALS (pausada el 1-10)</td><td colspan="8" class="tbd">ninguna línea (pausada)</td></tr>
-</table></div>
-<p class="meta">Semana 7 (2026-10-13 a 2026-10-19), salido de <code>scripts/campanas.py</code> sobre el informe de términos, con las líneas del 13-10 repetidas de la semana 6 descontadas. Las impresiones incluyen la línea «(Other)».</p>
-<!-- /tabla-campanas -->
-<p><strong>Lo que estaba mal son dos frases sobre la manual.</strong></p>
-<ul>
-<li><strong>«Se creó el 19-10» (secciones 7 y 11)</strong> toma como día de creación
-  el día en que se marcó hecha. El CSV no trae la fecha de una campaña que no tuvo
-  líneas. Si se creó antes, la semana 7 la tuvo varios días y ninguna de las siete
-  búsquedas ganó un clic; el día exacto está en el historial del panel (paso 3 del
-  <a href="diagnostico-campana-manual.html">diagnóstico</a>).</li>
-<li><strong>«2 o más de 7 con clics» (predicción para la semana 8)</strong> era
-  optimista. En siete semanas las siete búsquedas juntas tuvieron 248 impresiones y
-  12 clics, y ocho de esos clics los pagó PRIMALS a entre $2,12 y $2,92. En las
-  semanas 5 a 7, entre las siete, un clic. A $1,00 con «solo bajada», una semana sin
-  ningún clic es lo esperable aunque la campaña esté perfecta. CAMBIO de la
-  propuesta anterior: la manual se mide por <strong>impresiones de cada palabra</strong>,
-  no por clics en el informe de términos.</li>
-</ul>
-<p><strong>Por qué el informe no la muestra.</strong> El informe de términos de
-búsqueda sólo trae búsquedas con clics, más una línea «(Other)» con las impresiones sin
-clic, que viene con el nombre de la campaña y del grupo. La automática tiene la suya
-(3.385 impresiones); la manual no tiene ni esa: en este rango no tuvo clics y, muy probablemente, casi
-ninguna impresión. Que esté bien creada y no gane subastas, o que algo la frene
-(estado, producto, puja), sólo se ve en el panel. CAMBIO de la propuesta anterior en
-el informe semanal: desde la semana 8 se baja también el <strong>informe de
-segmentación</strong>, que da las impresiones por palabra clave. Paso a paso para
-revisar la campaña y para bajar los dos informes:
-<a href="diagnostico-campana-manual.html"><strong>Diagnóstico de la campaña manual</strong></a>.</p>
-</div>
+  1.000 unidades a $19,89 &middot; generado 2026-10-20</p>
 
 <h2><span class="num">1.</span> Semana 7 &mdash; 13 al 19 de octubre de 2026</h2>
 <div class="kpis">
@@ -422,7 +378,7 @@ imágenes 2 y 5 siguen iguales. Las cinco están en el mismo orden.</p>
 <table>
 <tr><th>Lo que se pidió</th><th>Estado</th><th>Cómo se sabe</th></tr>
 <tr><td>Sustitutos y Complementos a $0,50</td><td class="ok">Sí</td><td>Las tres líneas con ASIN posteriores al 13-10 cuestan $0,75 justo ($0,50 más el 50% de las pujas dinámicas), con 18 impresiones en la semana.</td></tr>
-<tr><td>Campaña manual en exacta</td><td class="ok">Hecha el 19-10</td><td>Todavía no aparece: el informe termina ese mismo día. La semana 8 es la primera que la mide. <a href="#nota-manual" class="tbd">Corregido en la nota de arriba.</a></td></tr>
+<tr><td>Campaña manual en exacta</td><td class="ok">Hecha el 19-10</td><td>Todavía no aparece: el informe termina ese mismo día. La semana 8 es la primera que la mide.</td></tr>
 <tr><td>Pedir reseñas a los pedidos del 14-09 al 8-10</td><td class="ok">Hecho el 19-10</td><td>El registro <code>datos/resenas_solicitadas.csv</code> no tiene filas, así que no hay cuenta de cuántas se pidieron.</td></tr>
 <tr><td>Corregir las imágenes 3 y 4</td><td class="ok">Sí</td><td>En la ficha el 20-10, en 1600 &times; 1600 (sección 6).</td></tr>
 <tr><td>No tocar la puja de las búsquedas</td><td class="tbd">Cambió</td><td>Desde el 14 o el 15-10 se paga hasta $1,50, y $2,00 en dos líneas (sección 4).</td></tr>
@@ -437,6 +393,7 @@ imágenes 2 y 5 siguen iguales. Las cinco están en el mismo orden.</p>
 <tr><td>PRIMALS (pausada el 1-10)</td><td class="num">117</td><td class="num">15</td><td class="num">12,8%</td><td class="num">$2,07</td><td class="num">$241,99</td><td class="num">76,0%</td><td class="num neg">&minus;$97,99</td></tr>
 <tr class="row-bien"><td>Automática</td><td class="num">273</td><td class="num">38</td><td class="num">13,9%</td><td class="num">$1,07</td><td class="num">$291,91</td><td class="num">38,6%</td><td class="num pos">+$50,09</td></tr>
 <tr><td><strong>Las dos</strong></td><td class="num">390</td><td class="num">53</td><td class="num">13,6%</td><td class="num">$1,37</td><td class="num">$533,90</td><td class="num">49,7%</td><td class="num neg">&minus;$47,90</td></tr>
+<tr><td>Zriceros - Manual exacta</td><td colspan="7">sin clics esta semana, por eso no aparece en el informe de términos. <a href="diagnostico-campana-manual.html">Cómo verificarla &rarr;</a></td></tr>
 </table>
 <p>La automática lleva +$50,09. Lo que falta para que el proyecto quede en cero es
 la mitad de lo que perdió PRIMALS: a la ganancia de esta semana, una semana y
@@ -486,7 +443,7 @@ como menos clics sin que cambie nada más.</p>
 <tr><td>Pedidos de búsqueda, automática: 4 o más</td><td class="num ok">17</td><td>se cumplió, y de sobra</td></tr>
 <tr><td>CPC en fichas ajenas: $0,50 o menos</td><td class="num">$0,75</td><td>la puja quedó en $0,50; el 50% lo suman las pujas dinámicas</td></tr>
 <tr><td>Clics en fichas ajenas: 3 a 12</td><td class="num ok">3</td><td>se cumplió</td></tr>
-<tr><td>Manual exacta: 2 o más de 7</td><td class="num">&mdash;</td><td>se creó el 19-10, el último día del informe <a href="#nota-manual" class="tbd">(se marcó hecha el 19-10; ver la nota de arriba)</a></td></tr>
+<tr><td>Manual exacta: 2 o más de 7</td><td class="num">&mdash;</td><td>se creó el 19-10, el último día del informe</td></tr>
 <tr><td>Gasto total: $45 a $70</td><td class="num">$120,17</td><td>por encima, por la puja</td></tr>
 <tr><td>Ganancia neta: +$10 a +$45</td><td class="num ok">+$32,83</td><td>dentro del rango</td></tr>
 <tr><td>Calificaciones: 8 o más</td><td class="num">7</td><td>no se cumplió por tercera semana</td></tr>
@@ -640,7 +597,7 @@ Sustitutos y Complementos a $0,50, como están.</p>
 <tr><td>CTR de «tongue scraper»</td><td class="num">0,54%</td><td class="num">0,6% o más, con unas 1.100 impresiones por día</td><td>igual o menos con el mismo volumen: la imagen principal no mueve el CTR</td></tr>
 <tr><td>Búsquedas largas (todo menos «tongue scraper» y «for adults»)</td><td class="num">30 clics, 3 pedidos</td><td class="num">4 pedidos o más en unos 30 clics</td><td>de nuevo 3 o menos: la cola larga a $1,50 no paga</td></tr>
 <tr><td>Clics en fichas ajenas</td><td class="num">3</td><td class="num">0 a 5</td><td>&mdash;</td></tr>
-<tr><td>Manual exacta: términos con clics</td><td class="num">&mdash;</td><td class="num">2 o más de 7</td><td>ninguno: a $1,00 esas búsquedas no se ganan, y es un dato, no un error <a href="#nota-manual" class="tbd">CAMBIO: se mide por impresiones de cada palabra, ver la nota de arriba</a></td></tr>
+<tr><td>Manual exacta: términos con clics</td><td class="num">&mdash;</td><td class="num">2 o más de 7</td><td>ninguno: a $1,00 esas búsquedas no se ganan, y es un dato, no un error</td></tr>
 <tr><td>Ganancia neta</td><td class="num">+$32,83</td><td class="num">+$10 a +$40</td><td>negativa con la conversión arriba de 15%: mirar el gasto en búsquedas largas</td></tr>
 <tr><td>Calificaciones de la ficha</td><td class="num">7</td><td class="num">8 o más</td><td>&mdash;</td></tr>
 </table>

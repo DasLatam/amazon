@@ -3,118 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Diagnóstico manual — Seguimiento de Ads · Zriceros en Amazon</title>
+<title>Campaña manual — Seguimiento de Ads · Zriceros en Amazon</title>
 <style>
   body {
     font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    max-width: 960px;
+    max-width: 760px;
     margin: 40px auto;
-    padding: 0 24px;
-    line-height: 1.6;
+    padding: 0 20px;
+    line-height: 1.55;
     color: #232f3e;
     background: #f7f7f7;
+    font-size: 17px;
   }
   p, li { text-align: justify; hyphens: auto; }
-  h1 {
-    font-size: 23px;
-    border-bottom: 3px solid #ff9900;
-    padding-bottom: 8px;
+  h1 { font-size: 26px; border-bottom: 3px solid #ff9900; padding-bottom: 8px; margin-bottom: 14px; }
+  h2 { font-size: 19px; margin: 34px 0 12px; letter-spacing: .5px; }
+  .estado { background: #fff; border-left: 6px solid #2e7d32; border-radius: 8px;
+    padding: 14px 18px; font-size: 19px; font-weight: 600; margin: 0 0 8px; }
+  .paso { display: flex; gap: 16px; background: #fff; border: 1px solid #ddd;
+    border-radius: 10px; padding: 16px 18px; margin: 0 0 14px; }
+  .n { flex: 0 0 auto; font-size: 40px; font-weight: 800; color: #ff9900; line-height: 1; min-width: 34px; }
+  .paso div.t { flex: 1 1 auto; min-width: 0; }
+  .paso h3 { margin: 0 0 8px; font-size: 18px; }
+  .paso p { margin: 6px 0; }
+  .et { font-weight: 700; display: block; margin-top: 10px; font-size: 14px;
+    text-transform: uppercase; letter-spacing: .4px; }
+  .et.ok { color: #2e7d32; }
+  .et.no { color: #b3261e; }
+  .paso ul, .paso ol { margin: 4px 0; padding-left: 20px; }
+  .paso li { margin: 3px 0; text-align: left; }
+  .paso p, .paso li { hyphens: none; }
+  em { font-style: normal; font-weight: 600; background: #fff3d6; padding: 0 3px; border-radius: 3px; }
+  code { background: #eef2f5; padding: 1px 5px; border-radius: 4px; font-size: 15px; word-break: break-word; }
+  pre { background: #eef2f5; padding: 10px 12px; border-radius: 6px; font-size: 15px; margin: 6px 0; white-space: pre-wrap; }
+  a { color: #007185; }
+  @media (max-width: 480px) {
+    body { margin: 16px auto; padding: 0 12px; font-size: 16px; }
+    .paso { padding: 14px 12px; gap: 10px; }
+    .n { font-size: 32px; min-width: 26px; }
+    .paso p, .estado { text-align: left; }
   }
-  h2 {
-    font-size: 16px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #555;
-    margin-top: 44px;
-    border-left: 4px solid #ff9900;
-    padding-left: 10px;
-  }
-  h2 .num { color: #ff9900; margin-right: 6px; }
-  .meta { font-size: 13px; color: #888; margin-bottom: 4px; text-align: left; }
-  .card {
-    background: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 20px 24px;
-    margin-top: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
-  }
-  .tabla { overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-  table th, table td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: left; vertical-align: top; }
-  table th { background: #f0f0f0; }
-  td.num, th.num { text-align: right; white-space: nowrap; }
-  .warn { color: #c40000; font-weight: 600; }
-  .ok { color: #067d62; font-weight: 600; }
-  .tbd { color: #946200; font-style: italic; }
-  .summary { background: #eef6ff; border: 1px solid #c9e2ff; }
-  .card > h2:first-child { margin-top: 0; }
-  .summary h2 { border-left-color: #0a5cb8; color: #0a5cb8; }
-  .tips { background: #fff8ec; border: 1px solid #ffe2a8; }
-  .tips h2 { border-left-color: #cc8400; color: #8a5b00; }
-  .critique { background: #fff0ee; border: 1px solid #ffc9c0; }
-  .critique h2 { border-left-color: #c40000; color: #a30000; }
-  .semanas { font-size: 14px; margin: 10px 0 0; }
-  .semanas a, .semanas strong { margin-right: 10px; }
-  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }
-  .kpi { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center; }
-  .kpi .big { font-size: 26px; font-weight: 700; color: #0a5cb8; display: block; }
-  .kpi .lbl { font-size: 12px; color: #777; text-transform: uppercase; letter-spacing: .4px; margin-top: 4px; display: block; }
-  .kpi .sub { font-size: 12px; color: #999; display: block; margin-top: 2px; }
-  .pos { color: #067d62; }
-  .neg { color: #c40000; }
-  .row-total td { background: #eef6ff; font-weight: 700; }
-  .row-mal td { background: #fff5f3; }
-  .row-bien td { background: #ecf9f1; }
-  .formula { font-size: 17px; text-align: center; margin: 18px 0; }
-  footer { margin-top: 50px; font-size: 12px; color: #999; text-align: center; }
-  ol.pasos { counter-reset: paso; list-style: none; padding: 0; margin: 18px 0 0; }
-  ol.pasos > li { counter-increment: paso; position: relative;
-    margin: 0 0 22px; padding: 14px 16px 16px 52px; background: #fff;
-    border: 1px solid #ffe2a8; border-radius: 8px; }
-  ol.pasos > li::before { content: counter(paso); position: absolute; left: 14px; top: 14px;
-    width: 26px; height: 26px; border-radius: 50%; background: #cc8400; color: #fff;
-    font-weight: 700; font-size: 14px; text-align: center; line-height: 26px; }
-  .p-tit { display: block; font-size: 15.5px; font-weight: 700; color: #232f3e; }
-  .p-tag { display: block; font-size: 11.5px; color: #8a5b00; text-transform: uppercase;
-    letter-spacing: .4px; margin: 2px 0 10px; }
-  table.p-tab { margin: 0; font-size: 13.5px; }
-  table.p-tab > tbody > tr > th { width: 150px; background: #fffaf0; font-size: 12.5px;
-    color: #8a5b00; vertical-align: top; text-align: left; }
-  table.p-tab ul, table.p-tab ol { margin: 0; padding-left: 20px; }
-  table.p-mini { margin: 6px 0 0; font-size: 12.5px; }
-  table.p-mini th { background: #f5f5f5; }
-  ol.pasos code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
-  .p-registro { margin-top: 12px; padding: 10px 12px; background: #fffaf0;
-    border: 1px dashed #ffd27f; border-radius: 6px; }
-  .p-registro table.p-mini { margin: 0; }
-  .p-registro table.p-mini th { width: 60%; background: transparent; font-weight: 400; }
-  .p-registro p.meta { margin: 8px 0 0; }
-  @media (max-width: 640px) {
-    .kpis { grid-template-columns: repeat(2, 1fr); }
-    ol.pasos > li { padding-left: 16px; }
-    ol.pasos > li::before { position: static; display: inline-block; margin-right: 8px; }
-    table.p-tab > tbody > tr > th { width: auto; }
-  }
-  .img-par { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
-  .img-par figure { margin: 0; }
-  .img-par img, figure.sim img { width: 100%; height: auto; border: 1px solid #e0e0e0; border-radius: 6px; background: #fff; }
-  figure.sim { margin: 14px 0 0; }
-  figcaption { font-size: 12.5px; color: #777; margin-top: 4px; text-align: left; }
-  .brief { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; margin-top: 12px; }
-  @media (max-width: 640px) {
-    .img-par, .brief { grid-template-columns: 1fr; }
-  }
-  ol.clic { margin: 0; padding-left: 22px; }
-  ol.clic > li { margin: 0 0 8px; }
-  .ver { display: block; color: #067d62; font-size: 12.5px; margin-top: 3px; }
-  .ojo { display: block; color: #c40000; font-size: 12.5px; margin-top: 3px; }
-  p.ojo { font-size: 13px; }
-  .antes { background: #fff; border: 1px solid #ffe2a8; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
-  .antes > p:first-child { margin-top: 0; }
-  .galeria { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 12px; }
-  @media (max-width: 640px) { .galeria { grid-template-columns: repeat(2, 1fr); } }
-  pre.copiar { background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px; margin: 6px 0; white-space: pre-wrap; }
 </style>
 </head>
 <body>
@@ -143,296 +71,171 @@
   .zp a{flex:1 1 100%}
   table{display:block;max-width:100%;overflow-x:auto}
 }</style>
-<nav class="zm" aria-label="Hojas del proyecto"><div class="zm-f1"><a href="index.html" class="zm-marca">Zriceros en Amazon</a><a href="listing-zriceros-tongue-scraper.html" title="Listing, Competencia">Producto</a><a href="estrategia-inversion-zriceros.html" title="Inversión, PPC, Reseñas">Plan</a><a href="reporte-campanas-zriceros-semana-7.html" class="zm-aqui" title="Diagnóstico manual, Semana 1, Semana 2, Semana 3, Semana 4, Semana 5, Semana 6, Semana 7">Seguimiento de Ads</a></div><div class="zm-f2"><span class="zm-rot">Seguimiento de Ads ›</span><a href="diagnostico-campana-manual.html" aria-current="page">Diagnóstico manual</a><a href="reporte-campanas-zriceros.html">Semana 1</a><a href="reporte-campanas-zriceros-semana-2.html">Semana 2</a><a href="reporte-campanas-zriceros-semana-3.html">Semana 3</a><a href="reporte-campanas-zriceros-semana-4.html">Semana 4</a><a href="reporte-campanas-zriceros-semana-5.html">Semana 5</a><a href="reporte-campanas-zriceros-semana-6.html">Semana 6</a><a href="reporte-campanas-zriceros-semana-7.html">Semana 7</a></div></nav>
+<nav class="zm" aria-label="Hojas del proyecto"><div class="zm-f1"><a href="index.html" class="zm-marca">Zriceros en Amazon</a><a href="listing-zriceros-tongue-scraper.html" title="Listing, Competencia">Producto</a><a href="estrategia-inversion-zriceros.html" title="Inversión, PPC, Reseñas">Plan</a><a href="reporte-campanas-zriceros-semana-7.html" class="zm-aqui" title="Campaña manual, Semana 1, Semana 2, Semana 3, Semana 4, Semana 5, Semana 6, Semana 7">Seguimiento de Ads</a></div><div class="zm-f2"><span class="zm-rot">Seguimiento de Ads ›</span><a href="diagnostico-campana-manual.html" aria-current="page">Campaña manual</a><a href="reporte-campanas-zriceros.html">Semana 1</a><a href="reporte-campanas-zriceros-semana-2.html">Semana 2</a><a href="reporte-campanas-zriceros-semana-3.html">Semana 3</a><a href="reporte-campanas-zriceros-semana-4.html">Semana 4</a><a href="reporte-campanas-zriceros-semana-5.html">Semana 5</a><a href="reporte-campanas-zriceros-semana-6.html">Semana 6</a><a href="reporte-campanas-zriceros-semana-7.html">Semana 7</a></div></nav>
 <!-- /menu -->
 
+<h1>Campaña manual: verificar y activar</h1>
 
-<h1>Diagnóstico de la campaña manual en exacta</h1>
-<p class="meta">Zriceros - Manual exacta - oct 2026 &middot; ASIN B0H6QZGX56 &middot;
-  cuenta lombardi company &middot; armado el 2026-10-20 con los informes de las semanas 1 a 7</p>
+<p class="estado">La campaña manual ya está creada. No aparece en el informe porque todavía no tuvo clics.</p>
 
-<div class="card summary">
-<h2>En una línea</h2>
-<p><strong>El informe de la semana 7 estaba bien; lo que no alcanza es el tipo de
-informe.</strong> El de términos de búsqueda sólo muestra campañas que tuvieron
-clics, y la manual no tuvo ninguno: no hay ni una línea suya en los siete informes.
-Eso no dice si está mal creada. Las siete búsquedas que tiene sumaron 12 clics en
-siete semanas, y en las semanas 5 a 7 un solo clic entre todas: a $1,00 con «solo
-bajada» lo esperable es poco o nada. Los pasos 1 a 7 revisan la campaña en el panel;
-el 8 y el 9 cambian cómo se baja el informe para que la manual aparezca aunque no
-tenga clics.</p>
-</div>
+<h2>PASO A PASO</h2>
 
-<h2><span class="num">1.</span> Lo que dicen los informes, por campaña</h2>
-<div class="card">
-<p>Semana 7, del CSV. La manual no tiene líneas: ni búsquedas con clic ni la línea
-«(Other)» que agrupa las impresiones sin clic, que la automática sí tiene.</p>
-<!-- tabla-campanas -->
-<div class="tabla"><table>
-<tr><th>Campaña</th><th class="num">Líneas del informe</th><th class="num">Impr.</th><th class="num">Clics</th><th class="num">CTR</th><th class="num">Gasto</th><th class="num">Ventas</th><th class="num">Pedidos</th><th class="num">ACoS</th></tr>
-<tr><td>Campaña - 9/1/2026 automatica</td><td class="num">33 (29 búsq. · 3 fichas · 1 «(Other)»)</td><td class="num">13.896</td><td class="num">88</td><td class="num">0,63%</td><td class="num">$120,17</td><td class="num">$338,13</td><td class="num">17</td><td class="num">35,5%</td></tr>
-<tr><td>Zriceros - Manual exacta - oct 2026</td><td colspan="8" class="tbd">ninguna línea: ningún clic ni impresiones agrupadas en el informe</td></tr>
-<tr><td>Campaña - 9/1/2026 PRIMALS (pausada el 1-10)</td><td colspan="8" class="tbd">ninguna línea (pausada)</td></tr>
-</table></div>
-<p class="meta">Semana 7 (2026-10-13 a 2026-10-19), salido de <code>scripts/campanas.py</code> sobre el informe de términos, con las líneas del 13-10 repetidas de la semana 6 descontadas. Las impresiones incluyen la línea «(Other)».</p>
-<!-- /tabla-campanas -->
-<p>Las siete búsquedas de la manual, en todos los informes y en cualquier campaña:</p>
-<div class="tabla"><table>
-<tr><th>Búsqueda</th><th>Semanas con clic</th><th class="num">Impr.</th><th class="num">Clics</th><th>CPC pagado</th><th class="num">Pedidos</th></tr>
-<tr><td>tongue brush</td><td>1 (PRIMALS), 3 (automática)</td><td class="num">55</td><td class="num">2</td><td>$2,19 · $1,00</td><td class="num">1</td></tr>
-<tr><td>tongue scraper stainless steel</td><td>1 (PRIMALS)</td><td class="num">9</td><td class="num">1</td><td>$2,19</td><td class="num">1</td></tr>
-<tr><td>tongue scraper dr tung</td><td>1 (PRIMALS)</td><td class="num">3</td><td class="num">1</td><td>$2,92</td><td class="num">1</td></tr>
-<tr><td>tongue scrapper</td><td>2 (PRIMALS)</td><td class="num">78</td><td class="num">1</td><td>$2,84</td><td class="num">1</td></tr>
-<tr><td>tongue scraper black</td><td>3 (las dos), 4 y 5 (automática)</td><td class="num">32</td><td class="num">4</td><td>$2,19 · $0,77 · $1,20 · $1,34</td><td class="num">1</td></tr>
-<tr><td>tongue scraper with case</td><td>2 y 4 (PRIMALS)</td><td class="num">63</td><td class="num">2</td><td>$2,84 · $2,12</td><td class="num">0</td></tr>
-<tr><td>tongue scraper travel</td><td>2 (PRIMALS)</td><td class="num">8</td><td class="num">1</td><td>$2,72</td><td class="num">0</td></tr>
-<tr class="row-total"><td>Las siete</td><td>ninguna en las semanas 6 y 7</td><td class="num">248</td><td class="num">12</td><td>8 de 12 a más de $2 (PRIMALS)</td><td class="num">5</td></tr>
-</table></div>
-<p class="meta">Las impresiones son un piso: el informe sólo trae las búsquedas con
-clic. Cada búsqueda entró a la manual por un clic que convirtió; con un clic por
-palabra no hay conversión que se pueda medir todavía.</p>
-</div>
-
-<h2><span class="num">2.</span> Qué se puede afirmar y qué sólo se ve en el panel</h2>
-<div class="card tabla">
-<table>
-<tr><th>Con los informes</th><th>Sólo en Campaign Manager</th></tr>
-<tr><td>
+<div class="paso"><span class="n">1</span><div class="t">
+<h3>Encontrar la campaña</h3>
+<p>Entrar a <a href="https://advertising.amazon.com/cm/campaigns">advertising.amazon.com/cm/campaigns</a>.</p>
+<p>Arriba a la derecha: cuenta <em>lombardi company</em>, país <em>Estados Unidos</em>.</p>
+<p>Filtro <em>Estado de la campaña</em> (o <em>Estado</em>): elegir <em>Todas</em>.</p>
+<p>En el buscador escribir <code>Manual</code> y apretar Enter.</p>
+<span class="et ok">Tiene que decir</span>
+<p>Una sola fila: <em>Zriceros - Manual exacta - oct 2026</em>.</p>
+<span class="et no">Si no está así: hacé esto</span>
 <ul>
-<li>En los siete CSV hay dos campañas como mucho (automática y PRIMALS); en el de
-  la semana 7, sólo la automática. Ninguna línea de otra campaña.</li>
-<li>Los totales de la hoja de la semana 7 salen todos de la automática y coinciden
-  con el CSV.</li>
-<li>Los CSV no tienen filtro por campaña: traen la automática y, hasta el 1-10,
-  PRIMALS. Si la manual hubiera tenido un clic, tendría su línea.</li>
-<li>Las siete búsquedas tienen muy poco volumen y casi todos sus clics se pagaron
-  a más de $2.</li>
-</ul></td><td>
+<li>No aparece ninguna: ir a <a href="#crear">SI NO EXISTE: CREARLA</a>.</li>
+<li>Aparecen dos: dejar la que pase los pasos 2 a 5.</li>
+<li>A la otra, clic en su interruptor para pausarla.</li>
+</ul>
+</div></div>
+
+<div class="paso"><span class="n">2</span><div class="t">
+<h3>Estado y presupuesto</h3>
+<p>Mirar esa fila en la lista de campañas.</p>
+<span class="et ok">Tiene que decir</span>
+<p>Estado: <em>Entregando</em> (o <em>Activa</em>).</p>
+<p>Presupuesto: <em>$5,00</em> diario.</p>
+<span class="et no">Si no está así: hacé esto</span>
 <ul>
-<li>Si la campaña existe, en qué estado está y desde qué día.</li>
-<li>Si el producto del anuncio es B0H6QZGX56 y está apto para anunciarse.</li>
-<li>Si las siete palabras están en exacta, a $1,00, y cuál es la puja sugerida.</li>
-<li>Cuántas impresiones tuvo cada palabra (aunque tenga cero clics).</li>
-<li>Si alguna negativa la frena.</li>
-</ul></td></tr>
-</table>
-</div>
+<li><em>Pausada</em>: clic en el interruptor de la fila, que quede azul.</li>
+<li><em>Programada</em>: clic en el nombre → <em>Configuración</em> (o <em>Ajustes</em>).</li>
+<li>Ahí, <em>Fecha de inicio</em>: hoy → <em>Guardar cambios</em>.</li>
+<li><em>Finalizada</em>: en <em>Configuración</em>, <em>Fecha de finalización</em>: <em>Sin fecha de finalización</em> → <em>Guardar cambios</em>.</li>
+<li>Presupuesto distinto: clic en el número → escribir <code>5</code> → <em>Guardar</em>.</li>
+<li><em>Archivada</em>: no se puede reactivar. Ir a <a href="#crear">CREARLA</a>.</li>
+</ul>
+</div></div>
 
-<h2 id="pasos">El paso a paso, uno por uno</h2>
-<p>Se hace una vez, en unos diez minutos, en <strong>advertising.amazon.com</strong>
-con la cuenta <strong>lombardi company</strong> y <strong>Estados Unidos</strong>
-arriba a la derecha. <strong>Revisar no cambia nada</strong>: los pasos sólo corrigen
-algo cuando está distinto de lo que se pidió en la
-<a href="reporte-campanas-zriceros-semana-6.html#pasos">semana 6</a>. La puja, la
-estrategia y el presupuesto de la automática no se tocan hasta el informe del 27-10
-(paso 1 de la <a href="reporte-campanas-zriceros-semana-7.html#pasos">semana 7</a>).</p>
-<p class="meta">Los nombres de los botones son los del panel en español; Amazon
-los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
+<div class="paso"><span class="n">3</span><div class="t">
+<h3>Estrategia de puja</h3>
+<p>Clic en el nombre de la campaña.</p>
+<p>Menú de la izquierda → <em>Configuración</em> (o <em>Ajustes</em>).</p>
+<span class="et ok">Tiene que decir</span>
+<p>Segmentación: <em>Manual</em>.</p>
+<p>Estrategia de puja: <em>Pujas dinámicas: solo bajada</em>.</p>
+<p>Ajustes por ubicación: los tres en <em>0%</em> o vacíos.</p>
+<span class="et no">Si no está así: hacé esto</span>
+<ul>
+<li>Otra estrategia: tildar <em>Pujas dinámicas: solo bajada</em>.</li>
+<li>Ubicaciones con número: borrarlo o poner <code>0</code>.</li>
+<li>Abajo, <em>Guardar cambios</em>.</li>
+<li>Segmentación <em>Automática</em>: no es la manual. Pausarla e ir a <a href="#crear">CREARLA</a>.</li>
+</ul>
+</div></div>
 
-<ol class="pasos">
+<div class="paso"><span class="n">4</span><div class="t">
+<h3>El producto</h3>
+<p>Menú de la izquierda → <em>Grupos de anuncios</em> → clic en <em>Exacta</em>.</p>
+<p>Menú de la izquierda → <em>Anuncios</em> (o <em>Productos anunciados</em>).</p>
+<span class="et ok">Tiene que decir</span>
+<p>Un solo producto: <em>B0H6QZGX56</em>, a $19,89.</p>
+<p>Estado: <em>Entregando</em> (o <em>Activo</em>).</p>
+<span class="et no">Si no está así: hacé esto</span>
+<ul>
+<li>Falta: <em>Añadir productos</em> → buscar <code>B0H6QZGX56</code> → <em>Añadir</em> → <em>Guardar</em>.</li>
+<li>Hay otro ASIN (por ejemplo B0GVZF1GN7): clic en su interruptor para pausarlo.</li>
+<li>Producto pausado: clic en su interruptor, que quede azul.</li>
+</ul>
+</div></div>
 
-<li><span class="p-tit">Que la campaña exista, y una sola vez</span>
-<span class="p-tag">1 min</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td><em>Campañas</em>. Arriba de la lista, el filtro de estado en
-  <em>Todas</em> (no sólo «Activas») y en el buscador escribir <code>Manual</code>.</td></tr>
-<tr><th>Si ves</th><td><ul>
-<li><em>Zriceros - Manual exacta - oct 2026</em>, una vez &rarr; bien, seguir.</li>
-<li>Ninguna &rarr; mirar arriba a la derecha que sea lombardi company y Estados
-  Unidos. Si lo es, no se creó: crearla con la Parte A y la Parte B de la
-  <a href="reporte-campanas-zriceros-semana-6.html#pasos">semana 6</a>.</li>
-<li>Dos parecidas &rarr; quedarse con la que pase los pasos 4 a 6 y
-  <em>pausar</em> la otra (no archivar).</li>
-<li>Con estado <em>Archivada</em> &rarr; no tiene vuelta atrás: crearla de nuevo.</li>
-</ul></td></tr>
-</table></li>
+<div class="paso"><span class="n">5</span><div class="t">
+<h3>Las siete palabras</h3>
+<p>Dentro del grupo <em>Exacta</em>, menú de la izquierda → <em>Segmentación</em> (o <em>Palabras clave</em>).</p>
+<span class="et ok">Tiene que decir</span>
+<p>Siete filas. En cada una: Concordancia <em>Exacta</em>, Puja <em>1,00</em>, Estado activo.</p>
+<pre>tongue brush
+tongue scraper stainless steel
+tongue scraper dr tung
+tongue scrapper
+tongue scraper black
+tongue scraper with case
+tongue scraper travel</pre>
+<p>«scrapper» con dos p va así a propósito.</p>
+<span class="et no">Si no está así: hacé esto</span>
+<ul>
+<li>Puja distinta: clic en el número → escribir <code>1</code> → <em>Guardar</em>.</li>
+<li>Filas en <em>Amplia</em> o <em>Frase</em>: clic en su interruptor para pausarlas.</li>
+<li>Falta alguna: <em>Añadir palabras clave</em> → pestaña <em>Introducir lista</em> (o <em>Ingresar lista</em>).</li>
+<li>Tildar sólo <em>Exacta</em>. Puja: <em>Personalizada</em>, <code>1</code>.</li>
+<li>Pegar la que falta → <em>Añadir palabras clave</em> → <em>Guardar</em>.</li>
+</ul>
+</div></div>
 
-<li><span class="p-tit">El estado de la campaña</span>
-<span class="p-tag">1 min</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td>Columna <em>Estado</em> de esa fila (pasar el mouse por
-  encima da el detalle).</td></tr>
-<tr><th>Si ves</th><td><ul>
-<li><em>Entregando</em> o <em>Activa</em> &rarr; bien.</li>
-<li><em>Programada</em> &rarr; la fecha de inicio quedó en el futuro: en
-  <em>Configuración</em>, poner la de hoy.</li>
-<li><em>Pausada</em> &rarr; tocar el interruptor de la fila para que quede en azul.</li>
-<li><em>Fuera de presupuesto</em> &rarr; ver el paso 4.</li>
-<li><em>Finalizada</em> &rarr; tiene fecha de fin: en <em>Configuración</em>,
-  <em>Sin fecha de finalización</em>.</li>
-</ul></td></tr>
-</table></li>
+<div class="paso"><span class="n">6</span><div class="t">
+<h3>Bajar el informe donde sí aparece</h3>
+<p>Hacerlo el martes 27-10 (para la semana del 20 al 26-10).</p>
+<p>Entrar a <a href="https://advertising.amazon.com/reports">advertising.amazon.com/reports</a> (o <em>Medición e informes</em> → <em>Informes de anuncios patrocinados</em>).</p>
+<p>Botón <em>Crear informe</em>.</p>
+<ul>
+<li>Tipo de anuncio: <em>Sponsored Products</em>.</li>
+<li>Tipo de informe: <em>Segmentación</em> (o <em>Targeting</em>).</li>
+<li>Unidad de tiempo: <em>Resumen</em>.</li>
+<li>Período: <em>Personalizado</em>, del <em>20-10-2026</em> al <em>26-10-2026</em>.</li>
+<li>Filtros: ninguno. Todas las campañas, todos los estados.</li>
+<li>Columnas: las que trae. Tienen que estar <em>Segmentación</em>, <em>Tipo de concordancia</em>, <em>Impresiones</em> y <em>Clics</em>.</li>
+<li><em>Ejecutar informe</em> → cuando diga <em>Completado</em>, <em>Descargar</em>.</li>
+</ul>
+<span class="et ok">Tiene que decir</span>
+<p>Filas con <em>Zriceros - Manual exacta - oct 2026</em>, aunque tengan cero clics.</p>
+<span class="et">Dónde guardarlo</span>
+<p>En la carpeta compartida <code>shared/amazon</code> de srvnvidia, con este nombre:</p>
+<p><code>Targeting_-_10_27_2026_semana_8_.csv</code></p>
+<p>El de términos de búsqueda se baja igual que siempre, al lado: <code>Search_term_-_10_27_2026_semana_8_.csv</code>.</p>
+</div></div>
 
-<li><span class="p-tit">Desde qué día está: el historial</span>
-<span class="p-tag">1 min · dice si la semana 7 la tuvo un día o varios</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td>Clic en el nombre de la campaña &rarr; menú de la izquierda
-  &rarr; <em>Historial</em> (o <em>Historial de cambios</em>). La primera línea es la
-  creación.</td></tr>
-<tr><th>Si ves</th><td><ul>
-<li>Creada el 19-10 &rarr; tuvo un día en el informe de la semana 7: que no
-  aparezca no dice nada. La semana 8 (20 al 26-10) es la primera completa.</li>
-<li>Creada antes &rarr; la semana 7 la tuvo esos días y ninguna de las siete ganó un
-  clic. No es una falla si los pasos 4 a 7 dan bien: es el volumen de la sección 1.</li>
-</ul></td></tr>
-<tr><th>De paso</th><td>Lo mismo en <em>Campaña - 9/1/2026 automatica</em> &rarr;
-  <em>Historial</em>: entre el 14 y el 15-10 tiene que figurar el cambio de la
-  estrategia de puja a <em>aumentar y reducir</em> (es lo que muestra el informe). Si
-  ese cambio es del mismo día en que se creó la manual, la estrategia se eligió en la
-  campaña equivocada: la automática se deja así hasta el 27-10, y la manual tiene que
-  quedar como dice el paso 4.</td></tr>
-</table></li>
+<h2 id="crear">SI NO EXISTE: CREARLA</h2>
 
-<li><span class="p-tit">Presupuesto y estrategia de puja</span>
-<span class="p-tag">1 min</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td>En la campaña manual, menú de la izquierda &rarr;
-  <em>Configuración</em> (o <em>Ajustes</em>).</td></tr>
-<tr><th>Tiene que decir</th><td>Presupuesto diario <strong>$5,00</strong> &middot;
-  <em>Pujas dinámicas: solo bajada</em> &middot; ajustes por ubicación (parte superior,
-  páginas de producto, resto) en <strong>0%</strong> &middot; segmentación
-  <em>manual</em>.</td></tr>
-<tr><th>Si ves</th><td><ul>
-<li>Otra estrategia o ubicaciones con porcentaje &rarr; corregirlas a esto y
-  <em>Guardar</em>.</li>
-<li>Dice <em>automática</em> en la segmentación &rarr; no es la manual: es otra
-  campaña automática con el mismo producto, que compite con la de siempre.
-  Pausarla y crear la manual (paso 1).</li>
-<li>Fuera de presupuesto con $5 &rarr; sí está sirviendo y gastando: aparecería en
-  el informe. Bajar el informe de nuevo (paso 8).</li>
-</ul></td></tr>
-</table></li>
-
-<li><span class="p-tit">El grupo de anuncios y el producto</span>
-<span class="p-tag">2 min · el error más fácil de no ver</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td>En la campaña, clic en el grupo <em>Exacta</em> &rarr; menú
-  de la izquierda &rarr; <em>Anuncios</em> (o <em>Productos anunciados</em>).</td></tr>
-<tr><th>Tiene que decir</th><td>Grupo <em>Activo</em>. Un solo producto,
-  <strong>B0H6QZGX56</strong>, a $19,89, estado <em>Activo</em> o
-  <em>Entregando</em>.</td></tr>
-<tr><th>Si ves</th><td><ul>
-<li><strong>B0GVZF1GN7</strong> o cualquier otro ASIN &rarr; es la ficha de prueba
-  o la equivocada: agregar B0H6QZGX56 y pausar el otro.</li>
-<li><em>No apto</em>, <em>Sin oferta destacada</em> (Buy Box) o <em>Sin
-  existencias</em> &rarr; la campaña está bien y el producto no puede salir. Si la
-  automática, con el mismo ASIN, no tiene ese cartel, el cartel es de otro producto:
-  volver al punto anterior.</li>
-<li>Grupo <em>Pausado</em> &rarr; activarlo.</li>
-</ul></td></tr>
-</table></li>
-
-<li><span class="p-tit">Las siete palabras: concordancia, puja e impresiones</span>
-<span class="p-tag">3 min · el que contesta la pregunta</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td>En el grupo <em>Exacta</em> &rarr; <em>Segmentación</em> (o
-  <em>Palabras clave</em>). Arriba a la derecha, el rango de fechas en <em>Últimos 7
-  días</em>.</td></tr>
-<tr><th>Tiene que decir</th><td>Siete filas, todas <em>Exacta</em>, puja $1,00,
-  activas: tongue brush &middot; tongue scraper stainless steel &middot; tongue
-  scraper dr tung &middot; tongue scrapper (con dos p, a propósito) &middot; tongue
-  scraper black &middot; tongue scraper with case &middot; tongue scraper travel.</td></tr>
-<tr><th>Si ves</th><td><ul>
-<li>14 o 21 filas (Amplia o Frase) &rarr; pausar las que no son Exacta. Compiten
-  con la automática por «tongue scraper».</li>
-<li>Una palabra mal escrita, salvo «scrapper» &rarr; pausarla y agregarla bien.</li>
-<li><strong>Impresiones en 0 en las siete y puja sugerida arriba de $1,00</strong>
-  &rarr; está bien creada y no gana subastas a $1,00. No se sube esta semana: el
-  equilibrio de las búsquedas es $1,58 por clic, pero estas palabras tienen un clic
-  cada una y no hay conversión propia que justifique pagar más. Lo mide la semana 8.</li>
-<li><strong>Impresiones en 0 con la sugerida en $1,00 o menos</strong>, una semana
-  después de creada &rarr; algo la frena: volver a los pasos 2, 5 y 7.</li>
-<li><strong>Impresiones y ningún clic</strong> &rarr; está sirviendo. Por eso no
-  aparece en el informe de términos: se ve en el de segmentación (paso 8).</li>
-<li><strong>Clics en alguna</strong> &rarr; tiene que aparecer en el informe de
-  términos del mismo rango. Si no está, el informe se bajó con otro rango o con
-  filtro (paso 8).</li>
-</ul></td></tr>
-</table></li>
-
-<li><span class="p-tit">Las negativas que podrían frenarla</span>
-<span class="p-tag">1 min</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td>En el grupo <em>Exacta</em> &rarr; <em>Segmentación negativa</em>.
-  Después, en <em>Campaña - 9/1/2026 automatica</em> &rarr; <em>Grupo RASPADOR -
-  9/1/2026</em> &rarr; <em>Segmentación negativa</em>.</td></tr>
-<tr><th>Si ves</th><td><ul>
-<li>En la manual, vacía &rarr; bien. Con alguna de las siete o con «tongue scraper»
-  &rarr; borrarla: una negativa adentro de la manual la apaga.</li>
-<li>En la automática, las siete como <em>Negativa exacta</em> &rarr; bien: una
-  negativa sólo actúa en su propia campaña y no frena a la manual.</li>
-<li>En la automática, alguna como <em>Frase negativa</em> &rarr; cambiarla a
-  exacta: en frase, «tongue brush» corta también «tongue brush for adults».</li>
-</ul></td></tr>
-</table></li>
-
-<li><span class="p-tit">Cuándo esperar los datos</span>
-<span class="p-tag">para leer bien lo que se ve</span>
-<table class="p-tab">
-<tr><th>Lo que hay que saber</th><td><ul>
-<li>Las impresiones y los clics aparecen en el panel a las pocas horas, pero los de
-  los últimos dos o tres días todavía pueden cambiar.</li>
-<li>Las ventas se atribuyen hasta 7 días después del clic: un informe bajado al día
-  siguiente de cerrar la semana todavía puede sumar.</li>
-<li>Por eso el informe de cada semana (lunes a domingo) se baja el martes o
-  después, y no el mismo domingo.</li>
-</ul></td></tr>
-</table></li>
-
-<li><span class="p-tit">Cómo bajar el informe para que la manual entre</span>
-<span class="p-tag">5 min por semana · CAMBIO de la propuesta anterior: eran un informe, ahora son dos</span>
-<table class="p-tab">
-<tr><th>Dónde</th><td><em>Medición e informes</em> (o <em>Informes</em>) &rarr;
-  <em>Informes de anuncios patrocinados</em> &rarr; <em>Crear informe</em>.</td></tr>
-<tr><th>Informe 1, el de siempre</th><td>Tipo de anuncio <em>Sponsored
-  Products</em> &middot; tipo de informe <em>Término de búsqueda</em> &middot;
-  unidad de tiempo <em>Resumen</em> &middot; período: <em>Personalizado</em>, de
-  lunes a domingo (semana 8: 20 al 26-10) &middot; <strong>sin filtro de campaña
-  ni de estado</strong>, todas &middot; <em>Ejecutar informe</em> &rarr; descargar.
-  Si deja elegir columnas, sumar <em>Segmentación</em> y <em>Tipo de
-  concordancia</em>.</td></tr>
-<tr><th>Informe 2, el nuevo</th><td>Lo mismo, con tipo de informe
-  <strong><em>Segmentación</em></strong> (Targeting). Trae una línea por palabra
-  clave y por segmentación de la automática, con sus impresiones aunque no tenga
-  clics. Es el que muestra si la manual está saliendo.</td></tr>
-<tr><th>Columnas que usa la hoja</th><td>Rango de fechas &middot; nombre de la
-  campaña &middot; nombre del grupo de anuncios &middot; segmentación &middot; tipo
-  de concordancia &middot; término de búsqueda (sólo el 1) &middot; impresiones
-  &middot; clics &middot; coste total &middot; compras &middot; ventas &middot;
-  unidades vendidas. El de términos que se viene bajando ya trae todas salvo
-  segmentación y concordancia.</td></tr>
-<tr><th>Dónde dejarlos</th><td>Los dos en la carpeta compartida
-  <code>shared/amazon/</code>, como hasta ahora, con «semana 8» en el nombre. Desde
-  ahí se arma la hoja; no se publican (traen el ID de la cuenta).</td></tr>
-</table></li>
-
+<div class="paso"><span class="n">A</span><div class="t">
+<h3>Crear la campaña</h3>
+<ol>
+<li>Entrar a <a href="https://advertising.amazon.com/cm/campaigns">advertising.amazon.com/cm/campaigns</a>.</li>
+<li>Botón <em>Crear campaña</em> → <em>Sponsored Products</em> → <em>Continuar</em>.</li>
+<li>Nombre de la campaña: <code>Zriceros - Manual exacta - oct 2026</code>.</li>
+<li>Cartera: <em>Sin cartera</em> (dejar vacío).</li>
+<li>Fecha de inicio: hoy.</li>
+<li>Fecha de finalización: <em>Sin fecha de finalización</em>.</li>
+<li>Presupuesto diario: <code>5</code>.</li>
+<li>Segmentación: <em>Segmentación manual</em>.</li>
+<li>Estrategia de puja: <em>Pujas dinámicas: solo bajada</em>.</li>
+<li>Ajustes por ubicación: los tres vacíos o en <code>0</code>.</li>
+<li>Nombre del grupo de anuncios: <code>Exacta</code>.</li>
+<li>Productos: buscar <code>B0H6QZGX56</code> → <em>Añadir</em>. Queda uno solo, a $19,89.</li>
+<li>Segmentación: <em>Segmentación por palabras clave</em> (no «por producto»).</li>
+<li>Pestaña <em>Introducir lista</em> (o <em>Ingresar lista</em>).</li>
+<li>Tipo de concordancia: destildar <em>Amplia</em> y <em>Frase</em>. Queda sólo <em>Exacta</em>.</li>
+<li>Puja: <em>Puja personalizada</em> → <code>1</code>.</li>
+<li>Pegar las siete palabras del paso 5 → <em>Añadir palabras clave</em>.</li>
+<li>Tienen que quedar siete filas, todas Exacta a $1,00.</li>
+<li>Si quedaron 14 o 21: borrar las que no son Exacta con su X.</li>
+<li><em>Palabras clave negativas</em>: no poner nada.</li>
+<li>Abajo de todo, <em>Lanzar campaña</em>.</li>
+<li>En la lista tiene que decir <em>Entregando</em> (o <em>Programada</em>) y $5,00.</li>
 </ol>
+</div></div>
 
-<h2><span class="num">3.</span> Lo que va a mostrar la semana 8</h2>
-<div class="card tabla">
-<table>
-<tr><th>En el informe de segmentación, la manual</th><th>Qué significa</th><th>Qué se hace</th></tr>
-<tr class="row-bien"><td>Impresiones en cuatro o más de las siete</td><td>está sirviendo; a $1,00 gana algunas subastas</td><td>seguir igual; se miden clics y pedidos</td></tr>
-<tr><td>Impresiones en una a tres</td><td>sirve, pero estas búsquedas casi no existen a ese precio</td><td>seguir igual otra semana; con dos semanas se ve cuáles valen</td></tr>
-<tr class="row-mal"><td>Ninguna línea de la manual</td><td>no tuvo impresiones en toda la semana</td><td>es la puja (sugerida arriba de $1,00) o algo de los pasos 2, 5 o 7; la hoja de la semana 8 lo separa</td></tr>
-</table>
-<p>El informe de términos va a seguir mostrando poco de la manual: una o dos
-líneas en una semana buena. Eso no es un problema del informe, es lo que tiene que
-pasar con siete búsquedas así de chicas.</p>
-</div>
-
-<hr style="margin-top:40px;border:0;border-top:1px solid #e0e0e0">
-<p class="meta"><strong>Fuentes.</strong> Informes de términos de búsqueda de
-Sponsored Products de las semanas 1 a 7 (31-08 al 19-10), contados por campaña y por
-tipo de línea con <code>scripts/campanas.py</code>. Configuración pedida para la
-manual: <a href="reporte-campanas-zriceros-semana-6.html#pasos">hoja de la semana
-6</a>, paso 2.</p>
+<div class="paso"><span class="n">B</span><div class="t">
+<h3>Las mismas siete como negativas en la automática</h3>
+<ol>
+<li>En la lista de campañas, clic en <em>Campaña - 9/1/2026 automatica</em>.</li>
+<li>Clic en el grupo <em>Grupo RASPADOR - 9/1/2026</em>.</li>
+<li>Menú de la izquierda → <em>Segmentación negativa</em> (o <em>Palabras clave negativas</em>).</li>
+<li>No entrar en <em>Productos negativos</em>: es otra cosa.</li>
+<li>Botón <em>Añadir palabras clave negativas</em>.</li>
+<li>Tipo de concordancia: <em>Negativa exacta</em> (no «Frase negativa»).</li>
+<li>Pegar las siete palabras del paso 5 → <em>Añadir</em> → <em>Guardar</em>.</li>
+<li>Tienen que quedar las siete, todas como <em>Negativa exacta</em>.</li>
+</ol>
+</div></div>
 
 <!-- pie-menu -->
 <nav class="zp" aria-label="Hoja anterior y siguiente"><a href="resenas-zriceros.html"><small>← Anterior</small>Plan · Reseñas</a><a class="zp-sig" href="reporte-campanas-zriceros.html"><small>Siguiente →</small>Seguimiento de Ads · Semana 1</a></nav>
 <!-- /pie-menu -->
-
-<footer>Zriceros Tongue Scraper · B0H6QZGX56 · diagnóstico de la campaña manual ·
-armado 2026-10-20</footer>
 </body>
 </html>

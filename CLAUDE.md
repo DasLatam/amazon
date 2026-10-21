@@ -29,7 +29,7 @@ anterior resultó mal, se agrega una nota de corrección.
 
 ## Cómo se le escribe a Ariel en estas hojas
 
-Tres reglas que puso el 2026-09-21 y que valen para todas las hojas del
+Tres reglas que puso el 2026-09-21 (y una cuarta del 2026-10-20) que valen para todas las hojas del
 proyecto, no sólo para el seguimiento semanal:
 
 1. **La hoja es su informe: no se le hacen preguntas ni se le piden datos.**
@@ -53,6 +53,23 @@ proyecto, no sólo para el seguimiento semanal:
    miniaturas»*. Las hojas viejas no se reescriben, así que el pendiente y la
    hoja nueva arrancan diciendo «CAMBIO de la propuesta anterior». Si no, la
    contradicción entre dos hojas parece un error y no una decisión.
+
+4. **Concretas y cortas. Nada de revisionismo.** 2026-10-20, sobre la primera
+   versión de `diagnostico-campana-manual.html` y el cartel «Nota de corrección del
+   20-10» de la semana 7: *«es ininteligible...! ¿por qué querés volver loco a
+   todos? te pido que seamos claros y concretos... nada de revisionismo, quiero el
+   paso a paso concreto para verificar y si no para activar la campaña manual...
+   otra vez poniendo cartelotes que no se entienden... por favor concretos, claros y
+   si hay que hacer algo un paso a paso muy detallado»*.
+   - Ni carteles de corrección, ni «por qué el informe salió así», ni «lo que se
+     puede afirmar», ni historial, ni comparar con semanas anteriores **salvo que
+     cambie un número del informe**. Si nada cambia, no se escribe nada.
+   - Si hay que hacer algo: paso a paso con **cada clic y cada valor exacto**
+     (dónde entrar, qué tiene que decir la pantalla, qué hacer si no dice eso).
+   - **Máximo 6 pasos por hoja**, frases cortas (~12 palabras), sin tablas de
+     diagnóstico. Modelo: `diagnostico-campana-manual.html` (2026-10-21).
+   - Un dato chico de una campaña va en una fila de la tabla que corresponde, con
+     un link a la guía, no en un recuadro aparte.
 
 ## El registro de solicitudes de reseña
 
@@ -97,12 +114,15 @@ mostrar una campaña sin clics. Sus siete búsquedas sumaron 248 impresiones y 1
 clics en siete semanas (ocho pagados por PRIMALS a más de $2; en las semanas 5–7, un
 clic entre las siete): a $1,00 con «solo bajada» lo normal es una semana sin clics.
 **La manual se mide por impresiones por palabra (informe de segmentación), no por
-clics en el de términos.** Paso a paso para revisarla en el panel y para bajar los
-informes: `diagnostico-campana-manual.html` (en el menú, Seguimiento de Ads).
+clics en el de términos.** Guía para verificarla, crearla y bajar el informe:
+`diagnostico-campana-manual.html` («Campaña manual» en el menú, Seguimiento de Ads).
+Ariel lo deja en el compartido como `Targeting_-_<MM_DD_AAAA>_semana_N_.csv`, al
+lado del `Search_term_-_…`.
 Antes de armar cada semana, `/usr/bin/python3 scripts/campanas.py` cuenta líneas y
 totales por campaña y tipo, busca las siete palabras y verifica los totales de la
 hoja; con `--poner` escribe la tabla por campaña en el bloque `<!-- tabla-campanas -->`
-(sumar la hoja nueva a `HOJAS` y el control `HOJA_S7` de la semana que toque).
+de las hojas de `HOJAS` (hoy vacía: el bloque salió de la semana 7 con el cartel de
+corrección; sumar la hoja nueva y el control `HOJA_S7` de la semana que toque).
 **Que una campaña no tenga líneas no la hace culpable ni inexistente**: el
 historial del panel da el día de creación, no el día en que se marcó hecha.
 
