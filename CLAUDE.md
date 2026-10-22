@@ -316,6 +316,38 @@ leyendo el archivo en cada pedido, así que editarla no pide reiniciar nada.
 - El inserto con QR que se decidió el 2026-06-23 armaba el enlace con el ASIN de
   **prueba**: si se imprimió así, las reseñas van a la ficha equivocada.
 
+## Frases (2026-10-22)
+
+`frases-zriceros.html` («Frases» en Seguimiento de Ads, pedido de Ariel: *«un
+apartado de Frases así vamos poniendo ahí el trabajo fino»*). Lugar permanente,
+no una hoja por semana: arriba los pasos de esta semana (máx. 6), las dos cajas
+para copiar (negativas de frase y exactas, para la automática), la regla, el cuadro
+de familias, la tabla de todas las frases (filtro, buscador y orden con JS inline:
+no pide nada a otro servidor, así que anda por https) y una sección por semana.
+
+**La hoja entera la escribe `scripts/frases.py`; no se edita a mano** (se pisa).
+Semana nueva: CSV a `datos/` como siempre → `/usr/bin/python3 scripts/frases.py`
+(imprime totales por semana contra `HOJAS_TOTALES`, sumar ahí la semana nueva con
+los números de su hoja) → mirar las «nuevas que quedaron en Madurar por defecto» →
+si alguna no encaja, sumarla a `FAMILIAS` (frase) o `EXACTAS` → nota en
+`NOTAS_SEMANA` → `--poner` → `scripts/menu.py`. Reusa la lectura y el descuento
+del día pisado de `campanas.py`. Sale con 1 si una negativa de frase taparía una
+frase que vendió, una de la manual o «tongue scraper».
+
+Criterio (verificado con los 7 informes): conversión de búsquedas 18,0% (41 en 228;
+la semana 7 decía 17,8% porque contaba 2 clics sin término). 15 clics sin pedido
+pasan 5% de las veces → negativa exacta; menos, madurar. **Lo que no encaja con el
+producto se negativiza sin esperar**, y por familia (frase) cuando una palabra sola
+describe otro producto: una exacta de una frase de un clic casi nunca vuelve a
+salir. Trampas que corrigieron la lista de Ariel del 22-10: **«electric tongue
+scraper» vendió** (13-10), «smaller mouth» y «electric» en las semanas 6 y 7 son el
+mismo clic del 13-10, y las búsquedas de marca (dr tung, mastermedi, equate)
+vendieron 3 de 6: «grin» y «gum» no se cierran. Las negativas van en la automática;
+la manual sólo puja por sus siete exactas, así que nadie hereda subastas. Ninguna
+negativa de frase consta como cargada en la automática (copper dejó de salir en
+PRIMALS el 9-09). Se cargan el 27-10, después de bajar el informe de la semana 8,
+para que esa semana mida la puja sola.
+
 ## Pendientes
 
 Las acciones que sólo puede hacer Ariel en Seller Central van a

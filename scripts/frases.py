@@ -255,7 +255,7 @@ def fila(f: dict, ver: str, motivo: str) -> str:
     nota = NOTAS_FRASE.get(f["frase"], "")
     return (
         f'<tr data-v="{e(ver)}" data-t="{e(f["frase"])}">'
-        f'<td class="fr">{e(f["frase"])}'
+        f'<td class="fr"><bdi>{e(f["frase"])}</bdi>'
         + (f'<small>{e(nota)}</small>' if nota else "") +
         f'</td><td><span class="vd {CLASE[ver]}">{e(ver)}</span><small>{e(motivo)}</small></td>'
         f'<td data-s="{min(f["semanas"])}">{sem}</td>'
@@ -312,7 +312,11 @@ CSS = """
   #frases th[aria-sort="ascending"]::after { content: " ▲"; color: #ff9900; }
   td.num, th.num { text-align: right; white-space: nowrap; }
   td small { display: block; color: #6b7780; font-size: 12px; line-height: 1.35; margin-top: 2px; }
-  td.fr { font-weight: 600; min-width: 160px; }
+  td.fr { font-weight: 600; min-width: 150px; }
+  #frases td.fr, #frases th:first-child { position: sticky; left: 0; background: #fff; z-index: 1;
+    box-shadow: 1px 0 0 #e0e0e0; }
+  #frases th:first-child { background: #f0f2f4; z-index: 2; }
+  #frases td:nth-child(2) { min-width: 190px; }
   .vd { display: inline-block; font-size: 12px; font-weight: 700; padding: 1px 7px; border-radius: 10px; white-space: nowrap; }
   .v-frase { background: #b3261e; color: #fff; } .v-exacta { background: #f6c9c4; color: #7a1711; }
   .v-madurar { background: #fff0c2; color: #6b4e00; } .v-oport { background: #2e7d32; color: #fff; }
@@ -438,7 +442,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
         nuevas = sorted((frases[t] for t in frases if primeras[t] == n), key=lambda f: (-f["clics"], f["frase"]))
         con_clic = sum(1 for f in frases.values() if n in f["semanas"])
         items = "".join(
-            f'<li><strong>{e(f["frase"])}</strong> · {f["semanas"][n][0]} clic{"s" if f["semanas"][n][0] != 1 else ""}'
+            f'<li><strong><bdi>{e(f["frase"])}</bdi></strong> · {f["semanas"][n][0]} clic{"s" if f["semanas"][n][0] != 1 else ""}'
             f'{" · " + str(f["semanas"][n][1]) + " pedido" + ("s" if f["semanas"][n][1] != 1 else "") if f["semanas"][n][1] else ""}'
             f' · <span class="vd {CLASE[clasif[f["frase"]][0]]}">{e(clasif[f["frase"]][0])}</span></li>'
             for f in nuevas)
@@ -452,7 +456,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
     # Repetidas.
     multi = sorted((f for f in frases.values() if len(f["semanas"]) > 1), key=lambda f: (-f["clics"], f["frase"]))
     rep_items = "".join(
-        f'<li><strong>{e(f["frase"])}</strong>: semanas {", ".join(str(n) for n in sorted(f["semanas"]))} · '
+        f'<li><strong><bdi>{e(f["frase"])}</bdi></strong>: semanas {", ".join(str(n) for n in sorted(f["semanas"]))} · '
         f'{int(f["clics"])} clics, {int(f["pedidos"])} pedidos</li>' for f in multi)
     pisadas = "".join(f"<li>{e(t)} ({c} clic{'s' if c != 1 else ''}, {ped} pedido{'s' if ped != 1 else ''})</li>"
                       for _, t, c, ped in repetidas)
