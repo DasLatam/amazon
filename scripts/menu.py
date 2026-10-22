@@ -35,6 +35,7 @@ SECCIONES = [
     ], 0),
     ("Seguimiento de Ads", [
         ("diagnostico-campana-manual.html", "Campaña manual"),
+        ("frases-zriceros.html", "Frases"),
         ("reporte-campanas-zriceros.html", "Semana 1"),
         ("reporte-campanas-zriceros-semana-2.html", "Semana 2"),
         ("reporte-campanas-zriceros-semana-3.html", "Semana 3"),
