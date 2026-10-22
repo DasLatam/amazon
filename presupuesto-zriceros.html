@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Presupuesto — Seguimiento de Ads · Zriceros en Amazon</title>
+<style>
+  body {
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    max-width: 760px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.55;
+    color: #232f3e;
+    background: #f7f7f7;
+    font-size: 17px;
+  }
+  p, li { text-align: justify; hyphens: auto; }
+  h1 { font-size: 26px; border-bottom: 3px solid #ff9900; padding-bottom: 8px; margin-bottom: 14px; }
+  h2 { font-size: 19px; margin: 38px 0 12px; letter-spacing: .5px; }
+  .estado { background: #fff; border-left: 6px solid #ff9900; border-radius: 8px;
+    padding: 14px 18px; font-size: 19px; font-weight: 600; margin: 0 0 8px; text-align: left; }
+  .paso { display: flex; gap: 16px; background: #fff; border: 1px solid #ddd;
+    border-radius: 10px; padding: 16px 18px; margin: 0 0 14px; }
+  .n { flex: 0 0 auto; font-size: 40px; font-weight: 800; color: #ff9900; line-height: 1; min-width: 34px; }
+  .paso div.t { flex: 1 1 auto; min-width: 0; }
+  .paso h3 { margin: 0 0 8px; font-size: 18px; }
+  .paso p { margin: 6px 0; }
+  .et { font-weight: 700; display: block; margin-top: 10px; font-size: 14px;
+    text-transform: uppercase; letter-spacing: .4px; }
+  .et.ok { color: #2e7d32; }
+  .et.no { color: #b3261e; }
+  .paso ul { margin: 4px 0; padding-left: 20px; }
+  .paso li { margin: 3px 0; text-align: left; }
+  .paso p, .paso li { hyphens: none; }
+  em { font-style: normal; font-weight: 600; background: #fff3d6; padding: 0 3px; border-radius: 3px; }
+  code { background: #eef2f5; padding: 1px 5px; border-radius: 4px; font-size: 15px; word-break: break-word; }
+  a { color: #007185; }
+  .card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 14px 18px; margin: 12px 0; }
+  .card p { margin: 6px 0; }
+  .cuenta { font-family: ui-monospace, Menlo, Consolas, monospace; font-size: 15px; background: #eef2f5;
+    border-radius: 6px; padding: 10px 12px; margin: 8px 0; line-height: 1.6; text-align: left; overflow-x: auto; }
+  .tabla { overflow-x: auto; -webkit-overflow-scrolling: touch; background: #fff;
+    border: 1px solid #e0e0e0; border-radius: 8px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { border-bottom: 1px solid #eceff1; padding: 7px 9px; text-align: left; vertical-align: top; }
+  th { background: #f0f2f4; white-space: nowrap; }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  tr.ult td { font-weight: 700; background: #fff8ea; }
+  .meta { font-size: 13px; color: #6b7780; text-align: left; margin: 6px 0; }
+  ol.op { padding-left: 22px; }
+  ol.op li { margin: 8px 0; }
+  .rec { border-left: 6px solid #2e7d32; }
+  @media (max-width: 480px) {
+    body { margin: 16px auto; padding: 0 12px; font-size: 16px; }
+    .paso { padding: 14px 12px; gap: 10px; }
+    .n { font-size: 32px; min-width: 26px; }
+    .paso p, .estado, .card p, ol.op li { text-align: left; }
+    table { font-size: 13px; }
+  }
+</style>
+</head>
+<body>
+<!-- menu -->
+<style>.zm{position:sticky;top:0;z-index:50;margin:0 0 26px;border-radius:10px;overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.18);font:14px/1.3 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.zm a{text-decoration:none;white-space:nowrap}
+.zm-f1{display:flex;flex-wrap:wrap;align-items:center;gap:4px;background:#232f3e;padding:7px 10px}
+.zm-f1 a{color:#fff;padding:7px 13px;border-radius:6px}
+.zm-f1 a:hover{background:rgba(255,255,255,.14)}
+.zm-f1 .zm-marca{font-weight:700;margin-right:8px}
+.zm-f1 .zm-aqui{background:#37475a;box-shadow:inset 0 -3px 0 #ff9900;font-weight:700}
+.zm-f2{display:flex;flex-wrap:wrap;align-items:center;gap:4px;background:#37475a;padding:6px 10px}
+.zm-f2 .zm-rot{color:#b8c4cf;font-size:12px;padding:0 6px 0 3px}
+.zm-f2 a{color:#e8edf2;padding:5px 11px;border-radius:6px}
+.zm-f2 a:hover{background:rgba(255,255,255,.14)}
+.zm-f2 a[aria-current]{background:#ff9900;color:#232f3e;font-weight:700}
+.zp{display:flex;flex-wrap:wrap;gap:12px;margin:48px 0 0;padding-top:18px;border-top:1px solid #e0e0e0}
+.zp a{flex:0 1 46%;text-decoration:none;color:#007185;background:#fff;border:1px solid #e0e0e0;
+  border-radius:8px;padding:10px 14px;font-size:15px;font-weight:600}
+.zp a:hover{border-color:#ff9900}
+.zp small{display:block;color:#888;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.4px}
+.zp .zp-sig{margin-left:auto;text-align:right}
+@media (max-width:640px){
+  .zm{position:static}
+  .zp a{flex:1 1 100%}
+  table{display:block;max-width:100%;overflow-x:auto}
+}</style>
+<nav class="zm" aria-label="Hojas del proyecto"><div class="zm-f1"><a href="index.html" class="zm-marca">Zriceros en Amazon</a><a href="listing-zriceros-tongue-scraper.html" title="Listing, Competencia">Producto</a><a href="estrategia-inversion-zriceros.html" title="Inversión, PPC, Reseñas">Plan</a><a href="reporte-campanas-zriceros-semana-7.html" class="zm-aqui" title="Campaña manual, Frases, Presupuesto, Semana 1, Semana 2, Semana 3, Semana 4, Semana 5, Semana 6, Semana 7">Seguimiento de Ads</a></div><div class="zm-f2"><span class="zm-rot">Seguimiento de Ads ›</span><a href="diagnostico-campana-manual.html">Campaña manual</a><a href="frases-zriceros.html">Frases</a><a href="presupuesto-zriceros.html" aria-current="page">Presupuesto</a><a href="reporte-campanas-zriceros.html">Semana 1</a><a href="reporte-campanas-zriceros-semana-2.html">Semana 2</a><a href="reporte-campanas-zriceros-semana-3.html">Semana 3</a><a href="reporte-campanas-zriceros-semana-4.html">Semana 4</a><a href="reporte-campanas-zriceros-semana-5.html">Semana 5</a><a href="reporte-campanas-zriceros-semana-6.html">Semana 6</a><a href="reporte-campanas-zriceros-semana-7.html">Semana 7</a></div></nav>
+<!-- /menu -->
+<h1>Presupuesto de la automática</h1>
+<p class="estado">Desde el 20-10 el presupuesto corta a la automática. Subirlo a $18 por día.
+CAMBIO de las semanas 2 a 7, que decían no tocarlo: hasta el 19-10 no cortaba.</p>
+
+<h2>PASO A PASO</h2>
+
+<div class="paso"><span class="n">1</span><div class="t">
+<h3>Encontrar la automática</h3>
+<p>Entrar a <a href="https://advertising.amazon.com/cm/campaigns">advertising.amazon.com/cm/campaigns</a>.</p>
+<p>Arriba a la derecha: cuenta <em>lombardi company</em>, país <em>Estados Unidos</em>.</p>
+<p>Buscar la fila <em>Campaña - 9/1/2026 automatica</em>.</p>
+<span class="et ok">Tiene que decir</span>
+<p>Estado: <em>Fuera de presupuesto</em> (o <em>Sin presupuesto</em>) algunos días.</p>
+<p>Presupuesto: alrededor de <em>$12,00</em> diario.</p>
+<span class="et no">Si no está así</span>
+<ul>
+<li>Ya dice $18 o más: no hacer el paso 2.</li>
+</ul>
+</div></div>
+
+<div class="paso"><span class="n">2</span><div class="t">
+<h3>Subir el presupuesto a 18</h3>
+<p>En esa fila, clic en el número de la columna <em>Presupuesto</em>.</p>
+<p>Escribir <code>18</code> → <em>Guardar</em>.</p>
+<span class="et ok">Tiene que decir</span>
+<p>Presupuesto: <em>$18,00</em>, tipo <em>Diario</em>.</p>
+<span class="et no">Lo que no se toca</span>
+<ul>
+<li>La puja, la estrategia de puja y las negativas.</li>
+<li><em>Reglas de presupuesto</em>: ninguna por ahora.</li>
+</ul>
+</div></div>
+
+<div class="paso"><span class="n">3</span><div class="t">
+<h3>Mirarla tres días</h3>
+<p>Del 23 al 25-10, misma lista, rango <em>Ayer</em>.</p>
+<span class="et ok">Tiene que decir</span>
+<p>Clics: <em>12 o más</em> por día. Gasto: <em>$18 o menos</em>.</p>
+<p>Estado sin <em>Fuera de presupuesto</em>, o sólo de noche.</p>
+<span class="et no">Si no está así</span>
+<ul>
+<li>Sigue cortando con menos de 12 clics: no subir más. Esperar el informe.</li>
+</ul>
+</div></div>
+
+<div class="paso"><span class="n">4</span><div class="t">
+<h3>El 27-10, informes y negativas</h3>
+<p>Bajar los dos informes como dice <a href="diagnostico-campana-manual.html">Campaña manual</a>, paso 6.</p>
+<p>Después, cargar las negativas de <a href="frases-zriceros.html">Frases</a>, pasos 2 a 4.</p>
+</div></div>
+
+<div class="paso"><span class="n">5</span><div class="t">
+<h3>Si la semana 8 no paga</h3>
+<p>Conversión de búsqueda de las semanas 7 y 8 juntas <em>debajo de 15,4%</em>:</p>
+<p>presupuesto otra vez en <code>12</code> y estrategia <em>Pujas dinámicas: solo bajada</em>.</p>
+<p>Con <em>15,4% o más</em>, los $18 quedan.</p>
+</div></div>
+
+<h2>POR QUÉ SE AGOTA AHORA Y ANTES NO</h2>
+<div class="card">
+<p>Amazon no corta el gasto día por día: corta por mes. Un día puede gastar más que el
+diario (en campañas creadas desde 2023, hasta el doble) si en el mes quedó plata sin
+usar. El tope real es <em>diario × días del mes</em>.</p>
+<p>En las semanas 5 y 6 la automática gastó menos de $9 por día y fue juntando sobrante. En
+la semana 7, con la puja de subir y bajar, gastó $17,17 por día comiéndose ese sobrante. Con
+$12 por día, la cuenta de octubre queda así:</p>
+<div class="cuenta">
+Presupuesto del 1 al 19-10: 19 × $12 = $228<br>
+Gastado del 1 al 19-10 (informes): ≈ $223<br>
+Sobrante el 20-10: ≈ $5
+</div>
+<p>Sin sobrante, desde el 20-10 el techo es $12 justos. A $1,39 por clic eso son
+<em>8 o 9 clics por día</em>: lo que se vio el 21-10. Con $14 de presupuesto habrían sobrado
+$43 y no habría cortado a los 9 clics.</p>
+</div>
+
+<h2>LO QUE SE PIERDE</h2>
+<div class="card">
+<p>La semana 7 compró 12,6 clics por día. Con el techo de $12 compra 9.</p>
+<div class="cuenta">
+Clics que faltan: 12,6 − 9 = 3,6 por día<br>
+Pedidos que faltan: 3,6 × 18% = 0,65 por día ≈ 4,5 por semana<br>
+Cada clic de búsqueda deja: 18% × $9,00 − $1,39 = +$0,23<br>
+Plata que no se gana: 3,6 × $0,23 = $0,83 por día ≈ $6 por semana
+</div>
+<p>En plata es poco. Lo que se pierde son <em>unidades</em>: 4 o 5 por semana, que es lo
+que separa vender las 1.000 en un año o en más.</p>
+<p>Subir a $18 se paga solo mientras la búsqueda convierta. $18 por día se cubre con 2
+ventas por día ($18 ÷ $9,00). Con 13 clics al 18% salen 2,3. El equilibrio a $1,39 es
+<em>15,4%</em> ($1,39 ÷ $9,00): debajo de eso, cada clic de más pierde.</p>
+</div>
+
+<h2>LOS 9 CLICS SIN VENTA DEL 21-10</h2>
+<div class="card">
+<p>Son normales. La búsqueda convierte 18,0% (41 pedidos en 228 clics, siete semanas).</p>
+<div class="cuenta">
+Ningún pedido en 9 clics: 0,82<sup>9</sup> = 17%<br>
+Con 16% de conversión: 0,84<sup>9</sup> = 21%
+</div>
+<p>Pasa uno de cada cinco o seis días. Además, Amazon suma ventas hasta 7 días después
+del clic: esos 9 todavía pueden vender.</p>
+</div>
+
+<h2>LAS OPCIONES, EN ORDEN</h2>
+<div class="card rec">
+<p><strong>Recomendación: subir hoy a $18 y cargar las negativas el 27-10.</strong> El gasto
+malo ya está casi cortado, y sin subir, la semana 8 mide el techo y no la puja.</p>
+</div>
+<ol class="op">
+<li><strong>Cortar el gasto malo.</strong> Las fichas ajenas ya bajaron: en la semana 7
+fueron 3 clics y $2,25 (en la 5, 48 clics y $43,94). Lo que queda son las negativas de
+<a href="frases-zriceros.html">Frases</a>: 12 clics en la semana 7, unos $17, 1,7 por
+día. Se cargan el 27-10. Aun sin ellos quedan 10,9 clics por día × $1,39 = $15: el techo
+de $12 sigue cortando.</li>
+<li><strong>Subir el presupuesto a $18.</strong> Es el ritmo de la semana 7 (12,6 × $1,39 =
+$17,50) redondeado. Como mucho, $126 por semana. Después de las negativas, esos $18
+compran sólo búsquedas que encajan.</li>
+<li><strong>Repartir con la manual.</strong> No resuelve esto: sus siete palabras juntaron
+248 impresiones en siete semanas y casi no gastan. Llevar «tongue scraper» a una exacta
+propia se discute con la semana 8, no antes.</li>
+<li><strong>Reglas de presupuesto de Amazon</strong> (sube el presupuesto si el ACoS de los
+últimos 7 días da bien; pide $10 o más de diario). Ahora no: mezcla la medición de la puja.
+Con la semana 8 cerrada, una regla de +25% con ACoS menor a 36% es razonable.</li>
+</ol>
+
+<h2>CÓMO FUNCIONA EL PRESUPUESTO DE AMAZON</h2>
+<div class="card">
+<p><strong>Es diario, pero se controla por mes.</strong> Un día puede pasarse; el mes no pasa
+de diario × días.</p>
+<p><strong>El día es el de la costa oeste (Pacífico).</strong> Hasta el 1-11 son 4 horas menos
+que Argentina; después, 5. El «21-10» del panel va de las 4:00 del 21 a las 4:00 del 22,
+hora argentina.</p>
+<p><strong>Al agotarse, los anuncios se apagan</strong> hasta la medianoche del Pacífico. Si
+la automática gasta temprano, la tarde y la noche de EE.UU. quedan sin anuncio.</p>
+<p><strong>El panel llega tarde.</strong> El gasto puede tardar horas en verse y los clics
+inválidos se descuentan después. Por eso puede decir «Fuera de presupuesto» con menos de
+$12 a la vista. El número firme es el del informe.</p>
+</div>
+
+<h2>SEMANA A SEMANA</h2>
+<div class="tabla">
+<table>
+<tr><th>Semana</th><th class="num">Días</th><th class="num">Clics</th><th class="num">Clics/día</th>
+<th class="num">Gasto</th><th class="num">Gasto/día</th><th class="num">CPC</th><th class="num">Pedidos</th>
+<th class="num">ACoS</th><th class="num">Neto</th><th>Presupuesto</th></tr>
+<tr><td>1 · 31-08 a 06-09</td><td class="num">5</td><td class="num">5</td><td class="num">1,0</td><td class="num">$4,22</td><td class="num">$0,84</td><td class="num">$0,84</td><td class="num">1</td><td class="num">21,2%</td><td class="num">+$4,78</td><td>sobra</td></tr>
+<tr><td>2 · 07 a 13-09</td><td class="num">7</td><td class="num">8</td><td class="num">1,1</td><td class="num">$6,35</td><td class="num">$0,91</td><td class="num">$0,79</td><td class="num">2</td><td class="num">16,0%</td><td class="num">+$11,65</td><td>sobra</td></tr>
+<tr><td>3 · 14 a 20-09</td><td class="num">7</td><td class="num">16</td><td class="num">2,3</td><td class="num">$14,98</td><td class="num">$2,14</td><td class="num">$0,94</td><td class="num">2</td><td class="num">37,7%</td><td class="num">+$3,02</td><td>sobra</td></tr>
+<tr><td>4 · 21 a 27-09</td><td class="num">7</td><td class="num">21</td><td class="num">3,0</td><td class="num">$18,78</td><td class="num">$2,68</td><td class="num">$0,89</td><td class="num">0</td><td class="num">—</td><td class="num">−$18,78</td><td>sobra</td></tr>
+<tr><td>5 · 28-09 a 06-10</td><td class="num">9</td><td class="num">78</td><td class="num">8,7</td><td class="num">$72,89</td><td class="num">$8,10</td><td class="num">$0,93</td><td class="num">5</td><td class="num">73,3%</td><td class="num">−$27,89</td><td>sobra</td></tr>
+<tr><td>6 · 07 a 13-10</td><td class="num">7</td><td class="num">57</td><td class="num">8,1</td><td class="num">$54,52</td><td class="num">$7,79</td><td class="num">$0,96</td><td class="num">11</td><td class="num">24,9%</td><td class="num">+$44,48</td><td>sobra</td></tr>
+<tr><td>7 · 13 a 19-10</td><td class="num">7</td><td class="num">88</td><td class="num">12,6</td><td class="num">$120,17</td><td class="num">$17,17</td><td class="num">$1,37</td><td class="num">17</td><td class="num">35,5%</td><td class="num">+$32,83</td><td>usa el sobrante del mes</td></tr>
+<tr class="ult"><td>8 · desde 20-10</td><td class="num">—</td><td class="num">≈ 9</td><td class="num">≈ 9</td><td class="num">—</td><td class="num">≈ $12</td><td class="num">≈ $1,39</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td>agotado el 21-10</td></tr>
+</table>
+</div>
+<p class="meta">Sólo la automática, del informe de términos de cada semana
+(<code>scripts/campanas.py</code>; en la 7, sin las líneas del 13-10 repetidas). Neto =
+unidades × $9,00 − gasto. Semana 8: lo que mostró el panel el 21-10; el informe sale el
+27-10. Fichas ajenas por semana (clics): 0, 4, 5, 13, 48, 12, 3.</p>
+
+<p class="meta">Hoja hecha el 2026-10-22. Datos hasta el informe de la semana 7.</p>
+<!-- pie-menu -->
+<nav class="zp" aria-label="Hoja anterior y siguiente"><a href="frases-zriceros.html"><small>← Anterior</small>Seguimiento de Ads · Frases</a><a class="zp-sig" href="reporte-campanas-zriceros.html"><small>Siguiente →</small>Seguimiento de Ads · Semana 1</a></nav>
+<!-- /pie-menu -->
+
+</body>
+</html>

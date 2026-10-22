@@ -259,6 +259,23 @@ igual: se pidieron pero no se anotaron.
 el informe sólo trae términos con clics. Por eso el paso de la manual empieza
 mirando si ya está creada.
 
+## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
+
+`presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel
+del 22-10: el 21-10 la automática marcó presupuesto agotado con 9 clics y menos de $12.
+**El presupuesto configurado no consta en el proyecto** (el plan decía $14; Ariel ve ~$12).
+Amazon deja pasar el diario un día (hasta el doble en campañas creadas desde 2023; su guía
+vieja dice 25%) mientras el mes no pase de **diario × días**. Las semanas 5–6 gastaron
+<$9/día y juntaron sobrante; la 7 (puja de subir y bajar) gastó $17,17/día con ese sobrante.
+Con $12: 1–19 oct presupuesto $228, gastado ≈$223 (prorrateando el «Rango de fechas» de cada
+fila) → sin sobrante desde el 20-10, techo $12 = 8–9 clics a $1,39. Con $14 habrían sobrado
+$43: **el dato de Ariel encaja con $12, no con $14**. Recomendación (CAMBIO de «no tocar el
+presupuesto» de las semanas 2–7): $18/día (12,6 clics × $1,39), negativas de Frases el 27-10;
+vuelve a $12 y «solo reducir» si la búsqueda de semanas 7+8 convierte < 15,4% ($1,39 ÷ $9).
+Lo perdido con el techo: 3,6 clics/día, 0,65 pedidos/día, ~$0,83/día (+$0,23 por clic).
+El día del panel es el del Pacífico (4 h menos que Argentina hasta el 1-11, 5 después).
+Hoja estática a mano: si cambia el presupuesto, se agrega a la hoja de la semana, no acá.
+
 ## La imagen del diseñador (2026-10-10)
 
 Llegó cuadrada, 1787×1787 (`images/propuestas/disenador-2026-10.jpg`): fondo 254
