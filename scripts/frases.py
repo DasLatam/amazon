@@ -92,10 +92,11 @@ EXACTAS = {
 
 # Las que se miran con más plata, no con negativas.
 OPORTUNIDADES = {
-    "tongue scraper for adults": "10 pedidos en 29 clics (34,5%); la semana 8 hizo 1 en 9. Manual propia cuando pase los ~40 clics",
+    "tongue scraper for adults": "10 pedidos en 29 clics (34,5%). Pasa a la manual exacta a $1,50 y a negativa exacta en la automática (semana 8, pasos 2 y 3)",
+    "tongue cleaner": "2 pedidos en 12 clics. Pasa a la manual exacta a $1,00 y a negativa exacta en la automática (semana 8, pasos 2 y 3)",
 }
 NUCLEO = {
-    "tongue scraper": "la búsqueda principal: nunca negativa, ni exacta ni de frase",
+    "tongue scraper": "la búsqueda principal. CAMBIO (27-10): pasa a la manual exacta a $1,00 y va de negativa exacta en la automática (semana 8, pasos 2 y 3). Nunca de frase",
 }
 
 # Lo que ya está cargado. Sólo lo que consta en las hojas o en los pendientes.
@@ -533,8 +534,8 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <div class="paso"><span class="n">5</span><div class="t">
 <h3>Lo que no se agrega</h3>
 <p>Nada que no esté en las cajas.</p>
-<p>Nunca <code>tongue scraper</code>, <code>electric</code>, <code>case</code> ni <code>kit</code> solas.</p>
-<p>No tocar la manual, las pujas de los grupos ni el presupuesto.</p>
+<p>Nunca de frase <code>tongue scraper</code>, <code>electric</code>, <code>case</code> ni <code>kit</code> solas.</p>
+<p>La manual, sus tres exactas nuevas y el presupuesto van en la <a href="reporte-campanas-zriceros-semana-8.html#pasos">semana 8, pasos 2 y 3</a>.</p>
 </div></div>
 
 <div class="paso"><span class="n">6</span><div class="t">
