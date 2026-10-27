@@ -271,6 +271,20 @@ El informe de segmentación no llegó: la manual sigue sin medirse. Desde esta s
 CSS de `scripts/menu.py` es la hoja común (ancho completo, 14 px, justificado) y pisa el
 `max-width` de cada hoja.
 
+## Lo que vende va a la manual; la automática mina (2026-10-27)
+
+Ariel preguntó si pasar de la automática a la manual «para no seguir perdiendo plata». **La
+automática no es la que pierde**: +$47,10 en ocho semanas (búsquedas +$78,60, fichas ajenas
+−$31,50). La pérdida fue PRIMALS, la manual vieja: −$97,99 por pagar $2,07 el clic y salir 64%
+en fichas ajenas; sus búsquedas convertían 19,0%, como las de la automática. Antes de
+contestar «¿manual o automática?», cortar por término y por tipo de línea, no por campaña.
+Propuesta (decisión en /atender, `2026-10-27-zriceros-manual`): «tongue scraper» $1,00,
+«tongue scraper for adults» $1,50 y «tongue cleaner» $1,00 en la manual exacta ($8/día), y las
+tres como negativa exacta en la automática ($6/día). **CAMBIO**: «tongue scraper» era «nunca
+negativa»; ahora va de exacta en la automática (nunca de frase), y sólo después de cargarla en
+la manual. Desde la semana 9 la manual sí tiene líneas en el informe de términos: medir las tres
+por separado. Regla para sumar otra: 10 clics o más y conversión ≥ 17%.
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel
