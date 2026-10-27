@@ -23,16 +23,14 @@ un caso real, no un producto del servidor.
 Manager lo hace Ariel; desde acá se proponen y quedan como pendientes del tablero
 (grupo `zriceros`).
 
-**Estado (2026-10-14):** seis semanas de campaña medidas. Semana 1: ACoS 18,8%,
-+$26,34. Semana 2: 75,6%, −$30,19. Semana 3: 51,6%, −$11,32. Semana 4: una venta
-en 56 clics, 428%, −$76,12. Semana 5 (nueve días): 73,7%, −$33,92. Semana 6: 24,9%,
-11 pedidos, +$44,48, la mejor. Acumulado: 37 unidades, ACoS 56,2%, −$80,73. En
-búsquedas el anuncio convierte 16,6% y gana; en fichas ajenas 7,6%, y es toda la
-pérdida que queda. PRIMALS pausada desde el 1-10; la automática sola gana en el
-acumulado (+$17,26). Las imágenes nuevas (principal vertical, 86% del alto, y galería
-de cinco) se subieron el 13-10: no explican la semana 6, la 7 es la primera que las mide. La propuesta es bajar Sustitutos y Complementos a $0,50
-y lanzar la manual en exacta a $1,00. 7 calificaciones (5,0); BSR de la categoría
-#175.
+**Estado (2026-10-27):** ocho semanas de campaña medidas. Semana 6: 24,9%, +$44,48,
+la de más ganancia. Semana 7: 17 pedidos, 35,5%, +$32,83. Semana 8: 9 pedidos, 46,9%,
+−$2,99 (el presupuesto de $12 cortó todos los días). Acumulado: 63 unidades, ACoS 49,3%,
+−$50,89. Las búsquedas de la automática convierten 17,2% y llevan +$78,60; las fichas
+ajenas son toda la pérdida (−$111,09, casi toda de las semanas 1–5). PRIMALS pausada
+desde el 1-10. La automática vuelve a «solo reducir» con presupuesto de $12; negativas
+de frase y exactas listas en `frases-zriceros.html`. 7 calificaciones (5,0); BSR de la
+categoría #131.
 
 **Dónde:** portal local `http://192.168.1.71:8089`, público en
 https://daslatam.github.io/amazon/ (repo `DasLatam/amazon`, sincronizado por cron).

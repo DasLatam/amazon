@@ -259,6 +259,18 @@ igual: se pidieron pero no se anotaron.
 el informe sólo trae términos con clics. Por eso el paso de la manual empieza
 mirando si ya está creada.
 
+## Precio y volumen a la vez no se compran con un tope fijo (semana 8)
+
+Semana 8 (2026-10-27): gasto $83,99 = **$12,00 por día exactos**: el tope cortó todos
+los días y el $18 propuesto no se cargó. Con el clic a $1,48 eso son ~8 clics por día:
+la puja alta paga el precio de la semana 7 con el volumen de la 6. Búsquedas 7+8:
+18,4% (26 en 141) → por la regla de la semana 7, vuelve «solo reducir» y **el
+presupuesto queda en $12** (CAMBIO del $18: a ~$1,00 alcanza para ~12 clics/día).
+**Un gasto diario igual al tope es la firma del corte**: mirarlo antes de leer los clics.
+El informe de segmentación no llegó: la manual sigue sin medirse. Desde esta semana el
+CSS de `scripts/menu.py` es la hoja común (ancho completo, 14 px, justificado) y pisa el
+`max-width` de cada hoja.
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel

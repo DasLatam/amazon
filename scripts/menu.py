@@ -6,6 +6,11 @@ links de verdad y llevan a la hoja principal de cada una; abajo, las hojas de la
 sección en la que se está, con la actual resaltada. Al pie, «anterior / siguiente».
 El <title> también sale de acá.
 
+El CSS de acá es la hoja común de todas: además del menú, fija el contenedor
+(ancho completo, 10–14 px de margen lateral, texto justificado) y pisa el
+`max-width` que cada hoja trae en su <style>, porque va después en el documento.
+Pedido de Ariel (2026-10-26): márgenes mínimos e iguales en todas las hojas.
+
 Es HTML estático y no JS a propósito: las hojas se ven en el portal :8089, en
 GitHub Pages y en https://192.168.1.71/reseñas, y desde esa página https un
 script pedido por http al portal se bloquea.
@@ -44,12 +49,16 @@ SECCIONES = [
         ("reporte-campanas-zriceros-semana-5.html", "Semana 5"),
         ("reporte-campanas-zriceros-semana-6.html", "Semana 6"),
         ("reporte-campanas-zriceros-semana-7.html", "Semana 7"),
+        ("reporte-campanas-zriceros-semana-8.html", "Semana 8"),
     ], -1),
 ]
 PORTADA = ("index.html", "Inicio", "")
 MARCA = "Zriceros en Amazon"
 
 CSS = """
+html body{max-width:none;margin:0;padding:10px 14px 32px;box-sizing:border-box}
+html body p,html body li{text-align:justify;hyphens:auto}
+html body img{max-width:100%;height:auto}
 .zm{position:sticky;top:0;z-index:50;margin:0 0 26px;border-radius:10px;overflow:hidden;
   box-shadow:0 2px 10px rgba(0,0,0,.18);font:14px/1.3 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
 .zm a{text-decoration:none;white-space:nowrap}

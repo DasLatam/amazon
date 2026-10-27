@@ -38,9 +38,10 @@ HOJA = BASE / "frases-zriceros.html"
 CONTRIBUCION = 9.00      # $19,89 − tarifas − producto (CLAUDE.md, «Economía»)
 CLICS_DECIDIR = 15       # la regla de la estrategia de PPC: 15 clics sin pedido
 
-# Lo que dice la hoja de la semana 7, tabla «Las siete semanas lado a lado».
+# Lo que dicen las hojas semanales, tabla «Las N semanas lado a lado» (la 8 desde el 27-10).
 HOJAS_TOTALES = {1: (11, 18.66, 4), 2: (34, 75.19, 5), 3: (53, 92.32, 9), 4: (56, 85.12, 1),
-                 5: (91, 87.92, 6), 6: (57, 54.52, 11), 7: (88, 120.17, 17)}
+                 5: (91, 87.92, 6), 6: (57, 54.52, 11), 7: (88, 120.17, 17),
+                 8: (58, 83.99, 9)}
 
 # Familias: una palabra que describe un producto que no vendemos. Va como
 # NEGATIVA DE FRASE en la automática y corta todas las variantes que la contengan.
@@ -80,11 +81,18 @@ EXACTAS = {
     "tongue buddy": "nombre de otro producto",
     "tongue scraper for adults fsa eligible": "pide apto para cuenta FSA; la ficha no lo es",
     "case for tongue scraper": "busca sólo el estuche",
+    # semana 8 (27-10)
+    "tongue scraper under 3 dollars": "busca algo de $3; el nuestro sale $19,89",
+    "tongue scraper pink": "pide rosa; el nuestro es negro",
+    "tongue scraper clear plastic": "pide plástico transparente; el nuestro es acero",
+    "tongue scraper spiky": "pide púas; el nuestro es liso",
+    "tung gel": "busca el gel de Tung, no un raspador",
+    "hy1200": "modelo de otro producto",
 }
 
 # Las que se miran con más plata, no con negativas.
 OPORTUNIDADES = {
-    "tongue scraper for adults": "candidata a manual exacta propia; se decide con el informe del 27-10, sin tocar la puja antes",
+    "tongue scraper for adults": "10 pedidos en 29 clics (34,5%); la semana 8 hizo 1 en 9. Manual propia cuando pase los ~40 clics",
 }
 NUCLEO = {
     "tongue scraper": "la búsqueda principal: nunca negativa, ni exacta ni de frase",
@@ -107,6 +115,9 @@ NOTAS_FRASE = {
 }
 
 NOTAS_SEMANA = {
+    8: "El presupuesto de $12 cortó todos los días. Seis exactas nuevas (pink, under 3 "
+       "dollars, clear plastic, spiky, tung gel, hy1200). «plastictongue scraper for "
+       "adults» vendió: «plastic» no va de frase.",
     7: "La puja dinámica llevó el anuncio a muchas búsquedas sueltas. Casi todas las "
        "negativas de frase salen de esta semana.",
     6: "La primera semana sin PRIMALS. «electric tongue scraper» vendió el 13-10.",
@@ -488,8 +499,8 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 
 <div class="paso"><span class="n">1</span><div class="t">
 <h3>Cuándo</h3>
-<p>El martes 27-10, después de bajar los dos informes.</p>
-<p>Así la semana 8 mide la puja sola.</p>
+<p>Ahora: tocaba el 27-10, con el informe de la semana 8.</p>
+<p>Va junto con «solo reducir» (<a href="reporte-campanas-zriceros-semana-8.html#pasos">semana 8, paso 1</a>).</p>
 </div></div>
 
 <div class="paso"><span class="n">2</span><div class="t">
@@ -523,7 +534,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <h3>Lo que no se agrega</h3>
 <p>Nada que no esté en las cajas.</p>
 <p>Nunca <code>tongue scraper</code>, <code>electric</code>, <code>case</code> ni <code>kit</code> solas.</p>
-<p>No tocar la manual, la puja ni el presupuesto.</p>
+<p>No tocar la manual, las pujas de los grupos ni el presupuesto.</p>
 </div></div>
 
 <div class="paso"><span class="n">6</span><div class="t">
