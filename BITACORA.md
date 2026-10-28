@@ -3,6 +3,14 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-10-27 · Semana 8 como hoja madre (pedido de Ariel): bloque «Frases: qué vende y qué gasta
+  sin vender» y «Las listas de esta semana» (#frases, #listas), escrito por `frases.py --poner`
+  en la hoja de la semana más nueva. 19 frases vendieron (50 en 207 clics); 70 no (77 clics,
+  $108,24). Reconciliado: búsquedas 17,6% en 284 clics con término (no 17,5% en 286: 2 clics
+  de PRIMALS sin término); «tongue scraper»/«tongue cleaner» difieren entre la estrategia (sólo
+  automática) y Frases (las dos campañas), con nota. Fechas: mié 28-10 y mar 3-11. Campaña
+  manual: $8, diez exactas, «solo reducir», informe de la semana 9. Presupuesto e índice: CAMBIO
+  del $18. Texto justificado también en `.meta`. Link roto de la hoja Listing arreglado.
 - 2026-10-27 · Semana 8, pedido de Ariel: «Estrategia de la semana» (#estrategia) y «Campaña
   manual: cómo fue» (#manual). La automática no pierde (+$47,10); perdió PRIMALS (−$97,99,
   clic a $2,07, 64% fichas ajenas). «tongue scraper», «for adults» y «tongue cleaner» (31 en

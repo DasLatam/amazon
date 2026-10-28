@@ -391,6 +391,12 @@ negativa de frase consta como cargada en la automática (copper dejó de salir e
 PRIMALS el 9-09). Se cargan el 27-10, después de bajar el informe de la semana 8,
 para que esa semana mida la puja sola.
 
+**La hoja de la semana es la madre** (pedido de Ariel, 2026-10-27): Frases y Campaña manual son
+el detalle. `frases.py --poner` también reescribe el bloque `<!-- frases-resumen -->` (veredictos
+y listas con puja, `MANUAL_NUEVAS`) de la hoja de semana más nueva: en la hoja nueva, dejar el
+bloque vacío donde va y correrlo. La conversión de búsquedas es la de Frases (por frase: sin las
+2 líneas sin término de la semana 4). La estrategia cuenta sólo la automática; Frases, las dos.
+
 ## Pendientes
 
 Las acciones que sólo puede hacer Ariel en Seller Central van a

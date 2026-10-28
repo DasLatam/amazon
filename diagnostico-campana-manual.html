@@ -48,7 +48,7 @@
 <body>
 <!-- menu -->
 <style>html body{max-width:none;margin:0;padding:10px 14px 32px;box-sizing:border-box}
-html body p,html body li{text-align:justify;hyphens:auto}
+html body p,html body li,html body p[class]{text-align:justify;hyphens:auto}
 html body img{max-width:100%;height:auto}
 .zm{position:sticky;top:0;z-index:50;margin:0 0 26px;border-radius:10px;overflow:hidden;
   box-shadow:0 2px 10px rgba(0,0,0,.18);font:14px/1.3 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
@@ -79,7 +79,8 @@ html body img{max-width:100%;height:auto}
 
 <h1>Campaña manual: verificar y activar</h1>
 
-<p class="estado">La campaña manual ya está creada. No aparece en el informe porque todavía no tuvo clics.</p>
+<p class="estado">La campaña manual ya está creada. No aparece en el informe porque todavía no tuvo clics.
+Qué falló con la manual y qué se decidió: <a href="reporte-campanas-zriceros-semana-8.html#manual">semana 8</a>.</p>
 
 <h2>PASO A PASO</h2>
 
@@ -104,14 +105,14 @@ html body img{max-width:100%;height:auto}
 <p>Mirar esa fila en la lista de campañas.</p>
 <span class="et ok">Tiene que decir</span>
 <p>Estado: <em>Entregando</em> (o <em>Activa</em>).</p>
-<p>Presupuesto: <em>$5,00</em> diario.</p>
+<p>Presupuesto: <em>$8,00</em> diario. CAMBIO: era $5,00; sube en la semana 8, paso 2.</p>
 <span class="et no">Si no está así: hacé esto</span>
 <ul>
 <li><em>Pausada</em>: clic en el interruptor de la fila, que quede azul.</li>
 <li><em>Programada</em>: clic en el nombre → <em>Configuración</em> (o <em>Ajustes</em>).</li>
 <li>Ahí, <em>Fecha de inicio</em>: hoy → <em>Guardar cambios</em>.</li>
 <li><em>Finalizada</em>: en <em>Configuración</em>, <em>Fecha de finalización</em>: <em>Sin fecha de finalización</em> → <em>Guardar cambios</em>.</li>
-<li>Presupuesto distinto: clic en el número → escribir <code>5</code> → <em>Guardar</em>.</li>
+<li>Presupuesto distinto: clic en el número → escribir <code>8</code> → <em>Guardar</em>.</li>
 <li><em>Archivada</em>: no se puede reactivar. Ir a <a href="#crear">CREARLA</a>.</li>
 </ul>
 </div></div>
@@ -122,11 +123,11 @@ html body img{max-width:100%;height:auto}
 <p>Menú de la izquierda → <em>Configuración</em> (o <em>Ajustes</em>).</p>
 <span class="et ok">Tiene que decir</span>
 <p>Segmentación: <em>Manual</em>.</p>
-<p>Estrategia de puja: <em>Pujas dinámicas: solo bajada</em>.</p>
+<p>Estrategia de puja: <em>Pujas dinámicas: solo reducir</em>.</p>
 <p>Ajustes por ubicación: los tres en <em>0%</em> o vacíos.</p>
 <span class="et no">Si no está así: hacé esto</span>
 <ul>
-<li>Otra estrategia: tildar <em>Pujas dinámicas: solo bajada</em>.</li>
+<li>Otra estrategia: tildar <em>Pujas dinámicas: solo reducir</em>.</li>
 <li>Ubicaciones con número: borrarlo o poner <code>0</code>.</li>
 <li>Abajo, <em>Guardar cambios</em>.</li>
 <li>Segmentación <em>Automática</em>: no es la manual. Pausarla e ir a <a href="#crear">CREARLA</a>.</li>
@@ -149,10 +150,10 @@ html body img{max-width:100%;height:auto}
 </div></div>
 
 <div class="paso"><span class="n">5</span><div class="t">
-<h3>Las siete palabras</h3>
+<h3>Las diez palabras</h3>
 <p>Dentro del grupo <em>Exacta</em>, menú de la izquierda → <em>Segmentación</em> (o <em>Palabras clave</em>).</p>
 <span class="et ok">Tiene que decir</span>
-<p>Siete filas. En cada una: Concordancia <em>Exacta</em>, Puja <em>1,00</em>, Estado activo.</p>
+<p>Diez filas, todas Concordancia <em>Exacta</em> y Estado activo. Estas siete, a <em>1,00</em>:</p>
 <pre>tongue brush
 tongue scraper stainless steel
 tongue scraper dr tung
@@ -160,10 +161,11 @@ tongue scrapper
 tongue scraper black
 tongue scraper with case
 tongue scraper travel</pre>
+<p>Y las tres de la semana 8, paso 2: <em>tongue scraper</em> y <em>tongue cleaner</em> a <em>1,00</em>, <em>tongue scraper for adults</em> a <em>1,50</em>.</p>
 <p>«scrapper» con dos p va así a propósito.</p>
 <span class="et no">Si no está así: hacé esto</span>
 <ul>
-<li>Puja distinta: clic en el número → escribir <code>1</code> → <em>Guardar</em>.</li>
+<li>Puja distinta: clic en el número → escribir la de arriba → <em>Guardar</em>.</li>
 <li>Filas en <em>Amplia</em> o <em>Frase</em>: clic en su interruptor para pausarlas.</li>
 <li>Falta alguna: <em>Añadir palabras clave</em> → pestaña <em>Introducir lista</em> (o <em>Ingresar lista</em>).</li>
 <li>Tildar sólo <em>Exacta</em>. Puja: <em>Personalizada</em>, <code>1</code>.</li>
@@ -173,14 +175,14 @@ tongue scraper travel</pre>
 
 <div class="paso"><span class="n">6</span><div class="t">
 <h3>Bajar el informe donde sí aparece</h3>
-<p>Hacerlo el martes 27-10 (para la semana del 20 al 26-10).</p>
+<p>Hacerlo el martes 3-11 (para la semana del 27-10 al 2-11).</p>
 <p>Entrar a <a href="https://advertising.amazon.com/reports">advertising.amazon.com/reports</a> (o <em>Medición e informes</em> → <em>Informes de anuncios patrocinados</em>).</p>
 <p>Botón <em>Crear informe</em>.</p>
 <ul>
 <li>Tipo de anuncio: <em>Sponsored Products</em>.</li>
 <li>Tipo de informe: <em>Segmentación</em> (o <em>Targeting</em>).</li>
 <li>Unidad de tiempo: <em>Resumen</em>.</li>
-<li>Período: <em>Personalizado</em>, del <em>20-10-2026</em> al <em>26-10-2026</em>.</li>
+<li>Período: <em>Personalizado</em>, del <em>27-10-2026</em> al <em>2-11-2026</em>.</li>
 <li>Filtros: ninguno. Todas las campañas, todos los estados.</li>
 <li>Columnas: las que trae. Tienen que estar <em>Segmentación</em>, <em>Tipo de concordancia</em>, <em>Impresiones</em> y <em>Clics</em>.</li>
 <li><em>Ejecutar informe</em> → cuando diga <em>Completado</em>, <em>Descargar</em>.</li>
@@ -189,8 +191,8 @@ tongue scraper travel</pre>
 <p>Filas con <em>Zriceros - Manual exacta - oct 2026</em>, aunque tengan cero clics.</p>
 <span class="et">Dónde guardarlo</span>
 <p>En la carpeta compartida <code>shared/amazon</code> de srvnvidia, con este nombre:</p>
-<p><code>Targeting_-_10_27_2026_semana_8_.csv</code></p>
-<p>El de términos de búsqueda se baja igual que siempre, al lado: <code>Search_term_-_10_27_2026_semana_8_.csv</code>.</p>
+<p><code>Targeting_-_11_03_2026_semana_9_.csv</code></p>
+<p>El de términos de búsqueda se baja igual que siempre, al lado: <code>Search_term_-_11_03_2026_semana_9_.csv</code>.</p>
 </div></div>
 
 <h2 id="crear">SI NO EXISTE: CREARLA</h2>
@@ -204,9 +206,9 @@ tongue scraper travel</pre>
 <li>Cartera: <em>Sin cartera</em> (dejar vacío).</li>
 <li>Fecha de inicio: hoy.</li>
 <li>Fecha de finalización: <em>Sin fecha de finalización</em>.</li>
-<li>Presupuesto diario: <code>5</code>.</li>
+<li>Presupuesto diario: <code>8</code>.</li>
 <li>Segmentación: <em>Segmentación manual</em>.</li>
-<li>Estrategia de puja: <em>Pujas dinámicas: solo bajada</em>.</li>
+<li>Estrategia de puja: <em>Pujas dinámicas: solo reducir</em>.</li>
 <li>Ajustes por ubicación: los tres vacíos o en <code>0</code>.</li>
 <li>Nombre del grupo de anuncios: <code>Exacta</code>.</li>
 <li>Productos: buscar <code>B0H6QZGX56</code> → <em>Añadir</em>. Queda uno solo, a $19,89.</li>
@@ -219,7 +221,8 @@ tongue scraper travel</pre>
 <li>Si quedaron 14 o 21: borrar las que no son Exacta con su X.</li>
 <li><em>Palabras clave negativas</em>: no poner nada.</li>
 <li>Abajo de todo, <em>Lanzar campaña</em>.</li>
-<li>En la lista tiene que decir <em>Entregando</em> (o <em>Programada</em>) y $5,00.</li>
+<li>Ya lanzada, sumar las tres de la semana 8, paso 2, con sus pujas.</li>
+<li>En la lista tiene que decir <em>Entregando</em> (o <em>Programada</em>) y $8,00.</li>
 </ol>
 </div></div>
 
@@ -234,6 +237,7 @@ tongue scraper travel</pre>
 <li>Tipo de concordancia: <em>Negativa exacta</em> (no «Frase negativa»).</li>
 <li>Pegar las siete palabras del paso 5 → <em>Añadir</em> → <em>Guardar</em>.</li>
 <li>Tienen que quedar las siete, todas como <em>Negativa exacta</em>.</li>
+<li>Las tres de la semana 8 van como negativa exacta en el paso 3 de esa hoja.</li>
 </ol>
 </div></div>
 

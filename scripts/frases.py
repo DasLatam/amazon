@@ -93,11 +93,15 @@ EXACTAS = {
 # Las que se miran con más plata, no con negativas.
 OPORTUNIDADES = {
     "tongue scraper for adults": "10 pedidos en 29 clics (34,5%). Pasa a la manual exacta a $1,50 y a negativa exacta en la automática (semana 8, pasos 2 y 3)",
-    "tongue cleaner": "2 pedidos en 12 clics. Pasa a la manual exacta a $1,00 y a negativa exacta en la automática (semana 8, pasos 2 y 3)",
+    "tongue cleaner": "en la automática, 2 pedidos en 12 clics (+$3,01). Pasa a la manual exacta a $1,00 y a negativa exacta en la automática (semana 8, pasos 2 y 3)",
 }
 NUCLEO = {
     "tongue scraper": "la búsqueda principal. CAMBIO (27-10): pasa a la manual exacta a $1,00 y va de negativa exacta en la automática (semana 8, pasos 2 y 3). Nunca de frase",
 }
+
+# Las que pasan a la manual exacta y su puja (semana 8, paso 2). Las usa el resumen de la hoja madre.
+MANUAL_NUEVAS = {"tongue scraper": 1.00, "tongue scraper for adults": 1.50, "tongue cleaner": 1.00}
+REGLA_MANUAL = (10, 0.17)  # para sumar otra a la manual: 10 clics o más y conversión de 17% o más
 
 # Lo que ya está cargado. Sólo lo que consta en las hojas o en los pendientes.
 YA_NEGATIVAS = {t: "negativa exacta en la automática y exacta en la manual (19-10)" for t in MANUAL}
@@ -106,7 +110,8 @@ NOTAS_FRASE = {
     "copper tongue scraper for adults": "propuesta como negativa en la semana 1; en la automática no consta",
     "electric tongue scraper": "vendió el 13-10: no va como negativa",
     "tongue scrapper for smaller mouth": "el mismo clic del 13-10 en dos informes: cuenta una vez",
-    "tongue cleaner": "convierte 1 en 11: por debajo de su equilibrio, todavía sin veredicto",
+    "tongue cleaner": "el neto en rojo son los 3 clics de PRIMALS a $2,68; en la automática gana",
+    "tongue scraper": "en la automática, 116 clics, 19 pedidos, +$31,78; PRIMALS la pagaba $2,29",
     "zricezos tongue cleaner": "nuestra marca mal escrita",
     "tung scraper": "«tongue» o Dr. Tung mal escrito",
     "tough scraper": "«tongue» mal escrito",
@@ -526,7 +531,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <p>Otra vez <em>Añadir palabras clave negativas</em> → <em>Negativa exacta</em>.</p>
 <p>Pegar la caja 2 → <em>Añadir</em> → <em>Guardar</em>.</p>
 <span class="et ok">Tiene que decir</span>
-<p>{len(neg_exacta)} filas nuevas <em>Negativa exacta</em>, más las siete de la manual.</p>
+<p>{len(neg_exacta)} filas nuevas <em>Negativa exacta</em>, más las siete de la manual y las tres del paso 3 de la semana 8.</p>
 <span class="et no">Si no está así</span>
 <p>Amazon avisa que una ya existe: seguir, no es un error.</p>
 </div></div>
@@ -636,6 +641,75 @@ def conservar_menu(nuevo: str) -> str:
     return nuevo
 
 
+MARCA_MADRE = "frases-resumen"
+
+
+def hoja_madre() -> Path | None:
+    """La hoja de la semana más nueva. Las viejas no se reescriben."""
+    hojas = [(int(m[1]), f) for f in BASE.glob("reporte-campanas-zriceros-semana-*.html")
+             if (m := re.search(r"semana-(\d+)\.html$", f.name))]
+    return max(hojas)[1] if hojas else None
+
+
+def resumen_madre(frases: dict, res: dict, ult: int) -> str:
+    """Lo que la hoja de la semana muestra de Frases: totales por veredicto y las listas, sin las cajas."""
+    clasif = res["clasif"]
+    def suma(ts):
+        fs = [frases[t] for t in ts]
+        cl, ga = sum(f["clics"] for f in fs), sum(f["gasto"] for f in fs)
+        pe, un = sum(f["pedidos"] for f in fs), sum(f["unidades"] for f in fs)
+        return len(fs), int(cl), int(pe), ga, un * CONTRIBUCION - ga
+    vend = [t for t, f in frases.items() if f["pedidos"]]
+    sinv = [t for t, f in frases.items() if not f["pedidos"]]
+    nv, cv, pv, gv, _ = suma(vend)
+    ns, cs, _, gs, _ = suma(sinv)
+    que = {"Núcleo": "a la manual exacta (paso 2)", "Oportunidad": "a la manual exacta (paso 2)",
+           "Madurar": f"esperar a {CLICS_DECIDIR} clics", "Negativa de frase": "Frases, caja 1 (paso 4)",
+           "Negativa exacta": "Frases, caja 2 (paso 4)", "Ya negativa": "exactas de la manual desde el 19-10"}
+    filas = []
+    for v in ["Núcleo", "Oportunidad", "Madurar", "Negativa de frase", "Negativa exacta", "Ya negativa"]:
+        ts = [t for t, (w, _) in clasif.items() if w == v]
+        if not ts:
+            continue
+        n, cl, pe, ga, ne = suma(ts)
+        filas.append(f'<tr><td><strong>{e(v)}</strong> ({n})<br><small>{e(que[v])}</small></td><td class="num">{cl}</td>'
+                     f'<td class="num">{pe}</td><td class="num">{plata(ga)}</td>'
+                     f'<td class="num {"pos" if ne > 0 else "neg"}">{signo(ne)}</td></tr>')
+    manual = "".join(
+        f'<tr><td><bdi>{e(t)}</bdi></td><td class="num">{int(frases[t]["clics"])}</td>'
+        f'<td class="num">{int(frases[t]["pedidos"])}</td><td class="num"><strong>{plata(pu)}</strong></td></tr>'
+        for t, pu in MANUAL_NUEVAS.items())
+    cmin, convmin = REGLA_MANUAL
+    cerca = sorted((f for t, f in frases.items() if f["pedidos"] and t not in MANUAL_NUEVAS and t not in YA_NEGATIVAS),
+                   key=lambda f: (-f["clics"], f["frase"]))[:2]
+    pasan = [f for f in cerca if f["clics"] >= cmin and f["pedidos"] / f["clics"] >= convmin]
+    cerca_txt = ", ".join(f'«{e(f["frase"])}» ({int(f["pedidos"])} en {int(f["clics"])})' for f in cerca)
+    return f"""<!-- {MARCA_MADRE} -->
+<h3 id="frases">Frases: qué vende y qué gasta sin vender</h3>
+<p>{len(frases)} frases con clics en {ult} semanas. <strong>{nv} vendieron</strong>: {pv} pedidos en {cv} clics.
+<strong>{ns} no vendieron</strong>: {cs} clics y {plata(gs)}. Las dos campañas juntas, como en
+<a href="frases-zriceros.html">Frases</a>: suman los clics de PRIMALS, que la tabla de la estrategia (sólo la automática) no cuenta.</p>
+<table>
+<tr><th>Veredicto (frases) y qué se hace</th><th class="num">Clics</th><th class="num">Pedidos</th><th class="num">Gasto</th><th class="num">Neto</th></tr>
+{"".join(filas)}
+</table>
+<h3 id="listas">Las listas de esta semana</h3>
+<table>
+<tr><th>A la manual exacta (paso 2)</th><th class="num">Clics*</th><th class="num">Pedidos</th><th class="num">Puja</th></tr>
+{manual}
+</table>
+<ul>
+<li><strong>Negativa exacta en la automática, paso 3:</strong> {", ".join(e(t) for t in MANUAL_NUEVAS)}.</li>
+<li><strong>Negativa exacta en la automática, paso 4</strong> ({len(res["exacta"])}): {", ".join(e(t) for t in res["exacta"])}.</li>
+<li><strong>Negativa de frase en la automática, paso 4</strong> ({len(res["frase"])}): {", ".join(e(t) for t in res["frase"])}.</li>
+<li><strong>A frase o a otra exacta con puja: {"ninguna" if not pasan else ", ".join(e(f["frase"]) for f in pasan)}.</strong>
+Regla: {cmin} clics o más y {pct(convmin, 0)} de conversión. Las más cerca: {cerca_txt}.</li>
+</ul>
+<p class="meta">* Las dos campañas, como en Frases. Para pegar, con botón Copiar: <a href="frases-zriceros.html#pasos">Frases &rarr; pasos</a>.
+Esta parte la escribe <code>scripts/frases.py --poner</code>.</p>
+<!-- /{MARCA_MADRE} -->"""
+
+
 def main() -> int:
     frases, fichas, otros, por_semana, repetidas, p, extra = juntar()
     ok = True
@@ -684,6 +758,18 @@ def main() -> int:
         if re.sub(r"generada el \S+", "", nuevo) != re.sub(r"generada el \S+", "", viejo):
             HOJA.write_text(nuevo, encoding="utf-8")
             print(f"actualizada: {HOJA.name}")
+        madre = hoja_madre()
+        if madre:
+            txt = madre.read_text(encoding="utf-8")
+            bloque = resumen_madre(frases, res, max(por_semana))
+            pat = rf"<!-- {MARCA_MADRE} -->.*?<!-- /{MARCA_MADRE} -->"
+            if re.search(pat, txt, re.S):
+                nuevo_m = re.sub(pat, lambda _: bloque, txt, count=1, flags=re.S)
+                if nuevo_m != txt:
+                    madre.write_text(nuevo_m, encoding="utf-8")
+                    print(f"actualizada: {madre.name} (bloque {MARCA_MADRE})")
+            else:
+                print(f"aviso: {madre.name} no tiene el bloque <!-- {MARCA_MADRE} -->", file=sys.stderr)
     return 0 if ok else 1
 
 
