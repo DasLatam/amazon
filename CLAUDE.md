@@ -285,6 +285,16 @@ negativa»; ahora va de exacta en la automática (nunca de frase), y sólo despu
 la manual. Desde la semana 9 la manual sí tiene líneas en el informe de términos: medir las tres
 por separado. Regla para sumar otra: 10 clics o más y conversión ≥ 17%.
 
+## Lo que el informe no muestra hecho no se da por hecho (semana 9, 2026-11-04)
+
+El CSV llegó por Telegram (no al compartido). Los pasos de la semana 8 tenían `hecha_en`
+puesto por Claude al fusionar tareas el 30-10, **no por Ariel**: la regla de «los marcados
+hechos se toman como hechos» vale sólo para lo que tilda él. El informe los desmiente (las
+tres búsquedas siguen en la automática, líneas a $1,50): la hoja repite los mismos pasos sin
+cartel. **Las mal escritas venden** (tung/tough/tounge/scrapper: 7 pedidos en 20 clics): no van
+de negativa. Un gasto muy por debajo del tope ($5,65 contra $12) puede ser un presupuesto ya
+bajado a $6: no se afirma ninguna de las dos.
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel

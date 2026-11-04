@@ -3,6 +3,12 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-11-04 · Semana 9 (27-10 al 2-11, CSV por Telegram → `datos/semana-9_2026-10-27_2026-11-02_terminos.csv`):
+  6 pedidos, ACoS 33,1%, +$14,47 con $39,53 ($5,65/día, el tope no cortó); acumulado −$36,42.
+  Búsquedas 17,9%. Los pasos de la semana 8 no se ven: las tres siguen en la automática, 9
+  líneas a $1,50/$2,00, manual con 2 impresiones; se repiten los seis pasos. Mal escritas: 7 en
+  20 clics, no se negativizan. Cuatro exactas nuevas en Frases (aquasonic, combo flosser,
+  silicone, blue). Ficha: 8 calificaciones de 4,8, #216. Segmentación: no llegó.
 - 2026-10-27 · Semana 8 como hoja madre (pedido de Ariel): bloque «Frases: qué vende y qué gasta
   sin vender» y «Las listas de esta semana» (#frases, #listas), escrito por `frases.py --poner`
   en la hoja de la semana más nueva. 19 frases vendieron (50 en 207 clics); 70 no (77 clics,
