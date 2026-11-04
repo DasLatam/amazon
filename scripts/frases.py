@@ -41,7 +41,7 @@ CLICS_DECIDIR = 15       # la regla de la estrategia de PPC: 15 clics sin pedido
 # Lo que dicen las hojas semanales, tabla «Las N semanas lado a lado» (la 8 desde el 27-10).
 HOJAS_TOTALES = {1: (11, 18.66, 4), 2: (34, 75.19, 5), 3: (53, 92.32, 9), 4: (56, 85.12, 1),
                  5: (91, 87.92, 6), 6: (57, 54.52, 11), 7: (88, 120.17, 17),
-                 8: (58, 83.99, 9)}
+                 8: (58, 83.99, 9), 9: (32, 39.53, 6)}
 
 # Familias: una palabra que describe un producto que no vendemos. Va como
 # NEGATIVA DE FRASE en la automática y corta todas las variantes que la contengan.
@@ -88,15 +88,20 @@ EXACTAS = {
     "tongue scraper spiky": "pide púas; el nuestro es liso",
     "tung gel": "busca el gel de Tung, no un raspador",
     "hy1200": "modelo de otro producto",
+    # semana 9 (4-11)
+    "aquasonic tooth scraper": "raspador dental de la marca Aquasonic: otro producto",
+    "combo flosser and tongue scraper": "combo de hilo dental y raspador de plástico",
+    "tongue scraper silicone": "pide silicona; el nuestro es acero",
+    "tongue scraper blue": "pide azul; el nuestro es negro",
 }
 
 # Las que se miran con más plata, no con negativas.
 OPORTUNIDADES = {
-    "tongue scraper for adults": "10 pedidos en 29 clics (34,5%). Pasa a la manual exacta a $1,50 y a negativa exacta en la automática (semana 8, pasos 2 y 3)",
-    "tongue cleaner": "en la automática, 2 pedidos en 12 clics (+$3,01). Pasa a la manual exacta a $1,00 y a negativa exacta en la automática (semana 8, pasos 2 y 3)",
+    "tongue scraper for adults": "10 pedidos en 32 clics (31,2%). Pasa a la manual exacta a $1,50 y a negativa exacta en la automática (semana 9, pasos 2 y 3; venía de la 8)",
+    "tongue cleaner": "en la automática, 2 pedidos en 13 clics (+$1,86). Pasa a la manual exacta a $1,00 y a negativa exacta en la automática (semana 9, pasos 2 y 3; venía de la 8)",
 }
 NUCLEO = {
-    "tongue scraper": "la búsqueda principal. CAMBIO (27-10): pasa a la manual exacta a $1,00 y va de negativa exacta en la automática (semana 8, pasos 2 y 3). Nunca de frase",
+    "tongue scraper": "la búsqueda principal. CAMBIO (27-10): pasa a la manual exacta a $1,00 y va de negativa exacta en la automática (semana 9, pasos 2 y 3; venía de la 8). Nunca de frase",
 }
 
 # Las que pasan a la manual exacta y su puja (semana 8, paso 2). Las usa el resumen de la hoja madre.
@@ -115,12 +120,19 @@ NOTAS_FRASE = {
     "zricezos tongue cleaner": "nuestra marca mal escrita",
     "tung scraper": "«tongue» o Dr. Tung mal escrito",
     "tough scraper": "«tongue» mal escrito",
+    "tounge scraper": "«tongue» mal escrito",
+    "irregulador de lengua": "en español",
+    "tongue scraper gurunanda": "marca de la competencia; vendió",
+    "cheek scraper inside": "pide raspador de mejilla; vendió",
     "raspalenguas": "en español",
     "舌苔刷": "chino: «cepillo de lengua»",
     "شطب اللسان": "árabe: «raspar la lengua»",
 }
 
 NOTAS_SEMANA = {
+    9: "Los pasos de la semana 8 no se ven en el informe: las tres siguen en la automática "
+       "y hay líneas a $1,50. Cuatro exactas nuevas (aquasonic, combo flosser, silicone, blue). "
+       "«dental hygiene kit for car» (28-10) cae en la familia «hygiene kit».",
     8: "El presupuesto de $12 cortó todos los días. Seis exactas nuevas (pink, under 3 "
        "dollars, clear plastic, spiky, tung gel, hy1200). «plastictongue scraper for "
        "adults» vendió: «plastic» no va de frase.",
@@ -505,8 +517,8 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 
 <div class="paso"><span class="n">1</span><div class="t">
 <h3>Cuándo</h3>
-<p>Ahora: tocaba el 27-10, con el informe de la semana 8.</p>
-<p>Va junto con «solo reducir» (<a href="reporte-campanas-zriceros-semana-8.html#pasos">semana 8, paso 1</a>).</p>
+<p>Ahora: tocaba el 27-10 y el informe de la semana 9 todavía no lo muestra.</p>
+<p>Va junto con «solo reducir» (<a href="reporte-campanas-zriceros-semana-9.html#pasos">semana 9, paso 1</a>).</p>
 </div></div>
 
 <div class="paso"><span class="n">2</span><div class="t">
@@ -531,7 +543,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <p>Otra vez <em>Añadir palabras clave negativas</em> → <em>Negativa exacta</em>.</p>
 <p>Pegar la caja 2 → <em>Añadir</em> → <em>Guardar</em>.</p>
 <span class="et ok">Tiene que decir</span>
-<p>{len(neg_exacta)} filas nuevas <em>Negativa exacta</em>, más las siete de la manual y las tres del paso 3 de la semana 8.</p>
+<p>{len(neg_exacta)} filas nuevas <em>Negativa exacta</em>, más las siete de la manual y las tres del paso 3 de la semana 9.</p>
 <span class="et no">Si no está así</span>
 <p>Amazon avisa que una ya existe: seguir, no es un error.</p>
 </div></div>
@@ -540,12 +552,12 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <h3>Lo que no se agrega</h3>
 <p>Nada que no esté en las cajas.</p>
 <p>Nunca de frase <code>tongue scraper</code>, <code>electric</code>, <code>case</code> ni <code>kit</code> solas.</p>
-<p>La manual, sus tres exactas nuevas y el presupuesto van en la <a href="reporte-campanas-zriceros-semana-8.html#pasos">semana 8, pasos 2 y 3</a>.</p>
+<p>La manual, sus tres exactas nuevas y el presupuesto van en la <a href="reporte-campanas-zriceros-semana-9.html#pasos">semana 9, pasos 2 y 3</a>.</p>
 </div></div>
 
 <div class="paso"><span class="n">6</span><div class="t">
 <h3>Cómo se verifica</h3>
-<p>En el informe de la semana 9 no sale ninguna frase de las cajas.</p>
+<p>En el informe de la semana 10 no sale ninguna frase de las cajas.</p>
 <p>Si sale una, la negativa no se guardó: repetir el paso 3 o 4.</p>
 </div></div>
 
