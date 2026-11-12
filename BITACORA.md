@@ -3,6 +3,14 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-11-11 · Semana 10 (3 al 9-11; llegó como PDF por WhatsApp, reconstruido entero a
+  `datos/semana-10_2026-11-03_2026-11-09_terminos.csv`, 35 líneas, CTR/ROAS verificados por fila):
+  8 pedidos, ACoS 59,2%, −$22,12; acumulado −$58,54. Los pasos de la semana 9 se hicieron el 4-11
+  (manual exacta nueva `MANUAL EXACTA - 11/4/2026 - ZRICEROS`, automática en «solo reducir» y sin
+  las tres). «for adults» a $1,50: 9.436 impr., CTR 0,40%, 3 en 38, −$29,22; «tongue scraper» a
+  $1,00: 2 clics. La automática se fue a pasta/enjuague/Waterpik (72.120 impr. en «(Other)», 21
+  clics y $21 en otros productos). Semana 11: pujas $1,10 y $1,20, ocho familias de frase y tres
+  exactas nuevas en Frases. Gráficos SVG (neto por semana, gasto por grupo). Segmentación: no llegó.
 - 2026-11-04 · Semana 9 (27-10 al 2-11, CSV por Telegram → `datos/semana-9_2026-10-27_2026-11-02_terminos.csv`):
   6 pedidos, ACoS 33,1%, +$14,47 con $39,53 ($5,65/día, el tope no cortó); acumulado −$36,42.
   Búsquedas 17,9%. Los pasos de la semana 8 no se ven: las tres siguen en la automática, 9

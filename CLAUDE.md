@@ -295,6 +295,21 @@ cartel. **Las mal escritas venden** (tung/tough/tounge/scrapper: 7 pedidos en 20
 de negativa. Un gasto muy por debajo del tope ($5,65 contra $12) puede ser un presupuesto ya
 bajado a $6: no se afirma ninguna de las dos.
 
+## Una exacta cara compra subastas peores (semana 10, 2026-11-11)
+
+Con los pasos hechos el 4-11 (manual exacta **nueva**, `MANUAL EXACTA - 11/4/2026 - ZRICEROS`,
+grupo `zriceros Manual exacta 04/11/2026`; la vieja de siete palabras no tuvo líneas), «tongue
+scraper for adults» a $1,50 pasó de 454 impresiones por semana en la automática a 9.436, el CTR
+de 1,06% a 0,40% y convirtió 3 en 38 (−$29,22, 60% del gasto). «tongue scraper» a $1,00 exacta
+casi no salió (2 clics). **Mover una búsqueda a exacta no hereda su rendimiento: a una puja alta
+compra ubicaciones peores, a una baja pierde las subastas.** Pujas de la semana 11 con
+$19,89 × 30% × conversión acumulada: $1,10 y $1,20 (esta, sobre el objetivo, para que salga).
+Y **la automática sin sus búsquedas buenas se va a otros productos de higiene bucal** (pasta,
+enjuague, Waterpik, hilo: 72.120 impresiones en «(Other)»): familias nuevas en `FAMILIAS`.
+El informe llegó **impreso a PDF**: se reconstruye entero con `pdftotext -bbox-layout` (cada
+página es un tramo de columnas de las mismas filas; se unen por la coordenada y y el texto que se
+repite en el borde) y se verifica fila por fila (CTR = clics/impr., ROAS = ventas/gasto).
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel
