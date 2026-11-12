@@ -41,7 +41,7 @@ CLICS_DECIDIR = 15       # la regla de la estrategia de PPC: 15 clics sin pedido
 # Lo que dicen las hojas semanales, tabla «Las N semanas lado a lado» (la 8 desde el 27-10).
 HOJAS_TOTALES = {1: (11, 18.66, 4), 2: (34, 75.19, 5), 3: (53, 92.32, 9), 4: (56, 85.12, 1),
                  5: (91, 87.92, 6), 6: (57, 54.52, 11), 7: (88, 120.17, 17),
-                 8: (58, 83.99, 9), 9: (32, 39.53, 6)}
+                 8: (58, 83.99, 9), 9: (32, 39.53, 6), 10: (76, 94.12, 8)}
 
 # Familias: una palabra que describe un producto que no vendemos. Va como
 # NEGATIVA DE FRASE en la automática y corta todas las variantes que la contengan.
