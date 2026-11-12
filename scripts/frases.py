@@ -59,6 +59,15 @@ FAMILIAS = {
     "non metal": "pide que no sea de metal",
     "hygiene kit": "kit de higiene completo: otro producto",
     "brushing teeth": "kit para cepillarse los dientes",
+    # semana 10 (11-11): la automática, sin las tres de la manual, salió en búsquedas de otros productos
+    "toothpaste": "busca pasta dental",
+    "mouthwash": "busca enjuague bucal",
+    "listerine": "enjuague Listerine: otro producto",
+    "waterpik": "irrigador Waterpik: otro producto",
+    "floss": "hilo dental: otro producto",
+    "flosser": "irrigador o porta-hilo: otro producto",
+    "miswak": "palito de miswak: otro producto",
+    "tooth brush": "busca un cepillo de dientes (escrito separado)",
 }
 
 # Palabras que parecen familia pero NO se negativizan (el cuadro las muestra).
@@ -93,19 +102,24 @@ EXACTAS = {
     "combo flosser and tongue scraper": "combo de hilo dental y raspador de plástico",
     "tongue scraper silicone": "pide silicona; el nuestro es acero",
     "tongue scraper blue": "pide azul; el nuestro es negro",
+    # semana 10 (11-11)
+    "tepe special care": "cepillo de dientes Tepe: otro producto",
+    "oral surgery recovery must haves": "busca cosas para después de una cirugía",
+    "tung tongue gel": "busca el gel de Tung, no un raspador",
 }
 
 # Las que se miran con más plata, no con negativas.
 OPORTUNIDADES = {
-    "tongue scraper for adults": "10 pedidos en 32 clics (31,2%). Pasa a la manual exacta a $1,50 y a negativa exacta en la automática (semana 9, pasos 2 y 3; venía de la 8)",
-    "tongue cleaner": "en la automática, 2 pedidos en 13 clics (+$1,86). Pasa a la manual exacta a $1,00 y a negativa exacta en la automática (semana 9, pasos 2 y 3; venía de la 8)",
+    "tongue scraper for adults": "en la manual exacta desde el 4-11. Semana 10: 3 en 38 a $1,48 (−$29,22); acumulado 13 en 70 (18,6%). Puja a $1,10 (semana 10, paso 1)",
+    "tongue cleaner": "en la manual exacta desde el 4-11 a $1,00: 1 clic en la semana 10. Queda en $1,00",
 }
 NUCLEO = {
-    "tongue scraper": "la búsqueda principal. CAMBIO (27-10): pasa a la manual exacta a $1,00 y va de negativa exacta en la automática (semana 9, pasos 2 y 3; venía de la 8). Nunca de frase",
+    "tongue scraper": "la búsqueda principal. En la manual exacta desde el 4-11 y negativa exacta en la automática. A $1,00 tuvo 2 clics en la semana 10: puja a $1,25 (semana 10, paso 1). Nunca de frase",
 }
 
-# Las que pasan a la manual exacta y su puja (semana 8, paso 2). Las usa el resumen de la hoja madre.
-MANUAL_NUEVAS = {"tongue scraper": 1.00, "tongue scraper for adults": 1.50, "tongue cleaner": 1.00}
+# Las tres de la manual exacta (en la campaña nueva desde el 4-11) y su puja de la semana 10, paso 1.
+# Las usa el resumen de la hoja madre.
+MANUAL_NUEVAS = {"tongue scraper": 1.25, "tongue scraper for adults": 1.10, "tongue cleaner": 1.00}
 REGLA_MANUAL = (10, 0.17)  # para sumar otra a la manual: 10 clics o más y conversión de 17% o más
 
 # Lo que ya está cargado. Sólo lo que consta en las hojas o en los pendientes.
@@ -127,9 +141,20 @@ NOTAS_FRASE = {
     "raspalenguas": "en español",
     "舌苔刷": "chino: «cepillo de lengua»",
     "شطب اللسان": "árabe: «raspar la lengua»",
+    "younger scraper": "«tongue scraper» mal corregido; vendió",
+    "tang scraper": "«tongue» mal escrito",
+    "le ngua cleaner": "«lengua» partido",
+    "gratte langue": "francés: «raspador de lengua»",
+    "oral b pulsar soft": "cepillo Oral-B, pero vendió: no va de negativa",
+    "guru nanda": "marca de la competencia que vende raspadores; «tongue scraper gurunanda» vendió",
+    "white tongue treatment": "el raspador es para la lengua blanca: encaja",
 }
 
 NOTAS_SEMANA = {
+    10: "Las tres pasaron a una manual exacta nueva (4-11) y la automática quedó en «solo reducir» "
+        "(ningún clic a más de $1,00). Sin ellas, la automática salió en pasta dental, enjuague, "
+        "Waterpik e hilo dental: 72.120 impresiones en «(Other)» y 20 clics sin venta. Ocho familias "
+        "nuevas de frase y tres exactas.",
     9: "Los pasos de la semana 8 no se ven en el informe: las tres siguen en la automática "
        "y hay líneas a $1,50. Cuatro exactas nuevas (aquasonic, combo flosser, silicone, blue). "
        "«dental hygiene kit for car» (28-10) cae en la familia «hygiene kit».",
@@ -517,8 +542,8 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 
 <div class="paso"><span class="n">1</span><div class="t">
 <h3>Cuándo</h3>
-<p>Ahora: tocaba el 27-10 y el informe de la semana 9 todavía no lo muestra.</p>
-<p>Va junto con «solo reducir» (<a href="reporte-campanas-zriceros-semana-9.html#pasos">semana 9, paso 1</a>).</p>
+<p>Ahora. Las cajas suman ocho familias y tres exactas nuevas de la semana 10.</p>
+<p>Va junto con las pujas de la manual (<a href="reporte-campanas-zriceros-semana-10.html#pasos">semana 10, paso 1</a>).</p>
 </div></div>
 
 <div class="paso"><span class="n">2</span><div class="t">
@@ -535,7 +560,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <p><em>Añadir palabras clave negativas</em> → concordancia <em>Frase negativa</em>.</p>
 <p>Pegar la caja 1 (botón <em>Copiar</em>, <a href="#cajas">abajo</a>) → <em>Añadir</em> → <em>Guardar</em>.</p>
 <span class="et ok">Tiene que decir</span>
-<p>{len(neg_frase)} filas nuevas, todas <em>Frase negativa</em>.</p>
+<p>Las de la caja, todas <em>Frase negativa</em>.</p>
 </div></div>
 
 <div class="paso"><span class="n">4</span><div class="t">
@@ -543,7 +568,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <p>Otra vez <em>Añadir palabras clave negativas</em> → <em>Negativa exacta</em>.</p>
 <p>Pegar la caja 2 → <em>Añadir</em> → <em>Guardar</em>.</p>
 <span class="et ok">Tiene que decir</span>
-<p>{len(neg_exacta)} filas nuevas <em>Negativa exacta</em>, más las siete de la manual y las tres del paso 3 de la semana 9.</p>
+<p>Las exactas de la caja, más las siete de la manual vieja y las tres de la manual nueva.</p>
 <span class="et no">Si no está así</span>
 <p>Amazon avisa que una ya existe: seguir, no es un error.</p>
 </div></div>
@@ -552,12 +577,12 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <h3>Lo que no se agrega</h3>
 <p>Nada que no esté en las cajas.</p>
 <p>Nunca de frase <code>tongue scraper</code>, <code>electric</code>, <code>case</code> ni <code>kit</code> solas.</p>
-<p>La manual, sus tres exactas nuevas y el presupuesto van en la <a href="reporte-campanas-zriceros-semana-9.html#pasos">semana 9, pasos 2 y 3</a>.</p>
+<p>Las pujas de la manual van en la <a href="reporte-campanas-zriceros-semana-10.html#pasos">semana 10, paso 1</a>.</p>
 </div></div>
 
 <div class="paso"><span class="n">6</span><div class="t">
 <h3>Cómo se verifica</h3>
-<p>En el informe de la semana 10 no sale ninguna frase de las cajas.</p>
+<p>En el informe de la semana 11 no sale ninguna frase de las cajas.</p>
 <p>Si sale una, la negativa no se guardó: repetir el paso 3 o 4.</p>
 </div></div>
 
@@ -675,9 +700,9 @@ def resumen_madre(frases: dict, res: dict, ult: int) -> str:
     sinv = [t for t, f in frases.items() if not f["pedidos"]]
     nv, cv, pv, gv, _ = suma(vend)
     ns, cs, _, gs, _ = suma(sinv)
-    que = {"Núcleo": "a la manual exacta (paso 2)", "Oportunidad": "a la manual exacta (paso 2)",
-           "Madurar": f"esperar a {CLICS_DECIDIR} clics", "Negativa de frase": "Frases, caja 1 (paso 4)",
-           "Negativa exacta": "Frases, caja 2 (paso 4)", "Ya negativa": "exactas de la manual desde el 19-10"}
+    que = {"Núcleo": "manual exacta, puja nueva (paso 1)", "Oportunidad": "manual exacta, puja nueva (paso 1)",
+           "Madurar": f"esperar a {CLICS_DECIDIR} clics", "Negativa de frase": "Frases, caja 1 (paso 2)",
+           "Negativa exacta": "Frases, caja 2 (paso 2)", "Ya negativa": "exactas de la manual vieja (19-10)"}
     filas = []
     for v in ["Núcleo", "Oportunidad", "Madurar", "Negativa de frase", "Negativa exacta", "Ya negativa"]:
         ts = [t for t, (w, _) in clasif.items() if w == v]
@@ -707,13 +732,12 @@ def resumen_madre(frases: dict, res: dict, ult: int) -> str:
 </table>
 <h3 id="listas">Las listas de esta semana</h3>
 <table>
-<tr><th>A la manual exacta (paso 2)</th><th class="num">Clics*</th><th class="num">Pedidos</th><th class="num">Puja</th></tr>
+<tr><th>Manual exacta: puja nueva (paso 1)</th><th class="num">Clics*</th><th class="num">Pedidos</th><th class="num">Puja</th></tr>
 {manual}
 </table>
 <ul>
-<li><strong>Negativa exacta en la automática, paso 3:</strong> {", ".join(e(t) for t in MANUAL_NUEVAS)}.</li>
-<li><strong>Negativa exacta en la automática, paso 4</strong> ({len(res["exacta"])}): {", ".join(e(t) for t in res["exacta"])}.</li>
-<li><strong>Negativa de frase en la automática, paso 4</strong> ({len(res["frase"])}): {", ".join(e(t) for t in res["frase"])}.</li>
+<li><strong>Negativa exacta en la automática, todas las de Frases</strong> ({len(res["exacta"])}; las nuevas, paso 2): {", ".join(e(t) for t in res["exacta"])}.</li>
+<li><strong>Negativa de frase en la automática, todas las de Frases</strong> ({len(res["frase"])}; las nuevas, paso 2): {", ".join(e(t) for t in res["frase"])}.</li>
 <li><strong>A frase o a otra exacta con puja: {"ninguna" if not pasan else ", ".join(e(f["frase"]) for f in pasan)}.</strong>
 Regla: {cmin} clics o más y {pct(convmin, 0)} de conversión. Las más cerca: {cerca_txt}.</li>
 </ul>

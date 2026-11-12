@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semana 10 — Seguimiento de Ads · Zriceros en Amazon</title>
+<style>
+  body {
+    font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    line-height: 1.6;
+    color: #232f3e;
+    background: #f7f7f7;
+  }
+  p, li { text-align: justify; hyphens: auto; }
+  h1 {
+    font-size: 23px;
+    border-bottom: 3px solid #ff9900;
+    padding-bottom: 8px;
+  }
+  h2 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #555;
+    margin-top: 44px;
+    border-left: 4px solid #ff9900;
+    padding-left: 10px;
+  }
+  h2 .num { color: #ff9900; margin-right: 6px; }
+  .meta { font-size: 13px; color: #888; margin-bottom: 4px; text-align: left; }
+  .card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin-top: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  }
+  .tabla { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+  table th, table td { border: 1px solid #e0e0e0; padding: 8px 10px; text-align: left; vertical-align: top; }
+  table th { background: #f0f0f0; }
+  td.num, th.num { text-align: right; white-space: nowrap; }
+  .warn { color: #c40000; font-weight: 600; }
+  .ok { color: #067d62; font-weight: 600; }
+  .tbd { color: #946200; font-style: italic; }
+  .summary { background: #eef6ff; border: 1px solid #c9e2ff; }
+  .card > h2:first-child { margin-top: 0; }
+  .summary h2 { border-left-color: #0a5cb8; color: #0a5cb8; }
+  .tips { background: #fff8ec; border: 1px solid #ffe2a8; }
+  .tips h2 { border-left-color: #cc8400; color: #8a5b00; }
+  .critique { background: #fff0ee; border: 1px solid #ffc9c0; }
+  .critique h2 { border-left-color: #c40000; color: #a30000; }
+  .semanas { font-size: 14px; margin: 10px 0 0; }
+  .semanas a, .semanas strong { margin-right: 10px; }
+  .kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 16px; }
+  .kpi { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; text-align: center; }
+  .kpi .big { font-size: 26px; font-weight: 700; color: #0a5cb8; display: block; }
+  .kpi .lbl { font-size: 12px; color: #777; text-transform: uppercase; letter-spacing: .4px; margin-top: 4px; display: block; }
+  .kpi .sub { font-size: 12px; color: #999; display: block; margin-top: 2px; }
+  .pos { color: #067d62; }
+  .neg { color: #c40000; }
+  .row-total td { background: #eef6ff; font-weight: 700; }
+  .row-mal td { background: #fff5f3; }
+  .row-bien td { background: #ecf9f1; }
+  .formula { font-size: 17px; text-align: center; margin: 18px 0; }
+  footer { margin-top: 50px; font-size: 12px; color: #999; text-align: center; }
+  ol.pasos { counter-reset: paso; list-style: none; padding: 0; margin: 18px 0 0; }
+  ol.pasos > li { counter-increment: paso; position: relative;
+    margin: 0 0 22px; padding: 14px 16px 16px 52px; background: #fff;
+    border: 1px solid #ffe2a8; border-radius: 8px; }
+  ol.pasos > li::before { content: counter(paso); position: absolute; left: 14px; top: 14px;
+    width: 26px; height: 26px; border-radius: 50%; background: #cc8400; color: #fff;
+    font-weight: 700; font-size: 14px; text-align: center; line-height: 26px; }
+  .p-tit { display: block; font-size: 15.5px; font-weight: 700; color: #232f3e; }
+  .p-tag { display: block; font-size: 11.5px; color: #8a5b00; text-transform: uppercase;
+    letter-spacing: .4px; margin: 2px 0 10px; }
+  table.p-tab { margin: 0; font-size: 13.5px; }
+  table.p-tab > tbody > tr > th { width: 150px; background: #fffaf0; font-size: 12.5px;
+    color: #8a5b00; vertical-align: top; text-align: left; }
+  table.p-tab ul, table.p-tab ol { margin: 0; padding-left: 20px; }
+  table.p-mini { margin: 6px 0 0; font-size: 12.5px; }
+  table.p-mini th { background: #f5f5f5; }
+  ol.pasos code { background: #f3f4f6; padding: 1px 5px; border-radius: 4px; font-size: 12.5px; }
+  .p-registro { margin-top: 12px; padding: 10px 12px; background: #fffaf0;
+    border: 1px dashed #ffd27f; border-radius: 6px; }
+  .p-registro table.p-mini { margin: 0; }
+  .p-registro table.p-mini th { width: 60%; background: transparent; font-weight: 400; }
+  .p-registro p.meta { margin: 8px 0 0; }
+  @media (max-width: 640px) {
+    .kpis { grid-template-columns: repeat(2, 1fr); }
+    ol.pasos > li { padding-left: 16px; }
+    ol.pasos > li::before { position: static; display: inline-block; margin-right: 8px; }
+    table.p-tab > tbody > tr > th { width: auto; }
+  }
+  .img-par { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 12px; }
+  .img-par figure { margin: 0; }
+  .img-par img, figure.sim img { width: 100%; height: auto; border: 1px solid #e0e0e0; border-radius: 6px; background: #fff; }
+  figure.sim { margin: 14px 0 0; }
+  figcaption { font-size: 12.5px; color: #777; margin-top: 4px; text-align: left; }
+  .brief { display: grid; grid-template-columns: 220px 1fr; gap: 20px; align-items: start; margin-top: 12px; }
+  @media (max-width: 640px) {
+    .img-par, .brief { grid-template-columns: 1fr; }
+  }
+  ol.clic { margin: 0; padding-left: 22px; }
+  ol.clic > li { margin: 0 0 8px; }
+  .ver { display: block; color: #067d62; font-size: 12.5px; margin-top: 3px; }
+  .ojo { display: block; color: #c40000; font-size: 12.5px; margin-top: 3px; }
+  p.ojo { font-size: 13px; }
+  .antes { background: #fff; border: 1px solid #ffe2a8; border-radius: 8px; padding: 12px 16px; margin: 14px 0; }
+  .antes > p:first-child { margin-top: 0; }
+  .galeria { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 12px; }
+  @media (max-width: 640px) { .galeria { grid-template-columns: repeat(2, 1fr); } }
+  pre.copiar { background: #f3f4f6; border-radius: 6px; padding: 8px 12px; font-size: 13px; margin: 6px 0; white-space: pre-wrap; }
+  .graf { width: 100%; height: auto; display: block; margin-top: 10px; }
+  .graf text { font-family: -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+  .graf rect.b:hover { opacity: .75; }
+</style>
+</head>
+<body>
+<!-- menu -->
+<style>html body{max-width:none;margin:0;padding:10px 14px 32px;box-sizing:border-box}
+html body p,html body li,html body p[class]{text-align:justify;hyphens:auto}
+html body img{max-width:100%;height:auto}
+.zm{position:sticky;top:0;z-index:50;margin:0 0 26px;border-radius:10px;overflow:hidden;
+  box-shadow:0 2px 10px rgba(0,0,0,.18);font:14px/1.3 -apple-system,Segoe UI,Roboto,Arial,sans-serif}
+.zm a{text-decoration:none;white-space:nowrap}
+.zm-f1{display:flex;flex-wrap:wrap;align-items:center;gap:4px;background:#232f3e;padding:7px 10px}
+.zm-f1 a{color:#fff;padding:7px 13px;border-radius:6px}
+.zm-f1 a:hover{background:rgba(255,255,255,.14)}
+.zm-f1 .zm-marca{font-weight:700;margin-right:8px}
+.zm-f1 .zm-aqui{background:#37475a;box-shadow:inset 0 -3px 0 #ff9900;font-weight:700}
+.zm-f2{display:flex;flex-wrap:wrap;align-items:center;gap:4px;background:#37475a;padding:6px 10px}
+.zm-f2 .zm-rot{color:#b8c4cf;font-size:12px;padding:0 6px 0 3px}
+.zm-f2 a{color:#e8edf2;padding:5px 11px;border-radius:6px}
+.zm-f2 a:hover{background:rgba(255,255,255,.14)}
+.zm-f2 a[aria-current]{background:#ff9900;color:#232f3e;font-weight:700}
+.zp{display:flex;flex-wrap:wrap;gap:12px;margin:48px 0 0;padding-top:18px;border-top:1px solid #e0e0e0}
+.zp a{flex:0 1 46%;text-decoration:none;color:#007185;background:#fff;border:1px solid #e0e0e0;
+  border-radius:8px;padding:10px 14px;font-size:15px;font-weight:600}
+.zp a:hover{border-color:#ff9900}
+.zp small{display:block;color:#888;font-size:11px;font-weight:400;text-transform:uppercase;letter-spacing:.4px}
+.zp .zp-sig{margin-left:auto;text-align:right}
+@media (max-width:640px){
+  .zm{position:static}
+  .zp a{flex:1 1 100%}
+  table{display:block;max-width:100%;overflow-x:auto}
+}</style>
+<nav class="zm" aria-label="Hojas del proyecto"><div class="zm-f1"><a href="index.html" class="zm-marca">Zriceros en Amazon</a><a href="listing-zriceros-tongue-scraper.html" title="Listing, Competencia">Producto</a><a href="estrategia-inversion-zriceros.html" title="Inversión, PPC, Reseñas">Plan</a><a href="reporte-campanas-zriceros-semana-10.html" class="zm-aqui" title="Campaña manual, Frases, Presupuesto, Semana 1, Semana 2, Semana 3, Semana 4, Semana 5, Semana 6, Semana 7, Semana 8, Semana 9, Semana 10">Seguimiento de Ads</a></div><div class="zm-f2"><span class="zm-rot">Seguimiento de Ads ›</span><a href="diagnostico-campana-manual.html">Campaña manual</a><a href="frases-zriceros.html">Frases</a><a href="presupuesto-zriceros.html">Presupuesto</a><a href="reporte-campanas-zriceros.html">Semana 1</a><a href="reporte-campanas-zriceros-semana-2.html">Semana 2</a><a href="reporte-campanas-zriceros-semana-3.html">Semana 3</a><a href="reporte-campanas-zriceros-semana-4.html">Semana 4</a><a href="reporte-campanas-zriceros-semana-5.html">Semana 5</a><a href="reporte-campanas-zriceros-semana-6.html">Semana 6</a><a href="reporte-campanas-zriceros-semana-7.html">Semana 7</a><a href="reporte-campanas-zriceros-semana-8.html">Semana 8</a><a href="reporte-campanas-zriceros-semana-9.html">Semana 9</a><a href="reporte-campanas-zriceros-semana-10.html" aria-current="page">Semana 10</a></div></nav>
+<!-- /menu -->
+
+<h1>Zriceros Tongue Scraper &mdash; Avances de Amazon Ads</h1>
+<p class="meta">ASIN: B0H6QZGX56 &middot; cuenta: lombardi company &middot;
+  1.000 unidades a $19,89 &middot; generado 2026-11-11</p>
+<p class="meta"><strong>Esta hoja es la de la semana</strong>: números, listas y pasos.
+El detalle: <a href="frases-zriceros.html">Frases</a> (cada búsqueda y las cajas para pegar),
+<a href="diagnostico-campana-manual.html">Campaña manual</a> y
+<a href="presupuesto-zriceros.html">Presupuesto</a>.</p>
+<h2><span class="num">1.</span> Semana 10 &mdash; 3 al 9 de noviembre de 2026</h2>
+<div class="kpis">
+  <div class="kpi"><span class="big">8</span><span class="lbl">Pedidos</span><span class="sub">semana 9: 6</span></div>
+  <div class="kpi"><span class="big neg">59,2%</span><span class="lbl">ACoS</span><span class="sub">semana 9: 33,1% &middot; equilibrio 45,2%</span></div>
+  <div class="kpi"><span class="big neg">&minus;$22,12</span><span class="lbl">Ganancia neta</span><span class="sub">semana 9: +$14,47</span></div>
+  <div class="kpi"><span class="big">8</span><span class="lbl">Calificaciones</span><span class="sub">4,8 &middot; igual que la semana 9</span></div>
+</div>
+<div class="card summary" id="resumen">
+<h2>Resumen</h2>
+<ol>
+<li><strong>Perdió $22,12</strong>: $94,12 de gasto, 76 clics, 8 pedidos, ACoS 59,2%. El acumulado pasa a &minus;$58,54.</li>
+<li><strong>Los pasos de la semana 9 se hicieron el 4-11</strong>: manual exacta nueva con las tres, la automática sin ellas y en «solo reducir».</li>
+<li><strong>Toda la pérdida es «tongue scraper for adults» en la manual</strong>: $56,22 (60% del gasto), 3 pedidos en 38 clics, &minus;$29,22.</li>
+<li><strong>«tongue scraper» a $1,00 casi no salió</strong>: 2 clics en seis días (semana 9: 6; semana 7: 43).</li>
+<li><strong>La automática se fue a otros productos</strong>: pasta, enjuague, Waterpik, hilo dental. 21 clics, $21,00, una venta.</li>
+<li><strong>Para la semana 11</strong>: «for adults» a $1,10, «tongue scraper» a $1,20 y once negativas en la automática (<a href="#pasos">4 pasos</a>).</li>
+</ol>
+</div>
+<h2><span class="num">2.</span> Las diez semanas lado a lado</h2>
+<div class="card tabla">
+<table>
+<tr><th></th><th class="num">Sem. 1</th><th class="num">Sem. 2</th><th class="num">Sem. 3</th><th class="num">Sem. 4</th><th class="num">Sem. 5*</th><th class="num">Sem. 6</th><th class="num">Sem. 7</th><th class="num">Sem. 8</th><th class="num">Sem. 9</th><th class="num">Sem. 10</th><th class="num">Acumulado</th></tr>
+<tr><td>Gasto</td><td class="num">$18,66</td><td class="num">$75,19</td><td class="num">$92,32</td><td class="num">$85,12</td><td class="num">$87,92</td><td class="num">$54,52</td><td class="num">$120,17</td><td class="num">$83,99</td><td class="num">$39,53</td><td class="num"><strong>$94,12</strong></td><td class="num">$751,54</td></tr>
+<tr><td>Clics</td><td class="num">11</td><td class="num">34</td><td class="num">53</td><td class="num">56</td><td class="num">91</td><td class="num">57</td><td class="num">88</td><td class="num">58</td><td class="num">32</td><td class="num"><strong>76</strong></td><td class="num">556</td></tr>
+<tr><td>CPC</td><td class="num">$1,70</td><td class="num">$2,21</td><td class="num">$1,74</td><td class="num">$1,52</td><td class="num">$0,97</td><td class="num">$0,96</td><td class="num">$1,37</td><td class="num">$1,45</td><td class="num">$1,24</td><td class="num"><strong>$1,24</strong></td><td class="num">$1,35</td></tr>
+<tr><td>Pedidos</td><td class="num">4</td><td class="num">5</td><td class="num">9</td><td class="num">1</td><td class="num">6</td><td class="num">11</td><td class="num">17</td><td class="num">9</td><td class="num">6</td><td class="num"><strong>8</strong></td><td class="num">76</td></tr>
+<tr><td>Unidades</td><td class="num">5</td><td class="num">5</td><td class="num">9</td><td class="num">1</td><td class="num">6</td><td class="num">11</td><td class="num">17</td><td class="num">9</td><td class="num">6</td><td class="num"><strong>8</strong></td><td class="num">77</td></tr>
+<tr><td>Ventas</td><td class="num">$99,45</td><td class="num">$99,45</td><td class="num">$179,01</td><td class="num">$19,89</td><td class="num">$119,34</td><td class="num">$218,79</td><td class="num">$338,13</td><td class="num">$179,01</td><td class="num">$119,34</td><td class="num"><strong>$159,12</strong></td><td class="num">$1.531,53</td></tr>
+<tr><td>Conversión (pedidos / clics)</td><td class="num">36,4%</td><td class="num">14,7%</td><td class="num">17,0%</td><td class="num">1,8%</td><td class="num">6,6%</td><td class="num">19,3%</td><td class="num">19,3%</td><td class="num">15,5%</td><td class="num">18,8%</td><td class="num"><strong>10,5%</strong></td><td class="num">13,7%</td></tr>
+<tr><td>ACoS</td><td class="num">18,8%</td><td class="num">75,6%</td><td class="num">51,6%</td><td class="num">428%</td><td class="num">73,7%</td><td class="num pos">24,9%</td><td class="num pos">35,5%</td><td class="num neg">46,9%</td><td class="num pos">33,1%</td><td class="num neg"><strong>59,2%</strong></td><td class="num">49,1%</td></tr>
+<tr><td>Ganancia neta</td><td class="num pos">+$26,34</td><td class="num neg">&minus;$30,19</td><td class="num neg">&minus;$11,32</td><td class="num neg">&minus;$76,12</td><td class="num neg">&minus;$33,92</td><td class="num pos">+$44,48</td><td class="num pos">+$32,83</td><td class="num neg">&minus;$2,99</td><td class="num pos">+$14,47</td><td class="num neg"><strong>&minus;$22,12</strong></td><td class="num">&minus;$58,54</td></tr>
+<tr><td>Gasto por día</td><td class="num">$2,67</td><td class="num">$10,74</td><td class="num">$13,19</td><td class="num">$12,16</td><td class="num">$9,77</td><td class="num">$7,79</td><td class="num">$17,17</td><td class="num">$12,00</td><td class="num">$5,65</td><td class="num"><strong>$13,45</strong></td><td class="num">&mdash;</td></tr>
+<tr><td>Impresiones</td><td class="num">2.046 (panel)</td><td class="num">4.080 o más</td><td class="num">10.485 o más</td><td class="num">6.910 o más</td><td class="num">11.999 o más</td><td class="num">3.980 o más</td><td class="num">13.896**</td><td class="num">10.595**</td><td class="num">8.439**</td><td class="num"><strong>105.501**</strong></td><td class="num">&mdash;</td></tr>
+<tr><td>CTR</td><td class="num">0,54%</td><td class="num">0,83% o menos</td><td class="num">0,51% o menos</td><td class="num">0,81% o menos</td><td class="num">0,76% o menos</td><td class="num">1,43% o menos</td><td class="num">0,63%**</td><td class="num">0,55%**</td><td class="num">0,38%**</td><td class="num"><strong>0,07%**</strong></td><td class="num">&mdash;</td></tr>
+</table>
+<p class="meta">El informe va del 3 al 9-11 y no se pisa con el de la semana 9. La manual nueva
+arranca el 4-11. * La semana 5 tiene nueve días. ** Con las líneas «(Other)»: 72.283
+impresiones sin clic esta semana (68,5% del total). Amazon atribuye una compra hasta 7 días
+después del clic: los últimos días todavía pueden sumar ventas.</p>
+<h3>Ganancia neta por semana</h3>
+<svg class="graf" viewBox="0 0 1000 300" role="img" aria-label="Ganancia neta por semana, semanas 1 a 10"><line x1="40" x2="1000" y1="150.0" y2="150.0" stroke="#999" stroke-width="1"/><line x1="40" x2="1000" y1="270.0" y2="270.0" stroke="#eee"/><text x="34" y="274.0" font-size="12" fill="#888" text-anchor="end">−$80</text><line x1="40" x2="1000" y1="210.0" y2="210.0" stroke="#eee"/><text x="34" y="214.0" font-size="12" fill="#888" text-anchor="end">−$40</text><line x1="40" x2="1000" y1="90.0" y2="90.0" stroke="#eee"/><text x="34" y="94.0" font-size="12" fill="#888" text-anchor="end">+$40</text><line x1="40" x2="1000" y1="30.0" y2="30.0" stroke="#eee"/><text x="34" y="34.0" font-size="12" fill="#888" text-anchor="end">+$80</text><text x="34" y="154.0" font-size="12" fill="#888" text-anchor="end">$0</text><rect class="b" x="47.0" y="110.5" width="82.0" height="39.5" rx="4" fill="#067d62"><title>Semana 1: +$26,34</title></rect><text x="88.0" y="104.5" font-size="13" fill="#232f3e" text-anchor="middle">+$26,34</text><text x="88.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 1</text><rect class="b" x="143.0" y="150.0" width="82.0" height="45.3" rx="4" fill="#c40000"><title>Semana 2: −$30,19</title></rect><text x="184.0" y="210.3" font-size="13" fill="#232f3e" text-anchor="middle">−$30,19</text><text x="184.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 2</text><rect class="b" x="239.0" y="150.0" width="82.0" height="17.0" rx="4" fill="#c40000"><title>Semana 3: −$11,32</title></rect><text x="280.0" y="182.0" font-size="13" fill="#232f3e" text-anchor="middle">−$11,32</text><text x="280.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 3</text><rect class="b" x="335.0" y="150.0" width="82.0" height="114.2" rx="4" fill="#c40000"><title>Semana 4: −$76,12</title></rect><text x="376.0" y="279.2" font-size="13" fill="#232f3e" text-anchor="middle">−$76,12</text><text x="376.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 4</text><rect class="b" x="431.0" y="150.0" width="82.0" height="50.9" rx="4" fill="#c40000"><title>Semana 5: −$33,92</title></rect><text x="472.0" y="215.9" font-size="13" fill="#232f3e" text-anchor="middle">−$33,92</text><text x="472.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 5</text><rect class="b" x="527.0" y="83.3" width="82.0" height="66.7" rx="4" fill="#067d62"><title>Semana 6: +$44,48</title></rect><text x="568.0" y="77.3" font-size="13" fill="#232f3e" text-anchor="middle">+$44,48</text><text x="568.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 6</text><rect class="b" x="623.0" y="100.8" width="82.0" height="49.2" rx="4" fill="#067d62"><title>Semana 7: +$32,83</title></rect><text x="664.0" y="94.8" font-size="13" fill="#232f3e" text-anchor="middle">+$32,83</text><text x="664.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 7</text><rect class="b" x="719.0" y="150.0" width="82.0" height="4.5" rx="4" fill="#c40000"><title>Semana 8: −$2,99</title></rect><text x="760.0" y="169.5" font-size="13" fill="#232f3e" text-anchor="middle">−$2,99</text><text x="760.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 8</text><rect class="b" x="815.0" y="128.3" width="82.0" height="21.7" rx="4" fill="#067d62"><title>Semana 9: +$14,47</title></rect><text x="856.0" y="122.3" font-size="13" fill="#232f3e" text-anchor="middle">+$14,47</text><text x="856.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 9</text><rect class="b" x="911.0" y="150.0" width="82.0" height="33.2" rx="4" fill="#c40000"><title>Semana 10: −$22,12</title></rect><text x="952.0" y="198.2" font-size="13" fill="#232f3e" text-anchor="middle" font-weight="700">−$22,12</text><text x="952.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 10</text></svg>
+</div>
+<h2><span class="num">3.</span> Qué pasó en cada campaña</h2>
+<div class="card tabla">
+<table>
+<tr><th>Campaña y dónde salió</th><th class="num">Semana 10</th><th class="num">Clics</th><th class="num">Pedidos</th><th class="num">Conversión</th><th class="num">CPC</th><th class="num">Gasto</th><th class="num">ACoS</th><th class="num">Neto</th></tr>
+<tr><td>Manual exacta nueva (desde el 4-11)</td><td class="num">10.541 impr.</td><td class="num">41</td><td class="num">4</td><td class="num">9,8%</td><td class="num">$1,44</td><td class="num">$59,22</td><td class="num">74,4%</td><td class="num neg">&minus;$23,22</td></tr>
+<tr><td>Automática, búsquedas (acumulado)</td><td class="num">35 clics, 4 ped., +$1,10</td><td class="num">307</td><td class="num">51</td><td class="num">16,6%</td><td class="num">$1,21</td><td class="num">$371,63</td><td class="num">36,6%</td><td class="num pos">+$87,37</td></tr>
+<tr><td>Automática, fichas ajenas (acumulado)</td><td class="num">ninguna línea</td><td class="num">91</td><td class="num">6</td><td class="num">6,6%</td><td class="num">$0,86</td><td class="num">$78,70</td><td class="num">65,9%</td><td class="num neg">&minus;$24,70</td></tr>
+<tr><td>PRIMALS (pausada), todo</td><td class="num">&mdash;</td><td class="num">117</td><td class="num">15</td><td class="num">12,8%</td><td class="num">$2,07</td><td class="num">$241,99</td><td class="num">76,0%</td><td class="num neg">&minus;$97,99</td></tr>
+<tr><td>Manual exacta vieja (19-10, siete palabras)</td><td class="num">ninguna línea</td><td class="num">0</td><td class="num">0</td><td class="num">&mdash;</td><td class="num">&mdash;</td><td class="num">$0</td><td class="num">&mdash;</td><td class="num">$0</td></tr>
+</table>
+<p class="meta">Automática esta semana: 94.960 impresiones, 72.120 de ellas en «(Other)» (75,9%).
+Manual: 163 en «(Other)» (1,5%). Ningún clic de la automática pagó más de $1,00.</p>
+<h3>A dónde fue el gasto de la semana</h3>
+<svg class="graf" viewBox="0 0 1000 194" role="img" aria-label="Gasto de la semana 10 por grupo de búsquedas"><text x="320" y="30" font-size="14" fill="#232f3e" text-anchor="end">«tongue scraper for adults» (manual)</text><rect class="b" x="330" y="14" width="449.8" height="24" rx="4" fill="#0a5cb8"><title>«tongue scraper for adults» (manual): $56,22 · 38 clics, 3 pedidos</title></rect><text x="787.8" y="31" font-size="13" fill="#232f3e"><tspan font-weight="700">$56,22</tspan> · 38 clics, 3 pedidos</text><text x="320" y="76" font-size="14" fill="#232f3e" text-anchor="end">Otros productos en la automática</text><rect class="b" x="330" y="60" width="168.0" height="24" rx="4" fill="#0a5cb8"><title>Otros productos en la automática: $21,00 · 21 clics, 1 pedido</title></rect><text x="506.0" y="77" font-size="13" fill="#232f3e"><tspan font-weight="700">$21,00</tspan> · 21 clics, 1 pedido</text><text x="320" y="122" font-size="14" fill="#232f3e" text-anchor="end">Raspadores en la automática</text><rect class="b" x="330" y="106" width="111.2" height="24" rx="4" fill="#0a5cb8"><title>Raspadores en la automática: $13,90 · 14 clics, 3 pedidos</title></rect><text x="449.2" y="123" font-size="13" fill="#232f3e"><tspan font-weight="700">$13,90</tspan> · 14 clics, 3 pedidos</text><text x="320" y="168" font-size="14" fill="#232f3e" text-anchor="end">«tongue scraper» y «tongue cleaner» (manual)</text><rect class="b" x="330" y="152" width="24.0" height="24" rx="4" fill="#0a5cb8"><title>«tongue scraper» y «tongue cleaner» (manual): $3,00 · 3 clics, 1 pedido</title></rect><text x="362.0" y="169" font-size="13" fill="#232f3e"><tspan font-weight="700">$3,00</tspan> · 3 clics, 1 pedido</text></svg>
+</div>
+<h2 id="plata"><span class="num">4.</span> Dónde se fue la plata</h2>
+<div class="card tabla">
+<p><strong>Las que compraron.</strong> 8 pedidos en 5 líneas.</p>
+<table>
+<tr><th>Término</th><th>Campaña</th><th class="num">Impr.</th><th class="num">Clics</th><th class="num">CTR</th><th class="num">Gasto</th><th class="num">Unid.</th><th class="num">Acumulado</th><th>Lectura</th></tr>
+<tr class="row-mal"><td>tongue scraper for adults</td><td>manual</td><td class="num">9.436</td><td class="num">38</td><td class="num">0,40%</td><td class="num">$56,22</td><td class="num">3</td><td class="num">13 en 70</td><td>&minus;$29,22. En la automática: 454 impresiones por semana y CTR 1,06%</td></tr>
+<tr class="row-bien"><td>tung scraper</td><td>automática</td><td class="num">575</td><td class="num">2</td><td class="num">0,35%</td><td class="num">$1,96</td><td class="num">2</td><td class="num">4 en 9</td><td>+$24,33 acumulado. A un clic de la regla de 10</td></tr>
+<tr><td>tongue scraper</td><td>manual</td><td class="num">784</td><td class="num">2</td><td class="num">0,26%</td><td class="num">$2,00</td><td class="num">1</td><td class="num">24 en 145</td><td>a $1,00 pierde las subastas</td></tr>
+<tr class="row-bien"><td>younger scraper</td><td>automática</td><td class="num">2</td><td class="num">1</td><td class="num">50%</td><td class="num">$1,00</td><td class="num">1</td><td class="num">1 en 1</td><td>«tongue scraper» mal corregido</td></tr>
+<tr><td>oral b pulsar soft</td><td>automática</td><td class="num">35</td><td class="num">1</td><td class="num">2,86%</td><td class="num">$1,00</td><td class="num">1</td><td class="num">1 en 1</td><td>cepillo Oral-B; vendió, no va de negativa</td></tr>
+</table>
+<p><strong>Las que gastaron sin comprar: 32 clics y $31,94.</strong> 20 clics y $20,00 en
+otros productos (van de negativa, <a href="#negativas">tabla abajo</a>); 12 clics y $11,94
+en raspadores (madurar).</p>
+<table>
+<tr><th>Raspadores sin venta (madurar)</th><th class="num">Clics</th><th class="num">Gasto</th></tr>
+<tr><td>tongue cleaner (manual), stainless tongue scraper, tongue cleaner for adults, tongue cleaner scraper, tongue scrapper case, tongue scraper u shaped, tang scraper, scrappy tongue, gratte langue, le ngua cleaner, white tongue treatment, guru nanda</td><td class="num">12</td><td class="num">$11,94</td></tr>
+</table>
+<p><strong>Impresiones altas y CTR bajo.</strong> Todas son de otros productos:
+waterpik water flosser (6.989, 0,01%), tooth brush (5.410, 0,04%), whitening toothpaste
+(2.801), scope mouthwash (2.495), mouthwash alcohol free (2.336). Sin las tres búsquedas
+buenas, la automática busca dónde gastar entre los productos de higiene bucal.</p>
+<p><strong>Por qué perdió «for adults».</strong> A $1,50 en exacta tuvo 20 veces las
+impresiones de la automática y el CTR cayó de 1,06% a 0,40%: ganó subastas peores, como
+«tongue scraper» en la semana 3. Con su conversión acumulada (18,6%), 3 o menos en 38 pasa
+6 de cada 100 veces. No es la ficha: los raspadores de la automática convirtieron 3 en 14
+(21%), y la ficha está igual ($19,89, en stock, 8 calificaciones de 4,8, #194 en la categoría;
+semana 9: #216).</p>
+<!-- frases-resumen -->
+<h3 id="frases">Frases: qué vende y qué gasta sin vender</h3>
+<p>132 frases con clics en 10 semanas. <strong>24 vendieron</strong>: 63 pedidos en 267 clics.
+<strong>108 no vendieron</strong>: 121 clics y $156,58. Las dos campañas juntas, como en
+<a href="frases-zriceros.html">Frases</a>: suman los clics de PRIMALS, que la tabla de la estrategia (sólo la automática) no cuenta.</p>
+<table>
+<tr><th>Veredicto (frases) y qué se hace</th><th class="num">Clics</th><th class="num">Pedidos</th><th class="num">Gasto</th><th class="num">Neto</th></tr>
+<tr><td><strong>Núcleo</strong> (1)<br><small>manual exacta, puja nueva (paso 1)</small></td><td class="num">145</td><td class="num">24</td><td class="num">$198,32</td><td class="num pos">+$17,68</td></tr><tr><td><strong>Oportunidad</strong> (2)<br><small>manual exacta, puja nueva (paso 1)</small></td><td class="num">87</td><td class="num">15</td><td class="num">$122,74</td><td class="num pos">+$12,26</td></tr><tr><td><strong>Madurar</strong> (73)<br><small>esperar a 15 clics</small></td><td class="num">90</td><td class="num">19</td><td class="num">$111,63</td><td class="num pos">+$59,37</td></tr><tr><td><strong>Negativa de frase</strong> (30)<br><small>Frases, caja 1 (paso 2)</small></td><td class="num">34</td><td class="num">0</td><td class="num">$40,92</td><td class="num neg">−$40,92</td></tr><tr><td><strong>Negativa exacta</strong> (19)<br><small>Frases, caja 2 (paso 2)</small></td><td class="num">20</td><td class="num">0</td><td class="num">$28,00</td><td class="num neg">−$28,00</td></tr><tr><td><strong>Ya negativa</strong> (7)<br><small>exactas de la manual vieja (19-10)</small></td><td class="num">12</td><td class="num">5</td><td class="num">$24,32</td><td class="num pos">+$29,68</td></tr>
+</table>
+<h3 id="listas">Las listas de esta semana</h3>
+<table>
+<tr><th>Manual exacta: puja nueva (paso 1)</th><th class="num">Clics*</th><th class="num">Pedidos</th><th class="num">Puja</th></tr>
+<tr><td><bdi>tongue scraper</bdi></td><td class="num">145</td><td class="num">24</td><td class="num"><strong>$1,25</strong></td></tr><tr><td><bdi>tongue scraper for adults</bdi></td><td class="num">70</td><td class="num">13</td><td class="num"><strong>$1,10</strong></td></tr><tr><td><bdi>tongue cleaner</bdi></td><td class="num">17</td><td class="num">2</td><td class="num"><strong>$1,00</strong></td></tr>
+</table>
+<ul>
+<li><strong>Negativa exacta en la automática, todas las de Frases</strong> (19; las nuevas, paso 2): aquasonic tooth scraper, case for tongue scraper, hy1200, oral surgery recovery must haves, tepe special care, tongue buddy, tongue scraper blue, tongue scraper clear plastic, tongue scraper for adults fsa eligible, tongue scraper it does rough, tongue scraper pink, tongue scraper silicone, tongue scraper spiky, tongue scraper under 3 dollars, tongue scraper with stand, tongue scraper with teeth, tung gel, tung tongue gel, very thick tongue scraper.</li>
+<li><strong>Negativa de frase en la automática, todas las de Frases</strong> (20; las nuevas, paso 2): copper, titanium, disposable, toothbrush, palate, tongue guard, uv, sanitizer, rubber, non metal, hygiene kit, brushing teeth, toothpaste, mouthwash, listerine, waterpik, floss, flosser, miswak, tooth brush.</li>
+<li><strong>A frase o a otra exacta con puja: ninguna.</strong>
+Regla: 10 clics o más y 17% de conversión. Las más cerca: «tung scraper» (4 en 9), «electric tongue scraper» (1 en 3).</li>
+</ul>
+<p class="meta">* Las dos campañas, como en Frases. Para pegar, con botón Copiar: <a href="frases-zriceros.html#pasos">Frases &rarr; pasos</a>.
+Esta parte la escribe <code>scripts/frases.py --poner</code>.</p>
+<!-- /frases-resumen -->
+</div>
+<h2 id="negativas"><span class="num">5.</span> Para copiar: negativas y pujas</h2>
+<div class="card tabla">
+<table>
+<tr><th>Negativa en la automática</th><th>Tipo</th><th class="num">Clics</th><th class="num">Gasto</th><th>Tapa también</th></tr>
+<tr><td>toothpaste</td><td>frase</td><td class="num">4</td><td class="num">$4,00</td><td>sensodyne toothpaste, whitening toothpaste, travel toothpaste</td></tr>
+<tr><td>mouthwash</td><td>frase</td><td class="num">4</td><td class="num">$4,00</td><td>scope mouthwash, mouthwash alcohol free</td></tr>
+<tr><td>tooth brush</td><td>frase</td><td class="num">2</td><td class="num">$2,00</td><td>«toothbrush» junto ya estaba</td></tr>
+<tr><td>waterpik</td><td>frase</td><td class="num">2</td><td class="num">$2,00</td><td>waterpik water flosser, waterpik orange</td></tr>
+<tr><td>flosser</td><td>frase</td><td class="num">1</td><td class="num">$1,00</td><td>water flosser, combo flosser and tongue scraper</td></tr>
+<tr><td>floss</td><td>frase</td><td class="num">2</td><td class="num">$2,00</td><td>threader floss, pre cut super floss stripes holder</td></tr>
+<tr><td>listerine</td><td>frase</td><td class="num">1</td><td class="num">$1,00</td><td>yellow listerine</td></tr>
+<tr><td>miswak</td><td>frase</td><td class="num">1</td><td class="num">$1,00</td><td>sewak al-falah miswak</td></tr>
+<tr><td>tepe special care</td><td>exacta</td><td class="num">1</td><td class="num">$1,00</td><td>cepillo Tepe</td></tr>
+<tr><td>oral surgery recovery must haves</td><td>exacta</td><td class="num">1</td><td class="num">$1,00</td><td>&mdash;</td></tr>
+<tr><td>tung tongue gel</td><td>exacta</td><td class="num">1</td><td class="num">$1,00</td><td>gel de Tung</td></tr>
+<tr class="row-total"><td>Once negativas</td><td></td><td class="num">20</td><td class="num">$20,00</td><td>«waterpik water flosser» cuenta una vez</td></tr>
+</table>
+<p>Caja de frase (8):</p><pre class="copiar">toothpaste
+mouthwash
+tooth brush
+waterpik
+flosser
+floss
+listerine
+miswak</pre>
+<p>Caja exacta (3):</p><pre class="copiar">tepe special care
+oral surgery recovery must haves
+tung tongue gel</pre>
+<p class="meta">Ninguna tapa una búsqueda que haya vendido en diez semanas (lo controla
+<code>scripts/frases.py</code>). No van de negativa: «oral b pulsar soft» (vendió),
+«guru nanda» (marca que vende raspadores) ni las mal escritas.</p>
+<table>
+<tr><th>Manual exacta: pujas de la semana 11</th><th class="num">Hoy</th><th class="num">Nueva</th><th class="num">Conversión acumulada</th><th class="num">Objetivo (ACoS 30%)</th><th class="num">Equilibrio</th></tr>
+<tr><td>tongue scraper for adults</td><td class="num">$1,50</td><td class="num"><strong>$1,10</strong></td><td class="num">18,6% (13 en 70)</td><td class="num">$1,11</td><td class="num">$1,67</td></tr>
+<tr><td>tongue scraper</td><td class="num">$1,00</td><td class="num"><strong>$1,20</strong></td><td class="num">16,6% (24 en 145)</td><td class="num">$0,99</td><td class="num">$1,49</td></tr>
+<tr><td>tongue cleaner</td><td class="num">$1,00</td><td class="num">$1,00</td><td class="num">11,8% (2 en 17)</td><td class="num">$0,70</td><td class="num">$1,06</td></tr>
+</table>
+<p class="meta">Puja = $19,89 &times; ACoS &times; conversión. «tongue scraper» va por encima del
+objetivo porque a $1,00 no sale: a $1,20 cada unidad deja $1,77. <strong>A promover a la
+manual: ninguna nueva.</strong> Regla: 10 clics y 17%. La más cerca: «tung scraper», 4 en 9.</p>
+</div>
+<h2><span class="num">6.</span> Qué se hizo de lo que proponía la semana 9</h2>
+<div class="card tabla">
+<table>
+<tr><th>Paso de la semana 9</th><th>Lo que se ve en el informe</th></tr>
+<tr><td>1. Automática a «solo reducir»</td><td class="ok">Hecho: ningún clic de la automática pagó más de $1,00.</td></tr>
+<tr><td>2. Manual exacta: las tres</td><td class="ok">Hecho el 4-11, en una campaña nueva: <em>MANUAL EXACTA - 11/4/2026 - ZRICEROS</em>.</td></tr>
+<tr><td>3. Automática: las tres como negativa y $6</td><td class="ok">Hecho: ninguna de las tres en la automática; gastó $4,99 por día.</td></tr>
+<tr><td>4. Negativas de Frases</td><td class="ok">No salió ninguna frase de las cajas.</td></tr>
+<tr><td>5. Reseñas del 16 al 29-10</td><td>Registro sin filas. Calificaciones: 8, igual que la semana 9.</td></tr>
+<tr><td>6. Los dos informes</td><td>Llegó el de términos. El de segmentación, no.</td></tr>
+</table>
+<table>
+<tr><th>Predicción para la semana 10</th><th class="num">Real</th></tr>
+<tr><td>CPC de búsqueda $1,10 o menos</td><td class="num neg">$1,24 (automática $1,00, manual $1,44)</td></tr>
+<tr><td>Clics de las tres en la manual: 15 a 40</td><td class="num">41 (38 de «for adults»)</td></tr>
+<tr><td>Neto de las tres +$5 o más</td><td class="num neg">&minus;$23,22</td></tr>
+<tr><td>Conversión de búsqueda 15% o más</td><td class="num neg">10,5%</td></tr>
+<tr><td>Ganancia neta +$10 a +$35</td><td class="num neg">&minus;$22,12</td></tr>
+<tr><td>Calificaciones 9 o más</td><td class="num neg">8</td></tr>
+</table>
+</div>
+<h2><span class="num">7.</span> Proyección de las 1.000 unidades</h2>
+<div class="card tabla">
+<table>
+<tr><th>Escenario</th><th class="num">Publicidad por unidad</th><th class="num">ACoS</th><th class="num">Neto del ciclo</th><th class="num">Sobre el capital*</th></tr>
+<tr><td>Como las diez semanas juntas</td><td class="num">$9,76</td><td class="num">49,1%</td><td class="num neg">&minus;$760</td><td class="num neg">&minus;22%</td></tr>
+<tr><td>Equilibrio</td><td class="num">$9,00</td><td class="num">45,2%</td><td class="num">$0</td><td class="num">0%</td></tr>
+<tr><td>Búsquedas de la automática</td><td class="num">$7,28</td><td class="num">36,6%</td><td class="num pos">+$1.720</td><td class="num pos">+50%</td></tr>
+<tr><td>Como la semana 10</td><td class="num">$11,77</td><td class="num">59,2%</td><td class="num neg">&minus;$2.765</td><td class="num neg">&minus;80%</td></tr>
+</table>
+<p class="meta">* Capital en mercadería: 1.000 &times; $3,45 = $3.450. Contribución de $9,00
+por unidad: $19,89 &minus; tarifas $7,44 &minus; producto $3,45.</p>
+</div>
+<h2 id="pasos">Los próximos pasos, uno por uno</h2>
+<p><strong>Cuatro pasos.</strong> Ficha, imágenes y presupuestos ($8 la manual, $6 la
+automática) quedan como están: la caída es de una palabra, no de la ficha.</p>
+<p class="meta">Los nombres de los botones son los del panel en español; Amazon
+los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
+<div class="antes">
+<p><strong>Antes de empezar (una sola vez, 1 minuto)</strong></p>
+<ol class="clic">
+<li>Entrar a <strong>advertising.amazon.com</strong> con el mismo usuario de Seller Central.</li>
+<li>Arriba a la derecha tiene que decir <strong>lombardi company</strong> y
+  <strong>Estados Unidos</strong>. Si no, clic ahí y elegir esos dos.</li>
+</ol>
+<p class="ojo"><strong>No se tocan:</strong> el interruptor de arriba de una
+campaña, el botón <em>Archivar</em> y los presupuestos.</p>
+</div>
+<ol class="pasos">
+<li><span class="p-tit">Manual exacta: dos pujas nuevas</span>
+<span class="p-tag">3 min · lo que más plata mueve</span>
+<table class="p-tab">
+<tr><th>Clic por clic</th><td><ol class="clic">
+  <li><em>Campañas</em> &rarr; <em>MANUAL EXACTA - 11/4/2026 - ZRICEROS</em> &rarr; grupo <em>zriceros Manual exacta 04/11/2026</em>.</li>
+  <li><em>Segmentación</em> (o <em>Palabras clave</em>): tres filas Exacta.</li>
+  <li>Fila <strong>tongue scraper for adults</strong> &rarr; columna <em>Puja</em> &rarr; <strong>1,10</strong> &rarr; <em>Guardar</em>.</li>
+  <li>Fila <strong>tongue scraper</strong> &rarr; <em>Puja</em> &rarr; <strong>1,20</strong> &rarr; <em>Guardar</em>.
+    <span class="ver">Tenés que ver: 1,10 · 1,20 · 1,00 (tongue cleaner, no se toca).</span></li>
+  <li><em>Configuración</em> de la campaña &rarr; <em>Estrategia de puja</em>.
+    <span class="ojo">Si dice «aumentar y reducir», marcar «solo reducir» y guardar.</span></li>
+</ol></td></tr>
+<tr><th>Por qué</th><td>«for adults» gastó $56,22 por 3 ventas; «tongue scraper» a $1,00 tuvo 2 clics.</td></tr>
+<tr><th>Qué no hacer</th><td>No pausar «for adults»: lleva 13 en 70 y +$19,43.</td></tr>
+<tr><th>Cómo se verifica</th><td>Semana 11: «for adults» a $1,10 o menos con CTR de 0,7% o más; «tongue scraper» con 8 clics o más.</td></tr>
+</table></li>
+<li><span class="p-tit">Automática: once negativas</span>
+<span class="p-tag">4 min · cajas de la <a href="#negativas">sección 5</a></span>
+<table class="p-tab">
+<tr><th>Clic por clic</th><td><ol class="clic">
+  <li><em>Campañas</em> &rarr; <em>Campaña - 9/1/2026 automatica</em> &rarr; <em>Grupo RASPADOR - 9/1/2026</em>.</li>
+  <li><em>Segmentación negativa</em> &rarr; <em>Añadir palabras clave negativas</em> &rarr; <strong>Frase negativa</strong>.</li>
+  <li>Pegar la caja de frase (8) &rarr; <em>Añadir</em> &rarr; <em>Guardar</em>.</li>
+  <li>Otra vez &rarr; <strong>Negativa exacta</strong> &rarr; pegar la caja exacta (3) &rarr; <em>Guardar</em>.
+    <span class="ver">Tenés que ver: once filas nuevas, 8 Frase negativa y 3 Negativa exacta.</span></li>
+</ol></td></tr>
+<tr><th>Por qué</th><td>Esas búsquedas se llevaron 20 clics y $20,00 sin una venta.</td></tr>
+<tr><th>Qué no hacer</th><td>No negativizar «brush» solo: «tongue brush» vendió.</td></tr>
+<tr><th>Cómo se verifica</th><td>Semana 11: ninguna de esas palabras en el informe.</td></tr>
+</table></li>
+<li><span class="p-tit">Pedir la reseña a los pedidos del 16-10 al 5-11, y anotarlos</span>
+<span class="p-tag">≈1 min por pedido · el botón dura 30 días desde la entrega</span>
+<table class="p-tab">
+<tr><th>Clic por clic</th><td><ol class="clic">
+  <li><strong>sellercentral.amazon.com</strong> &rarr; <em>Pedidos</em> &rarr; <em>Administrar pedidos</em>.</li>
+  <li>Fechas: <em>Personalizado</em>, <strong>del 16 de octubre al 5 de noviembre de 2026</strong>.</li>
+  <li>Cada pedido &rarr; <em>Solicitar una reseña</em> &rarr; <em>Sí</em>.
+    <span class="ver">Tenés que ver: aviso de solicitud enviada.</span>
+    <span class="ojo">Si el botón no está, ese pedido ya venció o todavía no llegó: seguir.</span></li>
+  <li>Anotar número de pedido y fecha en <code>datos/resenas_solicitadas.csv</code>.</li>
+</ol></td></tr>
+<tr><th>Cómo se verifica</th><td>El registro deja de estar vacío; las calificaciones pasan de 8.</td></tr>
+</table>
+<!-- registro-resenas -->
+<p class="meta">Registro de solicitudes: todavía vacío. <code>datos/resenas_solicitadas.csv</code> está creado con las columnas; se llena con los pedidos de Seller Central.</p>
+<!-- /registro-resenas -->
+</li>
+<li><span class="p-tit">El martes 17 de noviembre, bajar los dos informes de la semana 11</span>
+<span class="p-tag">≈5 min · en CSV</span>
+<table class="p-tab">
+<tr><th>Clic por clic</th><td><ol class="clic">
+  <li><em>Medición e informes</em> &rarr; <em>Informes de Sponsored Ads</em> &rarr; <em>Crear informe</em>.</li>
+  <li>Sponsored Products &middot; <strong>Término de búsqueda</strong> &middot; del <strong>10 al 16-11</strong> &middot; Resumen &middot; CSV &rarr; <em>Descargar</em>.</li>
+  <li>Lo mismo con tipo <strong>Segmentación</strong>, mismas fechas.</li>
+  <li>Los dos a <code>smb://SRVNVIDIA._smb._tcp.local/shared/amazon/</code>.</li>
+</ol></td></tr>
+<tr><th>Cómo se verifica</th><td>En la carpeta, <em>Search_term_…</em> y <em>Targeting_…</em>.</td></tr>
+</table></li>
+</ol>
+<h3>Qué tendría que dar la semana 11, y qué se decide con eso</h3>
+<table>
+<tr><th></th><th class="num">Semana 10 (real)</th><th class="num">Semana 11 (si esto funciona)</th><th>Si no da eso</th></tr>
+<tr><td>«for adults»: CTR</td><td class="num">0,40%</td><td class="num">0,7% o más</td><td>con menos de 10 clics, puja a $1,30</td></tr>
+<tr><td>«tongue scraper»: clics</td><td class="num">2</td><td class="num">8 o más</td><td>menos de 5: puja a $1,40 (nunca más de $1,49)</td></tr>
+<tr><td>Clics en otros productos (automática)</td><td class="num">21</td><td class="num">5 o menos</td><td>sumar las nuevas a la caja de frase</td></tr>
+<tr><td>Conversión de búsqueda</td><td class="num">10,5%</td><td class="num">15% o más</td><td>menos de 12% dos semanas: mirar el informe comercial (sesiones y Buy Box)</td></tr>
+<tr><td>Gasto por día</td><td class="num">$13,45</td><td class="num">$9 a $14</td><td>&mdash;</td></tr>
+<tr><td>Ganancia neta</td><td class="num">&minus;$22,12</td><td class="num">$0 o más</td><td>negativa con CPC de $1,20 o menos: la conversión, no la puja</td></tr>
+<tr><td>Calificaciones</td><td class="num">8</td><td class="num">9 o más</td><td>&mdash;</td></tr>
+</table>
+<p class="meta">Si los pasos se hacen a mitad de semana, la semana 11 sale mezclada: se mide
+desde el día en que se hicieron.</p>
+<hr style="margin-top:40px;border:0;border-top:1px solid #e0e0e0">
+<p class="meta"><strong>Fuentes.</strong> Informe de términos de búsqueda de Sponsored
+Products del 3 al 9-11 (<code>Search_term_-_11_10_2026_semana_10.pdf</code>, enviado por Ariel
+el 11-11; el PDF se reconstruyó entero: 35 líneas y 39 columnas, con CTR, ROAS y costo por
+compra verificados fila por fila) y los de las semanas 1 a 9. Ficha viva de B0H6QZGX56 leída
+de amazon.com el 11-11: $19,89, en stock, 8 calificaciones de 4,8, #194 en Tongue Brushes,
+Scrapers &amp; Cleaners. Contribución de $9,00 por unidad y equilibrio de 45,2%, de la
+calculadora de Amazon (<a href="reporte-campanas-zriceros.html">hoja de la semana 1</a>);
+ACoS objetivo de 30%, de la misma hoja.</p>
+<!-- pie-menu -->
+<nav class="zp" aria-label="Hoja anterior y siguiente"><a href="reporte-campanas-zriceros-semana-9.html"><small>← Anterior</small>Seguimiento de Ads · Semana 9</a></nav>
+<!-- /pie-menu -->
+
+<footer>Zriceros Tongue Scraper · B0H6QZGX56 · avances de Amazon Ads ·
+semana 10 (3 – 9 nov 2026) · generado 2026-11-11</footer>
+</body>
+</html>
