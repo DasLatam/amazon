@@ -114,12 +114,12 @@ OPORTUNIDADES = {
     "tongue cleaner": "en la manual exacta desde el 4-11 a $1,00: 1 clic en la semana 10. Queda en $1,00",
 }
 NUCLEO = {
-    "tongue scraper": "la búsqueda principal. En la manual exacta desde el 4-11 y negativa exacta en la automática. A $1,00 tuvo 2 clics en la semana 10: puja a $1,25 (semana 10, paso 1). Nunca de frase",
+    "tongue scraper": "la búsqueda principal. En la manual exacta desde el 4-11 y negativa exacta en la automática. A $1,00 tuvo 2 clics en la semana 10: puja a $1,20 (semana 10, paso 1). Nunca de frase",
 }
 
 # Las tres de la manual exacta (en la campaña nueva desde el 4-11) y su puja de la semana 10, paso 1.
 # Las usa el resumen de la hoja madre.
-MANUAL_NUEVAS = {"tongue scraper": 1.25, "tongue scraper for adults": 1.10, "tongue cleaner": 1.00}
+MANUAL_NUEVAS = {"tongue scraper": 1.20, "tongue scraper for adults": 1.10, "tongue cleaner": 1.00}
 REGLA_MANUAL = (10, 0.17)  # para sumar otra a la manual: 10 clics o más y conversión de 17% o más
 
 # Lo que ya está cargado. Sólo lo que consta en las hojas o en los pendientes.
