@@ -3,6 +3,13 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-11-13 · Semana 10, CSV (`Search_term_-_11_10_2026_semana_10.csv`): coincide línea por línea con la
+  reconstrucción del PDF (35 líneas, mismos totales); no cambia ningún número. Arreglado: Frases y el
+  bloque de la hoja decían $1,25 para «tongue scraper» y el paso 1, $1,20 (queda $1,20). Nueva sección 8
+  de la hoja: las ideas del documento de NotebookLM/Gemini contra los datos (van: pujas, negativas de
+  frase, viñeta 3 sin el «3» —verificado en la ficha—, mal escritas en términos ocultos; no van:
+  Sustitutos/Complementos, cinco ASIN, campaña de producto, título, categoría). Paso 3 nuevo (ficha).
+  Ficha: 8 de 4,8, #201; medidas del paquete 7,2×2,36×0,87 in, 3,88 oz (agosto: 6,08×3,43×0,65, 3,21).
 - 2026-11-11 · Semana 10 (3 al 9-11; llegó como PDF por WhatsApp, reconstruido entero a
   `datos/semana-10_2026-11-03_2026-11-09_terminos.csv`, 35 líneas, CTR/ROAS verificados por fila):
   8 pedidos, ACoS 59,2%, −$22,12; acumulado −$58,54. Los pasos de la semana 9 se hicieron el 4-11
