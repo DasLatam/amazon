@@ -71,6 +71,11 @@ proyecto, no sólo para el seguimiento semanal:
    - Un dato chico de una campaña va en una fila de la tabla que corresponde, con
      un link a la guía, no en un recuadro aparte.
 
+5. **Los insumos externos no se nombran.** 2026-11-13: si Ariel trae un documento con ideas
+   (de otra IA, un curso, un blog), es material para analizar: en la hoja no aparece la fuente ni
+   «el documento» ni una tabla de «idea → va / no va». Lo que sirve entra como recomendación propia,
+   con su paso a paso (qué, dónde, con qué dato, éxito, cuándo se mide); lo que no, no se menciona.
+
 ## El registro de solicitudes de reseña
 
 `datos/resenas_solicitadas.csv` + `scripts/resenas.py`. Existe porque el botón
