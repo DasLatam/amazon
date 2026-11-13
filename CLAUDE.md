@@ -315,6 +315,19 @@ El informe llegó **impreso a PDF**: se reconstruye entero con `pdftotext -bbox-
 página es un tramo de columnas de las mismas filas; se unen por la coordenada y y el texto que se
 repite en el borde) y se verifica fila por fila (CTR = clics/impr., ROAS = ventas/gasto).
 
+## Crecer: el freno es el alcance, no la plata (2026-11-13)
+
+Sección 9 de la semana 10, por el pedido de Ariel de pasar de 10 a 100 ventas por semana. A $1,20
+el clic y 16,4% (búsquedas, diez semanas, 64 en 390) cada venta por anuncio deja $1,68: **100 por
+semana dejaría ganancia, pero pide 500–610 clics y 88–107 mil impresiones por semana**, y las
+búsquedas que venden nunca pasaron de ~10.500 (semanas 7 y 10). Subir la puja para comprarlas ya
+falló («for adults» a $1,50). Con datos: 20–30 por semana en 8–12 semanas; 100 depende del
+orgánico (reseñas, 8 calificaciones) y del stock (1.000 iniciales; a 100/semana duran <10 semanas).
+**Todo lo medido son ventas por anuncios**: las totales y el stock salen del informe comercial y
+de Logística de Amazon (pendiente `zri-crecer-datos`). La cola larga barata es la palanca de Ads
+con más respaldo («Madurar»: 90 clics, 19 pedidos, +$59,37). Cupón 10% con corte en 18% de
+conversión (`zri-cupon-bf`). Lo que pide marca registrada queda fuera del plan.
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel
