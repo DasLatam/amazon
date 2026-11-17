@@ -41,7 +41,8 @@ CLICS_DECIDIR = 15       # la regla de la estrategia de PPC: 15 clics sin pedido
 # Lo que dicen las hojas semanales, tabla «Las N semanas lado a lado» (la 8 desde el 27-10).
 HOJAS_TOTALES = {1: (11, 18.66, 4), 2: (34, 75.19, 5), 3: (53, 92.32, 9), 4: (56, 85.12, 1),
                  5: (91, 87.92, 6), 6: (57, 54.52, 11), 7: (88, 120.17, 17),
-                 8: (58, 83.99, 9), 9: (32, 39.53, 6), 10: (76, 94.12, 8)}
+                 8: (58, 83.99, 9), 9: (32, 39.53, 6), 10: (76, 94.12, 8),
+                 11: (71, 86.63, 4)}
 
 # Familias: una palabra que describe un producto que no vendemos. Va como
 # NEGATIVA DE FRASE en la automática y corta todas las variantes que la contengan.
@@ -106,20 +107,25 @@ EXACTAS = {
     "tepe special care": "cepillo de dientes Tepe: otro producto",
     "oral surgery recovery must haves": "busca cosas para después de una cirugía",
     "tung tongue gel": "busca el gel de Tung, no un raspador",
+    # semana 11 (17-11)
+    "cushion grip denture removal tool": "herramienta para dentaduras postizas: otro producto",
+    "dental hygiene implant scaler": "raspador dental para implantes: otro producto",
+    "surgical scrub brush": "cepillo quirúrgico de manos: otro producto",
+    "men hygiene": "higiene masculina en general: no es un raspador",
 }
 
 # Las que se miran con más plata, no con negativas.
 OPORTUNIDADES = {
-    "tongue scraper for adults": "en la manual exacta desde el 4-11. Semana 10: 3 en 38 a $1,48 (−$29,22); acumulado 13 en 70 (18,6%). Puja a $1,10 (semana 10, paso 1)",
-    "tongue cleaner": "en la manual exacta desde el 4-11 a $1,00: 1 clic en la semana 10. Queda en $1,00",
+    "tongue scraper for adults": "en la automática vendió 10 en 32 (CTR 0,7–1,9%); en la manual exacta, 5 en 74 (CTR 0,31–0,40%, −$63,29 en dos semanas). Se pausa en la manual y vuelve a la automática (semana 11, paso 1)",
+    "tongue cleaner": "en la manual exacta desde el 4-11 a $1,00: 1 en 3. Queda en $1,00",
 }
 NUCLEO = {
-    "tongue scraper": "la búsqueda principal. En la manual exacta desde el 4-11 y negativa exacta en la automática. A $1,00 tuvo 2 clics en la semana 10: puja a $1,20 (semana 10, paso 1). Nunca de frase",
+    "tongue scraper": "la búsqueda principal. En la manual exacta desde el 4-11 y negativa exacta en la automática. Semana 11 a $1,20: 7 clics, 1 pedido. Queda en $1,20 hasta el 25-11 (semana 11, sección 10). Nunca de frase",
 }
 
 # Las tres de la manual exacta (en la campaña nueva desde el 4-11) y su puja de la semana 10, paso 1.
 # Las usa el resumen de la hoja madre.
-MANUAL_NUEVAS = {"tongue scraper": 1.20, "tongue scraper for adults": 1.10, "tongue cleaner": 1.00}
+MANUAL_NUEVAS = {"tongue scraper": 1.20, "tongue scraper for adults": None, "tongue cleaner": 1.00}  # None: se pausa (semana 11)
 REGLA_MANUAL = (10, 0.17)  # para sumar otra a la manual: 10 clics o más y conversión de 17% o más
 
 # Lo que ya está cargado. Sólo lo que consta en las hojas o en los pendientes.
@@ -148,9 +154,16 @@ NOTAS_FRASE = {
     "oral b pulsar soft": "cepillo Oral-B, pero vendió: no va de negativa",
     "guru nanda": "marca de la competencia que vende raspadores; «tongue scraper gurunanda» vendió",
     "white tongue treatment": "el raspador es para la lengua blanca: encaja",
+    "tongue scraper blue": "exacta propuesta en la semana 9; salió el 16-11: no está cargada",
+    "dentek tongue cleaner": "marca de la competencia que vende limpiadores de lengua: encaja",
+    "tongue scraper adults": "variante de «for adults»: en la semana 11 entró por la manual exacta",
 }
 
 NOTAS_SEMANA = {
+    11: "4 pedidos en 71 clics. «tongue scraper for adults» en la manual exacta: 2 en 36, CTR 0,31%. "
+        "La automática no vendió (0 en 23). Las negativas de pasta, hilo y cepillo se ven desde el 15-11 "
+        "(ninguna línea después del 14). «tongue scraper blue» (exacta de la semana 9) salió el 16-11: "
+        "no está cargada. Cuatro exactas nuevas (dentadura, implante, cepillo quirúrgico, men hygiene).",
     10: "Las tres pasaron a una manual exacta nueva (4-11) y la automática quedó en «solo reducir» "
         "(ningún clic a más de $1,00). Sin ellas, la automática salió en pasta dental, enjuague, "
         "Waterpik e hilo dental: 72.120 impresiones en «(Other)» y 20 clics sin venta. Ocho familias "
@@ -542,8 +555,8 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 
 <div class="paso"><span class="n">1</span><div class="t">
 <h3>Cuándo</h3>
-<p>Ahora. Las cajas suman ocho familias y tres exactas nuevas de la semana 10.</p>
-<p>Va junto con las pujas de la manual (<a href="reporte-campanas-zriceros-semana-10.html#pasos">semana 10, paso 1</a>).</p>
+<p>Ahora. La caja 2 suma cuatro exactas nuevas de la semana 11. Pegar la caja entera: «tongue scraper blue», de la semana 9, salió el 16-11.</p>
+<p>Va junto con el paso 1 de la <a href="reporte-campanas-zriceros-semana-11.html#pasos">semana 11</a> («for adults» vuelve a la automática).</p>
 </div></div>
 
 <div class="paso"><span class="n">2</span><div class="t">
@@ -568,7 +581,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <p>Otra vez <em>Añadir palabras clave negativas</em> → <em>Negativa exacta</em>.</p>
 <p>Pegar la caja 2 → <em>Añadir</em> → <em>Guardar</em>.</p>
 <span class="et ok">Tiene que decir</span>
-<p>Las exactas de la caja, más las siete de la manual vieja y las tres de la manual nueva.</p>
+<p>Las exactas de la caja, más las siete de la manual vieja, «tongue scraper» y «tongue cleaner». «tongue scraper for adults» ya no: se sacó en la semana 11, paso 1.</p>
 <span class="et no">Si no está así</span>
 <p>Amazon avisa que una ya existe: seguir, no es un error.</p>
 </div></div>
@@ -577,12 +590,12 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <h3>Lo que no se agrega</h3>
 <p>Nada que no esté en las cajas.</p>
 <p>Nunca de frase <code>tongue scraper</code>, <code>electric</code>, <code>case</code> ni <code>kit</code> solas.</p>
-<p>Las pujas de la manual van en la <a href="reporte-campanas-zriceros-semana-10.html#pasos">semana 10, paso 1</a>.</p>
+<p>Las pujas de la manual van en la <a href="reporte-campanas-zriceros-semana-11.html#pasos">semana 11</a>.</p>
 </div></div>
 
 <div class="paso"><span class="n">6</span><div class="t">
 <h3>Cómo se verifica</h3>
-<p>En el informe de la semana 11 no sale ninguna frase de las cajas.</p>
+<p>En el informe de la semana 12 no sale ninguna frase de las cajas.</p>
 <p>Si sale una, la negativa no se guardó: repetir el paso 3 o 4.</p>
 </div></div>
 
@@ -700,7 +713,7 @@ def resumen_madre(frases: dict, res: dict, ult: int) -> str:
     sinv = [t for t, f in frases.items() if not f["pedidos"]]
     nv, cv, pv, gv, _ = suma(vend)
     ns, cs, _, gs, _ = suma(sinv)
-    que = {"Núcleo": "manual exacta, puja nueva (paso 1)", "Oportunidad": "manual exacta, puja nueva (paso 1)",
+    que = {"Núcleo": "manual exacta, $1,20 (sección 10)", "Oportunidad": "«for adults» a la automática (paso 1)",
            "Madurar": f"esperar a {CLICS_DECIDIR} clics", "Negativa de frase": "Frases, caja 1 (paso 2)",
            "Negativa exacta": "Frases, caja 2 (paso 2)", "Ya negativa": "exactas de la manual vieja (19-10)"}
     filas = []
@@ -714,7 +727,7 @@ def resumen_madre(frases: dict, res: dict, ult: int) -> str:
                      f'<td class="num {"pos" if ne > 0 else "neg"}">{signo(ne)}</td></tr>')
     manual = "".join(
         f'<tr><td><bdi>{e(t)}</bdi></td><td class="num">{int(frases[t]["clics"])}</td>'
-        f'<td class="num">{int(frases[t]["pedidos"])}</td><td class="num"><strong>{plata(pu)}</strong></td></tr>'
+        f'<td class="num">{int(frases[t]["pedidos"])}</td><td class="num"><strong>{plata(pu) if pu is not None else "pausar"}</strong></td></tr>'
         for t, pu in MANUAL_NUEVAS.items())
     cmin, convmin = REGLA_MANUAL
     cerca = sorted((f for t, f in frases.items() if f["pedidos"] and t not in MANUAL_NUEVAS and t not in YA_NEGATIVAS),
@@ -732,7 +745,7 @@ def resumen_madre(frases: dict, res: dict, ult: int) -> str:
 </table>
 <h3 id="listas">Las listas de esta semana</h3>
 <table>
-<tr><th>Manual exacta: puja nueva (paso 1)</th><th class="num">Clics*</th><th class="num">Pedidos</th><th class="num">Puja</th></tr>
+<tr><th>Manual exacta: puja de la semana 12</th><th class="num">Clics*</th><th class="num">Pedidos</th><th class="num">Puja</th></tr>
 {manual}
 </table>
 <ul>
