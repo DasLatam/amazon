@@ -3,6 +3,12 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-11-17 · Semana 11 (10 al 16-11, CSV `Search_term_-_11_17_2026_semana_11.csv` →
+  `datos/semana-11_2026-11-10_2026-11-16_terminos.csv`, 31 líneas): 4 pedidos, ACoS 110,3%, −$50,63;
+  acumulado −$109,17. «for adults» en exacta 2 en 36 (CTR 0,31%) → se pausa en la manual y vuelve a la
+  automática. Negativas visibles desde el 15-11; «tongue scraper blue» (semana 9) no estaba cargada. Cuatro
+  exactas nuevas en Frases. Hoja nueva con sección 10 (Black Friday día por día, techo $240) y seis pasos.
+  Ficha 17-11: viñeta 3 corregida, 8 de 4,8, #259. Segmentación, comercial e inventario: no llegaron.
 - 2026-11-13 · Semana 10, CSV (`Search_term_-_11_10_2026_semana_10.csv`): coincide línea por línea con la
   reconstrucción del PDF (35 líneas, mismos totales); no cambia ningún número. Arreglado: Frases y el
   bloque de la hoja decían $1,25 para «tongue scraper» y el paso 1, $1,20 (queda $1,20). Paso 3 nuevo (ficha).

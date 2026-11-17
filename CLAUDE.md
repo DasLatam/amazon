@@ -328,6 +328,19 @@ de Logística de Amazon (pendiente `zri-crecer-datos`). La cola larga barata es 
 con más respaldo («Madurar»: 90 clics, 19 pedidos, +$59,37). Cupón 10% con corte en 18% de
 conversión (`zri-cupon-bf`). Lo que pide marca registrada queda fuera del plan.
 
+## Una búsqueda que vendía en la automática no vende en exacta (semana 11, 2026-11-17)
+
+«tongue scraper for adults»: automática (semanas 5–9) 10 en 32, CTR 0,66–1,95%, +$48,65; manual exacta
+(semanas 10–11) 5 en 74, CTR 0,31–0,40%, −$63,29, con diez veces las impresiones. Bajar la puja no
+alcanzó a probarse (pagó $1,45 toda la semana): **se pausa en la manual y se le saca la negativa en la
+automática**. Regla: si una búsqueda movida a exacta pierde dos semanas con CTR a la mitad, vuelve a
+donde vendía antes de seguir bajando pujas. Las dos campañas cayeron juntas (4 en 69, p<1%): se cumplió
+la regla de la semana 10 de frenar el crecimiento (búsquedas <12% dos semanas); en Black Friday se sube
+presupuesto, nunca puja, y sólo si la semana 12 da ACoS ≤45%. **El «Rango de fechas» por fila fecha
+cuándo entró una negativa**: pasta/hilo/cepillo con última línea el 14-11 → cargadas el 14 o 15. Con
+cupón, cada unidad deja ≈$6,56 y la línea roja de ACoS baja a ≈35%. Lo que Ariel no confirmó (reseñas,
+grupo de frase) va «sin confirmar» en la hoja y la pregunta al pendiente, no a la hoja.
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel

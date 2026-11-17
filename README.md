@@ -23,12 +23,12 @@ un caso real, no un producto del servidor.
 Manager lo hace Ariel; desde acá se proponen y quedan como pendientes del tablero
 (grupo `zriceros`).
 
-**Estado (2026-11-11):** diez semanas de campaña medidas. Semana 10: 8 pedidos, ACoS 59,2%,
-−$22,12; acumulado 77 unidades, ACoS 49,1%, −$58,54. Desde el 4-11 las tres búsquedas que venden
-están en una manual exacta nueva y la automática quedó en «solo reducir»; «tongue scraper for
-adults» a $1,50 fue toda la pérdida de la semana. Propuesto para la semana 11: pujas de $1,10 y
-$1,20 en la manual y once negativas nuevas en la automática. 8 calificaciones (4,8); BSR de la
-categoría #194.
+**Estado (2026-11-17):** once semanas de campaña medidas. Semana 11 (10 al 16-11): 4 pedidos,
+ACoS 110,3%, −$50,63; acumulado 81 unidades, ACoS 52,1%, −$109,17. «tongue scraper for adults» en la
+manual exacta hizo 5 en 74 en dos semanas (en la automática, 10 en 32): vuelve a la automática. Las dos
+campañas cayeron juntas y se cumplió la regla de frenar el crecimiento. Cupón del 10% del 17-11 al
+2-12; plan día por día de Black Friday y Cyber Monday con techo de $240. 8 calificaciones (4,8); BSR
+de la categoría #259.
 
 **Dónde:** portal local `http://192.168.1.71:8089`, público en
 https://daslatam.github.io/amazon/ (repo `DasLatam/amazon`, sincronizado por cron).
