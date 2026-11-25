@@ -341,6 +341,17 @@ cuándo entró una negativa**: pasta/hilo/cepillo con última línea el 14-11 �
 cupón, cada unidad deja ≈$6,56 y la línea roja de ACoS baja a ≈35%. Lo que Ariel no confirmó (reseñas,
 grupo de frase) va «sin confirmar» en la hoja y la pregunta al pendiente, no a la hoja.
 
+## Cuando llega el informe de producto anunciado (semana 12, 2026-11-24)
+
+Ariel mandó el «Advertised product» en vez del de términos: **una fila por campaña**, impresiones
+completas (sin «(Other)»), ventas a $19,89 por unidad (no descuenta el cupón: el equilibrio con cupón es
+$6,56 ÷ $19,89 = 33,0%). Alcanza para la tabla por campaña, ACoS/ROAS y la regla de Black Friday; no
+para Frases, negativas ni para saber qué término gastó. Se copia como
+`semana-N_<desde>_<hasta>_producto-anunciado.csv` y el paso de descargas aclara «Término de búsqueda, no
+Producto anunciado». Dos informes de producto que se pisan acotan cuándo cambió algo (13–19: 18.115
+impresiones en la automática; 17–23: 1.770 → la caída empezó el 17). La hoja deja el bloque
+`<!-- frases-resumen -->` vacío para que `frases.py --poner` lo llene si llega el de términos.
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel

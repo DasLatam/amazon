@@ -3,6 +3,13 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-11-24 · Semana 12 (17 al 23-11). Llegó el informe de **producto anunciado** (dos filas, una por
+  campaña; CSV por WhatsApp → `datos/semana-12_2026-11-17_2026-11-23_producto-anunciado.csv`; también el
+  del 13 al 19-11 → `datos/entre-11-12_…`), no el de términos: sin Frases ni lectura por término.
+  8 pedidos, 9 unidades, $95,79, ACoS 53,5%, ROAS 1,87, −$14,79; acumulado −$123,96. Automática
+  1.770 impr. (63.507 la semana 11), CTR 1,07%, ACoS 47,6%; manual 18.873 impr., $76,87, 55,2% (encaja
+  con «for adults» activa; pendiente sin marcar). Black Friday: no cumple (ACoS >45%, neto <0) →
+  presupuestos como están. Cinco pasos. Ficha 24-11: cupón visible, 8 de 4,8, #183.
 - 2026-11-17 · Semana 11 (10 al 16-11, CSV `Search_term_-_11_17_2026_semana_11.csv` →
   `datos/semana-11_2026-11-10_2026-11-16_terminos.csv`, 31 líneas): 4 pedidos, ACoS 110,3%, −$50,63;
   acumulado −$109,17. «for adults» en exacta 2 en 36 (CTR 0,31%) → se pausa en la manual y vuelve a la
