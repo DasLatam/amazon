@@ -3,6 +3,14 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-11-24 · Semana 12 reescrita (v2) por pedido de Ariel: la v1 era demasiado tajante («la manual es la
+  pérdida, pausar»). Ahora: rangos de Wilson al 95% (conversión y ACoS) semanas 10–12 por campaña; la
+  manual mejora (ACoS 74→83→55%, clic $1,44→$1,18) y convierte como la automática (9,1% y 7,8% en tres
+  semanas); dos compras mueven el ACoS de 41% a 83%. Plan graduado: manual −10–15% las tres pujas
+  ($1,05/$0,95/$0,90), automática y presupuestos como están, mover términos y negativas sólo con informe
+  de términos; criterio 100 clics y 10 compras a la misma puja; revisión 1-12 y decisión 8-12. Secciones
+  nuevas «Qué datos nos faltan» (términos, segmentación, ubicación, campaña diaria, comercial, orgánico,
+  nombres de archivo) y «Qué cambiaría esta conclusión». v1 en `datos/respaldo/`. Regla 6 en CLAUDE.md.
 - 2026-11-24 · Semana 12 (17 al 23-11). Llegó el informe de **producto anunciado** (dos filas, una por
   campaña; CSV por WhatsApp → `datos/semana-12_2026-11-17_2026-11-23_producto-anunciado.csv`; también el
   del 13 al 19-11 → `datos/entre-11-12_…`), no el de términos: sin Frases ni lectura por término.

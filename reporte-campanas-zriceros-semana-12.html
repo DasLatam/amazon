@@ -164,22 +164,34 @@ html body img{max-width:100%;height:auto}
 El detalle: <a href="frases-zriceros.html">Frases</a>,
 <a href="diagnostico-campana-manual.html">Campaña manual</a> y
 <a href="presupuesto-zriceros.html">Presupuesto</a>.</p>
+<style>
+  .grado { display:inline-block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.4px;
+    padding:2px 8px; border-radius:10px; white-space:nowrap; }
+  .g-obs { background:#e7ecf2; color:#232f3e; }
+  .g-aju { background:#fff0d1; color:#8a5b00; }
+  .g-mov { background:#dff3ea; color:#067d62; }
+  .criterio { background:#f3f8ff; border:1px solid #c9e2ff; border-radius:8px; padding:12px 16px; margin:14px 0; }
+  .criterio p { margin:4px 0; }
+  ol.datos > li { margin:0 0 18px; }
+  ol.datos ol { margin:6px 0 0; padding-left:22px; }
+  ol.datos ol > li { margin:0 0 5px; }
+</style>
 <h2><span class="num">1.</span> Semana 12 &mdash; 17 al 23 de noviembre de 2026</h2>
 <div class="kpis">
   <div class="kpi"><span class="big">8</span><span class="lbl">Pedidos</span><span class="sub">9 unidades &middot; semana 11: 4</span></div>
-  <div class="kpi"><span class="big neg">53,5%</span><span class="lbl">ACoS</span><span class="sub">ROAS 1,87 &middot; equilibrio 45,2%</span></div>
-  <div class="kpi"><span class="big neg">&minus;$14,79</span><span class="lbl">Ganancia neta</span><span class="sub">semana 11: &minus;$50,63</span></div>
+  <div class="kpi"><span class="big">53,5%</span><span class="lbl">ACoS</span><span class="sub">rango probable 29% a 104% &middot; equilibrio 45,2%</span></div>
+  <div class="kpi"><span class="big neg">&minus;$14,79</span><span class="lbl">Ganancia neta</span><span class="sub">semana 11: &minus;$50,63 &middot; semana 10: &minus;$22,12</span></div>
   <div class="kpi"><span class="big">8</span><span class="lbl">Calificaciones</span><span class="sub">4,8 &middot; #183 en la categoría</span></div>
 </div>
 <div class="card summary" id="resumen">
 <h2>Resumen</h2>
 <ol>
-<li><strong>Perdió $14,79</strong>: $95,79 de gasto, 84 clics, 8 pedidos, 9 unidades, $179,01 de ventas. ACoS 53,5%, ROAS 1,87. Acumulado: &minus;$123,96.</li>
-<li><strong>La automática rinde mejor</strong>: ACoS 47,6%, clic a $1,00, CTR 1,07%, costo por pedido $9,46. Casi empata (&minus;$0,92).</li>
-<li><strong>La manual es la pérdida</strong>: $76,87 (80% del gasto), ACoS 55,2%, clic a $1,18, CTR 0,34%, &minus;$13,87.</li>
-<li><strong>El clic es el más barato desde la semana 6 ($1,14); lo que falta es conversión</strong>: 9,5%. Semanas 10 a 12: 20 pedidos en 231 clics (8,7%). Con la conversión de once semanas (14,7%) eso pasa 4 veces en 1.000.</li>
-<li><strong>Black Friday y Cyber Monday: no se suben presupuestos.</strong> La regla pedía ACoS 45% o menos y neto 0 o más (<a href="#bf">sección 5</a>).</li>
-<li><strong>Para la semana 13</strong>: pausar «tongue scraper for adults» en la manual y aplicar la regla de «tongue scraper» (<a href="#pasos">pasos 1 y 2</a>).</li>
+<li><strong>Mejor que la semana 11, todavía abajo del equilibrio</strong>: $95,79 de gasto, 84 clics, 8 pedidos, $179,01 de ventas, ACoS 53,5% (equilibrio 45,2%), &minus;$14,79.</li>
+<li><strong>Con 84 clics la semana no alcanza para un veredicto.</strong> La conversión de 9,5% puede ser, con 95% de confianza, cualquier cosa entre 4,9% y 17,7%; el ACoS, entre 29% y 104% (<a href="#margen-error">sección 3</a>).</li>
+<li><strong>La manual exacta mejora semana a semana</strong>: ACoS 74% &rarr; 83% &rarr; 55% en sus tres semanas, porque el clic bajó de $1,44 a $1,18. Convierte lo mismo que la automática (9,1% y 7,8% en tres semanas): la baja de conversión es de las dos, no de una campaña.</li>
+<li><strong>Dos compras más o menos dan vuelta la semana</strong>: la manual con 8 compras en vez de 6 habría dado ACoS 41% (gana); con 4, 83%.</li>
+<li><strong>Para la semana 13, ajuste leve</strong>: bajar 10&ndash;15% las tres pujas de la manual, la automática como está, presupuestos como están. Nada se pausa (<a href="#plan">sección 5</a>).</li>
+<li><strong>Para decidir más que eso faltan datos</strong>: términos, segmentación, ubicación y el informe comercial. El paso a paso está en la <a href="#datos">sección 7</a>.</li>
 </ol>
 </div>
 <h2><span class="num">2.</span> Las doce semanas lado a lado</h2>
@@ -209,130 +221,85 @@ después del clic: los últimos días todavía pueden sumar.</p>
 <h3>Ganancia neta por semana</h3>
 <div class="graf-box"><svg class="graf" viewBox="0 0 1000 300" role="img" aria-label="Ganancia neta por semana, semanas 1 a 12"><line x1="40" x2="1000" y1="150.0" y2="150.0" stroke="#999" stroke-width="1"/><line x1="40" x2="1000" y1="270.0" y2="270.0" stroke="#eee"/><text x="34" y="274.0" font-size="12" fill="#888" text-anchor="end">−$80</text><line x1="40" x2="1000" y1="210.0" y2="210.0" stroke="#eee"/><text x="34" y="214.0" font-size="12" fill="#888" text-anchor="end">−$40</text><line x1="40" x2="1000" y1="90.0" y2="90.0" stroke="#eee"/><text x="34" y="94.0" font-size="12" fill="#888" text-anchor="end">+$40</text><line x1="40" x2="1000" y1="30.0" y2="30.0" stroke="#eee"/><text x="34" y="34.0" font-size="12" fill="#888" text-anchor="end">+$80</text><text x="34" y="154.0" font-size="12" fill="#888" text-anchor="end">$0</text><rect class="b" x="46.4" y="110.5" width="67.2" height="39.5" rx="4" fill="#067d62"><title>Semana 1: +$26,34</title></rect><text x="80.0" y="104.5" font-size="12.5" fill="#232f3e" text-anchor="middle">+$26,34</text><text x="80.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 1</text><rect class="b" x="126.4" y="150.0" width="67.2" height="45.3" rx="4" fill="#c40000"><title>Semana 2: −$30,19</title></rect><text x="160.0" y="210.3" font-size="12.5" fill="#232f3e" text-anchor="middle">−$30,19</text><text x="160.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 2</text><rect class="b" x="206.4" y="150.0" width="67.2" height="17.0" rx="4" fill="#c40000"><title>Semana 3: −$11,32</title></rect><text x="240.0" y="182.0" font-size="12.5" fill="#232f3e" text-anchor="middle">−$11,32</text><text x="240.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 3</text><rect class="b" x="286.4" y="150.0" width="67.2" height="114.2" rx="4" fill="#c40000"><title>Semana 4: −$76,12</title></rect><text x="320.0" y="279.2" font-size="12.5" fill="#232f3e" text-anchor="middle">−$76,12</text><text x="320.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 4</text><rect class="b" x="366.4" y="150.0" width="67.2" height="50.9" rx="4" fill="#c40000"><title>Semana 5: −$33,92</title></rect><text x="400.0" y="215.9" font-size="12.5" fill="#232f3e" text-anchor="middle">−$33,92</text><text x="400.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 5</text><rect class="b" x="446.4" y="83.3" width="67.2" height="66.7" rx="4" fill="#067d62"><title>Semana 6: +$44,48</title></rect><text x="480.0" y="77.3" font-size="12.5" fill="#232f3e" text-anchor="middle">+$44,48</text><text x="480.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 6</text><rect class="b" x="526.4" y="100.8" width="67.2" height="49.2" rx="4" fill="#067d62"><title>Semana 7: +$32,83</title></rect><text x="560.0" y="94.8" font-size="12.5" fill="#232f3e" text-anchor="middle">+$32,83</text><text x="560.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 7</text><rect class="b" x="606.4" y="150.0" width="67.2" height="4.5" rx="4" fill="#c40000"><title>Semana 8: −$2,99</title></rect><text x="640.0" y="169.5" font-size="12.5" fill="#232f3e" text-anchor="middle">−$2,99</text><text x="640.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 8</text><rect class="b" x="686.4" y="128.3" width="67.2" height="21.7" rx="4" fill="#067d62"><title>Semana 9: +$14,47</title></rect><text x="720.0" y="122.3" font-size="12.5" fill="#232f3e" text-anchor="middle">+$14,47</text><text x="720.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 9</text><rect class="b" x="766.4" y="150.0" width="67.2" height="33.2" rx="4" fill="#c40000"><title>Semana 10: −$22,12</title></rect><text x="800.0" y="198.2" font-size="12.5" fill="#232f3e" text-anchor="middle">−$22,12</text><text x="800.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 10</text><rect class="b" x="846.4" y="150.0" width="67.2" height="75.9" rx="4" fill="#c40000"><title>Semana 11: −$50,63</title></rect><text x="880.0" y="240.9" font-size="12.5" fill="#232f3e" text-anchor="middle">−$50,63</text><text x="880.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 11</text><rect class="b" x="926.4" y="150.0" width="67.2" height="22.2" rx="4" fill="#c40000"><title>Semana 12: −$14,79</title></rect><text x="960.0" y="187.2" font-size="12.5" fill="#232f3e" text-anchor="middle" font-weight="700">−$14,79</text><text x="960.0" y="296" font-size="12" fill="#555" text-anchor="middle">Sem. 12</text></svg></div>
 </div>
-<h2 id="campanas"><span class="num">3.</span> Qué campaña rinde mejor</h2>
+<h2 id="margen-error"><span class="num">3.</span> Cada campaña, semana por semana y con su margen de error</h2>
 <div class="card tabla">
 <table>
-<tr><th>Campaña</th><th class="num">Impr.</th><th class="num">Clics</th><th class="num">CTR</th><th class="num">CPC</th><th class="num">Gasto</th><th class="num">Pedidos</th><th class="num">Unid.</th><th class="num">Ventas</th><th class="num">Conversión</th><th class="num">ACoS</th><th class="num">ROAS</th><th class="num">Costo por pedido</th><th class="num">Neto</th></tr>
-<tr class="row-bien"><td><strong>Automática, semana 12</strong></td><td class="num">1.770</td><td class="num">19</td><td class="num">1,07%</td><td class="num">$1,00</td><td class="num">$18,92</td><td class="num">2</td><td class="num">2</td><td class="num">$39,78</td><td class="num">10,5%</td><td class="num">47,6%</td><td class="num">2,10</td><td class="num">$9,46</td><td class="num neg">&minus;$0,92</td></tr>
-<tr><td>Automática, semana 11</td><td class="num">63.507</td><td class="num">23</td><td class="num">0,04%</td><td class="num">$0,93</td><td class="num">$21,35</td><td class="num">0</td><td class="num">0</td><td class="num">$0</td><td class="num">0%</td><td class="num">&mdash;</td><td class="num">0</td><td class="num">&mdash;</td><td class="num neg">&minus;$21,35</td></tr>
-<tr><td>Automática, semana 10</td><td class="num">94.960</td><td class="num">35</td><td class="num">0,04%</td><td class="num">$1,00</td><td class="num">$34,90</td><td class="num">4</td><td class="num">4</td><td class="num">$79,56</td><td class="num">11,4%</td><td class="num">43,9%</td><td class="num">2,28</td><td class="num">$8,72</td><td class="num pos">+$1,10</td></tr>
-<tr class="row-mal"><td><strong>Manual exacta, semana 12</strong></td><td class="num">18.873</td><td class="num">65</td><td class="num">0,34%</td><td class="num">$1,18</td><td class="num">$76,87</td><td class="num">6</td><td class="num">7</td><td class="num">$139,23</td><td class="num">9,2%</td><td class="num">55,2%</td><td class="num">1,81</td><td class="num">$12,81</td><td class="num neg">&minus;$13,87</td></tr>
-<tr><td>Manual exacta, semana 11</td><td class="num">14.320</td><td class="num">48</td><td class="num">0,34%</td><td class="num">$1,36</td><td class="num">$65,28</td><td class="num">4</td><td class="num">4</td><td class="num">$78,56</td><td class="num">8,3%</td><td class="num">83,1%</td><td class="num">1,20</td><td class="num">$16,32</td><td class="num neg">&minus;$29,28</td></tr>
-<tr><td>Manual exacta, semana 10</td><td class="num">10.541</td><td class="num">41</td><td class="num">0,39%</td><td class="num">$1,44</td><td class="num">$59,22</td><td class="num">4</td><td class="num">4</td><td class="num">$79,56</td><td class="num">9,8%</td><td class="num">74,4%</td><td class="num">1,34</td><td class="num">$14,80</td><td class="num neg">&minus;$23,22</td></tr>
-<tr class="row-total"><td>Las dos, semana 12</td><td class="num">20.643</td><td class="num">84</td><td class="num">0,41%</td><td class="num">$1,14</td><td class="num">$95,79</td><td class="num">8</td><td class="num">9</td><td class="num">$179,01</td><td class="num">9,5%</td><td class="num">53,5%</td><td class="num">1,87</td><td class="num">$11,97</td><td class="num neg">&minus;$14,79</td></tr>
-<tr><td>Las dos, semana 11</td><td class="num">77.827</td><td class="num">71</td><td class="num">0,09%</td><td class="num">$1,22</td><td class="num">$86,63</td><td class="num">4</td><td class="num">4</td><td class="num">$78,56</td><td class="num">5,6%</td><td class="num">110,3%</td><td class="num">0,91</td><td class="num">$21,66</td><td class="num neg">&minus;$50,63</td></tr>
-<tr><td>Las dos, semana 10</td><td class="num">105.501</td><td class="num">76</td><td class="num">0,07%</td><td class="num">$1,24</td><td class="num">$94,12</td><td class="num">8</td><td class="num">8</td><td class="num">$159,12</td><td class="num">10,5%</td><td class="num">59,2%</td><td class="num">1,69</td><td class="num">$11,77</td><td class="num neg">&minus;$22,12</td></tr>
+<tr><th>Campaña</th><th>Semana</th><th class="num">Clics</th><th class="num">Compras</th><th class="num">Conversión</th><th class="num">Rango probable (95%)</th><th class="num">CPC</th><th class="num">Conversión que empata</th><th class="num">ACoS</th><th class="num">Rango probable del ACoS</th><th class="num">Neto</th></tr>
+<tr><td>Manual exacta</td><td>10 (4 al 10-11)</td><td class="num">41</td><td class="num">4</td><td class="num">9,8%</td><td class="num">3,9% a 22,5%</td><td class="num">$1,44</td><td class="num">16,0%</td><td class="num">74,4%</td><td class="num">32,2% a 188,1%</td><td class="num">&minus;$23,22</td></tr>
+<tr><td></td><td>11 (10 al 16-11)</td><td class="num">48</td><td class="num">4</td><td class="num">8,3%</td><td class="num">3,3% a 19,6%</td><td class="num">$1,36</td><td class="num">15,1%</td><td class="num">83,1%</td><td class="num">35,0% a 207,9%</td><td class="num">&minus;$29,28</td></tr>
+<tr class="row-bien"><td></td><td><strong>12 (17 al 23-11)</strong></td><td class="num">65</td><td class="num">6</td><td class="num">9,2%</td><td class="num">4,3% a 18,7%</td><td class="num">$1,18</td><td class="num">13,1%</td><td class="num">55,2%</td><td class="num">27,2% a 118,5%</td><td class="num">&minus;$13,87</td></tr>
+<tr class="row-total"><td></td><td>10 a 12 juntas</td><td class="num">154</td><td class="num">14</td><td class="num">9,1%</td><td class="num">5,5% a 14,7%</td><td class="num">$1,31</td><td class="num">14,5%</td><td class="num">67,7%</td><td class="num">41,8% a 111,7%</td><td class="num">&minus;$66,37</td></tr>
+<tr><td>Automática</td><td>10</td><td class="num">35</td><td class="num">4</td><td class="num">11,4%</td><td class="num">4,5% a 26,0%</td><td class="num">$1,00</td><td class="num">11,1%</td><td class="num">43,9%</td><td class="num">19,3% a 110,5%</td><td class="num">+$1,10</td></tr>
+<tr><td></td><td>11</td><td class="num">23</td><td class="num">0</td><td class="num">0,0%</td><td class="num">0,0% a 14,3%</td><td class="num">$0,93</td><td class="num">10,3%</td><td class="num">&mdash;</td><td class="num">32,6% o más</td><td class="num">&minus;$21,35</td></tr>
+<tr class="row-bien"><td></td><td><strong>12</strong></td><td class="num">19</td><td class="num">2</td><td class="num">10,5%</td><td class="num">2,9% a 31,4%</td><td class="num">$1,00</td><td class="num">11,1%</td><td class="num">47,6%</td><td class="num">15,9% a 170,5%</td><td class="num">&minus;$0,92</td></tr>
+<tr class="row-total"><td></td><td>10 a 12 juntas</td><td class="num">77</td><td class="num">6</td><td class="num">7,8%</td><td class="num">3,6% a 16,0%</td><td class="num">$0,98</td><td class="num">10,8%</td><td class="num">63,0%</td><td class="num">30,7% a 135,6%</td><td class="num">&minus;$21,17</td></tr>
+<tr><td>Las dos</td><td>12</td><td class="num">84</td><td class="num">8</td><td class="num">9,5%</td><td class="num">4,9% a 17,7%</td><td class="num">$1,14</td><td class="num">12,7%</td><td class="num">53,5%</td><td class="num">28,8% a 103,9%</td><td class="num">&minus;$14,79</td></tr>
+<tr class="row-total"><td></td><td>10 a 12 juntas</td><td class="num">231</td><td class="num">20</td><td class="num">8,7%</td><td class="num">5,7% a 13,0%</td><td class="num">$1,20</td><td class="num">13,3%</td><td class="num">66,4%</td><td class="num">44,1% a 101,0%</td><td class="num">&minus;$87,54</td></tr>
 </table>
-<p class="meta">Semanas 10 y 11: informes de términos, con «(Other)». Semana 12: informe de producto
-anunciado. Un pedido de la manual llevó 2 unidades.</p>
-<p><strong>Por qué rinde mejor la automática.</strong> Las dos convierten parecido (10,5% y 9,2%; con 19
-clics no se distinguen). La diferencia es el precio del clic: $1,00 contra $1,18. Es la misma lección de la
-semana 3: antes de culpar a una campaña, mirar lo que paga por clic.</p>
-<p><strong>La automática se achicó y mejoró.</strong> De 63.507 impresiones a 1.770, con casi los mismos clics
-(19 contra 23) y el CTR de 0,04% a 1,07%. Las negativas de pasta, hilo y cepillo cortaron las impresiones
-en otros productos. Del 13 al 19-11 tuvo 18.115 y del 17 al 23, 1.770: la caída empezó el 17.</p>
-<p><strong>La manual creció.</strong> 18.873 impresiones y $76,87, más que la semana 11, cuando
-«tongue scraper for adults» eran 11.636 impresiones y $52,07. Sin «for adults», la manual de la semana 11
-tenía 2.684 impresiones y $13,21. El informe no separa por término: no dice cuál de las tres gastó.</p>
+<p class="meta"><strong>Rango probable</strong>: intervalo de Wilson al 95%, el que se usa con muestras chicas; dice entre
+qué valores está la conversión real con esa cantidad de clics. El rango del ACoS es el mismo cálculo con el
+gasto fijo. <strong>Conversión que empata</strong> = CPC &divide; $9,00. Semanas 10 y 11: informes de términos;
+semana 12: informe de producto anunciado (por campaña). La automática de las semanas 10 y 11 incluye los
+clics en pasta, enjuague e hilo que después se cortaron con negativas.</p>
+<p><strong>La tendencia de la manual va para el lado bueno.</strong> Convierte parejo (9,8%, 8,3%, 9,2%) y lo que
+cambió es el precio del clic: $1,44, $1,36, $1,18. Por eso el ACoS bajó de 83% a 55% y la pérdida de $29 a $14.
+Es su tercera semana desde el 4-11: con 154 clics y tres pujas distintas, todavía está aprendiendo.</p>
+<p><strong>La automática no se puede comparar con la manual por una semana.</strong> Sus 19 clics dan un rango de
+3% a 31%. En tres semanas convierte 7,8%, apenas debajo de la manual. Las dos bajaron juntas desde la semana 10
+(las búsquedas de once semanas convierten 14,7%): lo que comparten es la ficha, el precio, el cupón y la competencia. Eso lo dice el
+informe comercial, no el de campañas.</p>
+<p><strong>Cuánto pesan dos compras.</strong> La manual con 65 clics: 4 compras &rarr; ACoS 83%, ROAS 1,21;
+6 (lo real) &rarr; 55%, ROAS 1,81; 8 &rarr; 41%, ROAS 2,41, abajo del equilibrio. Con muestras así, el ROAS de
+una semana no ordena campañas.</p>
 <!-- frases-resumen -->
 <!-- /frases-resumen -->
 </div>
-<h2 id="margen"><span class="num">4.</span> Presupuesto y ACoS frente al margen</h2>
+
+<h2 id="lectura"><span class="num">4.</span> Cómo se lee: equilibrio, halo y el papel de cada campaña</h2>
 <div class="card tabla">
 <table>
 <tr><th>Línea</th><th class="num">Valor</th><th>De dónde sale</th></tr>
-<tr><td>Contribución por unidad</td><td class="num">$9,00</td><td>$19,89 &minus; tarifas $7,44 &minus; producto $3,45</td></tr>
+<tr><td>Contribución por unidad</td><td class="num">$9,00</td><td>$19,89 &minus; tarifas $7,44 &minus; producto $3,45 (calculadora de Amazon, <a href="reporte-campanas-zriceros.html">hoja de la semana 1</a>)</td></tr>
 <tr><td>ACoS de equilibrio</td><td class="num">45,2%</td><td>$9,00 &divide; $19,89</td></tr>
-<tr><td>ACoS de equilibrio con cupón</td><td class="num">33,0%</td><td>$6,56 &divide; $19,89: el informe trae la venta a precio lleno</td></tr>
-<tr class="row-mal"><td>ACoS de la semana 12</td><td class="num">53,5%</td><td>Manual 55,2% &middot; automática 47,6%: las dos arriba del equilibrio</td></tr>
-<tr><td>Clic de equilibrio con la conversión de la semana</td><td class="num">$0,86</td><td>$9,00 &times; 9,5%. Pagó $1,14.</td></tr>
-<tr><td>Clic de equilibrio con la conversión de once semanas</td><td class="num">$1,32</td><td>$9,00 &times; 14,7% (búsquedas). Con eso, $1,14 ganaría.</td></tr>
+<tr><td>ACoS de equilibrio si la venta usó el cupón del 10%</td><td class="num">33,0%</td><td>$6,56 &divide; $19,89 (<a href="reporte-campanas-zriceros-semana-10.html#c-cupon">hoja de la semana 10</a>). El informe no dice cuántas ventas lo usaron.</td></tr>
+<tr><td>ACoS de la semana 12</td><td class="num">53,5%</td><td>Rango probable 29% a 104%: el equilibrio está adentro del rango.</td></tr>
+<tr><td>Ventas halo</td><td class="num">0</td><td>Columna «Compras (halo)» del informe: compras de otro producto de la marca. Zriceros tiene uno solo.</td></tr>
+<tr><td>TACoS (gasto &divide; ventas totales)</td><td class="num">sin dato</td><td>Pide las ventas totales del informe comercial (<a href="#datos">sección 7, paso 4</a>). Si las totales fueran el doble de las de anuncios, el TACoS sería 26,8%.</td></tr>
 </table>
+<p><strong>El efecto que el ACoS no ve.</strong> Cada venta por anuncio suma historial de ventas y empuja la
+posición orgánica de la ficha; esas ventas sin anuncio no aparecen en ningún informe de Ads. Por eso un ACoS
+algo arriba de 45% puede pagar si las ventas totales crecen. Se sabe con el TACoS, no con el ACoS.</p>
 <table>
-<tr><th>Presupuesto</th><th class="num">Diario</th><th class="num">Gastó por día</th><th>Lectura</th></tr>
-<tr><td>Manual exacta</td><td class="num">$18</td><td class="num">$10,98</td><td>no cortó</td></tr>
-<tr><td>Automática</td><td class="num">$6</td><td class="num">$2,70</td><td>no cortó</td></tr>
-<tr class="row-total"><td>Las dos</td><td class="num">$24</td><td class="num">$13,68</td><td>$95,79 contra el tope de $85 del calendario de la semana 11</td></tr>
+<tr><th>Campaña</th><th>Para qué está</th><th>Con qué se mide</th><th>Semana 12</th></tr>
+<tr><td>Automática</td><td>Descubre búsquedas nuevas, barato.</td><td>Búsquedas nuevas que venden y ACoS cerca del equilibrio a $1,00 o menos el clic.</td><td>ACoS 47,6%, clic a $1,00, CTR 1,07%. Sin informe de términos no se ve qué descubrió.</td></tr>
+<tr><td>Manual exacta</td><td>Cosecha las búsquedas que ya vendieron, con puja propia.</td><td>ACoS por palabra frente al equilibrio y cuántas impresiones gana cada una.</td><td>ACoS 55,2% en baja. El informe no separa sus tres palabras (eso lo da el de segmentación).</td></tr>
 </table>
-<p>El presupuesto no frena nada: ninguna campaña llegó a su tope. Con el clic a $1,14, la pérdida es de
-conversión. Si la conversión vuelve a 14,7%, el mismo gasto gana. Por qué cayó tres semanas en las dos
-campañas lo dice el informe comercial (sesiones y conversión de la ficha, <a href="#pasos">paso 4</a>).</p>
-<p class="meta">Diario de la manual ($18) y de la automática ($6): los informó Ariel el 17-11.
-El informe de producto anunciado no trae el presupuesto.</p>
 </div>
-<h2 id="bf"><span class="num">5.</span> Black Friday y Cyber Monday: sin ventana</h2>
+
+<h2 id="plan"><span class="num">5.</span> Qué hacer esta semana, graduado</h2>
 <div class="card tabla">
 <table>
-<tr><th>Condición de la semana 11 para subir presupuestos</th><th class="num">Semana 12</th></tr>
-<tr><td>ACoS de búsqueda 45% o menos</td><td class="num neg">53,5% (manual 55,2%)</td></tr>
-<tr><td>Ganancia neta 0 o más</td><td class="num neg">&minus;$14,79</td></tr>
-<tr><td>100 o más unidades disponibles</td><td class="num tbd">sin dato</td></tr>
+<tr><th>Grado</th><th>Qué</th><th>Por qué alcanza con esto</th><th>Se revisa</th></tr>
+<tr><td><span class="grado g-aju">Ajustar levemente</span></td><td>Manual exacta: bajar las tres pujas 10&ndash;15% (<a href="#pasos">paso 1</a>).</td><td>Bajar el clic es lo que mejoró el ACoS tres semanas seguidas. Con 9,1% de conversión empata a $0,82; con la de once semanas (14,7%), a $1,32.</td><td>mar 1-12</td></tr>
+<tr><td><span class="grado g-obs">Observar</span></td><td>Automática: puja, presupuesto y grupos como están.</td><td>19 clics: rango de 3% a 31%. Cualquier cambio sería por azar.</td><td>mar 1-12</td></tr>
+<tr><td><span class="grado g-obs">Observar</span></td><td>Presupuestos: manual $18, automática $6.</td><td>Ninguna llegó al tope ($10,98 y $2,70 por día): más presupuesto no compraría más clics.</td><td>mar 1-12</td></tr>
+<tr><td><span class="grado g-mov">Mover términos</span></td><td>De la automática a la manual, sólo los que lleguen a 10 clics y 17% de conversión.</td><td>Es la regla de Frases. Esta semana no hay informe de términos: no se mueve ninguno.</td><td>con el informe de términos</td></tr>
+<tr><td><span class="grado g-mov">Negativas</span></td><td>Sólo con el informe de términos: 15 clics sin compra, o un producto que no es el nuestro.</td><td>Sin términos no hay evidencia. Las cinco de la semana 11 se verifican (<a href="#pasos">paso 2</a>).</td><td>con el informe de términos</td></tr>
 </table>
-<p><strong>Del 26-11 al 1-12 no se toca ningún presupuesto.</strong> Manual $18, automática $6, como el 19.
-La conversión de búsqueda sigue debajo de 12% (tercera semana): el crecimiento sigue frenado.</p>
-<p class="meta">El cupón del 10% se ve en la ficha del 24-11 («Apply 10% coupon»). Con cupón, la semana dio
-9,5%; la regla de corte es 15% y se decide el 2-12 con las semanas 12 a 14.</p>
+<div class="criterio">
+<p><strong>Criterio de decisión.</strong> Para pausar, subir una puja más de 15% o mover presupuesto hace falta,
+por campaña o por palabra, <strong>100 clics y 10 compras a la misma puja</strong>, o <strong>tres semanas a la misma
+puja</strong>. Hasta entonces, sólo ajustes de 10&ndash;15%.</p>
+<p><strong>Fechas.</strong> Martes 1-12: informe de la semana 13 (24 al 30-11). Martes 8-12: se decide con las
+semanas 13 y 14 juntas. La 13 trae Black Friday y Cyber Monday: más compradores, se lee aparte.</p>
+<p><strong>Black Friday y Cyber Monday.</strong> Presupuestos como están: ninguna campaña topó y la semana no
+llegó a ACoS 45% (la regla de la semana 11).</p>
 </div>
-<h2><span class="num">6.</span> Qué se hizo de lo que proponía la semana 11</h2>
-<div class="card tabla">
-<table>
-<tr><th>Paso de la semana 11</th><th>Lo que se ve</th></tr>
-<tr><td>1. «for adults» a la automática</td><td class="tbd">Sin confirmar. La manual creció a 18.873 impresiones y $76,87; sin «for adults» la semana 11 tenía 2.684 y $13,21.</td></tr>
-<tr><td>2. Cinco negativas exactas en la automática</td><td class="tbd">Sin confirmar. El informe no trae términos.</td></tr>
-<tr><td>3. Cupón</td><td class="ok">Se ve en la ficha del 24-11: «Apply 10% coupon». El día en que apareció no consta.</td></tr>
-<tr><td>4. Tres descargas del 24-11</td><td>Llegó el informe de producto anunciado. Términos, comercial e inventario, no.</td></tr>
-<tr><td>5. Black Friday</td><td>No corresponde: la semana 12 no cumple (<a href="#bf">sección 5</a>).</td></tr>
-<tr><td>6. Reseñas</td><td class="tbd">Sin confirmar. Registro vacío; 8 calificaciones.</td></tr>
-</table>
-<table>
-<tr><th>Predicción para la semana 12</th><th class="num">Real</th></tr>
-<tr><td>Gasto de «for adults» en la manual: $0</td><td class="num tbd">sin dato (la manual gastó $76,87)</td></tr>
-<tr><td>Conversión de búsqueda 12% o más</td><td class="num neg">9,5%</td></tr>
-<tr><td>ACoS de búsqueda 45% o menos</td><td class="num neg">53,5%</td></tr>
-<tr><td>Gasto por día $8 a $12</td><td class="num neg">$13,68</td></tr>
-<tr><td>Ganancia neta $0 o más</td><td class="num neg">&minus;$14,79</td></tr>
-<tr><td>Calificaciones 9 o más</td><td class="num neg">8</td></tr>
-</table>
-<p class="meta">«for adults» en la automática y los clics de «tongue scraper» se leen en el informe de
-términos (<a href="#pasos">paso 4</a>).</p>
 </div>
-<h2><span class="num">7.</span> Las 1.000 unidades</h2>
-<div class="card tabla">
-<table>
-<tr><th>Escenario</th><th class="num">Publicidad por unidad</th><th class="num">ACoS</th><th class="num">Neto del ciclo</th></tr>
-<tr><td>Como las doce semanas juntas</td><td class="num">$10,38</td><td class="num">52,2%</td><td class="num neg">&minus;$1.377</td></tr>
-<tr><td>Equilibrio</td><td class="num">$9,00</td><td class="num">45,2%</td><td class="num">$0</td></tr>
-<tr><td>Como la semana 12</td><td class="num">$10,64</td><td class="num">53,5%</td><td class="num neg">&minus;$1.643</td></tr>
-</table>
-<table>
-<tr><th>Stock</th><th class="num">Unidades</th><th>De dónde sale</th></tr>
-<tr><td>Iniciales</td><td class="num">1.000</td><td>Plan del lanzamiento</td></tr>
-<tr><td>Vendidas por anuncios, semanas 1 a 12</td><td class="num">90</td><td>Informes de términos y de producto anunciado</td></tr>
-<tr><td>Vendidas sin anuncios</td><td class="num tbd">sin dato</td><td>Informe comercial (paso 4)</td></tr>
-<tr class="row-total"><td>Quedan, como máximo</td><td class="num">910</td><td>El dato real: Inventario de Logística de Amazon (paso 4)</td></tr>
-</table>
-<p class="meta">Neto del ciclo = 1.000 &times; ($9,00 &minus; publicidad por unidad), si todas salieran por
-anuncios.</p>
-</div>
-<h2 id="estrategia"><span class="num">8.</span> Hacia adelante: plan de acción</h2>
-<div class="tabla"><table>
-<tr><th>#</th><th>Acción</th><th>Dato del informe</th><th>Éxito</th><th>Regla de corte</th></tr>
-<tr><td>1</td><td>Pausar «tongue scraper for adults» en la manual y sacar su negativa de la automática (<a href="#pasos">paso 1</a>)</td><td>Manual: 80% del gasto, ACoS 55,2%. «for adults» en exacta, semanas 10 y 11: 5 en 74, &minus;$63,29.</td><td>Manual debajo de $5 por día</td><td>En la automática, 12 clics sin venta: otra vez negativa exacta</td></tr>
-<tr><td>2</td><td>«tongue scraper»: la regla de la semana 11 (<a href="#pasos">paso 2</a>)</td><td>La regla: 10 clics o más y ACoS sobre 45% del 18 al 25-11 &rarr; $1,00.</td><td>ACoS 45% o menos</td><td>&mdash;</td></tr>
-<tr><td>3</td><td>Automática: no se toca</td><td>ACoS 47,6%, clic a $1,00, CTR 1,07%.</td><td>Neto 0 o más</td><td>&mdash;</td></tr>
-<tr><td>4</td><td>Black Friday: presupuestos como están</td><td>ACoS 53,5% y neto &minus;$14,79 (<a href="#bf">sección 5</a>).</td><td>&mdash;</td><td>&mdash;</td></tr>
-<tr><td>5</td><td>Informe de términos, comercial e inventario (<a href="#pasos">paso 4</a>)</td><td>Conversión de las dos campañas: 20 en 231 en tres semanas (p = 0,4%).</td><td>Saber si cayeron las sesiones o la conversión de la ficha</td><td>&mdash;</td></tr>
-</table></div>
-<p class="meta">Mover términos de la automática a la manual exacta: ninguno. Ni hay informe de
-términos esta semana, ni la regla lo respalda (10 clics y 17% de conversión). Las pujas por término de la
-manual tampoco constan en este informe.</p>
 
 <h2 id="pasos">Los próximos pasos, uno por uno</h2>
-<p><strong>Cinco pasos.</strong> El 1 y el 2, el miércoles 25-11, en la misma pantalla
-(<span class="etq etq-ahorro" style="margin:0">Ahorro</span>). El 3 y el 4 son
-<span class="etq etq-med" style="margin:0">Medición</span>. El 5,
-<span class="etq etq-crec" style="margin:0">Crecimiento</span>.
-Presupuestos, imágenes y precio quedan como están.</p>
+<div class="card tips">
+<p>Tres pasos para el miércoles 25-11. Nada se pausa ni se apaga.</p>
 <p class="meta">Los nombres de los botones son los del panel en español; Amazon
 los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
 <div class="antes">
@@ -343,99 +310,143 @@ los cambia cada tanto y puede que alguno se llame parecido pero no igual.</p>
   <strong>Estados Unidos</strong>. Si no, clic ahí y elegir esos dos.</li>
 </ol>
 <p class="ojo"><strong>No se tocan:</strong> el interruptor de arriba de una
-campaña, el botón <em>Archivar</em> de una campaña y los presupuestos.</p>
+campaña, el botón <em>Archivar</em> y los presupuestos.</p>
 </div>
 <ol class="pasos">
-<li><span class="p-tit">«tongue scraper for adults»: pausarla en la manual <span class="etq etq-ahorro">Ahorro</span></span>
-<span class="p-tag">3 min · lo que más plata mueve · miércoles 25-11</span>
+<li><span class="p-tit">Manual exacta: bajar las tres pujas un poco <span class="grado g-aju">Ajustar levemente</span></span>
+<span class="p-tag">3 min · miércoles 25-11</span>
 <table class="p-tab">
 <tr><th>Clic por clic</th><td><ol class="clic">
   <li><em>Campañas</em> &rarr; <em>MANUAL EXACTA - 11/4/2026 - ZRICEROS</em> &rarr; grupo <em>zriceros Manual exacta 04/11/2026</em> &rarr; <em>Segmentación</em>.</li>
-  <li>Arriba, fechas: <strong>17 al 23 de noviembre</strong>.</li>
-  <li>Fila <strong>tongue scraper for adults</strong>: si dice <em>Activa</em> &rarr; interruptor de la fila &rarr; <strong>Pausado</strong>.
-    <span class="ver">Si ya dice Pausado, anotar sus clics de la semana y seguir.</span></li>
-  <li><em>Campañas</em> &rarr; <em>Campaña - 9/1/2026 automatica</em> &rarr; <em>Grupo RASPADOR - 9/1/2026</em> &rarr; <em>Segmentación negativa</em>.</li>
-  <li>Fila <strong>tongue scraper for adults</strong>, <em>Negativa exacta</em> &rarr; casilla &rarr; <em>Archivar</em>.
-    <span class="ojo">Sólo esa fila. «tongue scraper» y «tongue cleaner» siguen de negativa exacta.</span></li>
+  <li><strong>tongue scraper</strong>: clic en la puja &rarr; <strong>1,05</strong> &rarr; <em>Guardar</em> (hoy 1,20).</li>
+  <li><strong>tongue scraper for adults</strong>: si dice <em>Activa</em>, puja <strong>0,95</strong> (hoy 1,10).
+    <span class="ver">Si ya la pausaste, queda pausada hasta el 8-12.</span></li>
+  <li><strong>tongue cleaner</strong>: puja <strong>0,90</strong> (hoy 1,00).</li>
+  <li>Arriba, fechas <strong>17 al 23 de noviembre</strong>: captura de la tabla y mandala con las descargas.</li>
 </ol></td></tr>
-<tr><th>Por qué</th><td>La manual es 80% del gasto y pierde. «for adults» en exacta hizo 5 en 74; en la automática, 10 en 32.</td></tr>
-<tr><th>Qué no hacer</th><td>No borrar la fila: pausada se reactiva en un clic.</td></tr>
-<tr><th>Cómo se verifica</th><td>Semana 13: la manual gasta menos de $5 por día.</td></tr>
+<tr><th>Por qué</th><td>Cada baja del clic mejoró el ACoS sin perder conversión. 10&ndash;15% no saca a nadie de las subastas.</td></tr>
+<tr><th>Qué no hacer</th><td>No pausar ni borrar palabras. No tocar la automática.</td></tr>
+<tr><th>Cómo se verifica</th><td>Semana 13: CPC de la manual cerca de $1,00 y ACoS más bajo que 55%.</td></tr>
 </table></li>
-<li><span class="p-tit">«tongue scraper»: la regla de la puja <span class="etq etq-ahorro">Ahorro</span></span>
-<span class="p-tag">1 min · misma pantalla del paso 1</span>
-<table class="p-tab">
-<tr><th>Clic por clic</th><td><ol class="clic">
-  <li>Fila <strong>tongue scraper</strong> (17 al 23-11): mirar <em>Clics</em> y <em>ACoS</em>.</li>
-  <li>10 clics o más y ACoS sobre 45% &rarr; clic en la puja &rarr; <strong>1,00</strong> &rarr; <em>Guardar</em>.
-    <span class="ver">Si no, queda en 1,20.</span></li>
-  <li>Fila <strong>tongue cleaner</strong>: queda en 1,00.</li>
-</ol></td></tr>
-<tr><th>Por qué</th><td>Es la regla puesta en la semana 11. La automática gana con el clic a $1,00.</td></tr>
-<tr><th>Cómo se verifica</th><td>Semana 13: ACoS de la manual 45% o menos.</td></tr>
-</table></li>
-<li><span class="p-tit">Automática: las cinco negativas exactas <span class="etq etq-med">Medición</span></span>
-<span class="p-tag">1 min · caja de la <a href="reporte-campanas-zriceros-semana-11.html#negativas">semana 11, sección 5</a></span>
+<li><span class="p-tit">Automática: verificar las cinco negativas exactas <span class="grado g-obs">Observar</span></span>
+<span class="p-tag">1 min · caja de la semana 11, sección 5</span>
 <table class="p-tab">
 <tr><th>Clic por clic</th><td><ol class="clic">
   <li><em>Grupo RASPADOR - 9/1/2026</em> &rarr; <em>Segmentación negativa</em>: buscar <strong>men hygiene</strong>.</li>
-  <li>Si no está: <em>Añadir palabras clave negativas</em> &rarr; <strong>Negativa exacta</strong> &rarr; pegar la caja de cinco &rarr; <em>Guardar</em>.
-    <span class="ojo">Si avisa que una ya existe, seguir.</span></li>
+  <li>Si no está: <em>Añadir palabras clave negativas</em> &rarr; <em>Negativa exacta</em> &rarr; pegar la <a href="reporte-campanas-zriceros-semana-11.html">caja de cinco</a> &rarr; <em>Guardar</em>.
+    <span class="ver">Si avisa que una ya existe, seguir.</span></li>
 </ol></td></tr>
 <tr><th>Qué no hacer</th><td>No tocar la puja ni el presupuesto de la automática.</td></tr>
 </table></li>
-<li><span class="p-tit">Tres descargas <span class="etq etq-med">Medición</span></span>
-<span class="p-tag">≈8 min · miércoles 25-11</span>
+<li><span class="p-tit">Bajar los informes que faltan <span class="grado g-obs">Medición</span></span>
+<span class="p-tag">≈12 min · miércoles 25-11 y después cada martes</span>
 <table class="p-tab">
-<tr><th>Clic por clic</th><td><ol class="clic">
-  <li><em>Medición e informes</em> &rarr; <em>Informes de Sponsored Ads</em> &rarr; Sponsored Products &middot; <strong>Término de búsqueda</strong> &middot; del <strong>17 al 23-11</strong> &middot; Resumen &middot; CSV.
-    <span class="ojo">El tipo es Término de búsqueda, no Producto anunciado.</span></li>
-  <li><strong>sellercentral.amazon.com</strong> &rarr; <em>Informes</em> &rarr; <em>Informes comerciales</em> &rarr; <em>Por ASIN</em> &rarr; <em>Detalle de la página de ventas y tráfico por artículo secundario</em>, del <strong>6-10 al 23-11</strong> &rarr; <em>Descargar (.csv)</em>.
-    <span class="ver">Tenés que ver la fila B0H6QZGX56 con <em>Sesiones</em> y <em>Unidades pedidas</em>.</span></li>
-  <li><em>Inventario</em> &rarr; <em>Administrar inventario de Logística de Amazon</em> &rarr; fila B0H6QZGX56: <strong>Disponible</strong> (una captura).</li>
-  <li>Los tres a <code>smb://SRVNVIDIA._smb._tcp.local/shared/amazon/</code>.</li>
-</ol></td></tr>
-<tr><th>Por qué</th><td>Tres semanas con la conversión baja en las dos campañas: el informe comercial dice si es la ficha o el tráfico.</td></tr>
+<tr><th>Clic por clic</th><td>El paso a paso de la <a href="#datos">sección 7</a>.</td></tr>
+<tr><th>Por qué</th><td>Con esos datos la semana que viene se decide por palabra, no por campaña.</td></tr>
 </table></li>
-<li class="p-crec"><span class="p-tit">Pedir la reseña a cada pedido, y anotarlo <span class="etq etq-crec">Crecimiento</span></span>
-<span class="p-tag">≈1 min por pedido · $0 · el botón dura 30 días desde la entrega</span>
-<table class="p-tab">
-<tr><th>Clic por clic</th><td><ol class="clic">
-  <li><strong>sellercentral.amazon.com</strong> &rarr; <em>Pedidos</em> &rarr; <em>Administrar pedidos</em>.</li>
-  <li>Fechas: <em>Personalizado</em>, <strong>del 25 de octubre al 19 de noviembre de 2026</strong>.</li>
-  <li>Cada pedido &rarr; <em>Solicitar una reseña</em> &rarr; <em>Sí</em>.
-    <span class="ojo">Si el botón no está, ya se pidió, venció o todavía no se habilitó: seguir.</span></li>
-  <li>Anotar número de pedido y fecha en <code>datos/resenas_solicitadas.csv</code>.</li>
-</ol></td></tr>
-<tr><th>Cómo se verifica</th><td>Las calificaciones pasan de 8.</td></tr>
-</table>
-<!-- registro-resenas -->
-<p class="meta">Registro de solicitudes: todavía vacío. <code>datos/resenas_solicitadas.csv</code> está creado con las columnas; se llena con los pedidos de Seller Central.</p>
-<!-- /registro-resenas -->
-</li>
 </ol>
-<h3>Qué tendría que dar la semana 13, y qué se decide con eso</h3>
+<p class="meta">Reseñas: sigue el pendiente de pedirlas a los pedidos de las últimas semanas
+(<a href="reporte-campanas-zriceros-semana-11.html#pasos">paso de la semana 11</a>); el registro está vacío.</p>
+</div>
+
+<h2 id="prediccion"><span class="num">6.</span> Qué tendría que dar la semana 13</h2>
+<div class="card tabla">
 <table>
-<tr><th></th><th class="num">Semana 12 (real)</th><th class="num">Semana 13 (si esto funciona)</th><th>Si no da eso</th></tr>
-<tr><td>Gasto de la manual por día</td><td class="num">$10,98</td><td class="num">menos de $5</td><td>«for adults» sigue activa: repetir el paso 1</td></tr>
-<tr><td>ACoS de la automática</td><td class="num">47,6%</td><td class="num">45% o menos</td><td>&mdash;</td></tr>
-<tr><td>Conversión de las dos</td><td class="num">9,5%</td><td class="num">12% o más</td><td>sigue frenado el crecimiento; mirar el informe comercial</td></tr>
-<tr><td>ACoS de las dos</td><td class="num">53,5%</td><td class="num">45% o menos</td><td>&mdash;</td></tr>
-<tr><td>Ganancia neta</td><td class="num">&minus;$14,79</td><td class="num">$0 o más</td><td>&mdash;</td></tr>
-<tr><td>Calificaciones</td><td class="num">8</td><td class="num">9 o más</td><td>&mdash;</td></tr>
+<tr><th></th><th class="num">Semana 12 (real)</th><th class="num">Semana 13, si el ajuste sirve</th><th>Si no da eso</th></tr>
+<tr><td>CPC de la manual</td><td class="num">$1,18</td><td class="num">$0,95 a $1,05</td><td>la puja no se cargó: repetir el paso 1</td></tr>
+<tr><td>Clics de la manual</td><td class="num">65</td><td class="num">50 o más</td><td>perdió subastas: volver 5% para arriba</td></tr>
+<tr><td>ACoS de la manual</td><td class="num">55,2%</td><td class="num">menos de 50%</td><td>esperar a la semana 14 (criterio de 100 clics)</td></tr>
+<tr><td>ACoS de la automática</td><td class="num">47,6%</td><td class="num">45% a 55%</td><td>&mdash;</td></tr>
+<tr><td>Conversión de las dos</td><td class="num">9,5%</td><td class="num">10% o más</td><td>mirar el informe comercial: sesiones y conversión de la ficha</td></tr>
 </table>
-<p class="meta">La semana 13 (24 al 30-11) tiene Black Friday y Cyber Monday: más compradores, mismas pujas y
-presupuestos.</p>
+</div>
+
+<h2 id="datos"><span class="num">7.</span> Qué datos nos faltan y cómo conseguirlos, paso a paso</h2>
+<div class="card">
+<p>Hoy hay una fila por campaña. Para decidir por palabra hacen falta estos. Todos de la <strong>semana
+lunes a domingo</strong>, bajados el <strong>martes</strong>. Los nombres de menú pueden variar: Amazon los cambia.</p>
+<ol class="datos">
+<li><strong>Términos de búsqueda</strong> (qué escribió la gente y cuánto gastó cada búsqueda).
+<ol>
+  <li><strong>advertising.amazon.com</strong> &rarr; menú de la izquierda <em>Medición e informes</em> &rarr; <em>Informes de Sponsored Ads</em> &rarr; <em>Crear informe</em>.</li>
+  <li>Tipo de anuncio <strong>Sponsored Products</strong>; tipo de informe <strong>Término de búsqueda</strong> (no «Producto anunciado»).</li>
+  <li>Unidad de tiempo <strong>Resumen</strong>; período <strong>lunes a domingo</strong> de la semana; todas las campañas.</li>
+  <li>Si deja elegir columnas: Campaña, Grupo de anuncios, Segmentación, Tipo de concordancia, Término de búsqueda, Impresiones, Clics, Coste total, Compras, Ventas, Unidades vendidas.</li>
+  <li><em>Ejecutar informe</em> &rarr; esperar a que diga <em>Completado</em> &rarr; <em>Descargar</em> (CSV).</li>
+</ol>
+<span class="ver">El acumulado desde el inicio no hace falta bajarlo: ya están todas las semanas desde la 1 y se suman acá.</span></li>
+<li><strong>Segmentación</strong> (cada palabra de la manual: puja, concordancia, estado, impresiones aunque no tenga clics).
+<ol>
+  <li>Mismo lugar, <em>Crear informe</em> &rarr; Sponsored Products &rarr; tipo <strong>Segmentación</strong> (Targeting).</li>
+  <li>Resumen, lunes a domingo, todas las campañas &rarr; <em>Ejecutar</em> &rarr; <em>Descargar</em>.</li>
+  <li>La puja y el estado de cada palabra: la captura de la pantalla <em>Segmentación</em> del paso 1.</li>
+</ol></li>
+<li><strong>Ubicación y gasto por día</strong> (dónde salió el anuncio y si alguna campaña se quedó sin presupuesto).
+<ol>
+  <li><em>Crear informe</em> &rarr; Sponsored Products &rarr; tipo <strong>Ubicación</strong> (Placement), Resumen, lunes a domingo.
+    <span class="ver">Da tres filas por campaña: parte superior de la búsqueda, resto de la búsqueda y páginas de producto.</span>
+    <span class="ojo">Si «Ubicación» no aparece como tipo, está como columna o desglose del informe de Campaña.</span></li>
+  <li>Otro: tipo <strong>Campaña</strong>, unidad de tiempo <strong>Diario</strong>, lunes a domingo. Da el gasto de cada día.</li>
+  <li>Un día con gasto igual al presupuesto diario es un día cortado.</li>
+</ol></li>
+<li><strong>Informe comercial</strong> (ventas totales, con y sin anuncios: TACoS y conversión de la ficha).
+<ol>
+  <li><strong>sellercentral.amazon.com</strong> &rarr; <em>Informes</em> &rarr; <em>Informes comerciales</em>.</li>
+  <li>A la izquierda, <em>Por ASIN</em> &rarr; <em>Detalle de la página de ventas y tráfico por artículo secundario</em>.</li>
+  <li>Fechas: la semana, lunes a domingo. <strong>Esta vez también</strong> del 1-09 al 23-11, para tener la historia.</li>
+  <li>Tiene que aparecer la fila <strong>B0H6QZGX56</strong> con Sesiones, Porcentaje de sesiones con unidades, Unidades pedidas, Ventas de productos pedidos y Porcentaje del Buy Box.</li>
+  <li>Arriba a la derecha, <em>Descargar (.csv)</em>.</li>
+</ol>
+<span class="ver">Unidades pedidas menos las de anuncios = ventas orgánicas. Gasto &divide; ventas totales = TACoS.</span></li>
+<li><strong>Posición orgánica, precio, cupón, stock y reseñas</strong> (2 minutos, a mano).
+<ol>
+  <li>En amazon.com, en ventana privada, buscar <em>tongue scraper</em>, <em>tongue scraper for adults</em> y <em>tongue cleaner</em>.</li>
+  <li>Anotar en qué página y en qué lugar sale Zriceros <strong>sin</strong> la etiqueta «Patrocinado». Si no sale en tres páginas, «no».</li>
+  <li>Stock: Seller Central &rarr; <em>Inventario</em> &rarr; <em>Administrar inventario de Logística de Amazon</em> &rarr; fila B0H6QZGX56, columna <em>Disponible</em>: captura.</li>
+  <li>Precio, cupón y calificaciones los lee Héctor de la ficha. Si cambiaste precio o cupón en la semana, una línea con el día.</li>
+</ol></li>
+<li><strong>Brand Analytics</strong> (qué se busca en Amazon, con % de clic y de compra): pide la marca en Brand Registry; con Zriceros sin registrar, no está disponible.</li>
+<li><strong>Cómo mandarlos.</strong>
+<ol>
+  <li>Por WhatsApp a Héctor, por la página de Héctor (adjuntar) o a la carpeta compartida <code>shared/amazon</code>.</li>
+  <li>Con estos nombres se cargan sin preguntar (N = número de semana):
+<pre class="copiar">semana-N_terminos.csv
+semana-N_segmentacion.csv
+semana-N_ubicacion.csv
+semana-N_campana-diario.csv
+semana-N_comercial.csv
+semana-N_inventario.png
+semana-N_organico.txt</pre>
+    <span class="ver">Si se mandan con el nombre que les pone Amazon, también sirven: el informe dice el tipo adentro.</span></li>
+  <li>Semana 13 (24 al 30-11): martes 1-12.</li>
+</ol></li>
+</ol>
+</div>
+
+<h2 id="cambia"><span class="num">8.</span> Qué cambiaría esta conclusión</h2>
+<div class="card">
+<ul>
+<li><strong>De ajustar a pausar una palabra de la manual</strong>: 100 clics a la misma puja con conversión debajo de
+9%, y el informe de términos mostrando que esa palabra es la que gasta. Hoy ninguna palabra tiene ese dato.</li>
+<li><strong>De bajar a subir la puja de la manual</strong>: semanas 13 y 14 con conversión de 13% o más (empata a $1,18).</li>
+<li><strong>De mirar las campañas a mirar la ficha</strong>: si el informe comercial muestra que la conversión de la ficha
+entera también bajó desde la semana 10, el problema es precio, fotos o competencia, no las pujas.</li>
+<li><strong>Aceptar un ACoS sobre 45%</strong>: si el TACoS queda en 30% o menos, las ventas orgánicas pagan la publicidad.</li>
+<li><strong>Ajustar por ubicación y no por campaña</strong>: si el informe de ubicación pone la pérdida en páginas de producto.</li>
+<li><strong>Subir presupuesto</strong>: un día con gasto igual al tope y ACoS de esa semana debajo de 45%.</li>
+</ul>
+</div>
 <hr style="margin-top:40px;border:0;border-top:1px solid #e0e0e0">
 <p class="meta"><strong>Fuentes.</strong> Informe de producto anunciado de Sponsored Products del 17 al
 23-11 (<code>Advertised_product_-_11_24_2026_semana_12_.csv</code>, enviado por Ariel el 24-11, dos filas, una
-por campaña) y el del 13 al 19-11 (enviado el 20-11). Semanas 1 a 11: informes de términos de búsqueda
+por campaña). Semanas 1 a 11: informes de términos de búsqueda
 (<a href="reporte-campanas-zriceros-semana-11.html">hoja de la semana 11</a>). Presupuestos: los informó
 Ariel el 17-11. Ficha viva de B0H6QZGX56 leída de amazon.com el 24-11: $19,89, cupón del 10%, 8
 calificaciones de 4,8, #183 en Tongue Brushes, Scrapers &amp; Cleaners. Contribución de $9,00 por unidad y
 equilibrio de 45,2%, de la calculadora de Amazon (<a href="reporte-campanas-zriceros.html">hoja de la semana
 1</a>); ≈$6,56 por unidad con cupón, de la <a href="reporte-campanas-zriceros-semana-10.html#c-cupon">hoja de
-la semana 10</a>.</p>
+la semana 10</a>. Menús: guías de Amazon Ads («Measurement &amp; Reporting &rarr; Sponsored ads reports &rarr; Create
+report») y de Seller Central (Business Reports por ASIN); Brand Analytics requiere Brand Registry (sell.amazon.com).</p>
 <!-- pie-menu -->
 <nav class="zp" aria-label="Hoja anterior y siguiente"><a href="reporte-campanas-zriceros-semana-11.html"><small>← Anterior</small>Seguimiento de Ads · Semana 11</a></nav>
 <!-- /pie-menu -->

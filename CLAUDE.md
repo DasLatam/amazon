@@ -76,6 +76,18 @@ proyecto, no sólo para el seguimiento semanal:
    «el documento» ni una tabla de «idea → va / no va». Lo que sirve entra como recomendación propia,
    con su paso a paso (qué, dónde, con qué dato, éxito, cuándo se mide); lo que no, no se menciona.
 
+6. **Informes finos: sin veredictos tajantes con muestra chica, con criterio de decisión explícito**
+   (Ariel lo pidió el 2026-11-24, sobre la primera versión de la semana 12, que decía «la manual es la
+   pérdida, pausar»: *«seamos mucho más finos; si no tenemos información y querés otro tipo de reporte,
+   dame el paso a paso para mejorar la información»*).
+   - Con menos de ~100 clics y 10 compras por campaña o palabra (o tres semanas a la misma puja) no se
+     pausa ni se apaga nada: se observa o se ajusta 10–15% (puja, presupuesto).
+   - Conversión y ACoS van con su rango (Wilson 95%, explicado en una línea) y con las semanas
+     anteriores al lado: tendencia, no foto. Decir cuánto mueven dos compras.
+   - La automática descubre y la manual exacta cosecha: no se juzgan con la misma vara.
+   - Si faltan datos para decidir, la hoja trae el paso a paso para conseguirlos y una sección «Qué
+     cambiaría esta conclusión». Modelo: `reporte-campanas-zriceros-semana-12.html` (v2, 24-11).
+
 ## El registro de solicitudes de reseña
 
 `datos/resenas_solicitadas.csv` + `scripts/resenas.py`. Existe porque el botón
