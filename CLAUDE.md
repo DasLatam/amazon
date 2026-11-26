@@ -364,6 +364,18 @@ Producto anunciado». Dos informes de producto que se pisan acotan cuándo cambi
 impresiones en la automática; 17–23: 1.770 → la caída empezó el 17). La hoja deja el bloque
 `<!-- frases-resumen -->` vacío para que `frases.py --poner` lo llene si llega el de términos.
 
+## Lo confirmado por Ariel (2026-11-25): no se vuelve a preguntar
+
+- **Reseñas del 16-10 al 5-11: pedidas.** Las tandas anteriores (14-09 al 8-10 el 19-10) también. El
+  registro `datos/resenas_solicitadas.csv` sigue sin filas porque Ariel pide las reseñas pero no pasa los
+  números de pedido: **la hoja de la semana no pregunta por el registro ni lo pone «sin confirmar»**. La
+  próxima tanda (pedidos desde el 6-11) va como paso normal, no como pregunta.
+- **Grupo «tongue scraper» en frase a $0,80: no se creó.** Regla de la semana 11: no se crea hasta que una
+  semana convierta 12% o más (11: 5,6%; 12: 9,5%). Cuando pase, el informe trae el paso a paso y se da de
+  alta una tarea; antes, ni tarea ni pregunta.
+- Lo que no se puede ver en un informe y Ariel ya contestó se anota acá y en `BITACORA.md`: el informe
+  siguiente lo toma como hecho sin volver a preguntar.
+
 ## Presupuesto: Amazon corta por mes, no por día (2026-10-22)
 
 `presupuesto-zriceros.html` («Presupuesto» en Seguimiento de Ads), por el planteo de Ariel

@@ -3,6 +3,10 @@
 Una línea por cambio relevante, la más reciente arriba. El detalle está en las hojas
 y en `CLAUDE.md`.
 
+- 2026-11-25 · Ariel contestó en /atender («Reseñas sí, frase no»): **se pidieron las reseñas de los pedidos
+  del 16-10 al 5-11** (sin números de pedido: el CSV de `datos/` sigue sin filas) y **no se creó el grupo
+  «tongue scraper» en frase a $0,80**. Hoja de la semana 12: la línea de reseñas lo dice. El grupo no se
+  crea hasta una semana con 12% o más (semana 11: 5,6%; semana 12: 9,5%); sin tarea nueva.
 - 2026-11-24 · Semana 12 reescrita (v2) por pedido de Ariel: la v1 era demasiado tajante («la manual es la
   pérdida, pausar»). Ahora: rangos de Wilson al 95% (conversión y ACoS) semanas 10–12 por campaña; la
   manual mejora (ACoS 74→83→55%, clic $1,44→$1,18) y convierte como la automática (9,1% y 7,8% en tres
