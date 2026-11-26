@@ -35,7 +35,7 @@ from campanas import MANUAL, campana, depurar, num, semanas, tipo  # noqa: E402
 BASE = Path(__file__).resolve().parent.parent
 HOJA = BASE / "frases-zriceros.html"
 
-CONTRIBUCION = 9.00      # $19,89 − tarifas − producto (CLAUDE.md, «Economía»)
+CONTRIBUCION = 9.00      # $19,89 − tarifas − producto («Economía» del proyecto)
 CLICS_DECIDIR = 15       # la regla de la estrategia de PPC: 15 clics sin pedido
 
 # Lo que dicen las hojas semanales, tabla «Las N semanas lado a lado» (la 8 desde el 27-10).
@@ -549,7 +549,7 @@ def pagina(frases, fichas, otros, por_semana, repetidas, p, extra) -> tuple[str,
 <h1>Frases: qué búsqueda sí, cuál no</h1>
 
 <p class="estado">{len(frases)} frases con clics en {len(por_semana)} semanas. {len(neg_frase)} negativas de frase y {len(neg_exacta)} exactas, listas para pegar en la automática.</p>
-<p class="meta">Datos hasta el informe de la semana {ult} ({fecha(desde_u)} al {fecha(hasta_u)}). Hoja generada el {fecha_hoy()} con <code>scripts/frases.py</code>.</p>
+<p class="meta">Datos hasta el informe de la semana {ult} ({fecha(desde_u)} al {fecha(hasta_u)}). Hoja actualizada el {fecha_hoy()}.</p>
 
 <h2 id="pasos">ESTA SEMANA</h2>
 
@@ -754,8 +754,7 @@ def resumen_madre(frases: dict, res: dict, ult: int) -> str:
 <li><strong>A frase o a otra exacta con puja: {"ninguna" if not pasan else ", ".join(e(f["frase"]) for f in pasan)}.</strong>
 Regla: {cmin} clics o más y {pct(convmin, 0)} de conversión. Las más cerca: {cerca_txt}.</li>
 </ul>
-<p class="meta">* Las dos campañas, como en Frases. Para pegar, con botón Copiar: <a href="frases-zriceros.html#pasos">Frases &rarr; pasos</a>.
-Esta parte la escribe <code>scripts/frases.py --poner</code>.</p>
+<p class="meta">* Las dos campañas, como en Frases. Para pegar, con botón Copiar: <a href="frases-zriceros.html#pasos">Frases &rarr; pasos</a>.</p>
 <!-- /{MARCA_MADRE} -->"""
 
 

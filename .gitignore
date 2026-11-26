@@ -1,3 +1,6 @@
 logs/
 __pycache__/
 datos/
+CLAUDE.md
+BITACORA.md
+serve.py.bak-*
